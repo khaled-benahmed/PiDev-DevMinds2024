@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}Welcome!{% endblock %}
+    </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> 
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        
+    {% endblock %}
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}"/>
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+    <!-- responsive style -->
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="hero_area">
+        <header class="header_section">
+            <div class="container-fluid">
+                <!-- Intégration de la barre de navigation -->
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="{{ path('main') }}">
+                        <span>
+							Nutrifit
+						</span>
+                        </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Les éléments de la barre de navigation -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ path('main') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Coaches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nutritionists</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Complaint</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <!-- Les éléments spécifiques aux utilisateurs -->
+                            {% if app.user %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('admin_index') }}">Administration</a>
+                                    </li>
+                                {% endif %}
+                                {% if is_granted('ROLE_COACH') %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Coach dashboard</a>
+                                    </li>
+                                {% endif %}
+                                {% if is_granted('ROLE_NUTRITIONIST') %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Nutritionist dashboard</a>
+                                    </li>
+                                {% endif %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{#  #}{ path('profile_index') }}">My profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{#  #}{ path('app_logout') }}">Logout</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{#  #}{ path('app_register') }}">Sign up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{#  #}{ path('app_login') }}">Sign in</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        {% block body %}
+        {% endblock %}
+    </div>
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved.
+    </p>
+  </footer>
+  <!-- footer section -->
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+</body>
+</html>
