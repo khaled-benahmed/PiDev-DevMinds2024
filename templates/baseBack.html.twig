@@ -171,7 +171,7 @@
                                 <a href="#">Ajouter Utilisateur</a>
                             </li>
                             <li>
-                                <a href="#">Afficher Utilisateurs</a>
+                                <a href="{{path('admin_users_list')}}">Afficher Utilisateurs</a>
                             </li>
                         </ul>
                     </li>
@@ -421,8 +421,9 @@
                                             </div>
                                         </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                            <a href="{{ path('app_logout') }}">
+                                                 <i class="zmdi zmdi-power"></i>Logout
+                                          </a>
                                         </div>
                                     </div>
                                 </div>

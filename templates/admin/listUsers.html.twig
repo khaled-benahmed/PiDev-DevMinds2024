@@ -1,0 +1,53 @@
+{% extends "baseBack.html.twig" %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <main class="col-lg-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Liste des utilisateurs</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Prénom</th>
+                                    <th>Nom</th>
+                                    <th>Email</th>
+                                    <th>Cin</th>
+                                    <th>Rôles</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.firstname }}</td>
+                                        <td>{{ user.lastname }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.cin }}</td>
+                                        <td>
+                                            {% for role in user.roles %}
+                                                {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                                <span class="badge bg-{{ badge_color }}">
+                                                    {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                                    {{ role_name }}
+                                                </span>
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-success">Modifier</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}

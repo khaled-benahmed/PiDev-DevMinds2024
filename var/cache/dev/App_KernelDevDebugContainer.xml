@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\xampp\htdocs\piDev-DevMinds2024</parameter>
+    <parameter key="kernel.project_dir">C:\wamp64\www\piDev-DevMinds2024</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\log</parameter>
+    <parameter key="kernel.build_dir">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">C:\wamp64\www\piDev-DevMinds2024\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -19,47 +19,57 @@
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
+      <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\debug-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\twig\extra-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\twig\extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\monolog-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
+      </parameter>
+      <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src</parameter>
+        <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -99,17 +109,17 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">C:\xampp\htdocs\piDev-DevMinds2024/translations</parameter>
+    <parameter key="translator.default_path">C:\wamp64\www\piDev-DevMinds2024/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_C:\xampp\htdocs\piDev-DevMinds2024.App_KernelDevDebugContainer</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_C:\wamp64\www\piDev-DevMinds2024.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -122,11 +132,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -191,7 +201,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -199,7 +209,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\xampp\htdocs\piDev-DevMinds2024/templates</parameter>
+    <parameter key="twig.default_path">C:\wamp64\www\piDev-DevMinds2024/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -324,6 +334,20 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\Admin\MainController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\Admin\UserController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -338,6 +362,21 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Security\EmailVerifier"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\RegistrationController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\SecurityController"/>
+      </call>
+    </service>
     <service id="App\Controller\TestController" class="App\Controller\TestController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -345,9 +384,32 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\TestController"/>
       </call>
     </service>
+    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+      <argument type="service" id="security.user_password_hasher"/>
+      <argument type="service" id="slugger"/>
+    </service>
+    <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Security\EmailVerifier" class="App\Security\EmailVerifier" autowire="true" autoconfigure="true">
+      <argument type="service" id="symfonycasts.verify_email.helper"/>
+      <argument type="service" id="mailer.mailer"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Security\UserAuthenticator" class="App\Security\UserAuthenticator" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -418,7 +480,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/http_cache</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -428,7 +490,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -479,6 +541,7 @@
         <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="debug.security.firewall" type="service" id="debug.security.firewall" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
         <argument key="debug.security.firewall.authenticator.main" type="service" id="debug.security.firewall.authenticator.main" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.main" type="service" id="monolog.handler.main" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.console" type="service" id="monolog.handler.console" on-invalid="ignore_uninitialized"/>
@@ -556,6 +619,9 @@
           <argument>reset</argument>
         </argument>
         <argument key="debug.security.firewall" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.security_token_verifier" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key="debug.security.firewall.authenticator.main" type="collection">
@@ -640,7 +706,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -673,7 +739,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -709,6 +775,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:clear</argument>
@@ -744,6 +811,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:delete</argument>
@@ -767,6 +835,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:list</argument>
@@ -842,7 +911,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1018,16 +1087,16 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/translations</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/translations</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
       <argument type="collection">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1044,16 +1113,16 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/translations</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/translations</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
       <argument type="collection">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1135,9 +1204,11 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1282,7 +1353,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1312,7 +1383,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1411,6 +1482,7 @@
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="cache.validator_expression_language" type="service" id="cache.validator_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id="cache.global_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="true">
@@ -1427,6 +1499,7 @@
         <argument key="cache.doctrine.orm.default.result" type="service" id="cache.doctrine.orm.default.result" on-invalid="ignore_uninitialized"/>
         <argument key="cache.doctrine.orm.default.query" type="service" id="cache.doctrine.orm.default.query" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id="identity_translator" class="Symfony\Component\Translation\IdentityTranslator"/>
@@ -1591,327 +1664,358 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
           </argument>
           <argument key="bs" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.cy.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fa.xlf</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mk" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.mk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.mk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.mk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.mk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.mk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.mk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.mk.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.mn.xlf</argument>
           </argument>
           <argument key="my" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
           </argument>
           <argument key="ur" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
           </argument>
           <argument key="uz" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+          </argument>
+          <argument key="sr" type="collection">
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\debug-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\twig\extra-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\monolog-bundle/translations</argument>
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\debug-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\monolog-bundle/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\debug-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\twig\extra-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\monolog-bundle/translations</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\debug-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\twig\extra-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\monolog-bundle/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2144,7 +2248,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument type="service_closure" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2733,7 +2837,7 @@
       <argument type="service" id=".service_locator.gOdCe1K.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev</argument>
+        <argument key="cache_dir">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2783,7 +2887,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -2846,13 +2950,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/annotations.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/annotations.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2870,7 +2974,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -2879,7 +2983,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/.env.dev.local</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/.env.dev.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -2991,10 +3095,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/serialization.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/serialization.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3133,7 +3237,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/sessions</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3223,7 +3327,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.y4dplYt"/>
+      <argument type="service" id=".service_locator.ZyXYEQR"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3329,7 +3433,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -3357,10 +3461,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3747,7 +3851,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/profiler</argument>
+      <argument>file:C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -3794,7 +3898,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -3855,6 +3959,10 @@
       <call method="addInstance">
         <argument>cache.security_expression_language</argument>
         <argument type="service" id="cache.security_expression_language"/>
+      </call>
+      <call method="addInstance">
+        <argument>cache.security_token_verifier</argument>
+        <argument type="service" id="cache.security_token_verifier"/>
       </call>
     </service>
     <service id="cache_pool_clearer.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\CachePoolClearerCacheWarmer">
@@ -4112,7 +4220,7 @@
       <tag name="doctrine.event_subscriber"/>
       <argument type="tagged_iterator" tag="messenger.receiver"/>
     </service>
-    <service id=".1_ServiceLocator~XFpB_mp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".1_ServiceLocator~IhOu_Iq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -4131,7 +4239,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.ek.zhtt"/>
+      <argument type="service" id=".service_locator.tUmh8HO"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4321,7 +4429,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4356,7 +4464,7 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\src\Entity</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\src\Entity</argument>
       </argument>
       <argument>false</argument>
     </service>
@@ -4423,7 +4531,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024/migrations</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -4450,6 +4558,9 @@
       <call method="setName">
         <argument>doctrine:migrations:diff</argument>
       </call>
+      <call method="setDescription">
+        <argument>Generate a migration by comparing your current database to your mapping information.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.sync_metadata_command" class="Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand">
       <tag name="console.command" command="doctrine:migrations:sync-metadata-storage"/>
@@ -4458,6 +4569,9 @@
       <argument>doctrine:migrations:sync-metadata-storage</argument>
       <call method="setName">
         <argument>doctrine:migrations:sync-metadata-storage</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Ensures that the metadata storage is at the latest version.</argument>
       </call>
     </service>
     <service id="doctrine_migrations.versions_command" class="Doctrine\Migrations\Tools\Console\Command\ListCommand">
@@ -4468,6 +4582,9 @@
       <call method="setName">
         <argument>doctrine:migrations:list</argument>
       </call>
+      <call method="setDescription">
+        <argument>Display a list of all available migrations and their status.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.current_command" class="Doctrine\Migrations\Tools\Console\Command\CurrentCommand">
       <tag name="console.command" command="doctrine:migrations:current"/>
@@ -4476,6 +4593,9 @@
       <argument>doctrine:migrations:current</argument>
       <call method="setName">
         <argument>doctrine:migrations:current</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Outputs the current version</argument>
       </call>
     </service>
     <service id="doctrine_migrations.dump_schema_command" class="Doctrine\Migrations\Tools\Console\Command\DumpSchemaCommand">
@@ -4486,6 +4606,9 @@
       <call method="setName">
         <argument>doctrine:migrations:dump-schema</argument>
       </call>
+      <call method="setDescription">
+        <argument>Dump the schema for your database to a migration.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.execute_command" class="Doctrine\Migrations\Tools\Console\Command\ExecuteCommand">
       <tag name="console.command" command="doctrine:migrations:execute"/>
@@ -4494,6 +4617,9 @@
       <argument>doctrine:migrations:execute</argument>
       <call method="setName">
         <argument>doctrine:migrations:execute</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Execute one or more migration versions up or down manually.</argument>
       </call>
     </service>
     <service id="doctrine_migrations.generate_command" class="Doctrine\Migrations\Tools\Console\Command\GenerateCommand">
@@ -4504,6 +4630,9 @@
       <call method="setName">
         <argument>doctrine:migrations:generate</argument>
       </call>
+      <call method="setDescription">
+        <argument>Generate a blank migration class.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.latest_command" class="Doctrine\Migrations\Tools\Console\Command\LatestCommand">
       <tag name="console.command" command="doctrine:migrations:latest"/>
@@ -4512,6 +4641,9 @@
       <argument>doctrine:migrations:latest</argument>
       <call method="setName">
         <argument>doctrine:migrations:latest</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Outputs the latest version</argument>
       </call>
     </service>
     <service id="doctrine_migrations.migrate_command" class="Doctrine\Migrations\Tools\Console\Command\MigrateCommand">
@@ -4522,6 +4654,9 @@
       <call method="setName">
         <argument>doctrine:migrations:migrate</argument>
       </call>
+      <call method="setDescription">
+        <argument>Execute a migration to a specified version or the latest available version.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.rollup_command" class="Doctrine\Migrations\Tools\Console\Command\RollupCommand">
       <tag name="console.command" command="doctrine:migrations:rollup"/>
@@ -4530,6 +4665,9 @@
       <argument>doctrine:migrations:rollup</argument>
       <call method="setName">
         <argument>doctrine:migrations:rollup</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Rollup migrations by deleting all tracked versions and insert the one version that exists.</argument>
       </call>
     </service>
     <service id="doctrine_migrations.status_command" class="Doctrine\Migrations\Tools\Console\Command\StatusCommand">
@@ -4540,6 +4678,9 @@
       <call method="setName">
         <argument>doctrine:migrations:status</argument>
       </call>
+      <call method="setDescription">
+        <argument>View the status of a set of migrations.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.up_to_date_command" class="Doctrine\Migrations\Tools\Console\Command\UpToDateCommand">
       <tag name="console.command" command="doctrine:migrations:up-to-date"/>
@@ -4549,6 +4690,9 @@
       <call method="setName">
         <argument>doctrine:migrations:up-to-date</argument>
       </call>
+      <call method="setDescription">
+        <argument>Tells you if your schema is up-to-date.</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.version_command" class="Doctrine\Migrations\Tools\Console\Command\VersionCommand">
       <tag name="console.command" command="doctrine:migrations:version"/>
@@ -4557,6 +4701,9 @@
       <argument>doctrine:migrations:version</argument>
       <call method="setName">
         <argument>doctrine:migrations:version</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Manually add and delete migration versions from the version table.</argument>
       </call>
     </service>
     <service id="doctrine.migrations.storage.table_storage" class="Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration"/>
@@ -4602,7 +4749,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -4624,7 +4771,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -4689,7 +4836,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/twig</argument>
+        <argument key="cache">C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -4795,10 +4942,10 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
-        <argument key="C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -4809,60 +4956,60 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -4888,7 +5035,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -4974,9 +5121,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -5010,7 +5157,7 @@
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -5177,6 +5324,14 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>app_logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.user.provider.missing" class="Symfony\Component\Security\Core\User\MissingUserProvider" abstract="true">
       <argument type="abstract">firewall</argument>
@@ -5265,7 +5420,7 @@
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument type="abstract">Provider Key</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -5430,7 +5585,7 @@
     </service>
     <service id="security.listener.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
       <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="1024" method="checkPassport"/>
-      <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="security.listener.user_provider.abstract" class="Symfony\Component\Security\Http\EventListener\UserProviderListener" abstract="true">
       <argument type="abstract">user provider</argument>
@@ -5561,7 +5716,10 @@
       <argument type="service" id=".service_locator.zJyh7qS"/>
       <argument type="service" id=".service_locator.XsyfP82"/>
       <argument type="collection">
-        <argument key="main" type="collection"/>
+        <argument key="main" type="collection">
+          <argument type="service" id="App\Security\UserAuthenticator"/>
+          <argument type="service" id="security.authenticator.remember_me.main"/>
+        </argument>
       </argument>
       <argument>true</argument>
       <call method="setName">
@@ -5571,8 +5729,11 @@
         <argument>Display information about your security firewall(s)</argument>
       </call>
     </service>
-    <service id="security.user.provider.concrete.users_in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider">
-      <argument type="collection"/>
+    <service id="security.user.provider.concrete.app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider">
+      <argument type="service" id="doctrine"/>
+      <argument>App\Entity\User</argument>
+      <argument>email</argument>
+      <argument>null</argument>
     </service>
     <service id="security.firewall.map.config.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig">
       <argument>dev</argument>
@@ -5603,17 +5764,20 @@
       <argument>null</argument>
       <argument>true</argument>
       <argument>false</argument>
-      <argument>security.user.provider.concrete.users_in_memory</argument>
+      <argument>security.user.provider.concrete.app_user_provider</argument>
       <argument>main</argument>
+      <argument>App\Security\UserAuthenticator</argument>
       <argument>null</argument>
       <argument>null</argument>
-      <argument>null</argument>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument>remember_me</argument>
+        <argument>App\Security\UserAuthenticator</argument>
+      </argument>
       <argument>null</argument>
     </service>
     <service id="security.listener.main.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
       <tag name="kernel.event_listener" dispatcher="security.event_dispatcher.main" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
-      <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="security.event_dispatcher.main" class="Symfony\Component\EventDispatcher\EventDispatcher">
       <tag name="security.event_dispatcher.main">event_dispatcher.dispatcher</tag>
@@ -5630,6 +5794,62 @@
         <argument type="collection">
           <argument type="service_closure" id="security.listener.session.main"/>
           <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.logout.listener.default.main"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>64</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.logout.listener.session.main"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.check_remember_me_conditions.main"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-32</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-64</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginFailureEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\TokenDeauthenticatedEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -5692,10 +5912,11 @@
     </service>
     <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse"/>
+      <tag name="security.remember_me_aware" id="main" provider="none"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument>main</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -5710,9 +5931,135 @@
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
       <argument type="service" id="security.authentication.session_strategy"/>
     </service>
+    <service id="security.logout_listener.main" class="Symfony\Component\Security\Http\Firewall\LogoutListener">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.event_dispatcher.main"/>
+      <argument type="collection">
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="csrf_token_id">logout</argument>
+        <argument key="logout_path">app_logout</argument>
+      </argument>
+    </service>
+    <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">
+      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>/</argument>
+    </service>
+    <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
+      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+    </service>
+    <service id="security.authenticator.remember_me_signature_hasher" class="Symfony\Component\Security\Core\Signature\SignatureHasher">
+      <argument type="service" id="property_accessor"/>
+      <argument type="abstract">signature properties</argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+    </service>
+    <service id="security.authenticator.signature_remember_me_handler" class="Symfony\Component\Security\Http\RememberMe\SignatureRememberMeHandler" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">signature hasher</argument>
+      <argument type="abstract">user provider</argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.persistent_remember_me_handler" class="Symfony\Component\Security\Http\RememberMe\PersistentRememberMeHandler" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">token provider</argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument type="abstract">user provider</argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="abstract">token verifier</argument>
+    </service>
+    <service id="security.authenticator.firewall_aware_remember_me_handler" class="Symfony\Bundle\SecurityBundle\RememberMe\FirewallAwareRememberMeHandler">
+      <argument type="service" id="security.firewall.map"/>
+      <argument type="service" id=".service_locator.XgpoQM9"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="security.listener.check_remember_me_conditions" class="Symfony\Component\Security\Http\EventListener\CheckRememberMeConditionsListener" abstract="true">
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+    </service>
+    <service id="security.listener.remember_me" class="Symfony\Component\Security\Http\EventListener\RememberMeListener" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">remember me handler</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.remember_me" class="Symfony\Component\Security\Http\Authenticator\RememberMeAuthenticator" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">remember me handler</argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="cache.security_token_verifier" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument type="service" id="cache.security_token_verifier.recorder_inner"/>
+    </service>
+    <service id="security.authenticator.remember_me_signature_hasher.main" class="Symfony\Component\Security\Core\Signature\SignatureHasher">
+      <argument type="service" id="property_accessor"/>
+      <argument type="collection">
+        <argument>password</argument>
+      </argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+    </service>
+    <service id="security.authenticator.remember_me_handler.main" class="Symfony\Component\Security\Http\RememberMe\SignatureRememberMeHandler">
+      <tag name="security.remember_me_handler" firewall="main"/>
+      <argument type="service" id="security.authenticator.remember_me_signature_hasher.main"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="collection">
+        <argument key="secret">%env(APP_SECRET)%</argument>
+        <argument key="lifetime">604800</argument>
+        <argument key="path">/</argument>
+        <argument key="always_remember_me">true</argument>
+        <argument key="user_providers" type="collection"/>
+        <argument key="catch_exceptions">true</argument>
+        <argument key="signature_properties" type="collection">
+          <argument>password</argument>
+        </argument>
+        <argument key="name">REMEMBERME</argument>
+        <argument key="domain">null</argument>
+        <argument key="secure">null</argument>
+        <argument key="httponly">true</argument>
+        <argument key="samesite">lax</argument>
+        <argument key="remember_me_parameter">_remember_me</argument>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.listener.check_remember_me_conditions.main" class="Symfony\Component\Security\Http\EventListener\CheckRememberMeConditionsListener">
+      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+      <argument type="collection">
+        <argument key="always_remember_me">true</argument>
+        <argument key="remember_me_parameter">_remember_me</argument>
+      </argument>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+    </service>
+    <service id="security.listener.remember_me.main" class="Symfony\Component\Security\Http\EventListener\RememberMeListener">
+      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+      <argument type="service" id="security.authenticator.remember_me_handler.main"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.remember_me.main" class="Symfony\Component\Security\Http\Authenticator\RememberMeAuthenticator">
+      <argument type="service" id="security.authenticator.remember_me_handler.main"/>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument>REMEMBERME</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
     <service id="security.authenticator.manager.main" class="Symfony\Component\Security\Http\Authentication\AuthenticatorManager">
       <tag name="monolog.logger" channel="security"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument type="service" id="App\Security\UserAuthenticator"/>
+        <argument type="service" id="security.authenticator.remember_me.main"/>
+      </argument>
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.event_dispatcher.main"/>
       <argument>main</argument>
@@ -5734,7 +6081,7 @@
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
-      <argument>null</argument>
+      <argument type="service" id="App\Security\UserAuthenticator"/>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -5748,7 +6095,7 @@
         <argument type="service" id="security.access_listener"/>
       </argument>
       <argument type="service" id="security.exception_listener.main"/>
-      <argument>null</argument>
+      <argument type="service" id="security.logout_listener.main"/>
       <argument type="service" id="security.firewall.map.config.main"/>
       <argument type="service" id="security.untracked_token_storage"/>
     </service>
@@ -5831,7 +6178,7 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\log/dev.log</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024\var\log/dev.log</argument>
       <argument>debug</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -5853,8 +6200,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -6019,7 +6366,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024</argument>
+      <argument>C:\wamp64\www\piDev-DevMinds2024</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -6031,17 +6378,85 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
+    <service id="symfonycasts.verify_email.token_generator" class="SymfonyCasts\Bundle\VerifyEmail\Generator\VerifyEmailTokenGenerator">
+      <argument>%env(APP_SECRET)%</argument>
+    </service>
+    <service id="symfonycasts.verify_email.query_utility" class="SymfonyCasts\Bundle\VerifyEmail\Util\VerifyEmailQueryUtility"/>
+    <service id="symfonycasts.verify_email.uri_signer_factory" class="SymfonyCasts\Bundle\VerifyEmail\Factory\UriSignerFactory">
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>signature</argument>
+    </service>
+    <service id="symfonycasts.verify_email.uri_signer" class="Symfony\Component\HttpFoundation\UriSigner">
+      <factory service="symfonycasts.verify_email.uri_signer_factory" method="createUriSigner"/>
+    </service>
+    <service id="symfonycasts.verify_email.helper" class="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelper">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="symfonycasts.verify_email.uri_signer"/>
+      <argument type="service" id="symfonycasts.verify_email.query_utility"/>
+      <argument type="service" id="symfonycasts.verify_email.token_generator"/>
+      <argument>3600</argument>
+    </service>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="doctrine.fixtures.loader"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="collection">
+        <argument key="default" type="service" id="doctrine.fixtures.purger.orm_purger_factory"/>
+      </argument>
+      <call method="setName">
+        <argument>doctrine:fixtures:load</argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader">
+      <argument type="service" id="service_container"/>
+      <call method="addFixtures">
+        <argument type="collection">
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\UserFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+        </argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
+      <tag name="doctrine.fixtures.purger_factory" alias="default"/>
+    </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TestController" class="App\Controller\TestController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6414,13 +6829,48 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator._tHndrl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.soq8KgK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="usersRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kXtg5m1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticator" type="service_closure" id="App\Security\UserAuthenticator"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userAuthenticator" type="service_closure" id="security.user_authenticator"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
+      </argument>
+    </service>
+    <service id=".service_locator.q2ji3lu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
+    <service id=".service_locator.zFcJjKU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
+      </argument>
+    </service>
+    <service id=".service_locator.299DF.l" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\Admin\UserController::index" type="service_closure" id=".service_locator.soq8KgK"/>
+        <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.kXtg5m1"/>
+        <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.q2ji3lu"/>
+        <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\Admin\UserController:index" type="service_closure" id=".service_locator.soq8KgK"/>
+        <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.kXtg5m1"/>
+        <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.q2ji3lu"/>
+        <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -6484,9 +6934,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.y4dplYt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ZyXYEQR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -6572,10 +7023,11 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.ek.zhtt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.tUmh8HO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\TestRepository" type="service_closure" id="App\Repository\TestRepository"/>
+        <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6844,6 +7296,18 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\Admin\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\MainController"/>
+      <argument>App\Controller\Admin\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\Admin\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\UserController"/>
+      <argument>App\Controller\Admin\UserController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6853,6 +7317,18 @@
     <service id=".service_locator.mx0UMmY.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
+      <argument>App\Controller\RegistrationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
+      <argument>App\Controller\SecurityController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -6968,6 +7444,12 @@
         <argument key="security.token_storage" type="service_closure" id="security.token_storage"/>
       </argument>
     </service>
+    <service id=".service_locator.XgpoQM9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="main" type="service_closure" id="security.authenticator.remember_me_handler.main"/>
+      </argument>
+    </service>
     <service id="debug.validator.inner" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
     </service>
@@ -7032,12 +7514,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.299DF.l"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.299DF.l"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7325,6 +7807,97 @@
       <argument>false</argument>
       <argument type="service_closure" id="console.command.secrets_encrypt_from_local"/>
     </service>
+    <service id=".doctrine_migrations.diff_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:diff</argument>
+      <argument type="collection"/>
+      <argument>Generate a migration by comparing your current database to your mapping information.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.diff_command"/>
+    </service>
+    <service id=".doctrine_migrations.sync_metadata_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:sync-metadata-storage</argument>
+      <argument type="collection"/>
+      <argument>Ensures that the metadata storage is at the latest version.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.sync_metadata_command"/>
+    </service>
+    <service id=".doctrine_migrations.versions_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:list</argument>
+      <argument type="collection"/>
+      <argument>Display a list of all available migrations and their status.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.versions_command"/>
+    </service>
+    <service id=".doctrine_migrations.current_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:current</argument>
+      <argument type="collection"/>
+      <argument>Outputs the current version</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.current_command"/>
+    </service>
+    <service id=".doctrine_migrations.dump_schema_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:dump-schema</argument>
+      <argument type="collection"/>
+      <argument>Dump the schema for your database to a migration.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.dump_schema_command"/>
+    </service>
+    <service id=".doctrine_migrations.execute_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:execute</argument>
+      <argument type="collection"/>
+      <argument>Execute one or more migration versions up or down manually.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.execute_command"/>
+    </service>
+    <service id=".doctrine_migrations.generate_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:generate</argument>
+      <argument type="collection"/>
+      <argument>Generate a blank migration class.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.generate_command"/>
+    </service>
+    <service id=".doctrine_migrations.latest_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:latest</argument>
+      <argument type="collection"/>
+      <argument>Outputs the latest version</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.latest_command"/>
+    </service>
+    <service id=".doctrine_migrations.migrate_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:migrate</argument>
+      <argument type="collection"/>
+      <argument>Execute a migration to a specified version or the latest available version.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.migrate_command"/>
+    </service>
+    <service id=".doctrine_migrations.rollup_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:rollup</argument>
+      <argument type="collection"/>
+      <argument>Rollup migrations by deleting all tracked versions and insert the one version that exists.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.rollup_command"/>
+    </service>
+    <service id=".doctrine_migrations.status_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:status</argument>
+      <argument type="collection"/>
+      <argument>View the status of a set of migrations.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.status_command"/>
+    </service>
+    <service id=".doctrine_migrations.up_to_date_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:up-to-date</argument>
+      <argument type="collection"/>
+      <argument>Tells you if your schema is up-to-date.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.up_to_date_command"/>
+    </service>
+    <service id=".doctrine_migrations.version_command.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>doctrine:migrations:version</argument>
+      <argument type="collection"/>
+      <argument>Manually add and delete migration versions from the version table.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="doctrine_migrations.version_command"/>
+    </service>
     <service id=".var_dumper.command.server_dump.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>server:dump</argument>
       <argument type="collection"/>
@@ -7547,7 +8120,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.zfa7Z9O"/>
+      <argument type="service" id=".service_locator.LTNNlSM"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -7627,6 +8200,7 @@
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -7655,7 +8229,7 @@
         <argument key="make:security:form-login">maker.auto_command.make_security_form_login</argument>
       </argument>
     </service>
-    <service id=".service_locator.zfa7Z9O" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LTNNlSM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -7715,19 +8289,19 @@
         <argument key="doctrine.schema_update_command" type="service_closure" id="doctrine.schema_update_command"/>
         <argument key="doctrine.schema_validate_command" type="service_closure" id="doctrine.schema_validate_command"/>
         <argument key="doctrine.mapping_import_command" type="service_closure" id="doctrine.mapping_import_command"/>
-        <argument key="doctrine_migrations.diff_command" type="service_closure" id="doctrine_migrations.diff_command"/>
-        <argument key="doctrine_migrations.sync_metadata_command" type="service_closure" id="doctrine_migrations.sync_metadata_command"/>
-        <argument key="doctrine_migrations.versions_command" type="service_closure" id="doctrine_migrations.versions_command"/>
-        <argument key="doctrine_migrations.current_command" type="service_closure" id="doctrine_migrations.current_command"/>
-        <argument key="doctrine_migrations.dump_schema_command" type="service_closure" id="doctrine_migrations.dump_schema_command"/>
-        <argument key="doctrine_migrations.execute_command" type="service_closure" id="doctrine_migrations.execute_command"/>
-        <argument key="doctrine_migrations.generate_command" type="service_closure" id="doctrine_migrations.generate_command"/>
-        <argument key="doctrine_migrations.latest_command" type="service_closure" id="doctrine_migrations.latest_command"/>
-        <argument key="doctrine_migrations.migrate_command" type="service_closure" id="doctrine_migrations.migrate_command"/>
-        <argument key="doctrine_migrations.rollup_command" type="service_closure" id="doctrine_migrations.rollup_command"/>
-        <argument key="doctrine_migrations.status_command" type="service_closure" id="doctrine_migrations.status_command"/>
-        <argument key="doctrine_migrations.up_to_date_command" type="service_closure" id="doctrine_migrations.up_to_date_command"/>
-        <argument key="doctrine_migrations.version_command" type="service_closure" id="doctrine_migrations.version_command"/>
+        <argument key="doctrine_migrations.diff_command" type="service_closure" id=".doctrine_migrations.diff_command.lazy"/>
+        <argument key="doctrine_migrations.sync_metadata_command" type="service_closure" id=".doctrine_migrations.sync_metadata_command.lazy"/>
+        <argument key="doctrine_migrations.versions_command" type="service_closure" id=".doctrine_migrations.versions_command.lazy"/>
+        <argument key="doctrine_migrations.current_command" type="service_closure" id=".doctrine_migrations.current_command.lazy"/>
+        <argument key="doctrine_migrations.dump_schema_command" type="service_closure" id=".doctrine_migrations.dump_schema_command.lazy"/>
+        <argument key="doctrine_migrations.execute_command" type="service_closure" id=".doctrine_migrations.execute_command.lazy"/>
+        <argument key="doctrine_migrations.generate_command" type="service_closure" id=".doctrine_migrations.generate_command.lazy"/>
+        <argument key="doctrine_migrations.latest_command" type="service_closure" id=".doctrine_migrations.latest_command.lazy"/>
+        <argument key="doctrine_migrations.migrate_command" type="service_closure" id=".doctrine_migrations.migrate_command.lazy"/>
+        <argument key="doctrine_migrations.rollup_command" type="service_closure" id=".doctrine_migrations.rollup_command.lazy"/>
+        <argument key="doctrine_migrations.status_command" type="service_closure" id=".doctrine_migrations.status_command.lazy"/>
+        <argument key="doctrine_migrations.up_to_date_command" type="service_closure" id=".doctrine_migrations.up_to_date_command.lazy"/>
+        <argument key="doctrine_migrations.version_command" type="service_closure" id=".doctrine_migrations.version_command.lazy"/>
         <argument key="var_dumper.command.server_dump" type="service_closure" id=".var_dumper.command.server_dump.lazy"/>
         <argument key="monolog.command.server_log" type="service_closure" id=".monolog.command.server_log.lazy"/>
         <argument key="twig.command.debug" type="service_closure" id=".twig.command.debug.lazy"/>
@@ -7735,6 +8309,7 @@
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_encoder" type="service_closure" id=".security.command.user_password_encoder.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+        <argument key="doctrine.fixtures_load_command" type="service_closure" id="doctrine.fixtures_load_command"/>
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
@@ -7762,78 +8337,86 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>bCLRXbzeVO</argument>
+      <argument>-CjaQOinU4</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>qW-Ct3kqcm</argument>
+      <argument>EjymNy5Uzl</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>CK7y2R55wH</argument>
+      <argument>q52M7XTcaI</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>y6ER73Llh5</argument>
+      <argument>rDpIilPEJ3</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>Wwtgb1udhn</argument>
+      <argument>Pkf+BzqoEY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>gPQSodRi9K</argument>
+      <argument>zlKVF38TBN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>knx2AaZujj</argument>
+      <argument>BXDAPqzi80</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.validator_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>EpKQcIcmzU</argument>
+      <argument>gJ4q5vw4m-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>Y9z3MDPSN2</argument>
+      <argument>nlbocBC5jd</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\piDev-DevMinds2024\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.security_token_verifier.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+      <argument>bhmO54r3xc</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:/wamp64/www/piDev-DevMinds2024/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7998,17 +8581,19 @@
       <deprecated package="symfony/security-bundle" version="5.3">The "%alias_id%" alias is deprecated, use the new authenticator system instead.</deprecated>
     </service>
     <service id="security.firewall" alias="debug.security.firewall"/>
-    <service id="security.user_providers" alias="security.user.provider.concrete.users_in_memory"/>
-    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.users_in_memory"/>
+    <service id="security.user_providers" alias="security.user.provider.concrete.app_user_provider"/>
+    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.app_user_provider"/>
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
+    <service id="Symfony\Component\Security\Http\RememberMe\RememberMeHandlerInterface" alias="security.authenticator.firewall_aware_remember_me_handler"/>
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="security.firewall.context_locator" alias=".service_locator.zJyh7qS"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
+    <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._tHndrl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.299DF.l"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8032,9 +8617,10 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.uYp3OwG" alias=".service_locator._tHndrl"/>
+    <service id=".service_locator.IJyWPwb" alias=".service_locator.kXtg5m1"/>
+    <service id=".service_locator.nNtdXLB" alias=".service_locator.299DF.l"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
+    <service id=".service_locator.yj07qm_" alias=".service_locator.ZyXYEQR"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8060,6 +8646,10 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.IbpX3.E" alias=".service_locator.soq8KgK"/>
+    <service id=".service_locator.0TSyRyT" alias=".service_locator.kXtg5m1"/>
+    <service id=".service_locator.426yQGu" alias=".service_locator.q2ji3lu"/>
+    <service id=".service_locator.URfgn8g" alias=".service_locator.zFcJjKU"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>
