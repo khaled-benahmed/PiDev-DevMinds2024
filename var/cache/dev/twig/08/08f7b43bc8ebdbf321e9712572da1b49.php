@@ -443,6 +443,6 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
 
 </body>
 </html>
-", "base.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024\\templates\\base.html.twig");
+", "base.html.twig", "C:\\xampp\\htdocs\\PiDev-DevMinds2024\\templates\\base.html.twig");
     }
 }
