@@ -72,6 +72,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Regex(pattern: '/^(0|1)[0-9]{7}$/', message: 'cin must start wit 0 or 1 and contains  8 numbers')]
     private ?int $cin = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $isBlocked = false;
+
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
@@ -260,6 +263,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function isVerified(): bool
     {
         return $this->isVerified;
+    }
+        // Getter
+        public function getIsVerified(): bool {
+            return $this->isVerified;
+        }
+    
+        // Setter
+        public function setIsVerified(bool $isVerified): void {
+            $this->isVerified = $isVerified;
+        }
+
+        public function getIsBlocked(): bool
+    {
+        return $this->isBlocked;
+    }
+
+    public function setIsBlocked(bool $isBlocked): self
+    {
+        $this->isBlocked = $isBlocked;
+
+        return $this;
     }
     
 }

@@ -67,7 +67,6 @@ class RegistrationFormType extends AbstractType
                 'label' => 'image'
             ])
 
-
             ->add('cin', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'

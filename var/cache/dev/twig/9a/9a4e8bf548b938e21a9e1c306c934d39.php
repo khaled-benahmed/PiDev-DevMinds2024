@@ -85,95 +85,127 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container\">
-        <div class=\"row\">
-            <main class=\"col-lg-9\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h1 class=\"card-title\">Liste des utilisateurs</h1>
-                        <table class=\"table\">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Prénom</th>
-                                    <th>Nom</th>
-                                    <th>Email</th>
-                                    <th>Cin</th>
-                                    <th>Rôles</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ";
-        // line 25
+        echo "    <div class=\"container mx-auto py-4\">
+        <h1 class=\"text-xl font-semibold mb-2\">Liste des utilisateurs</h1>
+        <div class=\"overflow-x-auto\">
+            <table class=\"table-auto w-full border-collapse text-sm\">
+                <thead>
+                    <tr>
+                        <th class=\"px-3 py-2 bg-gray-200\">ID</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Prénom</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Nom</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Email</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Cin</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Rôles</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Vérifié</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Bloqué</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 25
+            echo "                        <tr>
+                            <td class=\"border px-3 py-2\">";
             // line 26
-            echo "                                    <tr>
-                                        <td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 26), "html", null, true);
+            echo "</td>
+                            <td class=\"border px-3 py-2\">";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
-                                        <td>";
+                            <td class=\"border px-3 py-2\">";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
-                                        <td>";
+                            <td class=\"border px-3 py-2\">";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
-                                        <td>";
+                            <td class=\"border px-3 py-2\">";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
-                                        <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 31), "html", null, true);
-            echo "</td>
-                                        <td>
-                                            ";
-            // line 33
+                            <td class=\"border px-3 py-2\">
+                               ";
+            // line 32
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 33));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 32));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 34
-                echo "                                                ";
+                // line 33
+                echo "                                    ";
                 $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
-                // line 35
-                echo "                                                <span class=\"badge bg-";
-                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 35, $this->source); })()), "html", null, true);
+                // line 34
+                echo "                                    <span class=\"badge bg-";
+                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 34, $this->source); })()), "html", null, true);
                 echo "\">
-                                                    ";
-                // line 36
+                                        ";
+                // line 35
                 $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
-                // line 37
-                echo "                                                    ";
-                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 37, $this->source); })()), "html", null, true);
+                // line 36
+                echo "                                        ";
+                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 36, $this->source); })()), "html", null, true);
                 echo "
-                                                </span>
-                                            ";
+                                    </span>
+                                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 40
-            echo "                                        </td>
-                                        <td>
-                                            <a href=\"#\" class=\"btn btn-success\">Modifier</a>
-                                        </td>
-                                    </tr>
-                                ";
+            // line 39
+            echo "                            </td>
+                            <td class=\"border px-3 py-2\">
+                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
+            // line 41
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isVerified", [], "any", false, false, false, 41)) ? ("checked") : (""));
+            echo ">
+                            </td>
+                             <td class=\"border px-3 py-2\">
+                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
+            // line 44
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 44)) ? ("checked") : (""));
+            echo ">
+                            </td>
+                            <td class=\"border px-3 py-2\">
+                                <div class=\"dropdown\">
+                                    <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                                        Actions
+                                    </button>
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                                        <a class=\"dropdown-item\" href=\"#\">Modifier</a>
+                                        ";
+            // line 53
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 53)) {
+                // line 54
+                echo "                                            <a class=\"dropdown-item\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+                echo "\">Débloquer</a>
+                                        ";
+            } else {
+                // line 56
+                echo "                                           <a class=\"dropdown-item\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+                echo "\">Bloquer</a>
+
+                                        ";
+            }
+            // line 59
+            echo "                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
-        echo "                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </main>
+        // line 64
+        echo "                </tbody>
+            </table>
         </div>
     </div>
 ";
@@ -206,7 +238,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
      */
     public function getDebugInfo()
     {
-        return array (  172 => 46,  161 => 40,  151 => 37,  149 => 36,  144 => 35,  141 => 34,  137 => 33,  132 => 31,  128 => 30,  124 => 29,  120 => 28,  116 => 27,  113 => 26,  109 => 25,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  207 => 64,  197 => 59,  190 => 56,  184 => 54,  182 => 53,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -216,53 +248,71 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <div class=\"container\">
-        <div class=\"row\">
-            <main class=\"col-lg-9\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h1 class=\"card-title\">Liste des utilisateurs</h1>
-                        <table class=\"table\">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Prénom</th>
-                                    <th>Nom</th>
-                                    <th>Email</th>
-                                    <th>Cin</th>
-                                    <th>Rôles</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for user in users %}
-                                    <tr>
-                                        <td>{{ user.id }}</td>
-                                        <td>{{ user.firstname }}</td>
-                                        <td>{{ user.lastname }}</td>
-                                        <td>{{ user.email }}</td>
-                                        <td>{{ user.cin }}</td>
-                                        <td>
-                                            {% for role in user.roles %}
-                                                {% set badge_color = role == \"ROLE_ADMIN\" ? \"danger\" : (role == \"ROLE_COACH\" or role == \"ROLE_NUTRITIONIST\" ? \"warning\" : \"success\") %}
-                                                <span class=\"badge bg-{{ badge_color }}\">
-                                                    {% set role_name = role == \"ROLE_ADMIN\" ? \"Administrateur\" : (role == \"ROLE_COACH\" ? \"Coach\" : (role == \"ROLE_NUTRITIONIST\" ? \"Nutritionniste\" : \"Membre\")) %}
-                                                    {{ role_name }}
-                                                </span>
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            <a href=\"#\" class=\"btn btn-success\">Modifier</a>
-                                        </td>
-                                    </tr>
+    <div class=\"container mx-auto py-4\">
+        <h1 class=\"text-xl font-semibold mb-2\">Liste des utilisateurs</h1>
+        <div class=\"overflow-x-auto\">
+            <table class=\"table-auto w-full border-collapse text-sm\">
+                <thead>
+                    <tr>
+                        <th class=\"px-3 py-2 bg-gray-200\">ID</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Prénom</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Nom</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Email</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Cin</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Rôles</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Vérifié</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Bloqué</th>
+                        <th class=\"px-3 py-2 bg-gray-200\">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td class=\"border px-3 py-2\">{{ user.id }}</td>
+                            <td class=\"border px-3 py-2\">{{ user.firstname }}</td>
+                            <td class=\"border px-3 py-2\">{{ user.lastname }}</td>
+                            <td class=\"border px-3 py-2\">{{ user.email }}</td>
+                            <td class=\"border px-3 py-2\">{{ user.cin }}</td>
+                            <td class=\"border px-3 py-2\">
+                               {% for role in user.roles %}
+                                    {% set badge_color = role == \"ROLE_ADMIN\" ? \"danger\" : (role == \"ROLE_COACH\" or role == \"ROLE_NUTRITIONIST\" ? \"warning\" : \"success\") %}
+                                    <span class=\"badge bg-{{ badge_color }}\">
+                                        {% set role_name = role == \"ROLE_ADMIN\" ? \"Administrateur\" : (role == \"ROLE_COACH\" ? \"Coach\" : (role == \"ROLE_NUTRITIONIST\" ? \"Nutritionniste\" : \"Membre\")) %}
+                                        {{ role_name }}
+                                    </span>
                                 {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </main>
+                            </td>
+                            <td class=\"border px-3 py-2\">
+                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled {{ user.isVerified ? \"checked\" : \"\" }}>
+                            </td>
+                             <td class=\"border px-3 py-2\">
+                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled {{ user.isBlocked ? \"checked\" : \"\" }}>
+                            </td>
+                            <td class=\"border px-3 py-2\">
+                                <div class=\"dropdown\">
+                                    <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                                        Actions
+                                    </button>
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                                        <a class=\"dropdown-item\" href=\"#\">Modifier</a>
+                                        {% if user.isBlocked %}
+                                            <a class=\"dropdown-item\" href=\"{{ path('admin_users_user_unblock', {'id': user.id}) }}\">Débloquer</a>
+                                        {% else %}
+                                           <a class=\"dropdown-item\" href=\"{{ path('admin_users_block_user', {'id': user.id}) }}\">Bloquer</a>
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
-{% endblock %}", "admin/listUsers.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\listUsers.html.twig");
+{% endblock %}
+
+
+", "admin/listUsers.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\listUsers.html.twig");
     }
 }

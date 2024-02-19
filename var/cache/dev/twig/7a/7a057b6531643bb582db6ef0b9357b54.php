@@ -465,59 +465,72 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                                     </div>
                                 </div>
                             </div>
-                            <div class=\"account-wrap\">
-                                <div class=\"account-item clearfix js-item-menu\">
-                                    <div class=\"image\">
-                                        <img src=\"";
+                           <div class=\"account-wrap\">
+                <div class=\"account-item clearfix js-item-menu\">
+                     <div class=\"image\">
+                  <img src=\"#\" alt=\"";
         // line 390
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-01.jpg"), "html", null, true);
-        echo "\"  alt=\"John Doe\" />
-                                    </div>
-                                    <div class=\"content\">
-                                        <a class=\"js-acc-btn\" href=\"#\">john doe</a>
-                                    </div>
-                                    <div class=\"account-dropdown js-dropdown\">
-                                        <div class=\"info clearfix\">
-                                            <div class=\"image\">
-                                                <a href=\"#\">
-                                                    <img src=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 390, $this->source); })()), "user", [], "any", false, false, false, 390), "username", [], "any", false, false, false, 390), "html", null, true);
+        echo "\" />
+                 </div>
+                <div class=\"content\">
+                    <a class=\"js-acc-btn\" href=\"#\">";
+        // line 393
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 393, $this->source); })()), "user", [], "any", false, false, false, 393), "firstname", [], "any", false, false, false, 393), "html", null, true);
+        echo "</a>
+                </div>
+                <div class=\"account-dropdown js-dropdown\">
+                    <div class=\"info clearfix\">
+                <div class=\"image\">
+                    <a href=\"#\">
+                        <img src=\"";
         // line 399
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-01.jpg"), "html", null, true);
-        echo "\"  alt=\"John Doe\" />
-                                                </a>
-                                            </div>
-                                            <div class=\"content\">
-                                                <h5 class=\"name\">
-                                                    <a href=\"#\">john doe</a>
-                                                </h5>
-                                                <span class=\"email\">johndoe@example.com</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"account-dropdown__body\">
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-account\"></i>Account</a>
-                                            </div>
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-settings\"></i>Setting</a>
-                                            </div>
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-money-box\"></i>Billing</a>
-                                            </div>
-                                        </div>
-                                        <div class=\"account-dropdown__footer\">
-                                            <a href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("path/to/user/avatar.jpg"), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 399, $this->source); })()), "user", [], "any", false, false, false, 399), "username", [], "any", false, false, false, 399), "html", null, true);
+        echo "\" />
+                    </a>
+                </div>
+                <div class=\"content\">
+                    <h5 class=\"name\">
+                        <a href=\"#\">";
+        // line 404
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 404, $this->source); })()), "user", [], "any", false, false, false, 404), "firstname", [], "any", false, false, false, 404), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 404, $this->source); })()), "user", [], "any", false, false, false, 404), "lastname", [], "any", false, false, false, 404), "html", null, true);
+        echo "</a>
+                    </h5>
+                    <span class=\"email\">";
+        // line 406
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 406, $this->source); })()), "user", [], "any", false, false, false, 406), "email", [], "any", false, false, false, 406), "html", null, true);
+        echo "</span>
+                </div>
+            </div>
+            <div class=\"account-dropdown__body\">
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"fa-solid fa-user\"></i>Account</a>
+                </div>
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"zmdi zmdi-settings\"></i>Setting</a>
+                </div>
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"zmdi zmdi-money-box\"></i>Billing</a>
+                </div>
+            </div>
+            <div class=\"account-dropdown__footer\">
+                <a href=\"";
         // line 424
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">
-                                                 <i class=\"zmdi zmdi-power\"></i>Logout
-                                          </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <i class=\"zmdi zmdi-power\"></i>Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 </div>
@@ -538,9 +551,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <!-- START WHITE BACKGROUND-->
                     <div class=\"map-data m-b-40\">
                         ";
-        // line 450
+        // line 451
         $this->displayBlock('body', $context, $blocks);
-        // line 453
+        // line 454
         echo "                    </div>
                 </div>
             </div>
@@ -560,9 +573,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
 </body>
 ";
-        // line 471
+        // line 472
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 502
+        // line 503
         echo "
 </html>
 ";
@@ -674,7 +687,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
     }
 
-    // line 450
+    // line 451
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -684,7 +697,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 451
+        // line 452
         echo "
                         ";
         
@@ -695,7 +708,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
     }
 
-    // line 471
+    // line 472
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -705,71 +718,71 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 472
-        echo "    <!-- Jquery JS-->
-    <script src=\"";
         // line 473
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
-        echo "\" ></script>
+        echo "    <!-- Jquery JS-->
     <script src=\"";
         // line 474
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" ></script>
+    <script src=\"";
+        // line 475
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
+        echo "\" ></script>
     <!-- Bootstrap JS-->
     <script src=\"";
-        // line 476
+        // line 477
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/popper.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 477
+        // line 478
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/bootstrap.min.js"), "html", null, true);
         echo "\" ></script>
     <!-- Vendor JS-->
     <script src=\"";
-        // line 479
+        // line 480
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/slick/slick.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 480
+        // line 481
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/wow/wow.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 481
+        // line 482
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/animsition/animsition.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 482
+        // line 483
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 483
+        // line 484
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.waypoints.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 484
+        // line 485
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.counterup.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 485
+        // line 486
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/circle-progress/circle-progress.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 486
+        // line 487
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 487
+        // line 488
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/chartjs/Chart.bundle.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 488
+        // line 489
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/select2/select2.min.js"), "html", null, true);
         echo "\" ></script>
 
 
     <!-- Main JS-->
     <script src=\"";
-        // line 492
+        // line 493
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/js/main.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"https://kit.fontawesome.com/a781c8964e.js\" crossorigin=\"anonymous\"></script>
@@ -810,7 +823,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
      */
     public function getDebugInfo()
     {
-        return array (  773 => 492,  766 => 488,  762 => 487,  758 => 486,  754 => 485,  750 => 484,  746 => 483,  742 => 482,  738 => 481,  734 => 480,  730 => 479,  725 => 477,  721 => 476,  716 => 474,  712 => 473,  709 => 472,  699 => 471,  688 => 451,  678 => 450,  661 => 35,  655 => 32,  651 => 31,  647 => 30,  643 => 29,  639 => 28,  635 => 27,  631 => 26,  624 => 22,  618 => 19,  614 => 18,  610 => 17,  607 => 16,  597 => 15,  578 => 12,  566 => 502,  564 => 471,  544 => 453,  542 => 450,  513 => 424,  485 => 399,  473 => 390,  415 => 335,  403 => 326,  390 => 316,  364 => 293,  350 => 282,  258 => 192,  253 => 189,  248 => 186,  243 => 183,  231 => 174,  217 => 163,  207 => 156,  203 => 155,  144 => 98,  139 => 95,  134 => 92,  129 => 89,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
+        return array (  786 => 493,  779 => 489,  775 => 488,  771 => 487,  767 => 486,  763 => 485,  759 => 484,  755 => 483,  751 => 482,  747 => 481,  743 => 480,  738 => 478,  734 => 477,  729 => 475,  725 => 474,  722 => 473,  712 => 472,  701 => 452,  691 => 451,  674 => 35,  668 => 32,  664 => 31,  660 => 30,  656 => 29,  652 => 28,  648 => 27,  644 => 26,  637 => 22,  631 => 19,  627 => 18,  623 => 17,  620 => 16,  610 => 15,  591 => 12,  579 => 503,  577 => 472,  557 => 454,  555 => 451,  525 => 424,  504 => 406,  498 => 404,  488 => 399,  479 => 393,  473 => 390,  415 => 335,  403 => 326,  390 => 316,  364 => 293,  350 => 282,  258 => 192,  253 => 189,  248 => 186,  243 => 183,  231 => 174,  217 => 163,  207 => 156,  203 => 155,  144 => 98,  139 => 95,  134 => 92,  129 => 89,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -1201,50 +1214,51 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                                     </div>
                                 </div>
                             </div>
-                            <div class=\"account-wrap\">
-                                <div class=\"account-item clearfix js-item-menu\">
-                                    <div class=\"image\">
-                                        <img src=\"{{ asset('./BackOffice/images/icon/avatar-01.jpg') }}\"  alt=\"John Doe\" />
-                                    </div>
-                                    <div class=\"content\">
-                                        <a class=\"js-acc-btn\" href=\"#\">john doe</a>
-                                    </div>
-                                    <div class=\"account-dropdown js-dropdown\">
-                                        <div class=\"info clearfix\">
-                                            <div class=\"image\">
-                                                <a href=\"#\">
-                                                    <img src=\"{{ asset('./BackOffice/images/icon/avatar-01.jpg') }}\"  alt=\"John Doe\" />
-                                                </a>
-                                            </div>
-                                            <div class=\"content\">
-                                                <h5 class=\"name\">
-                                                    <a href=\"#\">john doe</a>
-                                                </h5>
-                                                <span class=\"email\">johndoe@example.com</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"account-dropdown__body\">
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-account\"></i>Account</a>
-                                            </div>
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-settings\"></i>Setting</a>
-                                            </div>
-                                            <div class=\"account-dropdown__item\">
-                                                <a href=\"#\">
-                                                    <i class=\"zmdi zmdi-money-box\"></i>Billing</a>
-                                            </div>
-                                        </div>
-                                        <div class=\"account-dropdown__footer\">
-                                            <a href=\"{{ path('app_logout') }}\">
-                                                 <i class=\"zmdi zmdi-power\"></i>Logout
-                                          </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           <div class=\"account-wrap\">
+                <div class=\"account-item clearfix js-item-menu\">
+                     <div class=\"image\">
+                  <img src=\"#\" alt=\"{{ app.user.username }}\" />
+                 </div>
+                <div class=\"content\">
+                    <a class=\"js-acc-btn\" href=\"#\">{{ app.user.firstname }}</a>
+                </div>
+                <div class=\"account-dropdown js-dropdown\">
+                    <div class=\"info clearfix\">
+                <div class=\"image\">
+                    <a href=\"#\">
+                        <img src=\"{{ asset('path/to/user/avatar.jpg') }}\" alt=\"{{ app.user.username }}\" />
+                    </a>
+                </div>
+                <div class=\"content\">
+                    <h5 class=\"name\">
+                        <a href=\"#\">{{ app.user.firstname}}{{ app.user.lastname}}</a>
+                    </h5>
+                    <span class=\"email\">{{ app.user.email }}</span>
+                </div>
+            </div>
+            <div class=\"account-dropdown__body\">
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"fa-solid fa-user\"></i>Account</a>
+                </div>
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"zmdi zmdi-settings\"></i>Setting</a>
+                </div>
+                <div class=\"account-dropdown__item\">
+                    <a href=\"#\">
+                        <i class=\"zmdi zmdi-money-box\"></i>Billing</a>
+                </div>
+            </div>
+            <div class=\"account-dropdown__footer\">
+                <a href=\"{{ path('app_logout') }}\">
+                    <i class=\"zmdi zmdi-power\"></i>Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 </div>

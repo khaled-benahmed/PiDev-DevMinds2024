@@ -3,51 +3,68 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <main class="col-lg-9">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Liste des utilisateurs</h1>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Prénom</th>
-                                    <th>Nom</th>
-                                    <th>Email</th>
-                                    <th>Cin</th>
-                                    <th>Rôles</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for user in users %}
-                                    <tr>
-                                        <td>{{ user.id }}</td>
-                                        <td>{{ user.firstname }}</td>
-                                        <td>{{ user.lastname }}</td>
-                                        <td>{{ user.email }}</td>
-                                        <td>{{ user.cin }}</td>
-                                        <td>
-                                            {% for role in user.roles %}
-                                                {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
-                                                <span class="badge bg-{{ badge_color }}">
-                                                    {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
-                                                    {{ role_name }}
-                                                </span>
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-success">Modifier</a>
-                                        </td>
-                                    </tr>
+    <div class="container mx-auto py-4">
+        <h1 class="text-xl font-semibold mb-2">Liste des utilisateurs</h1>
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full border-collapse text-sm">
+                <thead>
+                    <tr>
+                        <th class="px-3 py-2 bg-gray-200">ID</th>
+                        <th class="px-3 py-2 bg-gray-200">Prénom</th>
+                        <th class="px-3 py-2 bg-gray-200">Nom</th>
+                        <th class="px-3 py-2 bg-gray-200">Email</th>
+                        <th class="px-3 py-2 bg-gray-200">Cin</th>
+                        <th class="px-3 py-2 bg-gray-200">Rôles</th>
+                        <th class="px-3 py-2 bg-gray-200">Vérifié</th>
+                        <th class="px-3 py-2 bg-gray-200">Bloqué</th>
+                        <th class="px-3 py-2 bg-gray-200">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td class="border px-3 py-2">{{ user.id }}</td>
+                            <td class="border px-3 py-2">{{ user.firstname }}</td>
+                            <td class="border px-3 py-2">{{ user.lastname }}</td>
+                            <td class="border px-3 py-2">{{ user.email }}</td>
+                            <td class="border px-3 py-2">{{ user.cin }}</td>
+                            <td class="border px-3 py-2">
+                               {% for role in user.roles %}
+                                    {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                    <span class="badge bg-{{ badge_color }}">
+                                        {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                        {{ role_name }}
+                                    </span>
                                 {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </main>
+                            </td>
+                            <td class="border px-3 py-2">
+                                <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isVerified ? "checked" : "" }}>
+                            </td>
+                             <td class="border px-3 py-2">
+                                <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isBlocked ? "checked" : "" }}>
+                            </td>
+                            <td class="border px-3 py-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Modifier</a>
+                                        {% if user.isBlocked %}
+                                            <a class="dropdown-item" href="{{ path('admin_users_user_unblock', {'id': user.id}) }}">Débloquer</a>
+                                        {% else %}
+                                           <a class="dropdown-item" href="{{ path('admin_users_block_user', {'id': user.id}) }}">Bloquer</a>
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}
+
+

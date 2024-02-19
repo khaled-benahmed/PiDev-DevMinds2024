@@ -65,7 +65,7 @@ class __TwigTemplate_42494ae3d8ff4b7bd6ae2a9dced0d7a5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "welcome to espace Admin ";
+        echo "Welcome to Espace Admin";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +74,7 @@ class __TwigTemplate_42494ae3d8ff4b7bd6ae2a9dced0d7a5 extends Template
 
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,18 +84,20 @@ class __TwigTemplate_42494ae3d8ff4b7bd6ae2a9dced0d7a5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "
-    <br>
-    <div align=\"center\">
-        <strong>Espace Administration</strong>
+        // line 6
+        echo "    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5\">
+            <div class=\"col-md-8\">
+                <div class=\"card shadow\">
+                    <div class=\"card-body\">
+                        <h1 class=\"text-center mb-4\">Bienvenue dans l'Espace Administration</h1>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,28 +128,30 @@ class __TwigTemplate_42494ae3d8ff4b7bd6ae2a9dced0d7a5 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}welcome to espace Admin {% endblock %}
-
+{% block title %}Welcome to Espace Admin{% endblock %}
 
 {% block body %}
-
-    <br>
-    <div align=\"center\">
-        <strong>Espace Administration</strong>
+    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5\">
+            <div class=\"col-md-8\">
+                <div class=\"card shadow\">
+                    <div class=\"card-body\">
+                        <h1 class=\"text-center mb-4\">Bienvenue dans l'Espace Administration</h1>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-
-{% endblock %}", "admin/admin.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\admin.html.twig");
+{% endblock %}
+", "admin/admin.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\admin.html.twig");
     }
 }

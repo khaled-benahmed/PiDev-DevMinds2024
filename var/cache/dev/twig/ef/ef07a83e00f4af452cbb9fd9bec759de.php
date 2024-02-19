@@ -88,7 +88,7 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
         echo "<section class=\"container my-3 bg-dark\">
     <div class=\"row\">
         <div class=\"col\">
-            <form method=\"post\" class=\"p-5 rounded\">
+            <form method=\"post\" class=\"p-5 rounded shadow-lg\">
                 ";
         // line 10
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 10, $this->source); })())) {
@@ -117,13 +117,13 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
         // line 19
         echo "
                 <h1 class=\"h3 mb-3 font-weight-normal text-white\">Connexion</h1>
-                <label for=\"inputEmail\" class=\"text-white\">Email</label>
+                <label for=\"inputEmail\" class=\"visually-hidden text-white\">Email</label>
                 <input type=\"email\" value=\"";
         // line 22
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 22, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control bg-dark text-white border-secondary\" autocomplete=\"email\" required autofocus>
-                <label for=\"inputPassword\" class=\"text-white\">Mot de passe</label>
-                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control bg-dark text-white border-secondary\" autocomplete=\"current-password\" required>
+        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control bg-dark text-white border-secondary mb-3\" placeholder=\"Email\" autocomplete=\"email\" required autofocus>
+                <label for=\"inputPassword\" class=\"visually-hidden text-white \">Mot de passe</label>
+                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control bg-dark text-white border-secondary mb-3\" placeholder=\"Mot de passe\" autocomplete=\"current-password\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\"
                     value=\"";
@@ -132,11 +132,20 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
         echo "\"
                 >
 
-                <div class=\"d-grid gap-2 mt-3\">
+                <div class=\"d-grid gap-2\">
                     <button class=\"btn btn-lg btn-danger\" type=\"submit\">
                         Connexion
                     </button>
-                    <a href=\"#\" class=\"btn btn-lg btn-secondary\">S'inscrire</a>
+                    <a href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\" class=\"btn btn-lg btn-secondary\">S'inscrire</a>
+                </div>
+                <div class=\"text-center mt-3\">
+                    <a href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
+        echo "\" class=\"text-white\">Mot de passe oublié ?</a>
                 </div>
             </form>
         </div>
@@ -173,7 +182,7 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
      */
     public function getDebugInfo()
     {
-        return array (  131 => 27,  123 => 22,  118 => 19,  110 => 16,  107 => 15,  105 => 14,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  147 => 37,  141 => 34,  131 => 27,  123 => 22,  118 => 19,  110 => 16,  107 => 15,  105 => 14,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,7 +195,7 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
 <section class=\"container my-3 bg-dark\">
     <div class=\"row\">
         <div class=\"col\">
-            <form method=\"post\" class=\"p-5 rounded\">
+            <form method=\"post\" class=\"p-5 rounded shadow-lg\">
                 {% if error %}
                     <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
@@ -198,20 +207,23 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
                 {% endif %}
 
                 <h1 class=\"h3 mb-3 font-weight-normal text-white\">Connexion</h1>
-                <label for=\"inputEmail\" class=\"text-white\">Email</label>
-                <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control bg-dark text-white border-secondary\" autocomplete=\"email\" required autofocus>
-                <label for=\"inputPassword\" class=\"text-white\">Mot de passe</label>
-                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control bg-dark text-white border-secondary\" autocomplete=\"current-password\" required>
+                <label for=\"inputEmail\" class=\"visually-hidden text-white\">Email</label>
+                <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control bg-dark text-white border-secondary mb-3\" placeholder=\"Email\" autocomplete=\"email\" required autofocus>
+                <label for=\"inputPassword\" class=\"visually-hidden text-white \">Mot de passe</label>
+                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control bg-dark text-white border-secondary mb-3\" placeholder=\"Mot de passe\" autocomplete=\"current-password\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\"
                     value=\"{{ csrf_token('authenticate') }}\"
                 >
 
-                <div class=\"d-grid gap-2 mt-3\">
+                <div class=\"d-grid gap-2\">
                     <button class=\"btn btn-lg btn-danger\" type=\"submit\">
                         Connexion
                     </button>
-                    <a href=\"#\" class=\"btn btn-lg btn-secondary\">S'inscrire</a>
+                    <a href=\"{{ path('app_register')}}\" class=\"btn btn-lg btn-secondary\">S'inscrire</a>
+                </div>
+                <div class=\"text-center mt-3\">
+                    <a href=\"{{ path('app_forgot_password_request') }}\" class=\"text-white\">Mot de passe oublié ?</a>
                 </div>
             </form>
         </div>
@@ -219,7 +231,6 @@ class __TwigTemplate_7ed69959106226ef4e0a706ab541f7dd extends Template
 </section>
 
 {% endblock %}
-
 ", "security/login.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\security\\login.html.twig");
     }
 }
