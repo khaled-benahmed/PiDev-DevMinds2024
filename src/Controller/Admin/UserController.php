@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Form\EdituserTypeformType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,11 +14,41 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/utilisateurs', name: 'admin_users_')]
 class UserController extends AbstractController
 {
+    private EntityManagerInterface $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+
     #[Route('/', name: 'list')]
     public function index(UserRepository $usersRepository): Response
     {
         $users = $usersRepository->findBy([], ['firstname' => 'asc']);
         return $this->render('admin/listUsers.html.twig', compact('users'));
+    }
+    
+
+    #[Route('/{id}', name: 'show')]
+    public function showBook ($id,UserRepository $repository){
+        $user=$repository->find($id);
+        if (!$user){
+            return $this->redirectToRoute('main');
+        }
+        return $this->render('admin/showUser.html.twig',['user'=>$user]);
+
+    }
+
+
+    #[Route('/{id}/supprimer', name: 'delete', methods: ['POST'])]
+    public function delete(Request $request, User $user, UserRepository $userRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
+            $userRepository->remove($user, true);
+        }
+
+        return $this->redirectToRoute('admin_users_list', [], Response::HTTP_SEE_OTHER);
     }
 
     #[Route("/block/user/{id}", name: "block_user")]

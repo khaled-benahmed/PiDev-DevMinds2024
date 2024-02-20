@@ -1,0 +1,46 @@
+{% extends 'baseBack.html.twig' %}
+
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Roles</th>
+            <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+        </tr>
+
+        <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th>NumTel</th>
+            <td>{{ user.cin }}</td>
+        </tr>
+        <tr>
+            <th>Date de Naissance</th>
+            <td>{{ user.birthday ? user.birthday|date('Y-m-d') : '' }}</td>
+        </tr>
+        <!--<tr>
+            {% set img=user.image %}
+            <th>Image</th>
+            <td><img src="{{ asset('uploads/' ~ app.user.image) }}" height="200px;" width="100px;"></td>
+        </tr>-->
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-info">
+        <a href="{{ path('admin_users_list') }}">back to list</a>
+    </button>
+    <!--{# <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a> #}-->
+   
+{% endblock %}

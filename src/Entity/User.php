@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'First name should not be blank')]
+    #[Assert\NotBlank(message: 'Last name should not be blank')]
     #[Assert\Regex(
         pattern: '/^[^\d]+$/',
         message: 'Last name should not contain numbers'
@@ -68,8 +68,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $image = null;
 
     #[ORM\Column]
-    #[Assert\Length(min: 8, max: 8, exactMessage: 'cin must contains 8 numbers')]
-    #[Assert\Regex(pattern: '/^(0|1)[0-9]{7}$/', message: 'cin must start wit 0 or 1 and contains  8 numbers')]
+    #[Assert\Regex(
+        pattern: '/^[01]\d{7}$/' ,
+        message: "Le CIN doit commencer par 0 ou 1 et contenir exactement 8 chiffres."
+    )]
     private ?int $cin = null;
 
     #[ORM\Column(type: 'boolean')]

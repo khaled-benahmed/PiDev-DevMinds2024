@@ -177,23 +177,38 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                                     </button>
                                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
                                         <a class=\"dropdown-item\" href=\"#\">Modifier</a>
-                                        ";
+                                        <a class=\"dropdown-item\" href=\"";
             // line 53
-            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 53)) {
-                // line 54
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53)]), "html", null, true);
+            echo "\">Afficher</a>
+                                        <form action=\"";
+            // line 54
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+            echo "\" method=\"post\" class=\"dropdown-item\">
+                                            <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                                            <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 56
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56))), "html", null, true);
+            echo "\">
+                                            <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
+                                        </form>
+                                        ";
+            // line 59
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 59)) {
+                // line 60
                 echo "                                            <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60)]), "html", null, true);
                 echo "\">Débloquer</a>
                                         ";
             } else {
-                // line 56
+                // line 62
                 echo "                                           <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 62)]), "html", null, true);
                 echo "\">Bloquer</a>
 
                                         ";
             }
-            // line 59
+            // line 65
             echo "                                    </div>
                                 </div>
                             </td>
@@ -203,7 +218,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 70
         echo "                </tbody>
             </table>
         </div>
@@ -238,7 +253,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
      */
     public function getDebugInfo()
     {
-        return array (  207 => 64,  197 => 59,  190 => 56,  184 => 54,  182 => 53,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  222 => 70,  212 => 65,  205 => 62,  199 => 60,  197 => 59,  191 => 56,  186 => 54,  182 => 53,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -295,6 +310,12 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                                     </button>
                                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
                                         <a class=\"dropdown-item\" href=\"#\">Modifier</a>
+                                        <a class=\"dropdown-item\" href=\"{{path('admin_users_show', {'id': user.id})}}\">Afficher</a>
+                                        <form action=\"{{ path('admin_users_delete', {'id': user.id}) }}\" method=\"post\" class=\"dropdown-item\">
+                                            <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                                            <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
+                                            <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
+                                        </form>
                                         {% if user.isBlocked %}
                                             <a class=\"dropdown-item\" href=\"{{ path('admin_users_user_unblock', {'id': user.id}) }}\">Débloquer</a>
                                         {% else %}
@@ -311,8 +332,6 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         </div>
     </div>
 {% endblock %}
-
-
 ", "admin/listUsers.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\listUsers.html.twig");
     }
 }

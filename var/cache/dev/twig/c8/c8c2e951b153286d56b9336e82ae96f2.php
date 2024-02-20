@@ -74,7 +74,7 @@ class __TwigTemplate_fbcf3be6ebbd526b2f96ef8ef3586616 extends Template
 
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,18 +84,61 @@ class __TwigTemplate_fbcf3be6ebbd526b2f96ef8ef3586616 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "
-    <br>
-    <div align=\"center\">
-        <strong>Home Page</strong>
+        // line 6
+        echo "<div class=\"container\">
+    ";
+        // line 8
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [], "any", false, false, false, 8));
+        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+            // line 9
+            echo "        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 10
+                echo "            <div class=\"alert alert-";
+                echo twig_escape_filter($this->env, $context["label"], "html", null, true);
+                echo " alert-dismissible fade show\" role=\"alert\">
+                ";
+                // line 11
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "
+                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+            </div>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 15
+            echo "    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "</div>
+
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-8 offset-md-2\">
+            <div class=\"card text-center\">
+                <div class=\"card-header\">
+                    <h1>Welcome to NutriFit</h1>
+                </div>
+                <div class=\"card-body\">
+                    <p class=\"card-text\">\"Fuel your life with balanced nutrition and active living for a healthy mind and body!\"</p>
+                    <a href=\"#\" class=\"btn btn-primary\">Get Started</a>
+                </div>
+                <div class=\"card-footer text-muted\">
+                    <small>Start your journey to a healthier life today!</small>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,7 +169,7 @@ class __TwigTemplate_fbcf3be6ebbd526b2f96ef8ef3586616 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
+        return array (  122 => 16,  116 => 15,  106 => 11,  101 => 10,  96 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -135,19 +178,38 @@ class __TwigTemplate_fbcf3be6ebbd526b2f96ef8ef3586616 extends Template
 
 {% block title %}NutriFit | Home{% endblock %}
 
-
 {% block body %}
+<div class=\"container\">
+    {# Afficher les messages flash #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class=\"alert alert-{{ label }} alert-dismissible fade show\" role=\"alert\">
+                {{ message }}
+                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
 
-    <br>
-    <div align=\"center\">
-        <strong>Home Page</strong>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-8 offset-md-2\">
+            <div class=\"card text-center\">
+                <div class=\"card-header\">
+                    <h1>Welcome to NutriFit</h1>
+                </div>
+                <div class=\"card-body\">
+                    <p class=\"card-text\">\"Fuel your life with balanced nutrition and active living for a healthy mind and body!\"</p>
+                    <a href=\"#\" class=\"btn btn-primary\">Get Started</a>
+                </div>
+                <div class=\"card-footer text-muted\">
+                    <small>Start your journey to a healthier life today!</small>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-
-{% endblock %}", "home/index.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\home\\index.html.twig");
+</div>
+{% endblock %}
+", "home/index.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\home\\index.html.twig");
     }
 }

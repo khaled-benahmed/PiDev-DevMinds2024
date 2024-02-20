@@ -50,6 +50,12 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Modifier</a>
+                                        <a class="dropdown-item" href="{{path('admin_users_show', {'id': user.id})}}">Afficher</a>
+                                        <form action="{{ path('admin_users_delete', {'id': user.id}) }}" method="post" class="dropdown-item">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                        </form>
                                         {% if user.isBlocked %}
                                             <a class="dropdown-item" href="{{ path('admin_users_user_unblock', {'id': user.id}) }}">Débloquer</a>
                                         {% else %}
@@ -66,5 +72,3 @@
         </div>
     </div>
 {% endblock %}
-
-

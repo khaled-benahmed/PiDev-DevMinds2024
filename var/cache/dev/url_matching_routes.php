@@ -15,6 +15,11 @@ return [
         '/admin/utilisateurs' => [[['_route' => 'admin_users_list', '_controller' => 'App\\Controller\\Admin\\UserController::index'], null, null, null, true, false, null]],
         '/home' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
+        '/profile' => [
+            [['_route' => 'profile', '_controller' => 'App\\Controller\\ProfileController::index'], null, null, null, false, false, null],
+            [['_route' => 'profile_show', '_controller' => 'App\\Controller\\ProfileController::show'], null, null, null, false, false, null],
+        ],
+        '/profile/edit' => [[['_route' => 'profile_edit', '_controller' => 'App\\Controller\\ProfileController::edit'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/reset-password/reset' => [[['_route' => 'app_forgot_password_request', '_controller' => 'App\\Controller\\ResetPasswordController::request'], null, null, null, false, false, null]],
@@ -31,40 +36,44 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/admin/utilisateurs/(?'
-                    .'|block/user/([^/]++)(*:49)'
-                    .'|user/([^/]++)/unblock(*:77)'
+                    .'|([^/]++)(*:38)'
+                    .'|block/user/([^/]++)(*:64)'
+                    .'|user/([^/]++)/unblock(*:92)'
+                    .'|([^/]++)/supprimer(*:117)'
                 .')'
-                .'|/reset\\-password/reset(?:/([^/]++))?(*:121)'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:162)'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:160)'
-                    .'|wdt/([^/]++)(*:180)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:201)'
+                    .'|wdt/([^/]++)(*:221)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:226)'
-                            .'|router(*:240)'
+                            .'|search/results(*:267)'
+                            .'|router(*:281)'
                             .'|exception(?'
-                                .'|(*:260)'
-                                .'|\\.css(*:273)'
+                                .'|(*:301)'
+                                .'|\\.css(*:314)'
                             .')'
                         .')'
-                        .'|(*:283)'
+                        .'|(*:324)'
                     .')'
                 .')'
-                .'|/block/user/([^/]++)(*:313)'
+                .'|/block/user/([^/]++)(*:354)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        49 => [[['_route' => 'admin_users_block_user', '_controller' => 'App\\Controller\\Admin\\UserController::blockUser'], ['id'], null, null, false, true, null]],
-        77 => [[['_route' => 'admin_users_user_unblock', '_controller' => 'App\\Controller\\Admin\\UserController::unblockUser'], ['id'], ['POST' => 0], null, false, false, null]],
-        121 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        160 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        180 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        226 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        240 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        260 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        273 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        283 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        313 => [
+        38 => [[['_route' => 'admin_users_show', '_controller' => 'App\\Controller\\Admin\\UserController::showBook'], ['id'], null, null, false, true, null]],
+        64 => [[['_route' => 'admin_users_block_user', '_controller' => 'App\\Controller\\Admin\\UserController::blockUser'], ['id'], null, null, false, true, null]],
+        92 => [[['_route' => 'admin_users_user_unblock', '_controller' => 'App\\Controller\\Admin\\UserController::unblockUser'], ['id'], ['POST' => 0], null, false, false, null]],
+        117 => [[['_route' => 'admin_users_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, false, null]],
+        162 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        201 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        221 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        267 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        281 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        301 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        314 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        324 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        354 => [
             [['_route' => 'block_user', '_controller' => 'YourController::blockUser'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

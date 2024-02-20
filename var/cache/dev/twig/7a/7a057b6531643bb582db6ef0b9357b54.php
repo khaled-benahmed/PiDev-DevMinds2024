@@ -468,9 +468,11 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                            <div class=\"account-wrap\">
                 <div class=\"account-item clearfix js-item-menu\">
                      <div class=\"image\">
-                  <img src=\"#\" alt=\"";
+                  <img src=\"";
         // line 390
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 390, $this->source); })()), "user", [], "any", false, false, false, 390), "username", [], "any", false, false, false, 390), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 390, $this->source); })()), "user", [], "any", false, false, false, 390), "image", [], "any", false, false, false, 390))), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 390, $this->source); })()), "user", [], "any", false, false, false, 390), "image", [], "any", false, false, false, 390), "html", null, true);
         echo "\" />
                  </div>
                 <div class=\"content\">
@@ -485,9 +487,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <a href=\"#\">
                         <img src=\"";
         // line 399
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("path/to/user/avatar.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 399, $this->source); })()), "user", [], "any", false, false, false, 399), "image", [], "any", false, false, false, 399))), "html", null, true);
         echo "\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 399, $this->source); })()), "user", [], "any", false, false, false, 399), "username", [], "any", false, false, false, 399), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 399, $this->source); })()), "user", [], "any", false, false, false, 399), "image", [], "any", false, false, false, 399), "html", null, true);
         echo "\" />
                     </a>
                 </div>
@@ -507,8 +509,11 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
             </div>
             <div class=\"account-dropdown__body\">
                 <div class=\"account-dropdown__item\">
-                    <a href=\"#\">
-                        <i class=\"fa-solid fa-user\"></i>Account</a>
+                    <a href=\"";
+        // line 411
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
+        echo "\">
+                        <i class=\"fa-solid fa-user\"></i>Profile</a>
                 </div>
                 <div class=\"account-dropdown__item\">
                     <a href=\"#\">
@@ -823,7 +828,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
      */
     public function getDebugInfo()
     {
-        return array (  786 => 493,  779 => 489,  775 => 488,  771 => 487,  767 => 486,  763 => 485,  759 => 484,  755 => 483,  751 => 482,  747 => 481,  743 => 480,  738 => 478,  734 => 477,  729 => 475,  725 => 474,  722 => 473,  712 => 472,  701 => 452,  691 => 451,  674 => 35,  668 => 32,  664 => 31,  660 => 30,  656 => 29,  652 => 28,  648 => 27,  644 => 26,  637 => 22,  631 => 19,  627 => 18,  623 => 17,  620 => 16,  610 => 15,  591 => 12,  579 => 503,  577 => 472,  557 => 454,  555 => 451,  525 => 424,  504 => 406,  498 => 404,  488 => 399,  479 => 393,  473 => 390,  415 => 335,  403 => 326,  390 => 316,  364 => 293,  350 => 282,  258 => 192,  253 => 189,  248 => 186,  243 => 183,  231 => 174,  217 => 163,  207 => 156,  203 => 155,  144 => 98,  139 => 95,  134 => 92,  129 => 89,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
+        return array (  791 => 493,  784 => 489,  780 => 488,  776 => 487,  772 => 486,  768 => 485,  764 => 484,  760 => 483,  756 => 482,  752 => 481,  748 => 480,  743 => 478,  739 => 477,  734 => 475,  730 => 474,  727 => 473,  717 => 472,  706 => 452,  696 => 451,  679 => 35,  673 => 32,  669 => 31,  665 => 30,  661 => 29,  657 => 28,  653 => 27,  649 => 26,  642 => 22,  636 => 19,  632 => 18,  628 => 17,  625 => 16,  615 => 15,  596 => 12,  584 => 503,  582 => 472,  562 => 454,  560 => 451,  530 => 424,  514 => 411,  506 => 406,  500 => 404,  490 => 399,  481 => 393,  473 => 390,  415 => 335,  403 => 326,  390 => 316,  364 => 293,  350 => 282,  258 => 192,  253 => 189,  248 => 186,  243 => 183,  231 => 174,  217 => 163,  207 => 156,  203 => 155,  144 => 98,  139 => 95,  134 => 92,  129 => 89,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -1217,7 +1222,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                            <div class=\"account-wrap\">
                 <div class=\"account-item clearfix js-item-menu\">
                      <div class=\"image\">
-                  <img src=\"#\" alt=\"{{ app.user.username }}\" />
+                  <img src=\"{{ asset('uploads/' ~ app.user.image) }}\" alt=\"{{ app.user.image }}\" />
                  </div>
                 <div class=\"content\">
                     <a class=\"js-acc-btn\" href=\"#\">{{ app.user.firstname }}</a>
@@ -1226,7 +1231,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <div class=\"info clearfix\">
                 <div class=\"image\">
                     <a href=\"#\">
-                        <img src=\"{{ asset('path/to/user/avatar.jpg') }}\" alt=\"{{ app.user.username }}\" />
+                        <img src=\"{{ asset('uploads/' ~ app.user.image) }}\" alt=\"{{ app.user.image }}\" />
                     </a>
                 </div>
                 <div class=\"content\">
@@ -1238,8 +1243,8 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
             </div>
             <div class=\"account-dropdown__body\">
                 <div class=\"account-dropdown__item\">
-                    <a href=\"#\">
-                        <i class=\"fa-solid fa-user\"></i>Account</a>
+                    <a href=\"{{path('profile')}}\">
+                        <i class=\"fa-solid fa-user\"></i>Profile</a>
                 </div>
                 <div class=\"account-dropdown__item\">
                     <a href=\"#\">

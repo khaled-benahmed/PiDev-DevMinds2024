@@ -5,3 +5,10 @@
 block_user:
     path: '/block/user/{id}'
     controller: 'YourController::blockUser'
+
+admin_users_delete:
+    path: /admin/utilisateurs/{id}/supprimer
+    controller: 'App\Controller\Admin\UserController::delete'
+    methods: [POST]
+
+    

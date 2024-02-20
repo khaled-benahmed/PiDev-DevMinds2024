@@ -387,7 +387,7 @@
                            <div class="account-wrap">
                 <div class="account-item clearfix js-item-menu">
                      <div class="image">
-                  <img src="#" alt="{{ app.user.username }}" />
+                  <img src="{{ asset('uploads/' ~ app.user.image) }}" alt="{{ app.user.image }}" />
                  </div>
                 <div class="content">
                     <a class="js-acc-btn" href="#">{{ app.user.firstname }}</a>
@@ -396,7 +396,7 @@
                     <div class="info clearfix">
                 <div class="image">
                     <a href="#">
-                        <img src="{{ asset('path/to/user/avatar.jpg') }}" alt="{{ app.user.username }}" />
+                        <img src="{{ asset('uploads/' ~ app.user.image) }}" alt="{{ app.user.image }}" />
                     </a>
                 </div>
                 <div class="content">
@@ -408,8 +408,8 @@
             </div>
             <div class="account-dropdown__body">
                 <div class="account-dropdown__item">
-                    <a href="#">
-                        <i class="fa-solid fa-user"></i>Account</a>
+                    <a href="{{path('profile')}}">
+                        <i class="fa-solid fa-user"></i>Profile</a>
                 </div>
                 <div class="account-dropdown__item">
                     <a href="#">

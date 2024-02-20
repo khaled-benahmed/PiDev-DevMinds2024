@@ -5,10 +5,14 @@
 return [
     'admin_index' => [[], ['_controller' => 'App\\Controller\\Admin\\MainController::index'], [], [['text', '/admin/']], [], [], []],
     'admin_users_list' => [[], ['_controller' => 'App\\Controller\\Admin\\UserController::index'], [], [['text', '/admin/utilisateurs/']], [], [], []],
+    'admin_users_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::showBook'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
     'admin_users_block_user' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::blockUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs/block/user']], [], [], []],
     'admin_users_user_unblock' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::unblockUser'], [], [['text', '/unblock'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs/user']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], [], []],
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], [], []],
+    'profile' => [[], ['_controller' => 'App\\Controller\\ProfileController::index'], [], [['text', '/profile']], [], [], []],
+    'profile_show' => [[], ['_controller' => 'App\\Controller\\ProfileController::show'], [], [['text', '/profile']], [], [], []],
+    'profile_edit' => [[], ['_controller' => 'App\\Controller\\ProfileController::edit'], [], [['text', '/profile/edit']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], [], []],
     'app_forgot_password_request' => [[], ['_controller' => 'App\\Controller\\ResetPasswordController::request'], [], [['text', '/reset-password/reset']], [], [], []],
@@ -31,4 +35,5 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'block_user' => [['id'], ['_controller' => 'YourController::blockUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/block/user']], [], [], []],
+    'admin_users_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::delete'], [], [['text', '/supprimer'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
 ];

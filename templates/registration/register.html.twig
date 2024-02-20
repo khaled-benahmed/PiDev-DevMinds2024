@@ -3,29 +3,47 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+            
+            <div class="card bg-dark text-light">
+                <div class="card-body">
+                    <h1 class="text-center text-uppercase mb-4">Register</h1>
 
-    <h1>Register</h1>
+                    {{ form_errors(registrationForm) }}
 
-    {{ form_errors(registrationForm) }}
+                    {{ form_start(registrationForm) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form_row(registrationForm.email, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Email'}}) }}
+                            {{ form_row(registrationForm.plainPassword.first, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Password'}}) }}
+                            {{ form_row(registrationForm.plainPassword.second, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Confirm Password'}}) }}
+                            {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Lastname'}}) }}
+                            {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Firstname'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(registrationForm.username, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Username'}}) }}
+                            {{ form_row(registrationForm.city, {'attr': {'class': 'form-control mb-3', 'placeholder': 'City'}}) }}
+                            {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Speciality'}}) }}
+                            {{ form_row(registrationForm.birthday, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Birthday'}}) }}
+                            {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control mb-3', 'placeholder': 'CIN'}}) }}
+                        </div>
+                    </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-       {{ form_row(registrationForm.lastname) }}
-       {{ form_row(registrationForm.firstname) }}
-       {{ form_row(registrationForm.username) }}
-       {{ form_row(registrationForm.city) }}
-        {{ form_row(registrationForm.speciality) }}
-        {{ form_row(registrationForm.birthday) }}
-        {{ form_row(registrationForm.cin) }}
-        {{ form_row(registrationForm.image) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                    <div class="mb-3 form-check">
+                        {{ form_row(registrationForm.agreeTerms, {'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
+                        <label class="form-check-label" for="{{ registrationForm.agreeTerms.vars.id }}">I agree to the terms and conditions</label>
+                    </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
