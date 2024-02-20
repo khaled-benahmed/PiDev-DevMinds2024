@@ -168,8 +168,8 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -565,8 +565,8 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-            1 => __DIR__ . '/..' . '/doctrine/common/src',
+            0 => __DIR__ . '/..' . '/doctrine/common/src',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
         ),
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
@@ -591,26 +591,12 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
     );
 
     public static $classMap = array (
+        'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
+        'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
         'App\\Controller\\TestController' => __DIR__ . '/../..' . '/src/Controller/TestController.php',
-        'App\\Entity\\Admin' => __DIR__ . '/../..' . '/src/Entity/Admin.php',
-        'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
-        'App\\Entity\\Consultation' => __DIR__ . '/../..' . '/src/Entity/Consultation.php',
-        'App\\Entity\\Medicament' => __DIR__ . '/../..' . '/src/Entity/Medicament.php',
-        'App\\Entity\\Question' => __DIR__ . '/../..' . '/src/Entity/Question.php',
-        'App\\Entity\\Reclamation' => __DIR__ . '/../..' . '/src/Entity/Reclamation.php',
-        'App\\Entity\\RendezVous' => __DIR__ . '/../..' . '/src/Entity/RendezVous.php',
-        'App\\Entity\\Reponse' => __DIR__ . '/../..' . '/src/Entity/Reponse.php',
-        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Entity\\Test' => __DIR__ . '/../..' . '/src/Entity/Test.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
-        'App\\Repository\\AdminRepository' => __DIR__ . '/../..' . '/src/Repository/AdminRepository.php',
-        'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
-        'App\\Repository\\ConsultationRepository' => __DIR__ . '/../..' . '/src/Repository/ConsultationRepository.php',
-        'App\\Repository\\MedicamentRepository' => __DIR__ . '/../..' . '/src/Repository/MedicamentRepository.php',
-        'App\\Repository\\QuestionRepository' => __DIR__ . '/../..' . '/src/Repository/QuestionRepository.php',
-        'App\\Repository\\ReclamationRepository' => __DIR__ . '/../..' . '/src/Repository/ReclamationRepository.php',
-        'App\\Repository\\RendezVousRepository' => __DIR__ . '/../..' . '/src/Repository/RendezVousRepository.php',
-        'App\\Repository\\ReponseRepository' => __DIR__ . '/../..' . '/src/Repository/ReponseRepository.php',
-        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
+        'App\\Repository\\TestRepository' => __DIR__ . '/../..' . '/src/Repository/TestRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',

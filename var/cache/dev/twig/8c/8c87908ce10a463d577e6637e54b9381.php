@@ -69,6 +69,6 @@ class __TwigTemplate_f23814a13887bd1b85a4efcb528ba06c extends Template
     public function getSourceContext()
     {
         return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"#aaa\" d=\"M23.6 11l-6.5-6.6a1.2 1.2 0 0 0-2.1.9V9H1.4A1.8 1.8 0 0 0 0 10.8v2.6A1.6 1.6 0 0 0 1.4 15H15v3.7a1.2 1.2 0 0 0 2 1l6.7-6.8a1.3 1.3 0 0 0 0-1.8z\"/></svg>
-", "@WebProfiler/Icon/forward.svg", "C:\\xampp\\htdocs\\pidev\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Icon\\forward.svg");
+", "@WebProfiler/Icon/forward.svg", "C:\\xampp\\htdocs\\piDev-DevMinds2024\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Icon\\forward.svg");
     }
 }

@@ -251,42 +251,51 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
             </div>
 
             <div class=\"us_container \">
-                <div class=\"row\">
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-1.png\" alt=\"\">
-                            </div>
-                            <div class=\"detail-box\">
-                                <h5>
-                                    QUALITY EQUIPMENT
-                                </h5>
-                                <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-4.png\" alt=\"\">
-                            </div>
-                            <div class=\"detail-box\">
-                                <h5>
-                                    NUTRITION
-                                </h5>
-                                <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                </p>
+                    <div class=\"row\">
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"";
+        // line 177
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/u-1.png"), "html", null, true);
+        echo "\" alt=\"\">
+                                </div>
+                                <div class=\"detail-box\">
+                                    <h5>
+                                        QUALITY EQUIPMENT
+                                    </h5>
+                                    <p>
+                                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-2.png\" alt=\"\">
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"";
+        // line 192
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/u-4.png"), "html", null, true);
+        echo "\" alt=\"\">
+                                </div>
+                                <div class=\"detail-box\">
+                                    <h5>
+                                        NUTRITION
+                                    </h5>
+                                    <p>
+                                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    </p>
+                                </div>
                             </div>
+                        </div>
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"";
+        // line 207
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/u-2.png"), "html", null, true);
+        echo "\" alt=\"\">
+                                </div>
                             <div class=\"detail-box\">
                                 <h5>
                                     HEALTHY DIET PLAN
@@ -300,7 +309,10 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                     <div class=\"col-lg-3 col-md-6\">
                         <div class=\"box\">
                             <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-3.png\" alt=\"\">
+                                <img src=\"";
+        // line 222
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/u-3.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </div>
                             <div class=\"detail-box\">
                                 <h5>
@@ -366,17 +378,29 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"images/t1.jpg\" alt=\"\">
+                            <img src=\"";
+        // line 288
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t1.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 292
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 295
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 298
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -389,17 +413,29 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"images/t2.jpg\" alt=\"\">
+                            <img src=\"";
+        // line 311
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t2.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 315
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 318
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 321
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -412,17 +448,29 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/t3.jpg\" alt=\"\">
+                            <img src=\"";
+        // line 334
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t3.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 338
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 341
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 344
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -450,19 +498,32 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"  FrontOffice/images/nut1.jpg\" alt=\"\">
+                            <img src=\"";
+        // line 372
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut1.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 376
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 379
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 382
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <div class=\"col-lg-4 col-md-6 mx-auto\">
@@ -473,19 +534,32 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/nut2.jpg\" alt=\"\">
+                            <img src=\"";
+        // line 396
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut2.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 400
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 403
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 406
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <div class=\"col-lg-4 col-md-6 mx-auto\">
@@ -496,19 +570,32 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/nut3.webp\" alt=\"\">
+                            <img src=\"";
+        // line 420
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut3.webp"), "html", null, true);
+        echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 424
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"";
+        // line 427
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"";
+        // line 430
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
+        echo "\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -521,7 +608,10 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
             <div class=\"row\">
                 <div class=\"col-md-6 px-0\">
                     <div class=\"img-box\">
-                        <img src=\"FrontOffice/images/contact-img.jpg\" alt=\"\">
+                        <img src=\"";
+        // line 446
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/contact-img.jpg"), "html", null, true);
+        echo "\" alt=\"\">
                     </div>
                 </div>
                 <div class=\"col-lg-5 col-md-6\">
@@ -612,8 +702,14 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
 
 
 
-    <script src=\"FrontOffice/js/jquery-3.4.1.min.js\"></script>
-    <script src=\"FrontOffice/js/bootstrap.js\"></script>
+    <script src=\"";
+        // line 537
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/js/jquery-3.4.1.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 538
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/js/bootstrap.js"), "html", null, true);
+        echo "\"></script>
 
     </body>
 
@@ -647,7 +743,7 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  87 => 6,  77 => 5,  59 => 3,  36 => 1,);
+        return array (  711 => 538,  707 => 537,  613 => 446,  594 => 430,  588 => 427,  582 => 424,  575 => 420,  558 => 406,  552 => 403,  546 => 400,  539 => 396,  522 => 382,  516 => 379,  510 => 376,  503 => 372,  472 => 344,  466 => 341,  460 => 338,  453 => 334,  437 => 321,  431 => 318,  425 => 315,  418 => 311,  402 => 298,  396 => 295,  390 => 292,  383 => 288,  314 => 222,  296 => 207,  278 => 192,  260 => 177,  87 => 6,  77 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -824,42 +920,42 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
             </div>
 
             <div class=\"us_container \">
-                <div class=\"row\">
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-1.png\" alt=\"\">
-                            </div>
-                            <div class=\"detail-box\">
-                                <h5>
-                                    QUALITY EQUIPMENT
-                                </h5>
-                                <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-4.png\" alt=\"\">
-                            </div>
-                            <div class=\"detail-box\">
-                                <h5>
-                                    NUTRITION
-                                </h5>
-                                <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                </p>
+                    <div class=\"row\">
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"{{ asset('./FrontOffice/images/u-1.png') }}\" alt=\"\">
+                                </div>
+                                <div class=\"detail-box\">
+                                    <h5>
+                                        QUALITY EQUIPMENT
+                                    </h5>
+                                    <p>
+                                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=\"col-lg-3 col-md-6\">
-                        <div class=\"box\">
-                            <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-2.png\" alt=\"\">
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"{{ asset('./FrontOffice/images/u-4.png') }}\" alt=\"\">
+                                </div>
+                                <div class=\"detail-box\">
+                                    <h5>
+                                        NUTRITION
+                                    </h5>
+                                    <p>
+                                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    </p>
+                                </div>
                             </div>
+                        </div>
+                        <div class=\"col-lg-3 col-md-6\">
+                            <div class=\"box\">
+                                <div class=\"img-box\">
+                                    <img src=\"{{ asset('./FrontOffice/images/u-2.png') }}\" alt=\"\">
+                                </div>
                             <div class=\"detail-box\">
                                 <h5>
                                     HEALTHY DIET PLAN
@@ -873,7 +969,7 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                     <div class=\"col-lg-3 col-md-6\">
                         <div class=\"box\">
                             <div class=\"img-box\">
-                                <img src=\"FrontOffice/images/u-3.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/u-3.png') }}\" alt=\"\">
                             </div>
                             <div class=\"detail-box\">
                                 <h5>
@@ -939,17 +1035,17 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"images/t1.jpg\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/t1.jpg') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -962,17 +1058,17 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"images/t2.jpg\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/t2.jpg') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png')}}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png')}}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png')}}\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -985,17 +1081,17 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/t3.jpg\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/t3.jpg') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
                             </a>
                         </div>
                     </div>
@@ -1023,19 +1119,20 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"  FrontOffice/images/nut1.jpg\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/nut1.jpg') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <div class=\"col-lg-4 col-md-6 mx-auto\">
@@ -1046,19 +1143,20 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/nut2.jpg\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/nut2.jpg') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <div class=\"col-lg-4 col-md-6 mx-auto\">
@@ -1069,19 +1167,20 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                             </h5>
                         </div>
                         <div class=\"img-box\">
-                            <img src=\"FrontOffice/images/nut3.webp\" alt=\"\">
+                            <img src=\"{{ asset('./FrontOffice/images/nut3.webp') }}\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/facebook-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/twitter.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
                             </a>
                             <a href=\"\">
-                                <img src=\"FrontOffice/images/instagram-logo.png\" alt=\"\">
+                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
                             </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -1094,7 +1193,7 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
             <div class=\"row\">
                 <div class=\"col-md-6 px-0\">
                     <div class=\"img-box\">
-                        <img src=\"FrontOffice/images/contact-img.jpg\" alt=\"\">
+                        <img src=\"{{ asset('./FrontOffice/images/contact-img.jpg') }}\" alt=\"\">
                     </div>
                 </div>
                 <div class=\"col-lg-5 col-md-6\">
@@ -1185,12 +1284,12 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
 
 
 
-    <script src=\"FrontOffice/js/jquery-3.4.1.min.js\"></script>
-    <script src=\"FrontOffice/js/bootstrap.js\"></script>
+    <script src=\"{{ asset('./FrontOffice/js/jquery-3.4.1.min.js') }}\"></script>
+    <script src=\"{{ asset('./FrontOffice/js/bootstrap.js') }}\"></script>
 
     </body>
 
 {% endblock %}
-", "main/index.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\main\\index.html.twig");
+", "main/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024\\templates\\main\\index.html.twig");
     }
 }
