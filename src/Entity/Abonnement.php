@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\AbonnementRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: AbonnementRepository::class)]
 class Abonnement
@@ -15,21 +17,36 @@ class Abonnement
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\Length(min:5,max:30,
+        minmessage:"La nom ne peut pas dépasser {{ limit }} caractères" ,
+        maxmessage:"La nom ne peut pas dépasser {{ limit }} caractères")]
     private ?string $nom_a = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $type_a = null;
+
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\Length(min:20,max:255,
+        minmessage:"La description ne peut pas dépasser {{ limit }} caractères" ,
+    maxmessage:"La description ne peut pas dépasser {{ limit }} caractères")]
+
     private ?string $description_a = null;
 
     #[ORM\Column]
+    #[Assert\Regex(pattern:"/^[0-9]+$/", message:"Le prix '{{ value }}' ne doit contenir que des chiffres")]
+    #[Assert\Positive(message:"Le prix doit être positif")]
     private ?int $prix_a = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
+    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\Type('\DateTimeInterface', message: "La date '{{ value }}' n'est pas une date valide.")]
+    #[Assert\GreaterThan("today", message:"La date de début doit être ultérieure à aujourd'hui")]
     private ?\DateTimeImmutable $date_debut_a = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
+    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\Type('\DateTimeInterface', message: "La date '{{ value }}' n'est pas une date valide.")]
     private ?\DateTimeImmutable $date_fin_a = null;
 
     public function getId(): ?int

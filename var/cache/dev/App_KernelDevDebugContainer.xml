@@ -365,6 +365,9 @@
     <service id="App\Form\AjoutCatType" class="App\Form\AjoutCatType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\ModifcatType" class="App\Form\ModifcatType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\AbonnementRepository" class="App\Repository\AbonnementRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1169,6 +1172,7 @@
       <argument type="collection">
         <argument>App\Form\AbonnementType</argument>
         <argument>App\Form\AjoutCatType</argument>
+        <argument>App\Form\ModifcatType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3254,7 +3258,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.RkyApRU"/>
+      <argument type="service" id=".service_locator.TU.cPco"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6081,6 +6085,8 @@
     <service id=".abstract.instanceof.App\Form\AbonnementType" class="App\Form\AbonnementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AjoutCatType" class="App\Form\AjoutCatType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AjoutCatType" class="App\Form\AjoutCatType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ModifcatType" class="App\Form\ModifcatType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ModifcatType" class="App\Form\ModifcatType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AbonnementRepository" class="App\Repository\AbonnementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AbonnementRepository" class="App\Repository\AbonnementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategorieAbonnementsRepository" class="App\Repository\CategorieAbonnementsRepository" autowire="true" abstract="true"/>
@@ -6587,11 +6593,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.RkyApRU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.TU.cPco" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AbonnementType" type="service_closure" id="App\Form\AbonnementType"/>
         <argument key="App\Form\AjoutCatType" type="service_closure" id="App\Form\AjoutCatType"/>
+        <argument key="App\Form\ModifcatType" type="service_closure" id="App\Form\ModifcatType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -8154,7 +8161,7 @@
     <service id=".service_locator.GCAdxvy" alias=".service_locator.RPakEiu"/>
     <service id=".service_locator.QQjtYnI" alias=".service_locator.WJgeFOQ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.x1QPJfC" alias=".service_locator.RkyApRU"/>
+    <service id=".service_locator.kqX.ISU" alias=".service_locator.TU.cPco"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
