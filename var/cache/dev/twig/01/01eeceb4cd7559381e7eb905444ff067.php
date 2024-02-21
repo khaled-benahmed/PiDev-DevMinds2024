@@ -65,7 +65,9 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Reclamation";
+        // line 4
+        echo "    New Reclamation
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,18 +86,26 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Create new Reclamation</h1>
-
-    ";
         // line 8
+        echo "<center>
+<div class=\"container\">
+    <h1 class=\"mb-4\">Create New Reclamation</h1>
+
+    <div class=\"form-container\">
+        ";
+        // line 13
         echo twig_include($this->env, $context, "reclamation/_form.html.twig");
         echo "
+    </div>
 
-    <a href=\"";
-        // line 10
+    <div class=\"mt-3\">
+        <a href=\"";
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-secondary\">Back to List</a>
+    </div>
+</div>
+</center>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,21 +136,31 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  104 => 17,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Reclamation{% endblock %}
+{% block title %}
+    New Reclamation
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Reclamation</h1>
+<center>
+<div class=\"container\">
+    <h1 class=\"mb-4\">Create New Reclamation</h1>
 
-    {{ include('reclamation/_form.html.twig') }}
+    <div class=\"form-container\">
+        {{ include('reclamation/_form.html.twig') }}
+    </div>
 
-    <a href=\"{{ path('app_reclamation_index') }}\">back to list</a>
+    <div class=\"mt-3\">
+        <a href=\"{{ path('app_reclamation_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+    </div>
+</div>
+</center>
 {% endblock %}
 ", "reclamation/new.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation\\new.html.twig");
     }

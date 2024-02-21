@@ -27,7 +27,7 @@ class Reclamation
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\NotBlank]
-    #[Assert\GreaterThan("today", message:"Date should be after the current date")]
+    #[Assert\GreaterThan("today", message:"the Date must be today's date")]
 
     private ?\DateTimeInterface $dateReclamation = null;
 

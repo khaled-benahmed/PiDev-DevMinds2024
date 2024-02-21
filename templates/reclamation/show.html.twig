@@ -1,34 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reclamation{% endblock %}
+{% block title %}
+    Reclamation Details
+{% endblock %}
 
 {% block body %}
-    <h1>Reclamation</h1>
+    <div class="container">
+        <div class="reclamation-details">
+            <h1>Reclamation Details</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ reclamation.id }}</td>
-            </tr>
-            <tr>
-                <th>NomUserReclamation</th>
-                <td>{{ reclamation.NomUserReclamation }}</td>
-            </tr>
-            <tr>
-                <th>TextReclamation</th>
-                <td>{{ reclamation.textReclamation }}</td>
-            </tr>
-            <tr>
-                <th>DateReclamation</th>
-                <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ reclamation.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom User</th>
+                        <td>{{ reclamation.NomUserReclamation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Text</th>
+                        <td>{{ reclamation.textReclamation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('app_reclamation_index') }}">back to list</a>
+            <div class="navigation">
+                <a href="{{ path('app_reclamation_index') }}" class="btn btn-secondary">Back to List</a>
+                <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
 
-    <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}">edit</a>
-
-    {{ include('reclamation/_delete_form.html.twig') }}
+        <div class="delete-form">
+            {{ include('reclamation/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}

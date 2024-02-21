@@ -1,26 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reponse{% endblock %}
+{% block title %}
+    Reponse Details
+{% endblock %}
 
 {% block body %}
-    <h1>Reponse</h1>
+<div class="container">
+    <div class="reponse-details">
+        <h1 class="mb-4">Reponse Details</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ reponse.id }}</td>
-            </tr>
-            <tr>
-                <th>ContenuReponse</th>
-                <td>{{ reponse.contenuReponse }}</td>
-            </tr>
-            <tr>
-                <th>DateReponse</th>
-                <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>{{ reponse.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Contenu</th>
+                    <td>{{ reponse.contenuReponse }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date</th>
+                    <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_reponse_index') }}">back to list</a>
+        <div class="mt-4">
+            <a href="{{ path('app_reponse_index') }}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

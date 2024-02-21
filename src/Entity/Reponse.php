@@ -23,6 +23,8 @@ class Reponse
     private ?string $contenuReponse = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank]
+    #[Assert\GreaterThan("today", message:"the Date must be today's date")]
     private ?\DateTimeInterface $dateReponse = null;
 
     #[ORM\ManyToOne(inversedBy: 'reponses')]

@@ -65,7 +65,9 @@ class __TwigTemplate_23c038c35242de818ed223cc1b6eb4ac extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Reclamation";
+        // line 4
+        echo "    Reclamation Details
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_23c038c35242de818ed223cc1b6eb4ac extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,56 +86,63 @@ class __TwigTemplate_23c038c35242de818ed223cc1b6eb4ac extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Reclamation</h1>
+        // line 8
+        echo "    <div class=\"container\">
+        <div class=\"reclamation-details\">
+            <h1>Reclamation Details</h1>
 
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>NomUserReclamation</th>
-                <td>";
+            <table class=\"table\">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>";
         // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 16, $this->source); })()), "NomUserReclamation", [], "any", false, false, false, 16), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>TextReclamation</th>
-                <td>";
+                    </tr>
+                    <tr>
+                        <th>Nom User</th>
+                        <td>";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 20, $this->source); })()), "textReclamation", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 20, $this->source); })()), "NomUserReclamation", [], "any", false, false, false, 20), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>DateReclamation</th>
-                <td>";
+                    </tr>
+                    <tr>
+                        <th>Text</th>
+                        <td>";
         // line 24
-        ((twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 24, $this->source); })()), "dateReclamation", [], "any", false, false, false, 24)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 24, $this->source); })()), "dateReclamation", [], "any", false, false, false, 24), "Y-m-d"), "html", null, true))) : (print ("")));
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 24, $this->source); })()), "textReclamation", [], "any", false, false, false, 24), "html", null, true);
         echo "</td>
-            </tr>
-        </tbody>
-    </table>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>";
+        // line 28
+        ((twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 28, $this->source); })()), "dateReclamation", [], "any", false, false, false, 28)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 28, $this->source); })()), "dateReclamation", [], "any", false, false, false, 28), "Y-m-d"), "html", null, true))) : (print ("")));
+        echo "</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href=\"";
-        // line 29
+            <div class=\"navigation\">
+                <a href=\"";
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-secondary\">Back to List</a>
+                <a href=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Edit</a>
+            </div>
+        </div>
 
-    <a href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reclamation"]) || array_key_exists("reclamation", $context) ? $context["reclamation"] : (function () { throw new RuntimeError('Variable "reclamation" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
-        echo "\">edit</a>
-
-    ";
-        // line 33
+        <div class=\"delete-form\">
+            ";
+        // line 40
         echo twig_include($this->env, $context, "reclamation/_delete_form.html.twig");
         echo "
+        </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -164,44 +173,53 @@ class __TwigTemplate_23c038c35242de818ed223cc1b6eb4ac extends Template
      */
     public function getDebugInfo()
     {
-        return array (  135 => 33,  130 => 31,  125 => 29,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  142 => 40,  134 => 35,  130 => 34,  121 => 28,  114 => 24,  107 => 20,  100 => 16,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Reclamation{% endblock %}
+{% block title %}
+    Reclamation Details
+{% endblock %}
 
 {% block body %}
-    <h1>Reclamation</h1>
+    <div class=\"container\">
+        <div class=\"reclamation-details\">
+            <h1>Reclamation Details</h1>
 
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ reclamation.id }}</td>
-            </tr>
-            <tr>
-                <th>NomUserReclamation</th>
-                <td>{{ reclamation.NomUserReclamation }}</td>
-            </tr>
-            <tr>
-                <th>TextReclamation</th>
-                <td>{{ reclamation.textReclamation }}</td>
-            </tr>
-            <tr>
-                <th>DateReclamation</th>
-                <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class=\"table\">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ reclamation.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom User</th>
+                        <td>{{ reclamation.NomUserReclamation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Text</th>
+                        <td>{{ reclamation.textReclamation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href=\"{{ path('app_reclamation_index') }}\">back to list</a>
+            <div class=\"navigation\">
+                <a href=\"{{ path('app_reclamation_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                <a href=\"{{ path('app_reclamation_edit', {'id': reclamation.id}) }}\" class=\"btn btn-primary\">Edit</a>
+            </div>
+        </div>
 
-    <a href=\"{{ path('app_reclamation_edit', {'id': reclamation.id}) }}\">edit</a>
-
-    {{ include('reclamation/_delete_form.html.twig') }}
+        <div class=\"delete-form\">
+            {{ include('reclamation/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}
 ", "reclamation/show.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation\\show.html.twig");
     }

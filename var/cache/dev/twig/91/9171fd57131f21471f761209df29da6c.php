@@ -65,7 +65,9 @@ class __TwigTemplate_23084c44d02544f00516e654ab650079 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Reclamation";
+        // line 4
+        echo "    Edit Reclamation
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_23084c44d02544f00516e654ab650079 extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,23 +86,37 @@ class __TwigTemplate_23084c44d02544f00516e654ab650079 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Edit Reclamation</h1>
-
-    ";
         // line 8
+        echo "<center>
+    <div class=\"container\">
+        <div class=\"content-container\">
+            <div class=\"white-border\">
+                <h1>Edit Reclamation</h1>
+
+                <div class=\"form-container\">
+                    ";
+        // line 15
         echo twig_include($this->env, $context, "reclamation/_form.html.twig", ["button_label" => "Update"]);
         echo "
+                </div>
 
-    <a href=\"";
-        // line 10
+                <div class=\"navigation\">
+                    <a href=\"";
+        // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-secondary\">Back to List</a>
+                </div>
 
-    ";
-        // line 12
+                <div class=\"delete-form\">
+                    ";
+        // line 23
         echo twig_include($this->env, $context, "reclamation/_delete_form.html.twig");
         echo "
+                </div>
+            </div>
+        </div>
+    </div>
+    </center>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -131,23 +147,39 @@ class __TwigTemplate_23084c44d02544f00516e654ab650079 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  113 => 23,  106 => 19,  99 => 15,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit Reclamation{% endblock %}
+{% block title %}
+    Edit Reclamation
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Reclamation</h1>
+<center>
+    <div class=\"container\">
+        <div class=\"content-container\">
+            <div class=\"white-border\">
+                <h1>Edit Reclamation</h1>
 
-    {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
+                <div class=\"form-container\">
+                    {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
 
-    <a href=\"{{ path('app_reclamation_index') }}\">back to list</a>
+                <div class=\"navigation\">
+                    <a href=\"{{ path('app_reclamation_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                </div>
 
-    {{ include('reclamation/_delete_form.html.twig') }}
+                <div class=\"delete-form\">
+                    {{ include('reclamation/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    </center>
 {% endblock %}
 ", "reclamation/edit.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation\\edit.html.twig");
     }
