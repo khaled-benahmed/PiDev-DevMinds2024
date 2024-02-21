@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Reclamation index
+{% endblock %}
+
+{% block body %}
+	<h1>Reclamation index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>NomUserReclamation</th>
+				<th>TextReclamation</th>
+				<th>DateReclamation</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for reclamation in reclamations %}
+				<tr>
+					<td>{{ reclamation.id }}</td>
+					<td>{{ reclamation.NomUserReclamation }}</td>
+					<td>{{ reclamation.textReclamation }}</td>
+					<td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+					<td>
+						<a href="{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}">show</a>
+						<a href="{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}">edit</a>
+	                    <form action="{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary">Respond</button>
+                    </form>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_reclamation_back_new') }}">Create new</a>
+{% endblock %}
