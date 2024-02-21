@@ -195,13 +195,20 @@
                     </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="#">
-                            <i class="fas fa-plus"></i>Abonnements</a>
+                            <i class="fas fa-plus"></i>Abonnements et Category</a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="#">Ajouter Abonnement</a>
+                                <a href="{{path('Create_Abonnement')}}">Ajouter Abonnement</a>
+
                             </li>
                             <li>
-                                <a href="#">Afficher Abonnements</a>
+                                <a href="{{path('Read_Back_Abonnement')}}">Afficher Abonnements</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('add_category') }}">Ajouter Category </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('Read_Back_Category') }}">Afficher Category</a>
                             </li>
 
                         </ul>

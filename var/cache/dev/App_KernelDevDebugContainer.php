@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerX9Bvdfs\App_KernelDevDebugContainer([
     'container.build_hash' => 'X9Bvdfs',
-    'container.build_id' => 'f84ac817',
-    'container.build_time' => 1708429667,
+    'container.build_id' => '188fcede',
+    'container.build_time' => 1708553286,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerX9Bvdfs');

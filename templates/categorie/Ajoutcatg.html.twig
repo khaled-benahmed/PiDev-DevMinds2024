@@ -1,0 +1,35 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Liste des category{% endblock %}
+
+{% block body %}
+    <div class="col-sm-120 col-xl-60">
+        <div class="bg-light rounded h-100 p-4">
+            <h6 class="mb-4">Category</h6>
+            {{form_start(form,{'attr': {'novalidate': 'novalidate'}} )}}
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Nom Category</label>
+                <div class="col-sm-10">
+                    {{ form_widget(form.nom_categorie,{ 'attr': {'class': 'form-control'} }) }}
+                    {{ form_errors(form.nom_categorie) }}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    {{ form_widget(form.description_c,{ 'attr': {'class': 'form-control'} }) }}
+                    {{ form_errors(form.description_c) }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+
+            <br>
+            <a href="{{path('Read_Back_Category')}}" class="mt-2" >Liste des Category</a>
+            <br>
+            <br>
+
+            {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

@@ -21,22 +21,8 @@ class AbonnementController extends AbstractController
         return $this->render('Abonnement/ReadAbonnementBack.html.twig', ["Abonnements"=>$Abonnements]);
     }
 
-    #[Route('/Abonnement/Read_Front', name: 'Read_Front_Abonnement')] ///bch thotha fel front
-    public function ReadFrontAbonnement(AbonnementRepository $abonnementRepository): Response
-    {
-        $Abonnements = $abonnementRepository->findAll();
 
-        return $this->render('Abonnement/ReadAbonnementFront.html.twig', ["Abonnements"=>$Abonnements]);
-    }
 
-    #[Route('/Abonnement/Read_More_Front/{id}', name: 'Read_More_Front_Abonnement')]
-    public function ReadMoreFrontAbonnement(AbonnementRepository $abonnementRepository, $id): Response
-    {
-        $Abonnements = $abonnementRepository->findById($id);
-
-        return $this->render('Abonnement/ReadMoreAbonnementFront.html.twig', ["Abonnements"=>$Abonnements]);
-
-    }
     #[Route('/Abonnement/Create', name: 'Create_Abonnement')]/// ajout
     public function CreateAbonnement(ManagerRegistry $doctrine, Request $req): Response
     {

@@ -6,11 +6,20 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\AbonnementController' => $baseDir . '/src/Controller/AbonnementController.php',
+    'App\\Controller\\CategorieController' => $baseDir . '/src/Controller/CategorieController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
     'App\\Controller\\MainController' => $baseDir . '/src/Controller/MainController.php',
     'App\\Controller\\TestController' => $baseDir . '/src/Controller/TestController.php',
+    'App\\Entity\\Abonnement' => $baseDir . '/src/Entity/Abonnement.php',
+    'App\\Entity\\CategorieAbonnements' => $baseDir . '/src/Entity/CategorieAbonnements.php',
     'App\\Entity\\Test' => $baseDir . '/src/Entity/Test.php',
+    'App\\Form\\AbonnementType' => $baseDir . '/src/Form/AbonnementType.php',
+    'App\\Form\\AjoutCatType' => $baseDir . '/src/Form/AjoutCatType.php',
+    'App\\Form\\ModifcatType' => $baseDir . '/src/Form/ModifcatType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
+    'App\\Repository\\AbonnementRepository' => $baseDir . '/src/Repository/AbonnementRepository.php',
+    'App\\Repository\\CategorieAbonnementsRepository' => $baseDir . '/src/Repository/CategorieAbonnementsRepository.php',
     'App\\Repository\\TestRepository' => $baseDir . '/src/Repository/TestRepository.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'CURLStringFile' => $vendorDir . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',

@@ -142,5 +142,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="a781c8964e" level="application" />
+    <orderEntry type="library" name="fullcalendar" level="application" />
   </component>
 </module>

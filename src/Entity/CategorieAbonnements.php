@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategorieAbonnementsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategorieAbonnementsRepository::class)]
@@ -18,6 +20,14 @@ class CategorieAbonnements
 
     #[ORM\Column(length: 255)]
     private ?string $description_c = null;
+
+    #[ORM\OneToMany(mappedBy: 'categorieAbonnements', targetEntity: Abonnement::class)]
+    private Collection $abonments;
+
+    public function __construct()
+    {
+        $this->abonments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -44,6 +54,36 @@ class CategorieAbonnements
     public function setDescriptionC(string $description_c): static
     {
         $this->description_c = $description_c;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Abonnement>
+     */
+    public function getAbonments(): Collection
+    {
+        return $this->abonments;
+    }
+
+    public function addAbonment(Abonnement $abonment): static
+    {
+        if (!$this->abonments->contains($abonment)) {
+            $this->abonments->add($abonment);
+            $abonment->setCategorieAbonnements($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAbonment(Abonnement $abonment): static
+    {
+        if ($this->abonments->removeElement($abonment)) {
+            // set the owning side to null (unless already changed)
+            if ($abonment->getCategorieAbonnements() === $this) {
+                $abonment->setCategorieAbonnements(null);
+            }
+        }
 
         return $this;
     }

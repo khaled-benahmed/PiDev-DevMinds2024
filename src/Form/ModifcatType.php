@@ -14,6 +14,7 @@ class ModifcatType extends AbstractType
         $builder
             ->add('nom_categorie')
             ->add('description_c')
+
         ;
     }
 

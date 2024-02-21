@@ -168,8 +168,8 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -565,8 +565,8 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/common/src',
-            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            1 => __DIR__ . '/..' . '/doctrine/common/src',
         ),
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
@@ -591,11 +591,20 @@ class ComposerStaticInit002b29068aed2fa5bb5d3a8bed693fe6
     );
 
     public static $classMap = array (
+        'App\\Controller\\AbonnementController' => __DIR__ . '/../..' . '/src/Controller/AbonnementController.php',
+        'App\\Controller\\CategorieController' => __DIR__ . '/../..' . '/src/Controller/CategorieController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
         'App\\Controller\\TestController' => __DIR__ . '/../..' . '/src/Controller/TestController.php',
+        'App\\Entity\\Abonnement' => __DIR__ . '/../..' . '/src/Entity/Abonnement.php',
+        'App\\Entity\\CategorieAbonnements' => __DIR__ . '/../..' . '/src/Entity/CategorieAbonnements.php',
         'App\\Entity\\Test' => __DIR__ . '/../..' . '/src/Entity/Test.php',
+        'App\\Form\\AbonnementType' => __DIR__ . '/../..' . '/src/Form/AbonnementType.php',
+        'App\\Form\\AjoutCatType' => __DIR__ . '/../..' . '/src/Form/AjoutCatType.php',
+        'App\\Form\\ModifcatType' => __DIR__ . '/../..' . '/src/Form/ModifcatType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\AbonnementRepository' => __DIR__ . '/../..' . '/src/Repository/AbonnementRepository.php',
+        'App\\Repository\\CategorieAbonnementsRepository' => __DIR__ . '/../..' . '/src/Repository/CategorieAbonnementsRepository.php',
         'App\\Repository\\TestRepository' => __DIR__ . '/../..' . '/src/Repository/TestRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',

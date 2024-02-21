@@ -18,18 +18,14 @@ class Abonnement
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"La date est un champ obligatoire")]
-    #[Assert\Length(min:5,max:30,
-        minmessage:"La nom ne peut pas dépasser {{ limit }} caractères" ,
-        maxmessage:"La nom ne peut pas dépasser {{ limit }} caractères")]
+
     private ?string $nom_a = null;
 
 
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"La date est un champ obligatoire")]
-    #[Assert\Length(min:20,max:255,
-        minmessage:"La description ne peut pas dépasser {{ limit }} caractères" ,
-    maxmessage:"La description ne peut pas dépasser {{ limit }} caractères")]
+
 
     private ?string $description_a = null;
 
@@ -49,6 +45,9 @@ class Abonnement
     #[Assert\Type('\DateTimeInterface', message: "La date '{{ value }}' n'est pas une date valide.")]
     private ?\DateTimeImmutable $date_fin_a = null;
 
+    #[ORM\ManyToOne(inversedBy: 'abonments')]
+    private ?CategorieAbonnements $categorieAbonnements = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -66,17 +65,6 @@ class Abonnement
         return $this;
     }
 
-    public function getTypeA(): ?string
-    {
-        return $this->type_a;
-    }
-
-    public function setTypeA(string $type_a): static
-    {
-        $this->type_a = $type_a;
-
-        return $this;
-    }
 
     public function getDescriptionA(): ?string
     {
@@ -122,6 +110,18 @@ class Abonnement
     public function setDateFinA(\DateTimeImmutable $date_fin_a): static
     {
         $this->date_fin_a = $date_fin_a;
+
+        return $this;
+    }
+
+    public function getCategorieAbonnements(): ?CategorieAbonnements
+    {
+        return $this->categorieAbonnements;
+    }
+
+    public function setCategorieAbonnements(?CategorieAbonnements $categorieAbonnements): static
+    {
+        $this->categorieAbonnements = $categorieAbonnements;
 
         return $this;
     }

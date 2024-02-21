@@ -14,13 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CategorieController extends AbstractController
 {
-    #[Route('/gestioncategorie', name: 'app_gestioncategorie')]
+    #[Route('/gestioncategorie', name: 'Read_Back_Category')]
     public function index(CategorieAbonnementsRepository $categorieAbonnementsRepository): Response
     {
 
-        $categories = $categorieAbonnementsRepository->findAll();
-        return $this->render('category/index.html.twig', [
-            'categories' => $categories,
+        $categories = $categorieAbonnementsRepository->findAll();//yejbed mel base de donne kol chy
+        return $this->render('categorie/Read_Back_Category.html.twig', [
+            'categories' => $categories,//mbae3ed t3adi el variable categories lel view reaad_back oitamlelha boucle oitafichi
         ]);
     }
 
@@ -35,7 +35,7 @@ class CategorieController extends AbstractController
             $em->persist($categorie);
             $em->flush();
         }
-        return $this->render('category/Ajoutcatg.html.twig',
+        return $this->render('categorie/Ajoutcatg.html.twig',
             [
                 'form' => $form->createView(),
             ]);
@@ -51,9 +51,9 @@ class CategorieController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         { $em = $managerRegistry->getManager();
             $em->flush();
-            return $this->redirectToRoute('app_gestioncategorie');
+            return $this->redirectToRoute('Read_Back_Category');
         }
-        return $this->renderForm("category/updateCat.html.twig",
+        return $this->renderForm("categorie/updateCat.html.twig",
             ["form"=>$form]) ;
 
 
@@ -66,7 +66,7 @@ class CategorieController extends AbstractController
         $em = $managerRegistry->getManager();
         $em->remove($categorie);
         $em->flush() ;
-        return $this->redirectToRoute('app_gestioncategorie');
+        return $this->redirectToRoute('Read_Back_Category');
     }
 
 }
