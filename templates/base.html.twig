@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
     <meta charset="UTF-8">
     <title>
@@ -47,6 +47,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Nutritionists</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="/planning/crud/viewPlanning">vos planning</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Complaint</a>
                         </li>
@@ -69,11 +71,12 @@
                                     <a class="nav-link" href="#">Nutritionist dashboard</a>
                                 </li>
                             {% endif %}
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{#  #}{ path('profile_index') }}">My profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{#  #}{ path('app_logout') }}">Logout</a>
+                            <a href="/planning/crud/viewPlanning">Planning</a>
                             </li>
                         {% else %}
                             <li class="nav-item">
@@ -91,6 +94,11 @@
             </nav>
         </div>
     </header>
+        {% block tache %}
+
+
+
+        {% endblock %}
 
     {% block body %}
     {% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NutriFit | Activité | {{ activite.nomActivite }}{% endblock %}
+
+{% block tache %}
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70 text-center">
+                                <h2>Activité | {{ activite.nomActivite }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!--? Blog Area Start-->
+        <section class="services-area pt-100 pb-150">
+            <section class="wantToWork-area w-padding">
+                <div class="container">
+                    <div class="row align-items-end justify-content-between">
+                        <div class="col-lg-6 col-md-10 col-sm-10">
+                            <div class="section-tittle">
+                                <span>Activité</span>
+                                <h2>{{ activite.nomActivite }}</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-3">
+                            <a href="/activite/crud/viewActivite" class="btn wantToWork-btn f-right">Liste des Activités</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    {% set img = activite.imageActivite %}
+                                    <img class="card-img rounded-0" src="{{asset(img)}}" alt="Image Introuvable">
+                                </div>
+                                <div class="blog_details">
+                                    
+                                    <a class="d-inline-block">
+                                        <h3>Difficulté</h3>
+                                        <p>{{ activite.difficulteActivite }}</p>
+                                    </a>
+                                    <br>
+                                    <a class="d-inline-block">
+                                        <h3>Durée</h3>
+                                        <p>{{ activite.dureeActivite }}</p>
+                                    </a>
+                                    <br>
+                                    <a class="d-inline-block">
+                                        <h3>Plus de detail</h3>
+                                        <p>{{ activite.descriptionActivite }}.</p>
+                                    </a>
+                                </div>
+                            </article>
+                    
+                        </div>     
+                    </div>
+                </div>                
+            </div>
+        </section>
+    </main>
+{% endblock %}

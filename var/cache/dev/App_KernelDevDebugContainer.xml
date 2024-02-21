@@ -19,6 +19,7 @@
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -61,9 +62,14 @@
         <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="images">C:\xampp\htdocs\piDev-DevMinds2024/public/uploads</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -230,6 +236,11 @@
         </parameter>
       </parameter>
     </parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -324,6 +335,34 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\ActiviteCrudController" class="App\Controller\ActiviteCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ActiviteCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ActiviteJSONController" class="App\Controller\ActiviteJSONController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ActiviteJSONController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ApiCalendarController" class="App\Controller\ApiCalendarController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ApiCalendarController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CalendarController" class="App\Controller\CalendarController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\CalendarController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -338,12 +377,47 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\PlanningCrudController" class="App\Controller\PlanningCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PlanningCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PlanningJSONController" class="App\Controller\PlanningJSONController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PlanningJSONController"/>
+      </call>
+    </service>
     <service id="App\Controller\TestController" class="App\Controller\TestController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\TestController"/>
       </call>
+    </service>
+    <service id="App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PlanningType" class="App\Form\PlanningType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\PlanningRepository" class="App\Repository\PlanningRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1135,9 +1209,13 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ActiviteType</argument>
+        <argument>App\Form\CalendarType</argument>
+        <argument>App\Form\PlanningType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1603,6 +1681,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1618,6 +1697,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1628,11 +1708,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1643,11 +1725,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1658,11 +1742,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1673,21 +1759,25 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1703,11 +1793,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -1718,16 +1810,19 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -1738,6 +1833,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -1768,6 +1864,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1778,11 +1875,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -1793,16 +1892,19 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -1833,6 +1935,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -1848,11 +1951,13 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -1879,11 +1984,18 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
           </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
           <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations</argument>
           <argument>C:\xampp\htdocs\piDev-DevMinds2024/translations</argument>
           <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -1901,6 +2013,7 @@
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\form/Resources/translations</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2181,6 +2294,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2631,6 +2752,46 @@
           <argument>onConsoleTerminate</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -3223,7 +3384,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.y4dplYt"/>
+      <argument type="service" id=".service_locator.2Mg_IQc"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4131,7 +4292,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.ek.zhtt"/>
+      <argument type="service" id=".service_locator.OklyFia"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4751,6 +4912,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -4849,6 +5013,14 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\piDev-DevMinds2024\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\piDev-DevMinds2024/templates</argument>
@@ -6031,15 +6203,91 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActiviteCrudController" class="App\Controller\ActiviteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActiviteCrudController" class="App\Controller\ActiviteCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ActiviteCrudController" class="App\Controller\ActiviteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActiviteJSONController" class="App\Controller\ActiviteJSONController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActiviteJSONController" class="App\Controller\ActiviteJSONController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ActiviteJSONController" class="App\Controller\ActiviteJSONController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApiCalendarController" class="App\Controller\ApiCalendarController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApiCalendarController" class="App\Controller\ApiCalendarController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ApiCalendarController" class="App\Controller\ApiCalendarController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PlanningCrudController" class="App\Controller\PlanningCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PlanningCrudController" class="App\Controller\PlanningCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PlanningCrudController" class="App\Controller\PlanningCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PlanningJSONController" class="App\Controller\PlanningJSONController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PlanningJSONController" class="App\Controller\PlanningJSONController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PlanningJSONController" class="App\Controller\PlanningJSONController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TestController" class="App\Controller\TestController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PlanningType" class="App\Form\PlanningType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PlanningType" class="App\Form\PlanningType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PlanningRepository" class="App\Repository\PlanningRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PlanningRepository" class="App\Repository\PlanningRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6414,13 +6662,203 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator._tHndrl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.FKW.MqW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.h..bsSR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vj0fnNa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="activite" type="service_closure" id=".errored..service_locator.vj0fnNa.App\Entity\Activite"/>
+      </argument>
+    </service>
+    <service id=".service_locator.6cgsujv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="activite" type="service_closure" id=".errored..service_locator.6cgsujv.App\Entity\Activite"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.8E040vi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="normalizer" type="service_closure" id="serializer"/>
+        <argument key="repo" type="service_closure" id="App\Repository\ActiviteRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vKmjUQy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service_closure" id="App\Repository\ActiviteRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.by_ndYT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+        <argument key="normalizer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.cvg0QVu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vYJJTqk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="planning" type="service_closure" id=".errored..service_locator.vYJJTqk.App\Entity\Planning"/>
+      </argument>
+    </service>
+    <service id=".service_locator.F_DYhqA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.8_BVbXm" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendar" type="service_closure" id=".errored..service_locator.8_BVbXm.App\Entity\Calendar"/>
+      </argument>
+    </service>
+    <service id=".service_locator.F_YhoRh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendar" type="service_closure" id=".errored..service_locator.F_YhoRh.App\Entity\Calendar"/>
+        <argument key="calendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Pqy61XC" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="planningRepository" type="service_closure" id="App\Repository\PlanningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.bPwFCzP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="planningRepository" type="service_closure" id="App\Repository\PlanningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kPYmnHi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="planning" type="service_closure" id=".errored..service_locator.kPYmnHi.App\Entity\Planning"/>
+      </argument>
+    </service>
+    <service id=".service_locator.adafc7c" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="normalizer" type="service_closure" id="serializer"/>
+        <argument key="repo" type="service_closure" id="App\Repository\PlanningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.i9GOSYV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.hRkfwE." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="normalizer" type="service_closure" id="serializer"/>
+        <argument key="planningRepository" type="service_closure" id="App\Repository\PlanningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.UvERUkZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service_closure" id="App\Repository\PlanningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.n7wQ0Ry" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\ActiviteCrudController::delete" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController::edit" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController::index" type="service_closure" id=".service_locator.FKW.MqW"/>
+        <argument key="App\Controller\ActiviteCrudController::new" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController::show" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController::showActivite" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController::viewActivite" type="service_closure" id=".service_locator.FKW.MqW"/>
+        <argument key="App\Controller\ActiviteJSONController::AfficheTicketPDF" type="service_closure" id=".service_locator.vKmjUQy"/>
+        <argument key="App\Controller\ActiviteJSONController::deleteJSON" type="service_closure" id=".service_locator.6cgsujv"/>
+        <argument key="App\Controller\ActiviteJSONController::editJSON" type="service_closure" id=".service_locator.vj0fnNa"/>
+        <argument key="App\Controller\ActiviteJSONController::getActivities" type="service_closure" id=".service_locator.by_ndYT"/>
+        <argument key="App\Controller\ActiviteJSONController::newJSON" type="service_closure" id=".service_locator.cvg0QVu"/>
+        <argument key="App\Controller\ActiviteJSONController::searchActivity" type="service_closure" id=".service_locator.8E040vi"/>
+        <argument key="App\Controller\ActiviteJSONController::showJSON" type="service_closure" id=".service_locator.8E040vi"/>
+        <argument key="App\Controller\ApiCalendarController::onClick" type="service_closure" id=".service_locator.vYJJTqk"/>
+        <argument key="App\Controller\CalendarController::delete" type="service_closure" id=".service_locator.F_YhoRh"/>
+        <argument key="App\Controller\CalendarController::edit" type="service_closure" id=".service_locator.F_YhoRh"/>
+        <argument key="App\Controller\CalendarController::index" type="service_closure" id=".service_locator.F_DYhqA"/>
+        <argument key="App\Controller\CalendarController::new" type="service_closure" id=".service_locator.F_DYhqA"/>
+        <argument key="App\Controller\CalendarController::show" type="service_closure" id=".service_locator.8_BVbXm"/>
+        <argument key="App\Controller\PlanningCrudController::delete" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController::edit" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController::index" type="service_closure" id=".service_locator.bPwFCzP"/>
+        <argument key="App\Controller\PlanningCrudController::new" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController::show" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController::viewPlanning" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningJSONController::CalendarView" type="service_closure" id=".service_locator.UvERUkZ"/>
+        <argument key="App\Controller\PlanningJSONController::deleteJSON" type="service_closure" id=".service_locator.i9GOSYV"/>
+        <argument key="App\Controller\PlanningJSONController::editJSON" type="service_closure" id=".service_locator.kPYmnHi"/>
+        <argument key="App\Controller\PlanningJSONController::newJSON" type="service_closure" id=".service_locator.cvg0QVu"/>
+        <argument key="App\Controller\PlanningJSONController::showJSON" type="service_closure" id=".service_locator.adafc7c"/>
+        <argument key="App\Controller\PlanningJSONController::viewJSON" type="service_closure" id=".service_locator.hRkfwE."/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\ActiviteCrudController:delete" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController:edit" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController:index" type="service_closure" id=".service_locator.FKW.MqW"/>
+        <argument key="App\Controller\ActiviteCrudController:new" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController:show" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController:showActivite" type="service_closure" id=".service_locator.h..bsSR"/>
+        <argument key="App\Controller\ActiviteCrudController:viewActivite" type="service_closure" id=".service_locator.FKW.MqW"/>
+        <argument key="App\Controller\ActiviteJSONController:AfficheTicketPDF" type="service_closure" id=".service_locator.vKmjUQy"/>
+        <argument key="App\Controller\ActiviteJSONController:deleteJSON" type="service_closure" id=".service_locator.6cgsujv"/>
+        <argument key="App\Controller\ActiviteJSONController:editJSON" type="service_closure" id=".service_locator.vj0fnNa"/>
+        <argument key="App\Controller\ActiviteJSONController:getActivities" type="service_closure" id=".service_locator.by_ndYT"/>
+        <argument key="App\Controller\ActiviteJSONController:newJSON" type="service_closure" id=".service_locator.cvg0QVu"/>
+        <argument key="App\Controller\ActiviteJSONController:searchActivity" type="service_closure" id=".service_locator.8E040vi"/>
+        <argument key="App\Controller\ActiviteJSONController:showJSON" type="service_closure" id=".service_locator.8E040vi"/>
+        <argument key="App\Controller\ApiCalendarController:onClick" type="service_closure" id=".service_locator.vYJJTqk"/>
+        <argument key="App\Controller\CalendarController:delete" type="service_closure" id=".service_locator.F_YhoRh"/>
+        <argument key="App\Controller\CalendarController:edit" type="service_closure" id=".service_locator.F_YhoRh"/>
+        <argument key="App\Controller\CalendarController:index" type="service_closure" id=".service_locator.F_DYhqA"/>
+        <argument key="App\Controller\CalendarController:new" type="service_closure" id=".service_locator.F_DYhqA"/>
+        <argument key="App\Controller\CalendarController:show" type="service_closure" id=".service_locator.8_BVbXm"/>
+        <argument key="App\Controller\PlanningCrudController:delete" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController:edit" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController:index" type="service_closure" id=".service_locator.bPwFCzP"/>
+        <argument key="App\Controller\PlanningCrudController:new" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController:show" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningCrudController:viewPlanning" type="service_closure" id=".service_locator.Pqy61XC"/>
+        <argument key="App\Controller\PlanningJSONController:CalendarView" type="service_closure" id=".service_locator.UvERUkZ"/>
+        <argument key="App\Controller\PlanningJSONController:deleteJSON" type="service_closure" id=".service_locator.i9GOSYV"/>
+        <argument key="App\Controller\PlanningJSONController:editJSON" type="service_closure" id=".service_locator.kPYmnHi"/>
+        <argument key="App\Controller\PlanningJSONController:newJSON" type="service_closure" id=".service_locator.cvg0QVu"/>
+        <argument key="App\Controller\PlanningJSONController:showJSON" type="service_closure" id=".service_locator.adafc7c"/>
+        <argument key="App\Controller\PlanningJSONController:viewJSON" type="service_closure" id=".service_locator.hRkfwE."/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -6484,9 +6922,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.y4dplYt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2Mg_IQc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ActiviteType" type="service_closure" id="App\Form\ActiviteType"/>
+        <argument key="App\Form\CalendarType" type="service_closure" id="App\Form\CalendarType"/>
+        <argument key="App\Form\PlanningType" type="service_closure" id="App\Form\PlanningType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -6572,9 +7013,12 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.ek.zhtt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OklyFia" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+        <argument key="App\Repository\CalendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+        <argument key="App\Repository\PlanningRepository" type="service_closure" id="App\Repository\PlanningRepository"/>
         <argument key="App\Repository\TestRepository" type="service_closure" id="App\Repository\TestRepository"/>
       </argument>
     </service>
@@ -6844,6 +7288,30 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ActiviteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ActiviteCrudController"/>
+      <argument>App\Controller\ActiviteCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ActiviteJSONController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ActiviteJSONController"/>
+      <argument>App\Controller\ActiviteJSONController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ApiCalendarController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ApiCalendarController"/>
+      <argument>App\Controller\ApiCalendarController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\CalendarController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CalendarController"/>
+      <argument>App\Controller\CalendarController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6853,6 +7321,18 @@
     <service id=".service_locator.mx0UMmY.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\PlanningCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PlanningCrudController"/>
+      <argument>App\Controller\PlanningCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\PlanningJSONController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PlanningJSONController"/>
+      <argument>App\Controller\PlanningJSONController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -7032,12 +7512,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.n7wQ0Ry"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.n7wQ0Ry"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7057,6 +7537,12 @@
       </call>
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.vj0fnNa.App\Entity\Activite" class="App\Entity\Activite"/>
+    <service id=".errored..service_locator.6cgsujv.App\Entity\Activite" class="App\Entity\Activite"/>
+    <service id=".errored..service_locator.vYJJTqk.App\Entity\Planning" class="App\Entity\Planning"/>
+    <service id=".errored..service_locator.8_BVbXm.App\Entity\Calendar" class="App\Entity\Calendar"/>
+    <service id=".errored..service_locator.F_YhoRh.App\Entity\Calendar" class="App\Entity\Calendar"/>
+    <service id=".errored..service_locator.kPYmnHi.App\Entity\Planning" class="App\Entity\Planning"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -8006,9 +8492,10 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._tHndrl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.n7wQ0Ry"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8032,9 +8519,17 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.uYp3OwG" alias=".service_locator._tHndrl"/>
+    <service id=".service_locator.EMJltZq" alias=".service_locator.vj0fnNa"/>
+    <service id=".service_locator.2hOf8BN" alias=".service_locator.6cgsujv"/>
+    <service id=".service_locator.76ZO.Cc" alias=".service_locator.8E040vi"/>
+    <service id=".service_locator.rYMbTVJ" alias=".service_locator.by_ndYT"/>
+    <service id=".service_locator.zxLzp_1" alias=".service_locator.bPwFCzP"/>
+    <service id=".service_locator.b2V63um" alias=".service_locator.kPYmnHi"/>
+    <service id=".service_locator.kyG4fVz" alias=".service_locator.adafc7c"/>
+    <service id=".service_locator.BNnP_lt" alias=".service_locator.hRkfwE."/>
+    <service id=".service_locator.Kw8CYRE" alias=".service_locator.n7wQ0Ry"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
+    <service id=".service_locator.hOUxMKg" alias=".service_locator.2Mg_IQc"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8060,6 +8555,25 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator._fYVPLt" alias=".service_locator.FKW.MqW"/>
+    <service id=".service_locator..F7odSV" alias=".service_locator.h..bsSR"/>
+    <service id=".service_locator.tFv0FdQ" alias=".service_locator.vj0fnNa"/>
+    <service id=".service_locator.iMZd42I" alias=".service_locator.6cgsujv"/>
+    <service id=".service_locator.RHA4Y4I" alias=".service_locator.8E040vi"/>
+    <service id=".service_locator.YPWipFA" alias=".service_locator.vKmjUQy"/>
+    <service id=".service_locator.i8YV_pK" alias=".service_locator.by_ndYT"/>
+    <service id=".service_locator.tHHqsXv" alias=".service_locator.cvg0QVu"/>
+    <service id=".service_locator.c0Jtd83" alias=".service_locator.vYJJTqk"/>
+    <service id=".service_locator.hNlq4ZS" alias=".service_locator.F_DYhqA"/>
+    <service id=".service_locator.dmc_kdQ" alias=".service_locator.8_BVbXm"/>
+    <service id=".service_locator.9HgtcCR" alias=".service_locator.F_YhoRh"/>
+    <service id=".service_locator.cIG76RJ" alias=".service_locator.Pqy61XC"/>
+    <service id=".service_locator.UIEfVkQ" alias=".service_locator.bPwFCzP"/>
+    <service id=".service_locator.oniSUiD" alias=".service_locator.kPYmnHi"/>
+    <service id=".service_locator.r2as6db" alias=".service_locator.adafc7c"/>
+    <service id=".service_locator.5kp8gXO" alias=".service_locator.i9GOSYV"/>
+    <service id=".service_locator.TueCYS8" alias=".service_locator.hRkfwE."/>
+    <service id=".service_locator.0vfgNzE" alias=".service_locator.UvERUkZ"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

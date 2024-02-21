@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('app_activite_crud_delete', {'id': activite.id}) }}" onsubmit="return confirm('Êtes vous sûr de supprimer cet activité ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ activite.id) }}">
+    <button style="margin-top:-18px; margin-right:53px" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Supprimer">
+        <i class="zmdi zmdi-delete"></i>
+    </button>
+</form>

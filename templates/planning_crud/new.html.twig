@@ -1,0 +1,16 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}EnergyBox | Planning{% endblock %}
+
+{% block body %}
+
+<div class="card">
+    <div class="card-header">
+        <strong>Ajouter</strong> Planning
+    </div>
+    {{ include('planning_crud/form.html.twig') }}
+</div>
+                                
+{% endblock %}
+
+
