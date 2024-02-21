@@ -65,7 +65,9 @@ class __TwigTemplate_1936974fc98d60d54d154a317e67d8bc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Reclamation";
+        // line 4
+        echo "    Edit Reclamation
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_1936974fc98d60d54d154a317e67d8bc extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,23 +86,34 @@ class __TwigTemplate_1936974fc98d60d54d154a317e67d8bc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Edit Reclamation</h1>
-
-    ";
         // line 8
+        echo "<div class=\"container\">
+    <div class=\"card edit-reclamation\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Edit Reclamation</h1>
+        </div>
+        <div class=\"card-body\">
+            <div class=\"form-container\">
+                ";
+        // line 15
         echo twig_include($this->env, $context, "reclamation_back/_form.html.twig", ["button_label" => "Update"]);
         echo "
-
-    <a href=\"";
-        // line 10
+            </div>
+        </div>
+        <div class=\"card-footer\">
+            <div class=\"btn-group\" role=\"group\">
+                <a href=\"";
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_index");
-        echo "\">back to list</a>
-
-    ";
-        // line 12
+        echo "\" class=\"btn btn-secondary\">Back to List</a>
+                ";
+        // line 21
         echo twig_include($this->env, $context, "reclamation_back/_delete_form.html.twig");
         echo "
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -131,23 +144,36 @@ class __TwigTemplate_1936974fc98d60d54d154a317e67d8bc extends Template
      */
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  111 => 21,  107 => 20,  99 => 15,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}Edit Reclamation{% endblock %}
+{% block title %}
+    Edit Reclamation
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Reclamation</h1>
-
-    {{ include('reclamation_back/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('app_reclamation_back_index') }}\">back to list</a>
-
-    {{ include('reclamation_back/_delete_form.html.twig') }}
+<div class=\"container\">
+    <div class=\"card edit-reclamation\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Edit Reclamation</h1>
+        </div>
+        <div class=\"card-body\">
+            <div class=\"form-container\">
+                {{ include('reclamation_back/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </div>
+        <div class=\"card-footer\">
+            <div class=\"btn-group\" role=\"group\">
+                <a href=\"{{ path('app_reclamation_back_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                {{ include('reclamation_back/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "reclamation_back/edit.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation_back\\edit.html.twig");
     }

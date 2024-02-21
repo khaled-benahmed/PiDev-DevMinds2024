@@ -1,11 +1,21 @@
 {% extends 'baseBack.html.twig' %}
 
-{% block title %}New Reponse{% endblock %}
+{% block title %}
+    New Reponse
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Reponse</h1>
-
-    {{ include('reponse_back/_form.html.twig') }}
-
-    <a href="{{ path('app_reponse_back_index') }}">back to list</a>
+<div class="container">
+    <div class="card new-reponse">
+        <div class="card-header">
+            <h1 class="card-title mb-0">Create New Reponse</h1>
+        </div>
+        <div class="card-body">
+            {{ include('reponse_back/_form.html.twig') }}
+        </div>
+        <div class="card-footer">
+            <a href="{{ path('app_reponse_back_index') }}" class="btn btn-secondary mr-2">Back to List</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

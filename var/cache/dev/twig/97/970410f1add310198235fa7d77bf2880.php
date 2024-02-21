@@ -65,7 +65,8 @@ class __TwigTemplate_e43d60cfacb44e966f80077f7941c25f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Reclamation index
+        // line 4
+        echo "    Reclamation index
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -75,7 +76,7 @@ class __TwigTemplate_e43d60cfacb44e966f80077f7941c25f extends Template
 
     }
 
-    // line 6
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,82 +86,86 @@ class __TwigTemplate_e43d60cfacb44e966f80077f7941c25f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "\t<h1>Reclamation index</h1>
+        // line 8
+        echo "<div class=\"container\">
+    <div class=\"reclamation-index\">
+        <h1 class=\"mb-4\">Reclamation index</h1>
 
-\t<table class=\"table\">
-\t\t<thead>
-\t\t\t<tr>
-\t\t\t\t<th>Id</th>
-\t\t\t\t<th>NomUserReclamation</th>
-\t\t\t\t<th>TextReclamation</th>
-\t\t\t\t<th>DateReclamation</th>
-\t\t\t\t<th>actions</th>
-\t\t\t</tr>
-\t\t</thead>
-\t\t<tbody>
-\t\t\t";
-        // line 20
+        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomUserReclamation</th>
+                    <th>TextReclamation</th>
+                    <th>DateReclamation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ";
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 23, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reclamation"]) {
-            // line 21
-            echo "\t\t\t\t<tr>
-\t\t\t\t\t<td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-\t\t\t\t\t<td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "NomUserReclamation", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-\t\t\t\t\t<td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "textReclamation", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-\t\t\t\t\t<td>";
+            echo "                    <tr>
+                        <td>";
             // line 25
-            ((twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 25), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
-\t\t\t\t\t<td>
-\t\t\t\t\t\t<a href=\"";
+                        <td>";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "NomUserReclamation", [], "any", false, false, false, 26), "html", null, true);
+            echo "</td>
+                        <td>";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">show</a>
-\t\t\t\t\t\t<a href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "textReclamation", [], "any", false, false, false, 27), "html", null, true);
+            echo "</td>
+                        <td>";
             // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\">edit</a>
-\t                    <form action=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_auto_response", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-            echo "\" method=\"post\" style=\"display: inline;\">
-                        <button type=\"submit\" class=\"btn btn-primary\">Respond</button>
-                    </form>
-\t\t\t\t\t</td>
-\t\t\t\t</tr>
-\t\t\t";
+            ((twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 28)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 28), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                        <td>
+                            <a href=\"";
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            echo "\" class=\"btn btn-info btn-sm mr-1\">Show</a>
+                            <a href=\"";
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm mr-1\">Edit</a>
+                            <form action=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_auto_response", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\" method=\"post\" class=\"d-inline\">
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\">Respond</button>
+                            </form>
+                        </td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 35
-            echo "\t\t\t\t<tr>
-\t\t\t\t\t<td colspan=\"5\">no records found</td>
-\t\t\t\t</tr>
-\t\t\t";
+            // line 38
+            echo "                    <tr>
+                        <td colspan=\"5\">No records found</td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reclamation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
-        echo "\t\t</tbody>
-\t</table>
-
-\t<a href=\"";
         // line 42
+        echo "            </tbody>
+        </table>
+
+        <a href=\"";
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_back_new");
-        echo "\">Create new</a>
+        echo "\" class=\"btn btn-success\">Create new</a>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -191,53 +196,58 @@ class __TwigTemplate_e43d60cfacb44e966f80077f7941c25f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  162 => 42,  157 => 39,  148 => 35,  137 => 29,  133 => 28,  129 => 27,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  165 => 45,  160 => 42,  151 => 38,  140 => 32,  136 => 31,  132 => 30,  127 => 28,  123 => 27,  119 => 26,  115 => 25,  112 => 24,  107 => 23,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}Reclamation index
+{% block title %}
+    Reclamation index
 {% endblock %}
 
 {% block body %}
-\t<h1>Reclamation index</h1>
+<div class=\"container\">
+    <div class=\"reclamation-index\">
+        <h1 class=\"mb-4\">Reclamation index</h1>
 
-\t<table class=\"table\">
-\t\t<thead>
-\t\t\t<tr>
-\t\t\t\t<th>Id</th>
-\t\t\t\t<th>NomUserReclamation</th>
-\t\t\t\t<th>TextReclamation</th>
-\t\t\t\t<th>DateReclamation</th>
-\t\t\t\t<th>actions</th>
-\t\t\t</tr>
-\t\t</thead>
-\t\t<tbody>
-\t\t\t{% for reclamation in reclamations %}
-\t\t\t\t<tr>
-\t\t\t\t\t<td>{{ reclamation.id }}</td>
-\t\t\t\t\t<td>{{ reclamation.NomUserReclamation }}</td>
-\t\t\t\t\t<td>{{ reclamation.textReclamation }}</td>
-\t\t\t\t\t<td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
-\t\t\t\t\t<td>
-\t\t\t\t\t\t<a href=\"{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}\">show</a>
-\t\t\t\t\t\t<a href=\"{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}\">edit</a>
-\t                    <form action=\"{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}\" method=\"post\" style=\"display: inline;\">
-                        <button type=\"submit\" class=\"btn btn-primary\">Respond</button>
-                    </form>
-\t\t\t\t\t</td>
-\t\t\t\t</tr>
-\t\t\t{% else %}
-\t\t\t\t<tr>
-\t\t\t\t\t<td colspan=\"5\">no records found</td>
-\t\t\t\t</tr>
-\t\t\t{% endfor %}
-\t\t</tbody>
-\t</table>
+        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomUserReclamation</th>
+                    <th>TextReclamation</th>
+                    <th>DateReclamation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reclamation in reclamations %}
+                    <tr>
+                        <td>{{ reclamation.id }}</td>
+                        <td>{{ reclamation.NomUserReclamation }}</td>
+                        <td>{{ reclamation.textReclamation }}</td>
+                        <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                        <td>
+                            <a href=\"{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}\" class=\"btn btn-info btn-sm mr-1\">Show</a>
+                            <a href=\"{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}\" class=\"btn btn-primary btn-sm mr-1\">Edit</a>
+                            <form action=\"{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}\" method=\"post\" class=\"d-inline\">
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\">Respond</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"5\">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-\t<a href=\"{{ path('app_reclamation_back_new') }}\">Create new</a>
+        <a href=\"{{ path('app_reclamation_back_new') }}\" class=\"btn btn-success\">Create new</a>
+    </div>
+</div>
 {% endblock %}
 ", "reclamation_back/index.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation_back\\index.html.twig");
     }

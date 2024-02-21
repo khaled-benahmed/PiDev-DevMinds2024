@@ -1,43 +1,48 @@
 {% extends 'baseBack.html.twig' %}
 
-{% block title %}Reclamation index
+{% block title %}
+    Reclamation index
 {% endblock %}
 
 {% block body %}
-	<h1>Reclamation index</h1>
+<div class="container">
+    <div class="reclamation-index">
+        <h1 class="mb-4">Reclamation index</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>NomUserReclamation</th>
-				<th>TextReclamation</th>
-				<th>DateReclamation</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for reclamation in reclamations %}
-				<tr>
-					<td>{{ reclamation.id }}</td>
-					<td>{{ reclamation.NomUserReclamation }}</td>
-					<td>{{ reclamation.textReclamation }}</td>
-					<td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
-					<td>
-						<a href="{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}">show</a>
-						<a href="{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}">edit</a>
-	                    <form action="{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-primary">Respond</button>
-                    </form>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="5">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomUserReclamation</th>
+                    <th>TextReclamation</th>
+                    <th>DateReclamation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reclamation in reclamations %}
+                    <tr>
+                        <td>{{ reclamation.id }}</td>
+                        <td>{{ reclamation.NomUserReclamation }}</td>
+                        <td>{{ reclamation.textReclamation }}</td>
+                        <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                        <td>
+                            <a href="{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}" class="btn btn-info btn-sm mr-1">Show</a>
+                            <a href="{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}" class="btn btn-primary btn-sm mr-1">Edit</a>
+                            <form action="{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-success btn-sm">Respond</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-	<a href="{{ path('app_reclamation_back_new') }}">Create new</a>
+        <a href="{{ path('app_reclamation_back_new') }}" class="btn btn-success">Create new</a>
+    </div>
+</div>
 {% endblock %}

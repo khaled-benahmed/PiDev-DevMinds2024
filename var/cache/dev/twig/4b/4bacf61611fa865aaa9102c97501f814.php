@@ -65,7 +65,9 @@ class __TwigTemplate_bd1257c618573c076726782a6794de19 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Reponse";
+        // line 4
+        echo "    New Reponse
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_bd1257c618573c076726782a6794de19 extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,18 +86,26 @@ class __TwigTemplate_bd1257c618573c076726782a6794de19 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Create new Reponse</h1>
-
-    ";
         // line 8
+        echo "<div class=\"container\">
+    <div class=\"card new-reponse\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Create New Reponse</h1>
+        </div>
+        <div class=\"card-body\">
+            ";
+        // line 14
         echo twig_include($this->env, $context, "reponse_back/_form.html.twig");
         echo "
-
-    <a href=\"";
-        // line 10
+        </div>
+        <div class=\"card-footer\">
+            <a href=\"";
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-secondary mr-2\">Back to List</a>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,21 +136,31 @@ class __TwigTemplate_bd1257c618573c076726782a6794de19 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  104 => 17,  98 => 14,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}New Reponse{% endblock %}
+{% block title %}
+    New Reponse
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Reponse</h1>
-
-    {{ include('reponse_back/_form.html.twig') }}
-
-    <a href=\"{{ path('app_reponse_back_index') }}\">back to list</a>
+<div class=\"container\">
+    <div class=\"card new-reponse\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Create New Reponse</h1>
+        </div>
+        <div class=\"card-body\">
+            {{ include('reponse_back/_form.html.twig') }}
+        </div>
+        <div class=\"card-footer\">
+            <a href=\"{{ path('app_reponse_back_index') }}\" class=\"btn btn-secondary mr-2\">Back to List</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "reponse_back/new.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reponse_back\\new.html.twig");
     }

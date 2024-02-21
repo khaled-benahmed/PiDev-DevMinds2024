@@ -65,7 +65,9 @@ class __TwigTemplate_72100e3a46239301254f63df73500fac extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Reponse";
+        // line 4
+        echo "    Edit Reponse
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_72100e3a46239301254f63df73500fac extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,23 +86,32 @@ class __TwigTemplate_72100e3a46239301254f63df73500fac extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Edit Reponse</h1>
-
-    ";
         // line 8
+        echo "<div class=\"container\">
+    <div class=\"card edit-reponse\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Edit Reponse</h1>
+        </div>
+        <div class=\"card-body\">
+            ";
+        // line 14
         echo twig_include($this->env, $context, "reponse_back/_form.html.twig", ["button_label" => "Update"]);
         echo "
-
-    <a href=\"";
-        // line 10
+        </div>
+        <div class=\"card-footer\">
+            <div class=\"btn-group\" role=\"group\">
+                <a href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_index");
-        echo "\">back to list</a>
-
-    ";
-        // line 12
+        echo "\" class=\"btn btn-secondary\">Back to List</a>
+                ";
+        // line 19
         echo twig_include($this->env, $context, "reponse_back/_delete_form.html.twig");
         echo "
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -131,23 +142,34 @@ class __TwigTemplate_72100e3a46239301254f63df73500fac extends Template
      */
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  109 => 19,  105 => 18,  98 => 14,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}Edit Reponse{% endblock %}
+{% block title %}
+    Edit Reponse
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Reponse</h1>
-
-    {{ include('reponse_back/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('app_reponse_back_index') }}\">back to list</a>
-
-    {{ include('reponse_back/_delete_form.html.twig') }}
+<div class=\"container\">
+    <div class=\"card edit-reponse\">
+        <div class=\"card-header\">
+            <h1 class=\"card-title mb-0\">Edit Reponse</h1>
+        </div>
+        <div class=\"card-body\">
+            {{ include('reponse_back/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+        <div class=\"card-footer\">
+            <div class=\"btn-group\" role=\"group\">
+                <a href=\"{{ path('app_reponse_back_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                {{ include('reponse_back/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "reponse_back/edit.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reponse_back\\edit.html.twig");
     }

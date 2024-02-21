@@ -65,7 +65,9 @@ class __TwigTemplate_544e391d918f12738faefa17a77ce3c5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Reponse index";
+        // line 4
+        echo "    Reponse index
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_544e391d918f12738faefa17a77ce3c5 extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,71 +86,77 @@ class __TwigTemplate_544e391d918f12738faefa17a77ce3c5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Reponse index</h1>
+        // line 8
+        echo "<div class=\"container\">
+    <div class=\"reponse-index\">
+        <h1 class=\"mb-4\">Reponse index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ContenuReponse</th>
-                <th>DateReponse</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 18
+        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Contenu Reponse</th>
+                    <th>Date Reponse</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            ";
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reponses"]) || array_key_exists("reponses", $context) ? $context["reponses"] : (function () { throw new RuntimeError('Variable "reponses" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reponses"]) || array_key_exists("reponses", $context) ? $context["reponses"] : (function () { throw new RuntimeError('Variable "reponses" does not exist.', 22, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reponse"]) {
-            // line 19
-            echo "            <tr>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "contenuReponse", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["reponse"], "dateReponse", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "dateReponse", [], "any", false, false, false, 22), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>
-                    <a href=\"";
+            // line 23
+            echo "                <tr>
+                    <td>";
             // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                    <td>";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "contenuReponse", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 26
+            ((twig_get_attribute($this->env, $this->source, $context["reponse"], "dateReponse", [], "any", false, false, false, 26)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "dateReponse", [], "any", false, false, false, 26), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                    <td>
+                        <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\" class=\"btn btn-info btn-sm mr-1\">Show</a>
+                        <a href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm\">Edit</a>
+                    </td>
+                </tr>
+            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
-            echo "            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        ";
+            // line 33
+            echo "                <tr>
+                    <td colspan=\"4\">No records found</td>
+                </tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reponse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
-    </table>
+        // line 37
+        echo "            </tbody>
+        </table>
 
-    <a href=\"";
-        // line 36
+        <div class=\"mt-3\">
+            <a href=\"";
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_back_new");
-        echo "\">Create new</a>
+        echo "\" class=\"btn btn-success\">Create New</a>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -179,47 +187,55 @@ class __TwigTemplate_544e391d918f12738faefa17a77ce3c5 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  155 => 41,  149 => 37,  140 => 33,  131 => 29,  127 => 28,  122 => 26,  118 => 25,  114 => 24,  111 => 23,  106 => 22,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}Reponse index{% endblock %}
+{% block title %}
+    Reponse index
+{% endblock %}
 
 {% block body %}
-    <h1>Reponse index</h1>
+<div class=\"container\">
+    <div class=\"reponse-index\">
+        <h1 class=\"mb-4\">Reponse index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ContenuReponse</th>
-                <th>DateReponse</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reponse in reponses %}
-            <tr>
-                <td>{{ reponse.id }}</td>
-                <td>{{ reponse.contenuReponse }}</td>
-                <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href=\"{{ path('app_reponse_back_show', {'id': reponse.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reponse_back_edit', {'id': reponse.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Contenu Reponse</th>
+                    <th>Date Reponse</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for reponse in reponses %}
+                <tr>
+                    <td>{{ reponse.id }}</td>
+                    <td>{{ reponse.contenuReponse }}</td>
+                    <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
+                    <td>
+                        <a href=\"{{ path('app_reponse_back_show', {'id': reponse.id}) }}\" class=\"btn btn-info btn-sm mr-1\">Show</a>
+                        <a href=\"{{ path('app_reponse_back_edit', {'id': reponse.id}) }}\" class=\"btn btn-primary btn-sm\">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan=\"4\">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href=\"{{ path('app_reponse_back_new') }}\">Create new</a>
+        <div class=\"mt-3\">
+            <a href=\"{{ path('app_reponse_back_new') }}\" class=\"btn btn-success\">Create New</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "reponse_back/index.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reponse_back\\index.html.twig");
     }
