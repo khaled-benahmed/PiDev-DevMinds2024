@@ -5,7 +5,8 @@
 return [
     'admin_index' => [[], ['_controller' => 'App\\Controller\\Admin\\MainController::index'], [], [['text', '/admin/']], [], [], []],
     'admin_users_list' => [[], ['_controller' => 'App\\Controller\\Admin\\UserController::index'], [], [['text', '/admin/utilisateurs/']], [], [], []],
-    'admin_users_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::showBook'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
+    'admin_users_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::showUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
+    'admin_users_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::updateUser'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
     'admin_users_block_user' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::blockUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs/block/user']], [], [], []],
     'admin_users_user_unblock' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::unblockUser'], [], [['text', '/unblock'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs/user']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], [], []],
@@ -35,5 +36,5 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'block_user' => [['id'], ['_controller' => 'YourController::blockUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/block/user']], [], [], []],
-    'admin_users_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::delete'], [], [['text', '/supprimer'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
+    'admin_users_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::deleteUser'], [], [['text', '/supprimer'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/utilisateurs']], [], [], []],
 ];

@@ -219,11 +219,16 @@ class __TwigTemplate_1f36852727330c383466aa8d4880f60b extends Template
                 <div class=\"form-group row\">
                     <div class=\"col-sm-9 offset-sm-3\">
                         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+                         <a href=\"";
+        // line 88
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\" class=\"btn btn-info\">Cancel</a>
                     </div>
+                    
                 </div>
                 ";
-        // line 90
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 90, $this->source); })()), 'form_end');
+        // line 92
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 92, $this->source); })()), 'form_end');
         echo "
             </div>
         </div>
@@ -258,7 +263,7 @@ class __TwigTemplate_1f36852727330c383466aa8d4880f60b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  226 => 90,  214 => 81,  210 => 80,  201 => 74,  197 => 73,  188 => 66,  182 => 64,  180 => 63,  176 => 62,  172 => 61,  163 => 55,  159 => 54,  150 => 48,  146 => 47,  137 => 41,  133 => 40,  124 => 34,  120 => 33,  111 => 27,  107 => 26,  98 => 20,  94 => 19,  85 => 13,  81 => 12,  74 => 8,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  231 => 92,  224 => 88,  214 => 81,  210 => 80,  201 => 74,  197 => 73,  188 => 66,  182 => 64,  180 => 63,  176 => 62,  172 => 61,  163 => 55,  159 => 54,  150 => 48,  146 => 47,  137 => 41,  133 => 40,  124 => 34,  120 => 33,  111 => 27,  107 => 26,  98 => 20,  94 => 19,  85 => 13,  81 => 12,  74 => 8,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -350,7 +355,9 @@ class __TwigTemplate_1f36852727330c383466aa8d4880f60b extends Template
                 <div class=\"form-group row\">
                     <div class=\"col-sm-9 offset-sm-3\">
                         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+                         <a href=\"{{ path('app_home') }}\" class=\"btn btn-info\">Cancel</a>
                     </div>
+                    
                 </div>
                 {{ form_end(form) }}
             </div>

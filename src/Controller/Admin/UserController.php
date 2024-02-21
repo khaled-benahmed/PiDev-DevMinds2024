@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Form\EdituserTypeformType;
+use Doctrine\Persistence\ManagerRegistry;
+use App\Form\UserAdminType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +33,7 @@ class UserController extends AbstractController
     
 
     #[Route('/{id}', name: 'show')]
-    public function showBook ($id,UserRepository $repository){
+    public function showUser ($id,UserRepository $repository){
         $user=$repository->find($id);
         if (!$user){
             return $this->redirectToRoute('main');
@@ -40,8 +42,38 @@ class UserController extends AbstractController
 
     }
 
+    #[Route('/{id}/edit', name: 'edit')]
+    public function updateUser($id,UserRepository $repository,Request  $request, ManagerRegistry $managerRegistry)
+    {
+        $user= $repository->find($id) ;
+        $form= $this->createForm(UserAdminType::class, $user);
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            $em = $managerRegistry->getManager();
+            $em->flush();
+           // return  new Response("Done!");
+            return  $this->redirectToRoute("admin_users_list");
+        }
+        return $this->renderForm('admin/editUser.html.twig',
+            array('formUser'=>$form));
+    }
 
-    #[Route('/{id}/supprimer', name: 'delete', methods: ['POST'])]
+    #[Route('/{id}/delete', name: 'delete')]
+    public function deleteUser($id, UserRepository $repository,
+                                 ManagerRegistry $managerRegistry)
+    {
+        $user= $repository->find($id);
+        $em = $managerRegistry->getManager();
+        $em->remove($user);
+        $em->flush();
+
+        return  $this->redirectToRoute("admin_users_list");
+
+    }
+
+
+
+   /* #[Route('/{id}/supprimer', name: 'delete', methods: ['POST'])]
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
@@ -50,7 +82,7 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('admin_users_list', [], Response::HTTP_SEE_OTHER);
     }
-
+*/
     #[Route("/block/user/{id}", name: "block_user")]
     public function blockUser($id): Response
     {

@@ -52,7 +52,7 @@
             <div class="container-fluid">
                 <div class="header-mobile-inner">
                     <a class="logo" href="{{path('app_home')}}">
-                        <img src="{{ asset('./BackOffice/images/logo/') }} " alt="NutriFit" />
+                        <img src="{{ asset('./BackOffice/images/logo.PNG/') }} " />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -73,9 +73,6 @@
                         <a class="js-arrow" href="#">
                             <i class="fas fa-user"></i>Utilisateurs</a>
                         <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="#">Ajouter Utilisateur</a>
-                            </li>
                             <li>
                                 <a href="#">Afficher Utilisateurs</a>
                             </li>
@@ -149,50 +146,54 @@
     </header>
     <!-- END HEADER MOBILE-->
 
-    <!-- MENU SIDEBAR-->
-    <aside class="menu-sidebar d-none d-lg-block">
-        <div class="logo">
-            <a href="{{path('app_home')}}">
-                <img src="{{ asset('./BackOffice/images/logo/') }} " height="90" width="100"  alt="NutriFit" />
-            </a>
-        </div>
-        <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar">
-                <ul class="list-unstyled navbar__list">
-                    <li class="active">
-                        <a class="js-arrow" href="{{path('app_home')}}">
-                            <i class="fas fa-home"></i>Home</a>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-user"></i>Utilisateurs</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="#">Ajouter Utilisateur</a>
-                            </li>
-                            <li>
-                                <a href="{{path('admin_users_list')}}">Afficher Utilisateurs</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-table"></i>Planning</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="{#  #}{path('app_activite_crud_new')}}">Ajouter Activité</a>
-                            </li>
-                            <li>
-                                <a href="{#  #}{path('app_activite_crud_index')}}">Afficher Activités</a>
-                            </li>
-                            <li>
-                                <a href="{#  #}{path('app_planning_crud_new')}}">Ajouter Planning</a>
-                            </li>
-                            <li>
-                                <a href="{#  #}{path('app_planning_crud_index')}}">Afficher Planning</a>
-                            </li>
-                        </ul>
-                    </li>
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="{{ path('app_home') }}">
+            <img src="{{ asset('uploads/logonutrifit.PNG') }}" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="active">
+                    <a class="js-arrow" href="{{ path('app_home') }}">
+                        <i class="fas fa-home"></i>Home
+                    </a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-user"></i>Utilisateurs
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="#">Ajouter Utilisateur</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_users_list') }}">Afficher Utilisateurs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-table"></i>Planning
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="{# path('app_activite_crud_new') }#}">Ajouter Activité</a>
+                        </li>
+                        <li>
+                            <a href="{# path('app_activite_crud_index') }#}">Afficher Activités</a>
+                        </li>
+                        <li>
+                            <a href="{# path('app_planning_crud_new') }#}">Ajouter Planning</a>
+                        </li>
+                        <li>
+                            <a href="{# path('app_planning_crud_index') }#}">Afficher Planning</a>
+                        </li>
+                    </ul>
+                </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="#">
                             <i class="fas fa-plus"></i>Abonnements</a>
@@ -249,6 +250,8 @@
                             </li>
                         </ul>
                     </li>
+                                    {% endif %}
+
                 </ul>
             </nav>
         </div>
@@ -394,10 +397,8 @@
                 </div>
                 <div class="account-dropdown js-dropdown">
                     <div class="info clearfix">
-                <div class="image">
-                    <a href="#">
+                <div class="image">   
                         <img src="{{ asset('uploads/' ~ app.user.image) }}" alt="{{ app.user.image }}" />
-                    </a>
                 </div>
                 <div class="content">
                     <h5 class="name">
@@ -407,24 +408,24 @@
                 </div>
             </div>
             <div class="account-dropdown__body">
-                <div class="account-dropdown__item">
-                    <a href="{{path('profile')}}">
-                        <i class="fa-solid fa-user"></i>Profile</a>
-                </div>
-                <div class="account-dropdown__item">
-                    <a href="#">
-                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                </div>
-                <div class="account-dropdown__item">
-                    <a href="#">
-                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                </div>
-            </div>
-            <div class="account-dropdown__footer">
-                <a href="{{ path('app_logout') }}">
-                    <i class="zmdi zmdi-power"></i>Logout
-                </a>
-            </div>
+    <div class="account-dropdown__item">
+        <a href="{{ path('profile') }}">
+<i class="bi bi-person text-primary"></i> Profile
+        </a>
+    </div>
+    
+    <div class="account-dropdown__item">
+        <a href="#">
+            <i class="bi bi-cash"></i> Billing
+        </a>
+    </div>
+</div>
+<div class="account-dropdown__footer">
+    <a href="{{ path('app_logout') }}">
+        <i class="bi bi-power"></i> Logout
+    </a>
+</div>
+
         </div>
     </div>
 </div>

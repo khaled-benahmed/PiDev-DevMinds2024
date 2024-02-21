@@ -176,39 +176,43 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                                         Actions
                                     </button>
                                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                                        <a class=\"dropdown-item\" href=\"#\">Modifier</a>
+                                        <a class=\"dropdown-item\" href=\"";
+            // line 52
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            echo "\">Modifier</a>
                                         <a class=\"dropdown-item\" href=\"";
             // line 53
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53)]), "html", null, true);
             echo "\">Afficher</a>
-                                        <form action=\"";
+                                       <form action=\"";
             // line 54
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 54)]), "html", null, true);
-            echo "\" method=\"post\" class=\"dropdown-item\">
-                                            <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
-                                            <input type=\"hidden\" name=\"_token\" value=\"";
+            echo "\" method=\"post\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
+                                        <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                                        <input type=\"hidden\" name=\"_token\" value=\"";
             // line 56
             echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56))), "html", null, true);
             echo "\">
-                                            <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
+                                          <button type=\"submit\" class=\"btn btn-danger\">Supprimer l'utilisateur</button>
                                         </form>
+
                                         ";
-            // line 59
-            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 59)) {
-                // line 60
+            // line 60
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 60)) {
+                // line 61
                 echo "                                            <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61)]), "html", null, true);
                 echo "\">Débloquer</a>
                                         ";
             } else {
-                // line 62
+                // line 63
                 echo "                                           <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 62)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 63)]), "html", null, true);
                 echo "\">Bloquer</a>
 
                                         ";
             }
-            // line 65
+            // line 66
             echo "                                    </div>
                                 </div>
                             </td>
@@ -218,7 +222,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 71
         echo "                </tbody>
             </table>
         </div>
@@ -253,7 +257,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
      */
     public function getDebugInfo()
     {
-        return array (  222 => 70,  212 => 65,  205 => 62,  199 => 60,  197 => 59,  191 => 56,  186 => 54,  182 => 53,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  226 => 71,  216 => 66,  209 => 63,  203 => 61,  201 => 60,  194 => 56,  189 => 54,  185 => 53,  181 => 52,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -309,13 +313,14 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                                         Actions
                                     </button>
                                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                                        <a class=\"dropdown-item\" href=\"#\">Modifier</a>
+                                        <a class=\"dropdown-item\" href=\"{{path('admin_users_edit', {'id': user.id})}}\">Modifier</a>
                                         <a class=\"dropdown-item\" href=\"{{path('admin_users_show', {'id': user.id})}}\">Afficher</a>
-                                        <form action=\"{{ path('admin_users_delete', {'id': user.id}) }}\" method=\"post\" class=\"dropdown-item\">
-                                            <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
-                                            <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
-                                            <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
+                                       <form action=\"{{ path('admin_users_delete', {'id': user.id}) }}\" method=\"post\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
+                                        <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                                        <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
+                                          <button type=\"submit\" class=\"btn btn-danger\">Supprimer l'utilisateur</button>
                                         </form>
+
                                         {% if user.isBlocked %}
                                             <a class=\"dropdown-item\" href=\"{{ path('admin_users_user_unblock', {'id': user.id}) }}\">Débloquer</a>
                                         {% else %}

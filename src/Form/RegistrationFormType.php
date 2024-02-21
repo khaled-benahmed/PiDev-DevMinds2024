@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType; 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -53,12 +54,39 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => 'Speciality'
             ])
-            ->add('city', TextType::class, [
+            ->add('city', ChoiceType::class, [
+                'choices' => [
+                    'Ariana' => 'Ariana',
+                    'Béja' => 'Béja',
+                    'Ben Arous' => 'Ben Arous',
+                    'Bizerte' => 'Bizerte',
+                    'Gabès' => 'Gabès',
+                    'Gafsa' => 'Gafsa',
+                    'Jendouba' => 'Jendouba',
+                    'Kairouan' => 'Kairouan',
+                    'Kasserine' => 'Kasserine',
+                    'Kébili' => 'Kébili',
+                    'Kef' => 'Kef',
+                    'Mahdia' => 'Mahdia',
+                    'Manouba' => 'Manouba',
+                    'Médenine' => 'Médenine',
+                    'Monastir' => 'Monastir',
+                    'Nabeul' => 'Nabeul',
+                    'Sfax' => 'Sfax',
+                    'Sidi Bouzid' => 'Sidi Bouzid',
+                    'Siliana' => 'Siliana',
+                    'Sousse' => 'Sousse',
+                    'Tataouine' => 'Tataouine',
+                    'Tozeur' => 'Tozeur',
+                    'Tunis' => 'Tunis',
+                    'Zaghouan' => 'Zaghouan',
+                ],
                 'attr' => [
                     'class' => 'form-control'
                 ],
                 'label' => 'City'
             ])
+            
 
 
             ->add('cin', TextType::class, [
@@ -72,15 +100,14 @@ class RegistrationFormType extends AbstractType
 
             ->add('birthday', DateType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'type' => 'date', // Ajoutez ceci si vous souhaitez un type de champ "date" HTML5
                 ],
                 'label' => 'Birthday',
                 'widget' => 'single_text',
-                'html5' => false,
-                'format' => 'dd/MM/yyyy',
-                // optionnel : définir une plage de dates autorisées
-                'years' => range(date('Y') - 100, date('Y') - 18), // Autorise les années de l'année actuelle à 100 ans en arrière (de l'âge de la majorité à 100 ans)
+                'html5' => true, // Activez HTML5 pour utiliser le type de champ "date"
             ])
+            
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'The password fields must match.',

@@ -8,7 +8,7 @@ block_user:
 
 admin_users_delete:
     path: /admin/utilisateurs/{id}/supprimer
-    controller: 'App\Controller\Admin\UserController::delete'
+    controller: 'App\Controller\Admin\UserController::deleteUser'
     methods: [POST]
 
     

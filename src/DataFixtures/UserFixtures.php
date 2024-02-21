@@ -22,6 +22,7 @@ class UserFixtures extends Fixture
         $admin1->setUsername('Admin');
         $admin1->setCin('14509900');
         $admin1->setCity('Ariana');
+        $admin1->setImage('admin.svg');
         $admin1->setBirthday(null);
         $admin1->setPassword(
             $this->passwordEncoder->hashPassword($admin1,'adminadmin')
@@ -36,13 +37,14 @@ class UserFixtures extends Fixture
         $admin = new User();
         $admin->setEmail('admin@admin.admin');
         $admin->setFirstname('Aymen');
-        $admin->setLastname('BG');
+        $admin->setLastname('Boughzala');
         $admin->setUsername('Admin');
         $admin->setCin('14509900');
         $admin->setCity('Ariana');
+        $admin->setImage('admin.svg');
         $admin->setBirthday(null);
         $admin->setPassword(
-            $this->passwordEncoder->hashPassword($admin,'admin')
+            $this->passwordEncoder->hashPassword($admin,'admin123456')
         );
         $admin->setRoles(['ROLE_ADMIN']);
 
@@ -58,9 +60,11 @@ class UserFixtures extends Fixture
         $coach->setUsername('coach');
         $coach->setCin('14509901');
         $coach->setCity('Ariana');
+        $coach->setImage('coach.png.webp');
+        $coach->setSpeciality('Préparateur physique.');
         $coach->setBirthday(null);
         $coach->setPassword(
-            $this->passwordEncoder->hashPassword($coach,'coach')
+            $this->passwordEncoder->hashPassword($coach,'coach123456')
         );
         $coach->setRoles(['ROLE_COACH']);
 
@@ -76,9 +80,12 @@ class UserFixtures extends Fixture
         $nutritionist->setUsername('Dr.Hamouda');
         $nutritionist->setCin('14059902');
         $nutritionist->setCity('Ariana');
+        $nutritionist->setImage('nutritionnist.jpg');
+        $nutritionist->setSpeciality('Alimentation végétarienne,
+        Allaitement, Allergies / Intolérances alimentaires.');
         $nutritionist->setBirthday(null);
         $nutritionist->setPassword(
-            $this->passwordEncoder->hashPassword($nutritionist,'nutritionist')
+            $this->passwordEncoder->hashPassword($nutritionist,'nutritionist123456')
         );
         $nutritionist->setRoles(['ROLE_NUTRITIONIST']);
 

@@ -1,0 +1,104 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit Profile</h3>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(formUser, {'attr': {'class': 'form-horizontal'}}) }}
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">Email:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.email, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.email) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">First Name:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.firstname, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.firstname) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">Last Name:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.lastname, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.lastname) }}
+                            </div>
+                        </div>               
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">City:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.city, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.city) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">CIN:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.cin, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.cin) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">Image:</label>
+                            <div class="col-sm-9">
+                                {{ form_row(formUser.image, {'attr': {'class': 'form-control-file'}}) }}
+                                {{ form_errors(formUser.image) }}
+                                {% if formUser.vars.value.image %}
+                                    <img src="{{ asset('uploads/' ~ formUser.vars.value.image) }}" alt="Current Image" class="mt-2" style="max-width: 200px;">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">Speciality:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.speciality, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(formUser.speciality) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bold">Birthday:</label>
+                            <div class="col-sm-9">
+                                {{ form_widget(formUser.birthday, {'attr': {'class': 'form-control datepicker', 'data-date-end-date': '0d'}}) }}
+
+                                {{ form_errors(formUser.birthday) }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                             <label class="col-sm-3 col-form-label font-weight-bold">Blocked:</label>
+    <div class="col-sm-9">
+        {{ form_widget(formUser.isBlocked, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(formUser.isBlocked) }}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-3 col-form-label font-weight-bold">Verified:</label>
+    <div class="col-sm-9">
+        {{ form_widget(formUser.isVerified, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(formUser.isVerified) }}
+    </div>
+</div>
+
+
+                        <!-- Autres champs du formulaire -->
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                
+                                <a href="{{ path('admin_users_list') }}" class="btn btn-info">Back to list</a>
+                            </div>
+                        </div>
+                        {{ form_end(formUser) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

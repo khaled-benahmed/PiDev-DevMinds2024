@@ -147,7 +147,7 @@ class __TwigTemplate_b3d30113d57efa229ad8628387196b9e extends Template
         echo "
                             ";
         // line 30
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 30, $this->source); })()), "city", [], "any", false, false, false, 30), 'row', ["attr" => ["class" => "form-control mb-3", "placeholder" => "City"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 30, $this->source); })()), "city", [], "any", false, false, false, 30), 'row', ["attr" => ["class" => "form-control mb-3"], "label" => "City"]);
         echo "
                             ";
         // line 31
@@ -249,7 +249,7 @@ class __TwigTemplate_b3d30113d57efa229ad8628387196b9e extends Template
                         </div>
                         <div class=\"col-md-6\">
                             {{ form_row(registrationForm.username, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Username'}}) }}
-                            {{ form_row(registrationForm.city, {'attr': {'class': 'form-control mb-3', 'placeholder': 'City'}}) }}
+                            {{ form_row(registrationForm.city, {'attr': {'class': 'form-control mb-3'}, 'label': 'City'}) }}
                             {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Speciality'}}) }}
                             {{ form_row(registrationForm.birthday, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Birthday'}}) }}
                             {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control mb-3', 'placeholder': 'CIN'}}) }}

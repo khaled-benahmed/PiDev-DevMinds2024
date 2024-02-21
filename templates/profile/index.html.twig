@@ -48,6 +48,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                            <label class="font-weight-bold">Role(s):</label>
+                                {% for role in app.user.roles %}
+                                    {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                    <span class="badge bg-{{ badge_color }}">
+                                        {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                        {{ role_name }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
                                 <label class="font-weight-bold">CIN:</label>
                                 <div>
                                     <h4>{{ app.user.cin }}</h4>
