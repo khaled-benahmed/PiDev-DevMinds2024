@@ -88,40 +88,44 @@ class __TwigTemplate_d7e118f06fd1715c5aed6f342a0ebf3e extends Template
 
         // line 8
         echo "<div class=\"container\">
-    <div class=\"reponse-details\">
-        <h1 class=\"mb-4\">Reponse Details</h1>
+    <div class=\"card\">
+        <div class=\"card-body\">
+            <div class=\"reponse-details\">
+                <h1 class=\"mb-4\">Reponse Details</h1>
 
-        <table class=\"table table-bordered\">
-            <tbody>
-                <tr>
-                    <th scope=\"row\">Id</th>
-                    <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
+                <table class=\"table table-bordered\">
+                    <tbody>
+                        <tr>
+                            <th scope=\"row\">Id</th>
+                            <td>";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18), "html", null, true);
         echo "</td>
-                </tr>
-                <tr>
-                    <th scope=\"row\">Contenu</th>
-                    <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 20, $this->source); })()), "contenuReponse", [], "any", false, false, false, 20), "html", null, true);
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">Contenu</th>
+                            <td>";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 22, $this->source); })()), "contenuReponse", [], "any", false, false, false, 22), "html", null, true);
         echo "</td>
-                </tr>
-                <tr>
-                    <th scope=\"row\">Date</th>
-                    <td>";
-        // line 24
-        ((twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 24, $this->source); })()), "dateReponse", [], "any", false, false, false, 24)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 24, $this->source); })()), "dateReponse", [], "any", false, false, false, 24), "Y-m-d"), "html", null, true))) : (print ("")));
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">Date</th>
+                            <td>";
+        // line 26
+        ((twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 26, $this->source); })()), "dateReponse", [], "any", false, false, false, 26)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 26, $this->source); })()), "dateReponse", [], "any", false, false, false, 26), "Y-m-d"), "html", null, true))) : (print ("")));
         echo "</td>
-                </tr>
-            </tbody>
-        </table>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <div class=\"mt-4\">
-            <a href=\"";
-        // line 30
+                <div class=\"mt-4\">
+                    <a href=\"";
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reponse_index");
         echo "\" class=\"btn btn-secondary\">Back to List</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -155,7 +159,7 @@ class __TwigTemplate_d7e118f06fd1715c5aed6f342a0ebf3e extends Template
      */
     public function getDebugInfo()
     {
-        return array (  123 => 30,  114 => 24,  107 => 20,  100 => 16,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  125 => 32,  116 => 26,  109 => 22,  102 => 18,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -168,28 +172,32 @@ class __TwigTemplate_d7e118f06fd1715c5aed6f342a0ebf3e extends Template
 
 {% block body %}
 <div class=\"container\">
-    <div class=\"reponse-details\">
-        <h1 class=\"mb-4\">Reponse Details</h1>
+    <div class=\"card\">
+        <div class=\"card-body\">
+            <div class=\"reponse-details\">
+                <h1 class=\"mb-4\">Reponse Details</h1>
 
-        <table class=\"table table-bordered\">
-            <tbody>
-                <tr>
-                    <th scope=\"row\">Id</th>
-                    <td>{{ reponse.id }}</td>
-                </tr>
-                <tr>
-                    <th scope=\"row\">Contenu</th>
-                    <td>{{ reponse.contenuReponse }}</td>
-                </tr>
-                <tr>
-                    <th scope=\"row\">Date</th>
-                    <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
-                </tr>
-            </tbody>
-        </table>
+                <table class=\"table table-bordered\">
+                    <tbody>
+                        <tr>
+                            <th scope=\"row\">Id</th>
+                            <td>{{ reponse.id }}</td>
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">Contenu</th>
+                            <td>{{ reponse.contenuReponse }}</td>
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">Date</th>
+                            <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <div class=\"mt-4\">
-            <a href=\"{{ path('app_reponse_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                <div class=\"mt-4\">
+                    <a href=\"{{ path('app_reponse_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

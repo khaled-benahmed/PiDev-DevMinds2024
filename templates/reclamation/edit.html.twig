@@ -5,25 +5,27 @@
 {% endblock %}
 
 {% block body %}
-<center>
-    <div class="container">
-        <div class="content-container">
-            <div class="white-border">
-                <h1>Edit Reclamation</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="content-container">
+                <div class="white-border">
+                    <h1>Edit Reclamation</h1>
 
-                <div class="form-container">
-                    {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
-                </div>
+                    <div class="form-container">
+                        {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
+                    </div>
 
-                <div class="navigation">
-                    <a href="{{ path('app_reclamation_index') }}" class="btn btn-secondary">Back to List</a>
-                </div>
+                    <div class="navigation">
+                        <a href="{{ path('app_reclamation_index') }}" class="btn btn-secondary">Back to List</a>
+                    </div>
 
-                <div class="delete-form">
-                    {{ include('reclamation/_delete_form.html.twig') }}
+                    <div class="delete-form">
+                        {{ include('reclamation/_delete_form.html.twig') }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </center>
+</div>
 {% endblock %}

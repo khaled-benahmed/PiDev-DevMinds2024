@@ -1,35 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reponse index{% endblock %}
+{% block title %}
+    Reponse index
+{% endblock %}
 
 {% block body %}
-    <h1>Reponse index</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1>Reponse index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ContenuReponse</th>
-                <th>DateReponse</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reponse in reponses %}
-            <tr>
-                <td>{{ reponse.id }}</td>
-                <td>{{ reponse.contenuReponse }}</td>
-                <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_reponse_show', {'id': reponse.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ContenuReponse</th>
+                        <th>DateReponse</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for reponse in reponses %}
+                    <tr>
+                        <td>{{ reponse.id }}</td>
+                        <td>{{ reponse.contenuReponse }}</td>
+                        <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
+                        <td>
+                            <a href="{{ path('app_reponse_show', {'id': reponse.id}) }}" class="btn btn-primary">Show</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

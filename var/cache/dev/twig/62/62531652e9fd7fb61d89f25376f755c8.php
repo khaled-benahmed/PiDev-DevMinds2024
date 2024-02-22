@@ -86,7 +86,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
         echo "\">
                         <img src=\"";
         // line 55
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo.png/"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo/"), "html", null, true);
         echo " \" alt=\"NutriFit\" />
                     </a>
                     <button class=\"hamburger hamburger--slider\" type=\"button\">
@@ -892,7 +892,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
             <div class=\"container-fluid\">
                 <div class=\"header-mobile-inner\">
                     <a class=\"logo\" href=\"{{path('app_home')}}\">
-                        <img src=\"{{ asset('./BackOffice/images/logo.png/') }} \" alt=\"NutriFit\" />
+                        <img src=\"{{ asset('./BackOffice/images/logo/') }} \" alt=\"NutriFit\" />
                     </a>
                     <button class=\"hamburger hamburger--slider\" type=\"button\">
                             <span class=\"hamburger-box\">

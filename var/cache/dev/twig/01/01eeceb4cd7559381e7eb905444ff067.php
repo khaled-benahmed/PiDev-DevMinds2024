@@ -87,25 +87,27 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "<center>
-<div class=\"container\">
-    <h1 class=\"mb-4\">Create New Reclamation</h1>
+        echo "<div class=\"container\">
+    <div class=\"card\">
+        <div class=\"card-body\">
+            <h1 class=\"mb-4\">Create New Reclamation</h1>
 
-    <div class=\"form-container\">
-        ";
-        // line 13
+            <div class=\"form-container\">
+                ";
+        // line 14
         echo twig_include($this->env, $context, "reclamation/_form.html.twig");
         echo "
-    </div>
+            </div>
 
-    <div class=\"mt-3\">
-        <a href=\"";
-        // line 17
+            <div class=\"mt-3\">
+                <a href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_index");
         echo "\" class=\"btn btn-secondary\">Back to List</a>
+            </div>
+        </div>
     </div>
 </div>
-</center>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -136,7 +138,7 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  104 => 17,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  105 => 18,  98 => 14,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,19 +150,21 @@ class __TwigTemplate_d33b392126e47bd44791735082d359b3 extends Template
 {% endblock %}
 
 {% block body %}
-<center>
 <div class=\"container\">
-    <h1 class=\"mb-4\">Create New Reclamation</h1>
+    <div class=\"card\">
+        <div class=\"card-body\">
+            <h1 class=\"mb-4\">Create New Reclamation</h1>
 
-    <div class=\"form-container\">
-        {{ include('reclamation/_form.html.twig') }}
-    </div>
+            <div class=\"form-container\">
+                {{ include('reclamation/_form.html.twig') }}
+            </div>
 
-    <div class=\"mt-3\">
-        <a href=\"{{ path('app_reclamation_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+            <div class=\"mt-3\">
+                <a href=\"{{ path('app_reclamation_index') }}\" class=\"btn btn-secondary\">Back to List</a>
+            </div>
+        </div>
     </div>
 </div>
-</center>
 {% endblock %}
 ", "reclamation/new.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation\\new.html.twig");
     }

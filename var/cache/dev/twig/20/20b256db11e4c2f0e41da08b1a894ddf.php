@@ -101,73 +101,77 @@ class __TwigTemplate_7b612729eef8ac76ebc76d6b9bafbe51 extends Template
         echo "\" class=\"btn btn-success mb-3\">Create New Reclamation</a>
         </div>
 
-        ";
-        // line 16
-        if ((twig_length_filter($this->env, (isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 16, $this->source); })())) > 0)) {
-            // line 17
-            echo "            <table class=\"table\">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>NomUserReclamation</th>
-                        <th>TextReclamation</th>
-                        <th>DateReclamation</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ";
-            // line 28
+        <div class=\"card\">
+            <div class=\"card-body\">
+                ";
+        // line 18
+        if ((twig_length_filter($this->env, (isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 18, $this->source); })())) > 0)) {
+            // line 19
+            echo "                    <table class=\"table\">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>NomUserReclamation</th>
+                                <th>TextReclamation</th>
+                                <th>DateReclamation</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ";
+            // line 30
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 28, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["reclamations"]) || array_key_exists("reclamations", $context) ? $context["reclamations"] : (function () { throw new RuntimeError('Variable "reclamations" does not exist.', 30, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["reclamation"]) {
-                // line 29
-                echo "                        <tr>
-                            <td>";
-                // line 30
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 30), "html", null, true);
-                echo "</td>
-                            <td>";
                 // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "NomUserReclamation", [], "any", false, false, false, 31), "html", null, true);
-                echo "</td>
-                            <td>";
+                echo "                                <tr>
+                                    <td>";
                 // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "textReclamation", [], "any", false, false, false, 32), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 32), "html", null, true);
                 echo "</td>
-                            <td>";
+                                    <td>";
                 // line 33
-                ((twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 33)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 33), "Y-m-d"), "html", null, true))) : (print ("")));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "NomUserReclamation", [], "any", false, false, false, 33), "html", null, true);
                 echo "</td>
-                            <td>
-                                <a href=\"";
+                                    <td>";
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "textReclamation", [], "any", false, false, false, 34), "html", null, true);
+                echo "</td>
+                                    <td>";
                 // line 35
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+                ((twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 35)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reclamation"], "dateReclamation", [], "any", false, false, false, 35), "Y-m-d"), "html", null, true))) : (print ("")));
+                echo "</td>
+                                    <td>
+                                        <a href=\"";
+                // line 37
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 37)]), "html", null, true);
                 echo "\" class=\"btn btn-sm btn-primary mr-2\">Show</a>
-                                <a href=\"";
-                // line 36
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                                        <a href=\"";
+                // line 38
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reclamation"], "id", [], "any", false, false, false, 38)]), "html", null, true);
                 echo "\" class=\"btn btn-sm btn-warning\">Edit</a>
-                            </td>
-                        </tr>
-                    ";
+                                    </td>
+                                </tr>
+                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reclamation'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 40
-            echo "                </tbody>
-            </table>
-        ";
+            // line 42
+            echo "                        </tbody>
+                    </table>
+                ";
         } else {
-            // line 43
-            echo "            <div class=\"alert alert-warning\" role=\"alert\">
-                No records found.
-            </div>
-        ";
+            // line 45
+            echo "                    <div class=\"alert alert-warning\" role=\"alert\">
+                        No records found.
+                    </div>
+                ";
         }
-        // line 47
-        echo "    </div>
+        // line 49
+        echo "            </div>
+        </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -198,7 +202,7 @@ class __TwigTemplate_7b612729eef8ac76ebc76d6b9bafbe51 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  170 => 47,  164 => 43,  159 => 40,  149 => 36,  145 => 35,  140 => 33,  136 => 32,  132 => 31,  128 => 30,  125 => 29,  121 => 28,  108 => 17,  106 => 16,  100 => 13,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  172 => 49,  166 => 45,  161 => 42,  151 => 38,  147 => 37,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  127 => 31,  123 => 30,  110 => 19,  108 => 18,  100 => 13,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -218,37 +222,41 @@ class __TwigTemplate_7b612729eef8ac76ebc76d6b9bafbe51 extends Template
             <a href=\"{{ path('app_reclamation_new') }}\" class=\"btn btn-success mb-3\">Create New Reclamation</a>
         </div>
 
-        {% if reclamations|length > 0 %}
-            <table class=\"table\">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>NomUserReclamation</th>
-                        <th>TextReclamation</th>
-                        <th>DateReclamation</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for reclamation in reclamations %}
-                        <tr>
-                            <td>{{ reclamation.id }}</td>
-                            <td>{{ reclamation.NomUserReclamation }}</td>
-                            <td>{{ reclamation.textReclamation }}</td>
-                            <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
-                            <td>
-                                <a href=\"{{ path('app_reclamation_show', {'id': reclamation.id}) }}\" class=\"btn btn-sm btn-primary mr-2\">Show</a>
-                                <a href=\"{{ path('app_reclamation_edit', {'id': reclamation.id}) }}\" class=\"btn btn-sm btn-warning\">Edit</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <div class=\"alert alert-warning\" role=\"alert\">
-                No records found.
+        <div class=\"card\">
+            <div class=\"card-body\">
+                {% if reclamations|length > 0 %}
+                    <table class=\"table\">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>NomUserReclamation</th>
+                                <th>TextReclamation</th>
+                                <th>DateReclamation</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for reclamation in reclamations %}
+                                <tr>
+                                    <td>{{ reclamation.id }}</td>
+                                    <td>{{ reclamation.NomUserReclamation }}</td>
+                                    <td>{{ reclamation.textReclamation }}</td>
+                                    <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                                    <td>
+                                        <a href=\"{{ path('app_reclamation_show', {'id': reclamation.id}) }}\" class=\"btn btn-sm btn-primary mr-2\">Show</a>
+                                        <a href=\"{{ path('app_reclamation_edit', {'id': reclamation.id}) }}\" class=\"btn btn-sm btn-warning\">Edit</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div class=\"alert alert-warning\" role=\"alert\">
+                        No records found.
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
     </div>
 {% endblock %}
 ", "reclamation/index.html.twig", "C:\\Users\\Nour\\OneDrive\\Bureau\\PiDev-DevMinds2024-main (2)\\PiDev-DevMinds2024-main\\templates\\reclamation\\index.html.twig");
