@@ -4,8 +4,6 @@
 
 return [
     'Read_Back_Abonnement' => [[], ['_controller' => 'App\\Controller\\AbonnementController::ReadBackAbonnement'], [], [['text', '/Abonnement/Read_Back']], [], [], []],
-    'Read_Front_Abonnement' => [[], ['_controller' => 'App\\Controller\\AbonnementController::ReadFrontAbonnement'], [], [['text', '/Abonnement/Read_Front']], [], [], []],
-    'Read_More_Front_Abonnement' => [['id'], ['_controller' => 'App\\Controller\\AbonnementController::ReadMoreFrontAbonnement'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/Abonnement/Read_More_Front']], [], [], []],
     'Create_Abonnement' => [[], ['_controller' => 'App\\Controller\\AbonnementController::CreateAbonnement'], [], [['text', '/Abonnement/Create']], [], [], []],
     'Delete_Abonnement' => [['id'], ['_controller' => 'App\\Controller\\AbonnementController::DeleteAbonnement'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/Abonnement/Delete']], [], [], []],
     'Update_Abonnement' => [['id'], ['_controller' => 'App\\Controller\\AbonnementController::UpdateAbonnement'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/Abonnement/Update']], [], [], []],

@@ -24,7 +24,7 @@ class AbonnementType extends AbstractType
                 'class' => CategorieAbonnements::class,
                 'choice_label' => 'nom_categorie',
             ])
-            ->add('Ajouter',SubmitType::class)
+
         ;
     }
 

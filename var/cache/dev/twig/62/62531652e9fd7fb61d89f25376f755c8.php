@@ -59,15 +59,10 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
         // line 12
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-    <!--<link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/LogoBlack.ico"), "html", null, true);
-        echo "\" />-->
-
     ";
-        // line 15
+        // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 42
+        // line 40
         echo "
     <style> </style>
 </head>
@@ -81,12 +76,12 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
             <div class=\"container-fluid\">
                 <div class=\"header-mobile-inner\">
                     <a class=\"logo\" href=\"";
-        // line 54
+        // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">
                         <img src=\"";
-        // line 55
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo/"), "html", null, true);
+        // line 53
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo/logo.png"), "html", null, true);
         echo " \" alt=\"NutriFit\" />
                     </a>
                     <button class=\"hamburger hamburger--slider\" type=\"button\">
@@ -102,7 +97,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                 <ul class=\"navbar-mobile__list list-unstyled\">
                     <li class=\"active\">
                         <a class=\"js-arrow\" href=\"";
-        // line 69
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">
                             <i class=\"fas fa-home\"></i>Home</a>
@@ -125,22 +120,22 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                         <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
                             <li>
                                 <a href=\"";
-        // line 89
+        // line 87
         echo "{path('app_activite_crud_new')}}\">Ajouter Activité</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 92
+        // line 90
         echo "{path('app_activite_crud_index')}}\">Afficher Activités</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 95
+        // line 93
         echo "{path('app_planning_crud_new')}}\">Ajouter Planning</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 98
+        // line 96
         echo "{path('app_planning_crud_index')}}\">Afficher Plannings</a>
                             </li>
                         </ul>
@@ -199,12 +194,12 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"";
-        // line 155
+        // line 153
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">
                 <img src=\"";
-        // line 156
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo/"), "html", null, true);
+        // line 154
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/logo/logo.png"), "html", null, true);
         echo " \" height=\"90\" width=\"100\"  alt=\"NutriFit\" />
             </a>
         </div>
@@ -213,7 +208,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                 <ul class=\"list-unstyled navbar__list\">
                     <li class=\"active\">
                         <a class=\"js-arrow\" href=\"";
-        // line 163
+        // line 161
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">
                             <i class=\"fas fa-home\"></i>Home</a>
@@ -236,22 +231,22 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
                                 <a href=\"";
-        // line 183
+        // line 181
         echo "{path('app_activite_crud_new')}}\">Ajouter Activité</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 186
+        // line 184
         echo "{path('app_activite_crud_index')}}\">Afficher Activités</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 189
+        // line 187
         echo "{path('app_planning_crud_new')}}\">Ajouter Planning</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 192
+        // line 190
         echo "{path('app_planning_crud_index')}}\">Afficher Planning</a>
                             </li>
                         </ul>
@@ -262,26 +257,26 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
                                 <a href=\"";
-        // line 201
+        // line 199
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Create_Abonnement");
         echo "\">Ajouter Abonnement</a>
 
                             </li>
                             <li>
                                 <a href=\"";
-        // line 205
+        // line 203
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Read_Back_Abonnement");
         echo "\">Afficher Abonnements</a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 208
+        // line 206
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_category");
         echo "\">Ajouter Category </a>
                             </li>
                             <li>
                                 <a href=\"";
-        // line 211
+        // line 209
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Read_Back_Category");
         echo "\">Afficher Category</a>
                             </li>
@@ -351,141 +346,12 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                             </button>
                         </form>
                         <div class=\"header-button\">
-                            <div class=\"noti-wrap\">
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-comment-more\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"mess-dropdown js-dropdown\">
-                                        <div class=\"mess__title\">
-                                            <p>You have 2 news message</p>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 289
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-06.jpg"), "html", null, true);
-        echo "\" alt=Michelle Moreno />
 
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Michelle Moreno</h6>
-                                                <p>Have sent a photo</p>
-                                                <span class=\"time\">3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 300
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-04.jpg"), "html", null, true);
-        echo "\"  alt=\"Diane Myers\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Diane Myers</h6>
-                                                <p>You are now connected on message</p>
-                                                <span class=\"time\">Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__footer\">
-                                            <a href=\"#\">View all messages</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-email\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"email-dropdown js-dropdown\">
-                                        <div class=\"email__title\">
-                                            <p>You have 3 New Emails</p>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 323
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-06.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, 3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 333
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-05.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 342
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-04.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, April 12,,2018</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__footer\">
-                                            <a href=\"#\">See all emails</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-notifications\"></i>
-                                    <span class=\"quantity\">3</span>
-                                    <div class=\"notifi-dropdown js-dropdown\">
-                                        <div class=\"notifi__title\">
-                                            <p>You have 3 Notifications</p>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c1 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-email-open\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a email notification</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c2 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-account-box\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Your account has been blocked</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c3 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-file-text\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a new file</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__footer\">
-                                            <a href=\"#\">All notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class=\"account-wrap\">
                                 <div class=\"account-item clearfix js-item-menu\">
                                     <div class=\"image\">
                                         <img src=\"";
-        // line 397
+        // line 281
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-01.jpg"), "html", null, true);
         echo "\"  alt=\"John Doe\" />
                                     </div>
@@ -497,7 +363,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                                             <div class=\"image\">
                                                 <a href=\"#\">
                                                     <img src=\"";
-        // line 406
+        // line 290
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-01.jpg"), "html", null, true);
         echo "\"  alt=\"John Doe\" />
                                                 </a>
@@ -550,9 +416,9 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                     <!-- START WHITE BACKGROUND-->
                     <div class=\"map-data m-b-40\">
                         ";
-        // line 456
+        // line 340
         $this->displayBlock('body', $context, $blocks);
-        // line 459
+        // line 343
         echo "                    </div>
                 </div>
             </div>
@@ -572,9 +438,9 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
 
 </body>
 ";
-        // line 477
+        // line 361
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 508
+        // line 392
         echo "
 </html>
 ";
@@ -605,7 +471,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
 
     }
 
-    // line 15
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -615,61 +481,61 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 16
+        // line 14
         echo "        <!-- Fontfaces CSS-->
         <link href=\"";
-        // line 17
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/css/font-face.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 18
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/mdi-font/css/material-design-iconic-font.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 19
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/font-awesome-5/css/fontawesome-all.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
 
         <!-- Bootstrap CSS-->
         <link href=\"";
-        // line 22
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
 
 
         <!-- Vendor CSS-->
         <link href=\"";
-        // line 26
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/animsition/animsition.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 27
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 28
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/wow/animate.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 29
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/css-hamburgers/hamburgers.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 30
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/slick/slick.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 31
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/select2/select2.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
         <link href=\"";
-        // line 32
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
 
         <!-- Main CSS-->
         <link href=\"";
-        // line 35
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/css/theme.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"all\">
 
@@ -686,7 +552,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
 
     }
 
-    // line 456
+    // line 340
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -696,7 +562,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 457
+        // line 341
         echo "
                         ";
         
@@ -707,7 +573,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
 
     }
 
-    // line 477
+    // line 361
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -717,71 +583,71 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 478
+        // line 362
         echo "    <!-- Jquery JS-->
     <script src=\"";
-        // line 479
+        // line 363
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 480
+        // line 364
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" ></script>
     <!-- Bootstrap JS-->
     <script src=\"";
-        // line 482
+        // line 366
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/popper.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 483
+        // line 367
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/bootstrap.min.js"), "html", null, true);
         echo "\" ></script>
     <!-- Vendor JS-->
     <script src=\"";
-        // line 485
+        // line 369
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/slick/slick.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 486
+        // line 370
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/wow/wow.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 487
+        // line 371
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/animsition/animsition.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 488
+        // line 372
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 489
+        // line 373
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.waypoints.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 490
+        // line 374
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.counterup.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 491
+        // line 375
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/circle-progress/circle-progress.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 492
+        // line 376
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 493
+        // line 377
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/chartjs/Chart.bundle.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 494
+        // line 378
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/select2/select2.min.js"), "html", null, true);
         echo "\" ></script>
 
 
     <!-- Main JS-->
     <script src=\"";
-        // line 498
+        // line 382
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/js/main.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"https://kit.fontawesome.com/a781c8964e.js\" crossorigin=\"anonymous\"></script>
@@ -822,7 +688,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  785 => 498,  778 => 494,  774 => 493,  770 => 492,  766 => 491,  762 => 490,  758 => 489,  754 => 488,  750 => 487,  746 => 486,  742 => 485,  737 => 483,  733 => 482,  728 => 480,  724 => 479,  721 => 478,  711 => 477,  700 => 457,  690 => 456,  673 => 35,  667 => 32,  663 => 31,  659 => 30,  655 => 29,  651 => 28,  647 => 27,  643 => 26,  636 => 22,  630 => 19,  626 => 18,  622 => 17,  619 => 16,  609 => 15,  590 => 12,  578 => 508,  576 => 477,  556 => 459,  554 => 456,  501 => 406,  489 => 397,  431 => 342,  419 => 333,  406 => 323,  380 => 300,  366 => 289,  285 => 211,  279 => 208,  273 => 205,  266 => 201,  255 => 192,  250 => 189,  245 => 186,  240 => 183,  217 => 163,  207 => 156,  203 => 155,  144 => 98,  139 => 95,  134 => 92,  129 => 89,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
+        return array (  651 => 382,  644 => 378,  640 => 377,  636 => 376,  632 => 375,  628 => 374,  624 => 373,  620 => 372,  616 => 371,  612 => 370,  608 => 369,  603 => 367,  599 => 366,  594 => 364,  590 => 363,  587 => 362,  577 => 361,  566 => 341,  556 => 340,  539 => 33,  533 => 30,  529 => 29,  525 => 28,  521 => 27,  517 => 26,  513 => 25,  509 => 24,  502 => 20,  496 => 17,  492 => 16,  488 => 15,  485 => 14,  475 => 13,  456 => 12,  444 => 392,  442 => 361,  422 => 343,  420 => 340,  367 => 290,  355 => 281,  280 => 209,  274 => 206,  268 => 203,  261 => 199,  250 => 190,  245 => 187,  240 => 184,  235 => 181,  212 => 161,  202 => 154,  198 => 153,  139 => 96,  134 => 93,  129 => 90,  124 => 87,  101 => 67,  84 => 53,  80 => 52,  66 => 40,  64 => 13,  60 => 12,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -839,8 +705,6 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
 
     <!-- Title Page-->
     <title>{% block title %}NutriFit Dashboard{% endblock %}</title>
-    <!--<link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('./BackOffice/images/icon/LogoBlack.ico')}}\" />-->
-
     {% block stylesheets %}
         <!-- Fontfaces CSS-->
         <link href=\"{{ asset('./BackOffice/css/font-face.css')}}\" rel=\"stylesheet\" media=\"all\">
@@ -881,7 +745,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
             <div class=\"container-fluid\">
                 <div class=\"header-mobile-inner\">
                     <a class=\"logo\" href=\"{{path('app_home')}}\">
-                        <img src=\"{{ asset('./BackOffice/images/logo/') }} \" alt=\"NutriFit\" />
+                        <img src=\"{{ asset('./BackOffice/images/logo/logo.png') }} \" alt=\"NutriFit\" />
                     </a>
                     <button class=\"hamburger hamburger--slider\" type=\"button\">
                             <span class=\"hamburger-box\">
@@ -982,7 +846,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"{{path('app_home')}}\">
-                <img src=\"{{ asset('./BackOffice/images/logo/') }} \" height=\"90\" width=\"100\"  alt=\"NutriFit\" />
+                <img src=\"{{ asset('./BackOffice/images/logo/logo.png') }} \" height=\"90\" width=\"100\"  alt=\"NutriFit\" />
             </a>
         </div>
         <div class=\"menu-sidebar__content js-scrollbar1\">
@@ -1105,121 +969,7 @@ class __TwigTemplate_650e6e5aa09ebd8288c19c0a88f5e355 extends Template
                             </button>
                         </form>
                         <div class=\"header-button\">
-                            <div class=\"noti-wrap\">
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-comment-more\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"mess-dropdown js-dropdown\">
-                                        <div class=\"mess__title\">
-                                            <p>You have 2 news message</p>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-06.jpg')}}\" alt=Michelle Moreno />
 
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Michelle Moreno</h6>
-                                                <p>Have sent a photo</p>
-                                                <span class=\"time\">3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-04.jpg') }}\"  alt=\"Diane Myers\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Diane Myers</h6>
-                                                <p>You are now connected on message</p>
-                                                <span class=\"time\">Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__footer\">
-                                            <a href=\"#\">View all messages</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-email\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"email-dropdown js-dropdown\">
-                                        <div class=\"email__title\">
-                                            <p>You have 3 New Emails</p>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-06.jpg') }}\"  alt=\"Cynthia Harvey\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, 3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-05.jpg') }}\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-04.jpg') }}\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, April 12,,2018</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__footer\">
-                                            <a href=\"#\">See all emails</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-notifications\"></i>
-                                    <span class=\"quantity\">3</span>
-                                    <div class=\"notifi-dropdown js-dropdown\">
-                                        <div class=\"notifi__title\">
-                                            <p>You have 3 Notifications</p>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c1 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-email-open\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a email notification</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c2 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-account-box\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Your account has been blocked</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c3 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-file-text\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a new file</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__footer\">
-                                            <a href=\"#\">All notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class=\"account-wrap\">
                                 <div class=\"account-item clearfix js-item-menu\">
                                     <div class=\"image\">

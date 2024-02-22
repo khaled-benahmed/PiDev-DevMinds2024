@@ -172,17 +172,23 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "getDateFinA", [], "method", false, false, false, 54), "d/m/Y"), "html", null, true);
             echo "
                 </td>
-               
+               <td>
+                    ";
+            // line 57
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["a"], "categorieAbonnements", [], "any", false, false, false, 57), "getNomCategorie", [], "method", false, false, false, 57), "html", null, true);
+            echo "
+                </td>
+
 
                 <td>
                     <div style=\"text-align: center;\">
                         <a href=\"";
-            // line 60
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Update_Abonnement", ["id" => twig_get_attribute($this->env, $this->source, $context["a"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Update_Abonnement", ["id" => twig_get_attribute($this->env, $this->source, $context["a"], "id", [], "any", false, false, false, 63)]), "html", null, true);
             echo "\" class=\"btn btn-warning mt-2\" type=\"submit\" >Modifier</a>
                         <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Delete_Abonnement", ["id" => twig_get_attribute($this->env, $this->source, $context["a"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Delete_Abonnement", ["id" => twig_get_attribute($this->env, $this->source, $context["a"], "id", [], "any", false, false, false, 64)]), "html", null, true);
             echo "\" class=\"btn btn-danger mt-2\" type=\"submit\" onclick=\"return confirm('Etes vous sure ?')\">Supprimer</a>
                     </div>
                 </td>
@@ -191,7 +197,7 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 66
+            // line 69
             echo "            <tr>
                 <td colspan=\"4\" style=\"text-align: center;\">no records found</td>
             </tr>
@@ -200,7 +206,7 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['a'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 73
         echo "        </tbody>
         <tbody id=\"search\"></tbody>
     </table>
@@ -208,7 +214,7 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
     <div style=\"text-align: center;\">
         <br>
         <a href=\"";
-        // line 76
+        // line 79
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Create_Abonnement");
         echo "\" class=\"btn btn-primary mt-2\" type=\"submit\" style=\"text-align: center;\">Ajouter un abonnement</a>
         <br>
@@ -260,7 +266,7 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  212 => 76,  204 => 70,  195 => 66,  185 => 61,  181 => 60,  172 => 54,  166 => 51,  160 => 48,  154 => 45,  147 => 41,  141 => 38,  137 => 36,  132 => 35,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  218 => 79,  210 => 73,  201 => 69,  191 => 64,  187 => 63,  178 => 57,  172 => 54,  166 => 51,  160 => 48,  154 => 45,  147 => 41,  141 => 38,  137 => 36,  132 => 35,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -320,7 +326,10 @@ class __TwigTemplate_822703bc35d335749823c4fa211e7d7a extends Template
                 <td>
                     {{a.getDateFinA()|date(\"d/m/Y\")}}
                 </td>
-               
+               <td>
+                    {{a.categorieAbonnements.getNomCategorie()}}
+                </td>
+
 
                 <td>
                     <div style=\"text-align: center;\">

@@ -164,11 +164,11 @@ class __TwigTemplate_a6502a92bf9ed6f13a809a597ee8eafe extends Template
             <div class=\"col-sm-10\">
                 ";
         // line 50
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), "categorieAbonnements", [], "any", false, false, false, 50), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), "CategorieAbonnements", [], "any", false, false, false, 50), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                 ";
         // line 51
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "categorieAbonnements", [], "any", false, false, false, 51), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "CategorieAbonnements", [], "any", false, false, false, 51), 'errors');
         echo "
             </div>
         </div>
@@ -180,7 +180,7 @@ class __TwigTemplate_a6502a92bf9ed6f13a809a597ee8eafe extends Template
         echo "\" class=\"mt-2\" >Liste des abonnement</a>
         <br>
         <br>
-
+        <button type=\"submit\" class=\"btn btn-primary\">Ajouter</button>
         ";
         // line 60
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 60, $this->source); })()), 'form_end');
@@ -271,8 +271,8 @@ class __TwigTemplate_a6502a92bf9ed6f13a809a597ee8eafe extends Template
         <div class=\"row mb-3\">
             <label class=\"col-sm-2 col-form-label\">Categorie</label>
             <div class=\"col-sm-10\">
-                {{ form_widget(form.categorieAbonnements,{ 'attr': {'class': 'form-control'} }) }}
-                {{ form_errors(form.categorieAbonnements) }}
+                {{ form_widget(form.CategorieAbonnements,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.CategorieAbonnements) }}
             </div>
         </div>
 
@@ -280,7 +280,7 @@ class __TwigTemplate_a6502a92bf9ed6f13a809a597ee8eafe extends Template
         <a href=\"{{path('Read_Back_Abonnement')}}\" class=\"mt-2\" >Liste des abonnement</a>
         <br>
         <br>
-
+        <button type=\"submit\" class=\"btn btn-primary\">Ajouter</button>
         {{form_end(form)}}
     </div>
 </div>

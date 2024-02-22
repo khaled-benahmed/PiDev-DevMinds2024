@@ -160,17 +160,31 @@ class __TwigTemplate_5a8085b33cb41704d53430d73e78e851 extends Template
                 </div>
             </div>
 
+            <div class=\"row mb-3\">
+                <label class=\"col-sm-2 col-form-label\">Categorie</label>
+                <div class=\"col-sm-10\">
+                    ";
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "CategorieAbonnements", [], "any", false, false, false, 51), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                    ";
+        // line 52
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), "CategorieAbonnements", [], "any", false, false, false, 52), 'errors');
+        echo "
+                </div>
+            </div>
+
             <br>
             <a href=\"";
-        // line 49
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Read_Back_Abonnement");
         echo "\" class=\"mt-2\" >Liste des abonnement</a>
             <br>
             <br>
 
             ";
-        // line 53
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 53, $this->source); })()), 'form_end');
+        // line 61
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -205,7 +219,7 @@ class __TwigTemplate_5a8085b33cb41704d53430d73e78e851 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  173 => 53,  166 => 49,  158 => 44,  154 => 43,  145 => 37,  141 => 36,  132 => 30,  128 => 29,  119 => 23,  115 => 22,  105 => 15,  101 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  187 => 61,  180 => 57,  172 => 52,  168 => 51,  158 => 44,  154 => 43,  145 => 37,  141 => 36,  132 => 30,  128 => 29,  119 => 23,  115 => 22,  105 => 15,  101 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -254,6 +268,14 @@ class __TwigTemplate_5a8085b33cb41704d53430d73e78e851 extends Template
                 <div class=\"col-sm-10\">
                     {{ form_widget(form.date_fin_a,{ 'attr': {'class': 'form-control'} }) }}
                     {{ form_errors(form.date_fin_a) }}
+                </div>
+            </div>
+
+            <div class=\"row mb-3\">
+                <label class=\"col-sm-2 col-form-label\">Categorie</label>
+                <div class=\"col-sm-10\">
+                    {{ form_widget(form.CategorieAbonnements,{ 'attr': {'class': 'form-control'} }) }}
+                    {{ form_errors(form.CategorieAbonnements) }}
                 </div>
             </div>
 
