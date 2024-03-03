@@ -31,15 +31,28 @@
                             {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Speciality'}}) }}
                             {{ form_row(registrationForm.birthday, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Birthday'}}) }}
                             {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control mb-3', 'placeholder': 'CIN'}}) }}
+                            {{ form_row(registrationForm.roles) }}
                         </div>
                     </div>
 
                     <div class="mb-3 form-check">
-                        {{ form_row(registrationForm.agreeTerms, {'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
-                        <label class="form-check-label" for="{{ registrationForm.agreeTerms.vars.id }}">I agree to the terms and conditions</label>
+                        <div class="form-check">
+                            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input', 'id': 'agreeTerms'}}) }}
+                            <label class="form-check-label" for="agreeTerms">I agree to the terms and conditions</label>
+                        </div>
+                        <small class="form-text text-danger">
+                            {{ form_errors(registrationForm.agreeTerms) }}
+                        </small>
                     </div>
+                    
+                            {{ form_row(registrationForm.recaptcha) }} 
+    {# must be the same name of this put on the FormBuilder #}
 
-                    <button type="submit" class="btn btn-primary btn-block mt-4">Register</button>
+                            {{ form_errors(registrationForm.recaptcha) }}
+    {# That will display the error of the captcha to user #}
+
+
+                    <button type="submit" class="btn btn-danger btn-block mt-4">Register</button>
                     {{ form_end(registrationForm) }}
                 </div>
             </div>

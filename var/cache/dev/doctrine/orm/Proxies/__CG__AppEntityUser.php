@@ -67,10 +67,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'birthday', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isVerified'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'birthday', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBlocked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\User' . "\0" . 'authCode'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'birthday', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isVerified'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'birthday', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBlocked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\User' . "\0" . 'authCode'];
     }
 
     /**
@@ -476,6 +476,94 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'isVerified', []);
 
         return parent::isVerified();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIsVerified(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsVerified', []);
+
+        return parent::getIsVerified();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsVerified(bool $isVerified): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsVerified', [$isVerified]);
+
+        parent::setIsVerified($isVerified);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIsBlocked(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsBlocked', []);
+
+        return parent::getIsBlocked();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsBlocked(bool $isBlocked): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsBlocked', [$isBlocked]);
+
+        return parent::setIsBlocked($isBlocked);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isEmailAuthEnabled(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isEmailAuthEnabled', []);
+
+        return parent::isEmailAuthEnabled();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEmailAuthRecipient(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmailAuthRecipient', []);
+
+        return parent::getEmailAuthRecipient();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEmailAuthCode(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmailAuthCode', []);
+
+        return parent::getEmailAuthCode();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setEmailAuthCode(string $authCode): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmailAuthCode', [$authCode]);
+
+        parent::setEmailAuthCode($authCode);
     }
 
 }

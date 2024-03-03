@@ -85,10 +85,10 @@ class __TwigTemplate_4db88b8f18247daa3072f7eb58bd63be extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container-fluid bg-dark text-light py-5\">
+        echo "<div class=\"container py-5\">
     <div class=\"row justify-content-center\">
         <div class=\"col-md-6\">
-            <div class=\"card shadow-lg\">
+            <div class=\"card bg-dark text-light shadow-lg\">
                 <div class=\"card-body text-center\">
                     <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
                     <p class=\"card-text text-muted\">
@@ -157,10 +157,10 @@ class __TwigTemplate_4db88b8f18247daa3072f7eb58bd63be extends Template
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-<div class=\"container-fluid bg-dark text-light py-5\">
+<div class=\"container py-5\">
     <div class=\"row justify-content-center\">
         <div class=\"col-md-6\">
-            <div class=\"card shadow-lg\">
+            <div class=\"card bg-dark text-light shadow-lg\">
                 <div class=\"card-body text-center\">
                     <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
                     <p class=\"card-text text-muted\">
@@ -181,6 +181,8 @@ class __TwigTemplate_4db88b8f18247daa3072f7eb58bd63be extends Template
     </div>
 </div>
 {% endblock %}
+
+
 
 
 ", "reset_password/request.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\reset_password\\request.html.twig");

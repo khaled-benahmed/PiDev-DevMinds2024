@@ -85,21 +85,34 @@ class __TwigTemplate_c91d0ed29e737edcaf0e608debbc49f2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Reset your password</h1>
-
-    ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 8, $this->source); })()), 'form_start');
+        echo "<div class=\"container\">
+    <div class=\"row justify-content-center mt-5\">
+        <div class=\"col-md-6\">
+            <div class=\"card bg-dark text-light shadow\">
+                <div class=\"card-body\">
+                    <h1 class=\"text-center mb-4\">Reset your password</h1>
+                    ";
+        // line 12
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 12, $this->source); })()), 'form_start');
         echo "
-        ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 9, $this->source); })()), "plainPassword", [], "any", false, false, false, 9), 'row');
+                        <div class=\"mb-3\">
+                            ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 14, $this->source); })()), "plainPassword", [], "any", false, false, false, 14), 'row', ["attr" => ["class" => "form-control", "placeholder" => "New Password"]]);
         echo "
-        <button class=\"btn btn-primary\">Reset password</button>
-    ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 11, $this->source); })()), 'form_end');
+                        </div>
+                        <div class=\"d-grid\">
+                            <button class=\"btn btn-primary btn-block\" type=\"submit\">Reset password</button>
+                        </div>
+                    ";
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 19, $this->source); })()), 'form_end');
         echo "
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -130,7 +143,7 @@ class __TwigTemplate_c91d0ed29e737edcaf0e608debbc49f2 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  101 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  109 => 19,  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -140,12 +153,25 @@ class __TwigTemplate_c91d0ed29e737edcaf0e608debbc49f2 extends Template
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-    <h1>Reset your password</h1>
-
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class=\"btn btn-primary\">Reset password</button>
-    {{ form_end(resetForm) }}
+<div class=\"container\">
+    <div class=\"row justify-content-center mt-5\">
+        <div class=\"col-md-6\">
+            <div class=\"card bg-dark text-light shadow\">
+                <div class=\"card-body\">
+                    <h1 class=\"text-center mb-4\">Reset your password</h1>
+                    {{ form_start(resetForm) }}
+                        <div class=\"mb-3\">
+                            {{ form_row(resetForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'New Password'}}) }}
+                        </div>
+                        <div class=\"d-grid\">
+                            <button class=\"btn btn-primary btn-block\" type=\"submit\">Reset password</button>
+                        </div>
+                    {{ form_end(resetForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "reset_password/reset.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\reset_password\\reset.html.twig");
     }

@@ -4,11 +4,23 @@
 
 {% block body %}
 <section class="container my-3 bg-dark">
+    {% for type, messages in app.flashes() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     <div class="row">
         <div class="col">
             <form method="post" class="p-5 rounded shadow-lg">
                 {% if error %}
-                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% if error.messageKey == 'Votre compte a été bloqué par l\'administrateur. Veuillez le contacter pour plus d\'informations.' %}
+                        <div class="alert alert-warning">{{ error.messageKey }}</div>
+                    {% else %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
                 {% endif %}
 
                 {% if app.user %}
@@ -17,10 +29,10 @@
                     </div>
                 {% endif %}
 
-                <h1 class="h3 mb-3 font-weight-normal text-white">Connexion</h1>
+                <h1 class="h3 mb-3 font-weight-normal text-white">Sign in</h1>
                 <label for="inputEmail" class="visually-hidden text-white">Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control bg-dark text-white border-secondary mb-3" placeholder="Email" autocomplete="email" required autofocus>
-                <label for="inputPassword" class="visually-hidden text-white ">Mot de passe</label>
+                <label for="inputPassword" class="visually-hidden text-white ">Password</label>
                 <input type="password" name="password" id="inputPassword" class="form-control bg-dark text-white border-secondary mb-3" placeholder="Mot de passe" autocomplete="current-password" required>
 
                 <input type="hidden" name="_csrf_token"
@@ -29,16 +41,17 @@
 
                 <div class="d-grid gap-2">
                     <button class="btn btn-lg btn-danger" type="submit">
-                        Connexion
+                        Sign in
                     </button>
-                    <a href="{{ path('app_register')}}" class="btn btn-lg btn-secondary">S'inscrire</a>
+                    <a href="{{ path('app_register')}}" class="btn btn-lg btn-secondary">Cancel</a>
                 </div>
                 <div class="text-center mt-3">
-                    <a href="{{ path('app_forgot_password_request') }}" class="text-white">Mot de passe oublié ?</a>
+                    <a href="{{ path('app_forgot_password_request') }}" class="text-white">Forgot you password ?</a>
                 </div>
             </form>
         </div>
     </div>
 </section>
+
 
 {% endblock %}

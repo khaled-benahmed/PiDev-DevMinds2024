@@ -218,6 +218,19 @@ class __TwigTemplate_68e5b870f27f4b1298abaa1a5ef8490b extends Template
         echo "
     </div>
 </div>
+                <div class=\"form-group row\">
+                    <label class=\"col-sm-3 col-form-label font-weight-bold\">Roles:</label>
+                    <div class=\"col-sm-9\">
+                        ";
+        // line 90
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formUser"]) || array_key_exists("formUser", $context) ? $context["formUser"] : (function () { throw new RuntimeError('Variable "formUser" does not exist.', 90, $this->source); })()), "roles", [], "any", false, false, false, 90), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                        ";
+        // line 91
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formUser"]) || array_key_exists("formUser", $context) ? $context["formUser"] : (function () { throw new RuntimeError('Variable "formUser" does not exist.', 91, $this->source); })()), "roles", [], "any", false, false, false, 91), 'errors');
+        echo "
+                    </div>
+                </div>
 
 
                         <!-- Autres champs du formulaire -->
@@ -226,14 +239,14 @@ class __TwigTemplate_68e5b870f27f4b1298abaa1a5ef8490b extends Template
                                 <button type=\"submit\" class=\"btn btn-primary\">Save</button>
                                 
                                 <a href=\"";
-        // line 94
+        // line 101
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_list");
         echo "\" class=\"btn btn-info\">Back to list</a>
                             </div>
                         </div>
                         ";
-        // line 97
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUser"]) || array_key_exists("formUser", $context) ? $context["formUser"] : (function () { throw new RuntimeError('Variable "formUser" does not exist.', 97, $this->source); })()), 'form_end');
+        // line 104
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUser"]) || array_key_exists("formUser", $context) ? $context["formUser"] : (function () { throw new RuntimeError('Variable "formUser" does not exist.', 104, $this->source); })()), 'form_end');
         echo "
                     </div>
                 </div>
@@ -270,7 +283,7 @@ class __TwigTemplate_68e5b870f27f4b1298abaa1a5ef8490b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  236 => 97,  230 => 94,  217 => 84,  213 => 83,  204 => 77,  200 => 76,  191 => 70,  186 => 68,  177 => 62,  173 => 61,  166 => 56,  160 => 54,  158 => 53,  154 => 52,  150 => 51,  141 => 45,  137 => 44,  128 => 38,  124 => 37,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  89 => 17,  85 => 16,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  249 => 104,  243 => 101,  230 => 91,  226 => 90,  217 => 84,  213 => 83,  204 => 77,  200 => 76,  191 => 70,  186 => 68,  177 => 62,  173 => 61,  166 => 56,  160 => 54,  158 => 53,  154 => 52,  150 => 51,  141 => 45,  137 => 44,  128 => 38,  124 => 37,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  89 => 17,  85 => 16,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -361,6 +374,13 @@ class __TwigTemplate_68e5b870f27f4b1298abaa1a5ef8490b extends Template
         {{ form_errors(formUser.isVerified) }}
     </div>
 </div>
+                <div class=\"form-group row\">
+                    <label class=\"col-sm-3 col-form-label font-weight-bold\">Roles:</label>
+                    <div class=\"col-sm-9\">
+                        {{ form_widget(formUser.roles, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(formUser.roles) }}
+                    </div>
+                </div>
 
 
                         <!-- Autres champs du formulaire -->

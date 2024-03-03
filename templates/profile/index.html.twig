@@ -28,13 +28,7 @@
                                 <div>
                                     <h4>{{ app.user.Lastname }}</h4>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="font-weight-bold">Username:</label>
-                                <div>
-                                    <h4>{{ app.user.username }}</h4>
-                                </div>
-                            </div>                            
+                            </div>                       
                             <div class="form-group">
                                 <label class="font-weight-bold">City:</label>
                                 <div>
@@ -74,6 +68,7 @@
                                 <a href="{{ path('profile_edit') }}" class="btn btn-danger">
                                     <i class="fa fa-magic"></i>&nbsp;
                                     Edit
+                                    <a href="{{ path('app_home') }}" class="btn btn-info ml-2">Back to home</a>
                                 </a>
                             </div>
                         </div>

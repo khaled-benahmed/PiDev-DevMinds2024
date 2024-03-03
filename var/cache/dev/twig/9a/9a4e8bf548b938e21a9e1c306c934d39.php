@@ -87,8 +87,11 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         // line 6
         echo "    <div class=\"container mx-auto py-4\">
         <h1 class=\"text-xl font-semibold mb-2\">Liste des utilisateurs</h1>
+        <div class=\"mb-3\">
+            <input type=\"text\" id=\"searchInput\" class=\"form-control\" placeholder=\"Rechercher...\">
+        </div>
         <div class=\"overflow-x-auto\">
-            <table class=\"table-auto w-full border-collapse text-sm\">
+            <table id=\"userTable\" class=\"table-auto w-full border-collapse text-sm\">
                 <thead>
                     <tr>
                         <th class=\"px-3 py-2 bg-gray-200\">ID</th>
@@ -104,51 +107,51 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                 </thead>
                 <tbody>
                     ";
-        // line 24
+        // line 27
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 27, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 25
+            // line 28
             echo "                        <tr>
                             <td class=\"border px-3 py-2\">";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 26), "html", null, true);
-            echo "</td>
-                            <td class=\"border px-3 py-2\">";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                            <td class=\"border px-3 py-2\">";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 28), "html", null, true);
-            echo "</td>
-                            <td class=\"border px-3 py-2\">";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                             <td class=\"border px-3 py-2\">";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 30), "html", null, true);
+            echo "</td>
+                            <td class=\"border px-3 py-2\">";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 31), "html", null, true);
+            echo "</td>
+                            <td class=\"border px-3 py-2\">";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 32), "html", null, true);
+            echo "</td>
+                            <td class=\"border px-3 py-2\">";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
                             <td class=\"border px-3 py-2\">
                                ";
-            // line 32
+            // line 35
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 32));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 35));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 33
+                // line 36
                 echo "                                    ";
                 $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
-                // line 34
+                // line 37
                 echo "                                    <span class=\"badge bg-";
-                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 34, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 37, $this->source); })()), "html", null, true);
                 echo "\">
                                         ";
-                // line 35
+                // line 38
                 $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
-                // line 36
+                // line 39
                 echo "                                        ";
-                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 36, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 39, $this->source); })()), "html", null, true);
                 echo "
                                     </span>
                                 ";
@@ -156,65 +159,58 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 39
+            // line 42
             echo "                            </td>
                             <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
-            // line 41
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isVerified", [], "any", false, false, false, 41)) ? ("checked") : (""));
-            echo ">
-                            </td>
-                             <td class=\"border px-3 py-2\">
-                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
             // line 44
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 44)) ? ("checked") : (""));
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isVerified", [], "any", false, false, false, 44)) ? ("checked") : (""));
             echo ">
                             </td>
                             <td class=\"border px-3 py-2\">
-                                <div class=\"dropdown\">
-                                    <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                        Actions
-                                    </button>
-                                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                                        <a class=\"dropdown-item\" href=\"";
+                                <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
+            // line 47
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 47)) ? ("checked") : (""));
+            echo ">
+                            </td>
+                            <td class=\"border px-3 py-2\">
+                                <div class=\"btn-group\" role=\"group\">
+                                    <a class=\"btn btn-outline-primary btn-sm\" href=\"";
+            // line 51
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 51)]), "html", null, true);
+            echo "\" title=\"Modifier\"><i class=\"fas fa-edit\"></i></a>
+                                    <a class=\"btn btn-outline-info btn-sm\" href=\"";
             // line 52
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52)]), "html", null, true);
-            echo "\">Modifier</a>
-                                        <a class=\"dropdown-item\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            echo "\" title=\"Afficher\"><i class=\"fas fa-eye\"></i></a>
+                                    <form action=\"";
             // line 53
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53)]), "html", null, true);
-            echo "\">Afficher</a>
-                                       <form action=\"";
-            // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 54)]), "html", null, true);
-            echo "\" method=\"post\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53)]), "html", null, true);
+            echo "\" method=\"post\" class=\"d-inline\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
                                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                                         <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 56
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56))), "html", null, true);
+            // line 55
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 55))), "html", null, true);
             echo "\">
-                                          <button type=\"submit\" class=\"btn btn-danger\">Supprimer l'utilisateur</button>
-                                        </form>
-
-                                        ";
-            // line 60
-            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 60)) {
-                // line 61
-                echo "                                            <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61)]), "html", null, true);
-                echo "\">Débloquer</a>
-                                        ";
+                                        <button type=\"submit\" class=\"btn btn-outline-danger btn-sm\" title=\"Supprimer\"><i class=\"fas fa-trash\"></i></button>
+                                    </form>
+                                    ";
+            // line 58
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 58)) {
+                // line 59
+                echo "                                        <a class=\"btn btn-outline-success btn-sm\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+                echo "\" title=\"Débloquer\"><i class=\"fas fa-lock-open\"></i></a>
+                                    ";
             } else {
-                // line 63
-                echo "                                           <a class=\"dropdown-item\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 63)]), "html", null, true);
-                echo "\">Bloquer</a>
-
-                                        ";
+                // line 61
+                echo "                                        <a class=\"btn btn-outline-warning btn-sm\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+                echo "\" title=\"Bloquer\"><i class=\"fas fa-lock\"></i></a>
+                                    ";
             }
-            // line 66
-            echo "                                    </div>
-                                </div>
+            // line 63
+            echo "                                </div>
                             </td>
                         </tr>
                     ";
@@ -222,11 +218,26 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 67
         echo "                </tbody>
             </table>
         </div>
     </div>
+
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script>
+        \$(document).ready(function() {
+            var table = \$('#userTable');
+            var input = \$('#searchInput');
+
+            input.on('keyup', function() {
+                var searchText = \$(this).val().toLowerCase();
+                \$('tbody tr').filter(function() {
+                    \$(this).toggle(\$(this).text().toLowerCase().indexOf(searchText) > -1);
+                });
+            });
+        });
+    </script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -257,7 +268,7 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
      */
     public function getDebugInfo()
     {
-        return array (  226 => 71,  216 => 66,  209 => 63,  203 => 61,  201 => 60,  194 => 56,  189 => 54,  185 => 53,  181 => 52,  170 => 44,  164 => 41,  160 => 39,  150 => 36,  148 => 35,  143 => 34,  140 => 33,  136 => 32,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  222 => 67,  213 => 63,  207 => 61,  201 => 59,  199 => 58,  193 => 55,  188 => 53,  184 => 52,  180 => 51,  173 => 47,  167 => 44,  163 => 42,  153 => 39,  151 => 38,  146 => 37,  143 => 36,  139 => 35,  134 => 33,  130 => 32,  126 => 31,  122 => 30,  118 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -269,8 +280,11 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
 {% block body %}
     <div class=\"container mx-auto py-4\">
         <h1 class=\"text-xl font-semibold mb-2\">Liste des utilisateurs</h1>
+        <div class=\"mb-3\">
+            <input type=\"text\" id=\"searchInput\" class=\"form-control\" placeholder=\"Rechercher...\">
+        </div>
         <div class=\"overflow-x-auto\">
-            <table class=\"table-auto w-full border-collapse text-sm\">
+            <table id=\"userTable\" class=\"table-auto w-full border-collapse text-sm\">
                 <thead>
                     <tr>
                         <th class=\"px-3 py-2 bg-gray-200\">ID</th>
@@ -304,30 +318,23 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
                             <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled {{ user.isVerified ? \"checked\" : \"\" }}>
                             </td>
-                             <td class=\"border px-3 py-2\">
+                            <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled {{ user.isBlocked ? \"checked\" : \"\" }}>
                             </td>
                             <td class=\"border px-3 py-2\">
-                                <div class=\"dropdown\">
-                                    <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                        Actions
-                                    </button>
-                                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                                        <a class=\"dropdown-item\" href=\"{{path('admin_users_edit', {'id': user.id})}}\">Modifier</a>
-                                        <a class=\"dropdown-item\" href=\"{{path('admin_users_show', {'id': user.id})}}\">Afficher</a>
-                                       <form action=\"{{ path('admin_users_delete', {'id': user.id}) }}\" method=\"post\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
+                                <div class=\"btn-group\" role=\"group\">
+                                    <a class=\"btn btn-outline-primary btn-sm\" href=\"{{ path('admin_users_edit', {'id': user.id}) }}\" title=\"Modifier\"><i class=\"fas fa-edit\"></i></a>
+                                    <a class=\"btn btn-outline-info btn-sm\" href=\"{{ path('admin_users_show', {'id': user.id}) }}\" title=\"Afficher\"><i class=\"fas fa-eye\"></i></a>
+                                    <form action=\"{{ path('admin_users_delete', {'id': user.id}) }}\" method=\"post\" class=\"d-inline\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
                                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                                         <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
-                                          <button type=\"submit\" class=\"btn btn-danger\">Supprimer l'utilisateur</button>
-                                        </form>
-
-                                        {% if user.isBlocked %}
-                                            <a class=\"dropdown-item\" href=\"{{ path('admin_users_user_unblock', {'id': user.id}) }}\">Débloquer</a>
-                                        {% else %}
-                                           <a class=\"dropdown-item\" href=\"{{ path('admin_users_block_user', {'id': user.id}) }}\">Bloquer</a>
-
-                                        {% endif %}
-                                    </div>
+                                        <button type=\"submit\" class=\"btn btn-outline-danger btn-sm\" title=\"Supprimer\"><i class=\"fas fa-trash\"></i></button>
+                                    </form>
+                                    {% if user.isBlocked %}
+                                        <a class=\"btn btn-outline-success btn-sm\" href=\"{{ path('admin_users_user_unblock', {'id': user.id}) }}\" title=\"Débloquer\"><i class=\"fas fa-lock-open\"></i></a>
+                                    {% else %}
+                                        <a class=\"btn btn-outline-warning btn-sm\" href=\"{{ path('admin_users_block_user', {'id': user.id}) }}\" title=\"Bloquer\"><i class=\"fas fa-lock\"></i></a>
+                                    {% endif %}
                                 </div>
                             </td>
                         </tr>
@@ -336,6 +343,21 @@ class __TwigTemplate_6e5e154c1460a2af2e2a86c00d7280cb extends Template
             </table>
         </div>
     </div>
+
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script>
+        \$(document).ready(function() {
+            var table = \$('#userTable');
+            var input = \$('#searchInput');
+
+            input.on('keyup', function() {
+                var searchText = \$(this).val().toLowerCase();
+                \$('tbody tr').filter(function() {
+                    \$(this).toggle(\$(this).text().toLowerCase().indexOf(searchText) > -1);
+                });
+            });
+        });
+    </script>
 {% endblock %}
 ", "admin/listUsers.html.twig", "C:\\wamp64\\www\\piDev-DevMinds2024\\templates\\admin\\listUsers.html.twig");
     }

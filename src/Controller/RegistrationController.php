@@ -35,6 +35,9 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $defaultProfilePicture = 'profile_picture.webp';
+            $user->setImage($defaultProfilePicture);
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(

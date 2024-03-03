@@ -13,6 +13,8 @@
         "doctrine/orm": "^2.18",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.25",
+        "scheb/2fa-bundle": "^6.12",
+        "scheb/2fa-email": "^6.12",
         "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
         "symfony/doctrine-messenger": "5.4.*",
@@ -42,7 +44,8 @@
         "symfonycasts/reset-password-bundle": "^1.20",
         "symfonycasts/verify-email-bundle": "^1.16",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "victor-prdh/recaptcha-bundle": "^1.8"
     },
     "config": {
         "allow-plugins": {

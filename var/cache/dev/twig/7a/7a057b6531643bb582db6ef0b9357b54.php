@@ -226,13 +226,18 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     </a>
                     <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                         <li>
-                            <a href=\"#\">Ajouter Utilisateur</a>
-                        </li>
-                        <li>
                             <a href=\"";
-            // line 174
+            // line 171
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_list");
             echo "\">Afficher Utilisateurs</a>
+                        </li>
+                    </ul>
+                    <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
+                        <li>
+                            <a href=\"";
+            // line 176
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_statistics");
+            echo "\">Statistiques</a>
                         </li>
                     </ul>
                 </li>
@@ -243,22 +248,22 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                         <li>
                             <a href=\"";
-            // line 184
+            // line 186
             echo "\">Ajouter Activité</a>
                         </li>
                         <li>
                             <a href=\"";
-            // line 187
+            // line 189
             echo "\">Afficher Activités</a>
                         </li>
                         <li>
                             <a href=\"";
-            // line 190
+            // line 192
             echo "\">Ajouter Planning</a>
                         </li>
                         <li>
                             <a href=\"";
-            // line 193
+            // line 195
             echo "\">Afficher Planning</a>
                         </li>
                     </ul>
@@ -319,9 +324,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                             </li>
                         </ul>
                     </li>
-                                    ";
+                  ";
         }
-        // line 254
+        // line 256
         echo "
                 </ul>
             </nav>
@@ -343,195 +348,74 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                             </button>
                         </form>
                         <div class=\"header-button\">
-                            <div class=\"noti-wrap\">
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-comment-more\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"mess-dropdown js-dropdown\">
-                                        <div class=\"mess__title\">
-                                            <p>You have 2 news message</p>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 285
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-06.jpg"), "html", null, true);
-        echo "\" alt=Michelle Moreno />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Michelle Moreno</h6>
-                                                <p>Have sent a photo</p>
-                                                <span class=\"time\">3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 296
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-04.jpg"), "html", null, true);
-        echo "\"  alt=\"Diane Myers\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Diane Myers</h6>
-                                                <p>You are now connected on message</p>
-                                                <span class=\"time\">Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__footer\">
-                                            <a href=\"#\">View all messages</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-email\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"email-dropdown js-dropdown\">
-                                        <div class=\"email__title\">
-                                            <p>You have 3 New Emails</p>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 319
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-06.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, 3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 329
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-05.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"";
-        // line 338
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/images/icon/avatar-04.jpg"), "html", null, true);
-        echo "\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, April 12,,2018</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__footer\">
-                                            <a href=\"#\">See all emails</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-notifications\"></i>
-                                    <span class=\"quantity\">3</span>
-                                    <div class=\"notifi-dropdown js-dropdown\">
-                                        <div class=\"notifi__title\">
-                                            <p>You have 3 Notifications</p>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c1 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-email-open\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a email notification</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c2 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-account-box\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Your account has been blocked</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c3 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-file-text\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a new file</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__footer\">
-                                            <a href=\"#\">All notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            
                             </div>
                            <div class=\"account-wrap\">
                 <div class=\"account-item clearfix js-item-menu\">
-                     <div class=\"image\">
-                  <img src=\"";
-        // line 393
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 393, $this->source); })()), "user", [], "any", false, false, false, 393), "image", [], "any", false, false, false, 393))), "html", null, true);
+
+    <div class=\"image\">
+      
+            <img src=\"";
+        // line 284
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 284, $this->source); })()), "user", [], "any", false, false, false, 284), "image", [], "any", false, false, false, 284))), "html", null, true);
         echo "\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 393, $this->source); })()), "user", [], "any", false, false, false, 393), "image", [], "any", false, false, false, 393), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 284, $this->source); })()), "user", [], "any", false, false, false, 284), "image", [], "any", false, false, false, 284), "html", null, true);
         echo "\" />
-                 </div>
-                <div class=\"content\">
-                    <a class=\"js-acc-btn\" href=\"#\">";
-        // line 396
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 396, $this->source); })()), "user", [], "any", false, false, false, 396), "firstname", [], "any", false, false, false, 396), "html", null, true);
+      
+            <!-- Afficher une image par défaut ou un texte alternatif si l'utilisateur n'a pas d'image -->
+            <img src=\"";
+        // line 287
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/default-image.png"), "html", null, true);
+        echo "\" alt=\"Default Image\" />
+    
+    </div>
+    <div class=\"content\">
+        <a class=\"js-acc-btn\" href=\"#\">";
+        // line 291
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 291, $this->source); })()), "user", [], "any", false, false, false, 291), "firstname", [], "any", false, false, false, 291), "html", null, true);
         echo "</a>
-                </div>
+    </div>
+
                 <div class=\"account-dropdown js-dropdown\">
                     <div class=\"info clearfix\">
                 <div class=\"image\">   
                         <img src=\"";
-        // line 401
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 401, $this->source); })()), "user", [], "any", false, false, false, 401), "image", [], "any", false, false, false, 401))), "html", null, true);
+        // line 297
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 297, $this->source); })()), "user", [], "any", false, false, false, 297), "image", [], "any", false, false, false, 297))), "html", null, true);
         echo "\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 401, $this->source); })()), "user", [], "any", false, false, false, 401), "image", [], "any", false, false, false, 401), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 297, $this->source); })()), "user", [], "any", false, false, false, 297), "image", [], "any", false, false, false, 297), "html", null, true);
         echo "\" />
                 </div>
                 <div class=\"content\">
                     <h5 class=\"name\">
                         <a href=\"#\">";
-        // line 405
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 405, $this->source); })()), "user", [], "any", false, false, false, 405), "firstname", [], "any", false, false, false, 405), "html", null, true);
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 405, $this->source); })()), "user", [], "any", false, false, false, 405), "lastname", [], "any", false, false, false, 405), "html", null, true);
+        // line 301
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 301, $this->source); })()), "user", [], "any", false, false, false, 301), "firstname", [], "any", false, false, false, 301), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 301, $this->source); })()), "user", [], "any", false, false, false, 301), "lastname", [], "any", false, false, false, 301), "html", null, true);
         echo "</a>
                     </h5>
                     <span class=\"email\">";
-        // line 407
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 407, $this->source); })()), "user", [], "any", false, false, false, 407), "email", [], "any", false, false, false, 407), "html", null, true);
+        // line 303
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 303, $this->source); })()), "user", [], "any", false, false, false, 303), "email", [], "any", false, false, false, 303), "html", null, true);
         echo "</span>
                 </div>
             </div>
+
             <div class=\"account-dropdown__body\">
     <div class=\"account-dropdown__item\">
         <a href=\"";
-        // line 412
+        // line 309
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
         echo "\">
 <i class=\"bi bi-person text-primary\"></i> Profile
         </a>
     </div>
     
-    <div class=\"account-dropdown__item\">
-        <a href=\"#\">
-            <i class=\"bi bi-cash\"></i> Billing
-        </a>
-    </div>
+    
 </div>
 <div class=\"account-dropdown__footer\">
     <a href=\"";
-        // line 424
+        // line 317
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">
         <i class=\"bi bi-power\"></i> Logout
@@ -562,9 +446,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <!-- START WHITE BACKGROUND-->
                     <div class=\"map-data m-b-40\">
                         ";
-        // line 452
+        // line 345
         $this->displayBlock('body', $context, $blocks);
-        // line 455
+        // line 348
         echo "                    </div>
                 </div>
             </div>
@@ -584,9 +468,9 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
 </body>
 ";
-        // line 473
+        // line 366
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 504
+        // line 397
         echo "
 </html>
 ";
@@ -698,7 +582,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
     }
 
-    // line 452
+    // line 345
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -708,7 +592,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 453
+        // line 346
         echo "
                         ";
         
@@ -719,7 +603,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
 
     }
 
-    // line 473
+    // line 366
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -729,71 +613,71 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 474
+        // line 367
         echo "    <!-- Jquery JS-->
     <script src=\"";
-        // line 475
+        // line 368
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 476
+        // line 369
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\" ></script>
     <!-- Bootstrap JS-->
     <script src=\"";
-        // line 478
+        // line 371
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/popper.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 479
+        // line 372
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-4.1/bootstrap.min.js"), "html", null, true);
         echo "\" ></script>
     <!-- Vendor JS-->
     <script src=\"";
-        // line 481
+        // line 374
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/slick/slick.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 482
+        // line 375
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/wow/wow.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 483
+        // line 376
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/animsition/animsition.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 484
+        // line 377
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 485
+        // line 378
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.waypoints.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 486
+        // line 379
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/counter-up/jquery.counterup.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 487
+        // line 380
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/circle-progress/circle-progress.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 488
+        // line 381
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 489
+        // line 382
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/chartjs/Chart.bundle.min.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 490
+        // line 383
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/vendor/select2/select2.min.js"), "html", null, true);
         echo "\" ></script>
 
 
     <!-- Main JS-->
     <script src=\"";
-        // line 494
+        // line 387
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./BackOffice/js/main.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"https://kit.fontawesome.com/a781c8964e.js\" crossorigin=\"anonymous\"></script>
@@ -834,7 +718,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
      */
     public function getDebugInfo()
     {
-        return array (  797 => 494,  790 => 490,  786 => 489,  782 => 488,  778 => 487,  774 => 486,  770 => 485,  766 => 484,  762 => 483,  758 => 482,  754 => 481,  749 => 479,  745 => 478,  740 => 476,  736 => 475,  733 => 474,  723 => 473,  712 => 453,  702 => 452,  685 => 35,  679 => 32,  675 => 31,  671 => 30,  667 => 29,  663 => 28,  659 => 27,  655 => 26,  648 => 22,  642 => 19,  638 => 18,  634 => 17,  631 => 16,  621 => 15,  602 => 12,  590 => 504,  588 => 473,  568 => 455,  566 => 452,  535 => 424,  520 => 412,  512 => 407,  506 => 405,  497 => 401,  489 => 396,  481 => 393,  423 => 338,  411 => 329,  398 => 319,  372 => 296,  358 => 285,  325 => 254,  262 => 193,  257 => 190,  252 => 187,  247 => 184,  234 => 174,  223 => 165,  221 => 164,  214 => 160,  204 => 153,  200 => 152,  141 => 95,  136 => 92,  131 => 89,  126 => 86,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
+        return array (  681 => 387,  674 => 383,  670 => 382,  666 => 381,  662 => 380,  658 => 379,  654 => 378,  650 => 377,  646 => 376,  642 => 375,  638 => 374,  633 => 372,  629 => 371,  624 => 369,  620 => 368,  617 => 367,  607 => 366,  596 => 346,  586 => 345,  569 => 35,  563 => 32,  559 => 31,  555 => 30,  551 => 29,  547 => 28,  543 => 27,  539 => 26,  532 => 22,  526 => 19,  522 => 18,  518 => 17,  515 => 16,  505 => 15,  486 => 12,  474 => 397,  472 => 366,  452 => 348,  450 => 345,  419 => 317,  408 => 309,  399 => 303,  393 => 301,  384 => 297,  375 => 291,  368 => 287,  360 => 284,  330 => 256,  267 => 195,  262 => 192,  257 => 189,  252 => 186,  239 => 176,  231 => 171,  223 => 165,  221 => 164,  214 => 160,  204 => 153,  200 => 152,  141 => 95,  136 => 92,  131 => 89,  126 => 86,  106 => 69,  89 => 55,  85 => 54,  71 => 42,  69 => 15,  64 => 13,  60 => 12,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -1009,10 +893,12 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     </a>
                     <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                         <li>
-                            <a href=\"#\">Ajouter Utilisateur</a>
-                        </li>
-                        <li>
                             <a href=\"{{ path('admin_users_list') }}\">Afficher Utilisateurs</a>
+                        </li>
+                    </ul>
+                    <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
+                        <li>
+                            <a href=\"{{ path('admin_users_statistics') }}\">Statistiques</a>
                         </li>
                     </ul>
                 </li>
@@ -1091,7 +977,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                             </li>
                         </ul>
                     </li>
-                                    {% endif %}
+                  {% endif %}
 
                 </ul>
             </nav>
@@ -1113,129 +999,23 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                             </button>
                         </form>
                         <div class=\"header-button\">
-                            <div class=\"noti-wrap\">
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-comment-more\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"mess-dropdown js-dropdown\">
-                                        <div class=\"mess__title\">
-                                            <p>You have 2 news message</p>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-06.jpg')}}\" alt=Michelle Moreno />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Michelle Moreno</h6>
-                                                <p>Have sent a photo</p>
-                                                <span class=\"time\">3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-04.jpg') }}\"  alt=\"Diane Myers\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <h6>Diane Myers</h6>
-                                                <p>You are now connected on message</p>
-                                                <span class=\"time\">Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"mess__footer\">
-                                            <a href=\"#\">View all messages</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-email\"></i>
-                                    <span class=\"quantity\">1</span>
-                                    <div class=\"email-dropdown js-dropdown\">
-                                        <div class=\"email__title\">
-                                            <p>You have 3 New Emails</p>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-06.jpg') }}\"  alt=\"Cynthia Harvey\" />
-
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, 3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-05.jpg') }}\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, Yesterday</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__item\">
-                                            <div class=\"image img-cir img-40\">
-                                                <img src=\"{{ asset('./BackOffice/images/icon/avatar-04.jpg') }}\"  alt=\"Cynthia Harvey\" />
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Meeting about new dashboard...</p>
-                                                <span>Cynthia Harvey, April 12,,2018</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"email__footer\">
-                                            <a href=\"#\">See all emails</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"noti__item js-item-menu\">
-                                    <i class=\"zmdi zmdi-notifications\"></i>
-                                    <span class=\"quantity\">3</span>
-                                    <div class=\"notifi-dropdown js-dropdown\">
-                                        <div class=\"notifi__title\">
-                                            <p>You have 3 Notifications</p>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c1 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-email-open\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a email notification</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c2 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-account-box\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>Your account has been blocked</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__item\">
-                                            <div class=\"bg-c3 img-cir img-40\">
-                                                <i class=\"zmdi zmdi-file-text\"></i>
-                                            </div>
-                                            <div class=\"content\">
-                                                <p>You got a new file</p>
-                                                <span class=\"date\">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class=\"notifi__footer\">
-                                            <a href=\"#\">All notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            
                             </div>
                            <div class=\"account-wrap\">
                 <div class=\"account-item clearfix js-item-menu\">
-                     <div class=\"image\">
-                  <img src=\"{{ asset('uploads/' ~ app.user.image) }}\" alt=\"{{ app.user.image }}\" />
-                 </div>
-                <div class=\"content\">
-                    <a class=\"js-acc-btn\" href=\"#\">{{ app.user.firstname }}</a>
-                </div>
+
+    <div class=\"image\">
+      
+            <img src=\"{{ asset('uploads/' ~ app.user.image) }}\" alt=\"{{ app.user.image }}\" />
+      
+            <!-- Afficher une image par défaut ou un texte alternatif si l'utilisateur n'a pas d'image -->
+            <img src=\"{{ asset('uploads/default-image.png') }}\" alt=\"Default Image\" />
+    
+    </div>
+    <div class=\"content\">
+        <a class=\"js-acc-btn\" href=\"#\">{{ app.user.firstname }}</a>
+    </div>
+
                 <div class=\"account-dropdown js-dropdown\">
                     <div class=\"info clearfix\">
                 <div class=\"image\">   
@@ -1248,6 +1028,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
                     <span class=\"email\">{{ app.user.email }}</span>
                 </div>
             </div>
+
             <div class=\"account-dropdown__body\">
     <div class=\"account-dropdown__item\">
         <a href=\"{{ path('profile') }}\">
@@ -1255,11 +1036,7 @@ class __TwigTemplate_1a78d342fe72949f9eaec07b9b6cbf5e extends Template
         </a>
     </div>
     
-    <div class=\"account-dropdown__item\">
-        <a href=\"#\">
-            <i class=\"bi bi-cash\"></i> Billing
-        </a>
-    </div>
+    
 </div>
 <div class=\"account-dropdown__footer\">
     <a href=\"{{ path('app_logout') }}\">

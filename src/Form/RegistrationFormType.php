@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType; 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use VictorPrdh\RecaptchaBundle\Form\ReCaptchaType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -86,8 +87,18 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => 'City'
             ])
-            
 
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                    'Abonné(e)' => 'ROLE_USER',
+                    'Coach' => 'ROLE_COACH',
+                    'Nutritionist' => 'ROLE_NUTRITIONIST',
+                ],
+                'multiple' => true,
+                'expanded' => true,
+                'label' => 'I want to sign up as a :',
+            ])
+            
 
             ->add('cin', TextType::class, [
                 'attr' => [
@@ -101,11 +112,11 @@ class RegistrationFormType extends AbstractType
             ->add('birthday', DateType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                    'type' => 'date', // Ajoutez ceci si vous souhaitez un type de champ "date" HTML5
+                    'type' => 'date', 
                 ],
                 'label' => 'Birthday',
                 'widget' => 'single_text',
-                'html5' => true, // Activez HTML5 pour utiliser le type de champ "date"
+                'html5' => true, 
             ])
             
             ->add('plainPassword', RepeatedType::class, [
@@ -128,6 +139,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add("recaptcha", ReCaptchaType::class);
         ;
     }
 

@@ -106,22 +106,13 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "Lastname", [], "any", false, false, false, 29), "html", null, true);
             echo "</h4>
                                 </div>
-                            </div>
-                            <div class=\"form-group\">
-                                <label class=\"font-weight-bold\">Username:</label>
-                                <div>
-                                    <h4>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "username", [], "any", false, false, false, 35), "html", null, true);
-            echo "</h4>
-                                </div>
-                            </div>                            
+                            </div>                       
                             <div class=\"form-group\">
                                 <label class=\"font-weight-bold\">City:</label>
                                 <div>
                                     <h4>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "city", [], "any", false, false, false, 41), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "city", [], "any", false, false, false, 35), "html", null, true);
             echo "</h4>
                                 </div>
                             </div>                                
@@ -129,31 +120,31 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
                                 <label class=\"font-weight-bold\">Email:</label>
                                 <div>
                                     <h4>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47), "email", [], "any", false, false, false, 47), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "email", [], "any", false, false, false, 41), "html", null, true);
             echo "</h4>
                                 </div>
                             </div>
                             <div class=\"form-group\">
                             <label class=\"font-weight-bold\">Role(s):</label>
                                 ";
-            // line 52
+            // line 46
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "user", [], "any", false, false, false, 52), "roles", [], "any", false, false, false, 52));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "roles", [], "any", false, false, false, 46));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 53
+                // line 47
                 echo "                                    ";
                 $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
-                // line 54
+                // line 48
                 echo "                                    <span class=\"badge bg-";
-                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 54, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 48, $this->source); })()), "html", null, true);
                 echo "\">
                                         ";
-                // line 55
+                // line 49
                 $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
-                // line 56
+                // line 50
                 echo "                                        ";
-                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 56, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 50, $this->source); })()), "html", null, true);
                 echo "
                                     </span>
                                 ";
@@ -161,14 +152,14 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 53
             echo "                            </div>
                             <div class=\"form-group\">
                                 <label class=\"font-weight-bold\">CIN:</label>
                                 <div>
                                     <h4>";
-            // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "cin", [], "any", false, false, false, 63), "html", null, true);
+            // line 57
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57), "cin", [], "any", false, false, false, 57), "html", null, true);
             echo "</h4>
                                 </div>
                             </div>
@@ -176,19 +167,23 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
                                 <label class=\"font-weight-bold\">Birth Date:</label>
                                 <div>
                                     <h4>";
-            // line 69
-            ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "user", [], "any", false, false, false, 69), "birthday", [], "any", false, false, false, 69)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "user", [], "any", false, false, false, 69), "birthday", [], "any", false, false, false, 69), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 63
+            ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "birthday", [], "any", false, false, false, 63)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "birthday", [], "any", false, false, false, 63), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</h4>
                                 </div>
                             </div>
 
                             <div class=\"text-center\">
                                 <a href=\"";
-            // line 74
+            // line 68
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile_edit");
             echo "\" class=\"btn btn-danger\">
                                     <i class=\"fa fa-magic\"></i>&nbsp;
                                     Edit
+                                    <a href=\"";
+            // line 71
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+            echo "\" class=\"btn btn-info ml-2\">Back to home</a>
                                 </a>
                             </div>
                         </div>
@@ -198,7 +193,7 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
         </div>
     ";
         } else {
-            // line 85
+            // line 80
             echo "        <div class=\"text-center mt-5\">
             <p>No records found</p>
         </div>
@@ -233,7 +228,7 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  202 => 85,  188 => 74,  180 => 69,  171 => 63,  165 => 59,  155 => 56,  153 => 55,  148 => 54,  145 => 53,  141 => 52,  133 => 47,  124 => 41,  115 => 35,  106 => 29,  97 => 23,  83 => 12,  78 => 9,  75 => 8,  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  197 => 80,  185 => 71,  179 => 68,  171 => 63,  162 => 57,  156 => 53,  146 => 50,  144 => 49,  139 => 48,  136 => 47,  132 => 46,  124 => 41,  115 => 35,  106 => 29,  97 => 23,  83 => 12,  78 => 9,  75 => 8,  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -268,13 +263,7 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
                                 <div>
                                     <h4>{{ app.user.Lastname }}</h4>
                                 </div>
-                            </div>
-                            <div class=\"form-group\">
-                                <label class=\"font-weight-bold\">Username:</label>
-                                <div>
-                                    <h4>{{ app.user.username }}</h4>
-                                </div>
-                            </div>                            
+                            </div>                       
                             <div class=\"form-group\">
                                 <label class=\"font-weight-bold\">City:</label>
                                 <div>
@@ -314,6 +303,7 @@ class __TwigTemplate_6a3d88399606e4f0a7538786d0891a95 extends Template
                                 <a href=\"{{ path('profile_edit') }}\" class=\"btn btn-danger\">
                                     <i class=\"fa fa-magic\"></i>&nbsp;
                                     Edit
+                                    <a href=\"{{ path('app_home') }}\" class=\"btn btn-info ml-2\">Back to home</a>
                                 </a>
                             </div>
                         </div>

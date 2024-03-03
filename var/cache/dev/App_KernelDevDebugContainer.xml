@@ -22,6 +22,8 @@
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
+      <parameter key="RecaptchaBundle">VictorPrdh\RecaptchaBundle\RecaptchaBundle</parameter>
+      <parameter key="SchebTwoFactorBundle">Scheb\TwoFactorBundle\SchebTwoFactorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +77,14 @@
       <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
         <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
+      </parameter>
+      <parameter key="RecaptchaBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src</parameter>
+        <parameter key="namespace">VictorPrdh\RecaptchaBundle</parameter>
+      </parameter>
+      <parameter key="SchebTwoFactorBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle</parameter>
+        <parameter key="namespace">Scheb\TwoFactorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -212,6 +222,7 @@
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@Recaptcha/form/recaptcha.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\wamp64\www\piDev-DevMinds2024/templates</parameter>
@@ -245,6 +256,19 @@
         </parameter>
       </parameter>
     </parameter>
+    <parameter key="victor_prdh_recaptcha.google_site_key">%env(GOOGLE_RECAPTCHA_SITE_KEY)%</parameter>
+    <parameter key="victor_prdh_recaptcha.google_secret_key">%env(GOOGLE_RECAPTCHA_SECRET_KEY)%</parameter>
+    <parameter key="scheb_two_factor.model_manager_name">null</parameter>
+    <parameter key="scheb_two_factor.security_tokens" type="collection">
+      <parameter>Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken</parameter>
+      <parameter>Symfony\Component\Security\Http\Authenticator\Token\PostAuthenticationToken</parameter>
+    </parameter>
+    <parameter key="scheb_two_factor.ip_whitelist" type="collection"/>
+    <parameter key="scheb_two_factor.email.sender_email">no-reply@test.com</parameter>
+    <parameter key="scheb_two_factor.email.sender_name">no-reply</parameter>
+    <parameter key="scheb_two_factor.email.template">@SchebTwoFactor/Authentication/form.html.twig</parameter>
+    <parameter key="scheb_two_factor.email.digits">6</parameter>
+    <parameter key="scheb_two_factor.trusted_device.enabled">false</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -1245,6 +1269,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument>VictorPrdh\RecaptchaBundle\Form</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\ChangePasswordFormType</argument>
@@ -1257,6 +1282,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>VictorPrdh\RecaptchaBundle\Form\ReCaptchaType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1755,6 +1781,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.cs.yml</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1772,6 +1799,8 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations\victorprdh_recaptcha.de.yaml</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1786,6 +1815,8 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations\victorprdh_recaptcha.en.yaml</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
@@ -1793,6 +1824,8 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations\victorprdh_recaptcha.es.yaml</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1823,6 +1856,8 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations\victorprdh_recaptcha.fr.yaml</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1838,6 +1873,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.hr.yml</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
@@ -1845,6 +1881,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -1863,6 +1900,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations\victorprdh_recaptcha.it.yaml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
@@ -1916,6 +1954,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.nl.yml</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1933,6 +1972,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -1952,6 +1992,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ro.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.ro.yml</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
@@ -1959,6 +2000,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -1966,6 +2008,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.sk.yml</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
@@ -1991,6 +2034,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.sv.yml</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -2008,6 +2052,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.tr.yml</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
@@ -2015,6 +2060,7 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations\SchebTwoFactorBundle.uk.yml</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -2052,6 +2098,8 @@
           <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations</argument>
+          <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations</argument>
           <argument>C:\wamp64\www\piDev-DevMinds2024/translations</argument>
           <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2072,6 +2120,8 @@
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/translations</argument>
+            <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/translations</argument>
             <argument>translations</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2773,6 +2823,54 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.kernel_exception_listener.two_factor.main"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>2</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.form_listener.two_factor.main"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>security.authentication.success</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.provider_preparation_listener.two_factor.main"/>
+          <argument>onLogin</argument>
+        </argument>
+        <argument>9223372036854775807</argument>
+      </call>
+      <call method="addListener">
+        <argument>scheb_two_factor.authentication.require</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.provider_preparation_listener.two_factor.main"/>
+          <argument>onAccessDenied</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>scheb_two_factor.authentication.form</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.provider_preparation_listener.two_factor.main"/>
+          <argument>onTwoFactorForm</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.provider_preparation_listener.two_factor.main"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
         <argument>console.command</argument>
         <argument type="collection">
           <argument type="service_closure" id="monolog.handler.console"/>
@@ -2803,6 +2901,30 @@
           <argument>onConsoleTerminate</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.listener.check_two_factor_code"/>
+          <argument>checkPassport</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.listener.suppress_remember_me"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-63</argument>
+      </call>
+      <call method="addListener">
+        <argument>security.authentication.success</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.authentication_success_event_suppressor"/>
+          <argument>onLogin</argument>
+        </argument>
+        <argument>9223372036854775806</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -3395,7 +3517,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.usHYyl."/>
+      <argument type="service" id=".service_locator.CCy4.in"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3537,7 +3659,7 @@
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
-      <argument type="service" id=".service_locator.19_mNxd"/>
+      <argument type="service" id=".service_locator.lrGgBvN"/>
     </service>
     <service id="validator.expression" class="Symfony\Component\Validator\Constraints\ExpressionValidator">
       <tag name="validator.constraint_validator" alias="validator.expression"/>
@@ -5063,6 +5185,22 @@
         <argument>!Security</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/views</argument>
+        <argument>Recaptcha</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\victor-prdh\recaptcha-bundle\src/Resources/views</argument>
+        <argument>!Recaptcha</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/views</argument>
+        <argument>SchebTwoFactor</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\piDev-DevMinds2024\vendor\scheb\2fa-bundle/Resources/views</argument>
+        <argument>!SchebTwoFactor</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\piDev-DevMinds2024/templates</argument>
       </call>
       <call method="addPath">
@@ -5293,7 +5431,6 @@
     <service id="security.helper" class="Symfony\Component\Security\Core\Security">
       <argument type="service" id=".service_locator.nLgZj7R"/>
     </service>
-    <service id="security.authentication.trust_resolver" class="Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver"/>
     <service id="security.authentication.session_strategy" class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy">
       <argument>migrate</argument>
       <argument type="service" id="security.csrf.token_storage" on-invalid="ignore"/>
@@ -5337,12 +5474,12 @@
     </service>
     <service id="security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter">
       <tag name="security.voter" priority="250"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
     </service>
     <service id="security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\ExpressionVoter">
       <tag name="security.voter" priority="245"/>
       <argument type="service" id="security.expression_language"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
       <argument type="service" id="security.authorization_checker"/>
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
@@ -5490,7 +5627,7 @@
       <argument type="abstract">Provider Key</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
       <argument type="collection">
         <argument type="service" id="security.token_storage"/>
         <argument>enableUsageTracking</argument>
@@ -5548,7 +5685,7 @@
     <service id="security.exception_listener" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" abstract="true">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument type="abstract">Provider-shared Key</argument>
       <argument type="service" id="security.authentication.entry_point" on-invalid="null"/>
@@ -5783,6 +5920,7 @@
       <argument type="collection">
         <argument key="main" type="collection">
           <argument type="service" id="App\Security\UserAuthenticator"/>
+          <argument type="service" id="security.authenticator.two_factor.main"/>
           <argument type="service" id="security.authenticator.remember_me.main"/>
         </argument>
       </argument>
@@ -5835,6 +5973,7 @@
       <argument>null</argument>
       <argument>null</argument>
       <argument type="collection">
+        <argument>two_factor</argument>
         <argument>remember_me</argument>
         <argument>App\Security\UserAuthenticator</argument>
       </argument>
@@ -5875,6 +6014,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.logout.listener.session.main"/>
           <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\AuthenticationTokenCreatedEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.token_created_listener.two_factor.main"/>
+          <argument>onAuthenticationTokenCreated</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -5959,6 +6106,38 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>security.authentication.success</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.authentication.provider_preparation_listener.two_factor.main"/>
+          <argument>onLogin</argument>
+        </argument>
+        <argument>9223372036854775807</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.listener.check_two_factor_code"/>
+          <argument>checkPassport</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.listener.suppress_remember_me"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-63</argument>
+      </call>
+      <call method="addListener">
+        <argument>security.authentication.success</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="scheb_two_factor.security.authentication_success_event_suppressor"/>
+          <argument>onLogin</argument>
+        </argument>
+        <argument>9223372036854775806</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -5986,7 +6165,7 @@
       <argument>main</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.event_dispatcher.main"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
       <argument type="collection">
         <argument type="service" id="security.token_storage"/>
         <argument>enableUsageTracking</argument>
@@ -6013,6 +6192,90 @@
     </service>
     <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+    </service>
+    <service id="security.firewall_config.two_factor.main" class="Scheb\TwoFactorBundle\Security\TwoFactor\TwoFactorFirewallConfig">
+      <tag name="scheb_two_factor.firewall_config" firewall="main"/>
+      <argument type="collection">
+        <argument key="auth_form_path">2fa_login</argument>
+        <argument key="check_path">2fa_login_check</argument>
+        <argument key="post_only">true</argument>
+        <argument key="always_use_default_target_path">false</argument>
+        <argument key="default_target_path">/</argument>
+        <argument key="success_handler">null</argument>
+        <argument key="failure_handler">null</argument>
+        <argument key="authentication_required_handler">null</argument>
+        <argument key="auth_code_parameter_name">_auth_code</argument>
+        <argument key="trusted_parameter_name">_trusted</argument>
+        <argument key="remember_me_sets_trusted">false</argument>
+        <argument key="multi_factor">false</argument>
+        <argument key="prepare_on_login">false</argument>
+        <argument key="prepare_on_access_denied">false</argument>
+        <argument key="enable_csrf">false</argument>
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="csrf_token_id">two_factor</argument>
+        <argument key="provider">null</argument>
+      </argument>
+      <argument>main</argument>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="scheb_two_factor.security.request_data_reader"/>
+    </service>
+    <service id="security.authentication.success_handler.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationSuccessHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+    </service>
+    <service id="security.authentication.failure_handler.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationFailureHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+    </service>
+    <service id="security.authentication.authentication_required_handler.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationRequiredHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+    </service>
+    <service id="security.authentication.kernel_exception_listener.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Firewall\ExceptionListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument>main</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.authentication_required_handler.two_factor.main"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="security.authentication.access_listener.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Firewall\TwoFactorAccessListener">
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="scheb_two_factor.security.access.access_decider"/>
+    </service>
+    <service id="security.authentication.form_listener.two_factor.main" class="Scheb\TwoFactorBundle\Security\TwoFactor\Event\TwoFactorFormListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="security.authentication.provider_preparation_listener.two_factor.main" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderPreparationListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="scheb_two_factor.provider_registry"/>
+      <argument type="service" id="scheb_two_factor.provider_preparation_recorder"/>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+      <argument>main</argument>
+      <argument>false</argument>
+      <argument>false</argument>
+    </service>
+    <service id="security.authentication.token_created_listener.two_factor.main" class="Scheb\TwoFactorBundle\Security\TwoFactor\Event\AuthenticationTokenListener">
+      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
+      <argument>main</argument>
+      <argument type="service" id="scheb_two_factor.condition_registry"/>
+      <argument type="service" id="scheb_two_factor.provider_initiator"/>
+      <argument type="service" id="scheb_two_factor.authentication_context_factory"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="security.authenticator.two_factor.main" class="Scheb\TwoFactorBundle\Security\Http\Authenticator\TwoFactorAuthenticator">
+      <argument type="service" id="security.firewall_config.two_factor.main"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.success_handler.two_factor.main"/>
+      <argument type="service" id="security.authentication.failure_handler.two_factor.main"/>
+      <argument type="service" id="security.authentication.authentication_required_handler.two_factor.main"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
     <service id="security.authenticator.remember_me_signature_hasher" class="Symfony\Component\Security\Core\Signature\SignatureHasher">
       <argument type="service" id="property_accessor"/>
@@ -6123,6 +6386,7 @@
       <tag name="monolog.logger" channel="security"/>
       <argument type="collection">
         <argument type="service" id="App\Security\UserAuthenticator"/>
+        <argument type="service" id="security.authenticator.two_factor.main"/>
         <argument type="service" id="security.authenticator.remember_me.main"/>
       </argument>
       <argument type="service" id="security.token_storage"/>
@@ -6143,7 +6407,7 @@
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener">
       <argument type="service" id="security.token_storage"/>
-      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
       <argument type="service" id="App\Security\UserAuthenticator"/>
@@ -6157,6 +6421,7 @@
         <argument type="service" id="security.channel_listener"/>
         <argument type="service" id="security.context_listener.0"/>
         <argument type="service" id="debug.security.firewall.authenticator.main"/>
+        <argument type="service" id="security.authentication.access_listener.two_factor.main"/>
         <argument type="service" id="security.access_listener"/>
       </argument>
       <argument type="service" id="security.exception_listener.main"/>
@@ -6516,6 +6781,178 @@
       <argument>3600</argument>
       <argument>3600</argument>
     </service>
+    <service id="victor_prdh_recaptcha_bundle.recaptcha_type" class="VictorPrdh\RecaptchaBundle\Form\ReCaptchaType" public="true" autowire="true">
+      <tag name="form.type" alias="captcha"/>
+      <argument type="service" id="parameter_bag"/>
+    </service>
+    <service id="victor_prdh_recaptcha_bundle.recaptcha_validator" class="VictorPrdh\RecaptchaBundle\Validator\Constraints\IsValidCaptchaValidator" public="true" autowire="true" autoconfigure="true">
+      <tag name="validator.is_valid" alias="victor_prdh_recaptcha.true"/>
+      <tag name="validator.constraint_validator"/>
+      <argument type="service" id="victor_prdh.recaptcha"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="victor_prdh.recaptcha" class="ReCaptcha\ReCaptcha" public="true">
+      <argument>%env(GOOGLE_RECAPTCHA_SECRET_KEY)%</argument>
+    </service>
+    <service id="scheb_two_factor.security.authenticator" class="Scheb\TwoFactorBundle\Security\Http\Authenticator\TwoFactorAuthenticator">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">Two-factor firewall config</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="abstract">Authentication success handler</argument>
+      <argument type="abstract">Authentication failure handler</argument>
+      <argument type="abstract">Authentication required handler</argument>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="scheb_two_factor.security.authentication.trust_resolver" class="Scheb\TwoFactorBundle\Security\Authentication\AuthenticationTrustResolver">
+      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver.inner"/>
+    </service>
+    <service id="scheb_two_factor.security.access.authenticated_voter" class="Scheb\TwoFactorBundle\Security\Authorization\Voter\TwoFactorInProgressVoter">
+      <tag name="security.voter" priority="249"/>
+    </service>
+    <service id="scheb_two_factor.security.access.access_decider" class="Scheb\TwoFactorBundle\Security\Authorization\TwoFactorAccessDecider">
+      <argument type="service" id="security.access_map"/>
+      <argument type="service" id="debug.security.access.decision_manager"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.logout_url_generator"/>
+    </service>
+    <service id="scheb_two_factor.security.listener.token_created" class="Scheb\TwoFactorBundle\Security\TwoFactor\Event\AuthenticationTokenListener">
+      <argument type="abstract">Firewall name</argument>
+      <argument type="service" id="scheb_two_factor.condition_registry"/>
+      <argument type="service" id="scheb_two_factor.provider_initiator"/>
+      <argument type="service" id="scheb_two_factor.authentication_context_factory"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="scheb_two_factor.security.listener.check_two_factor_code" class="Scheb\TwoFactorBundle\Security\Http\EventListener\CheckTwoFactorCodeListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="scheb_two_factor.provider_preparation_recorder"/>
+      <argument type="service" id="scheb_two_factor.provider_registry"/>
+    </service>
+    <service id="scheb_two_factor.security.listener.suppress_remember_me" class="Scheb\TwoFactorBundle\Security\Http\EventListener\SuppressRememberMeListener">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="scheb_two_factor.security.provider_preparation_listener" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderPreparationListener">
+      <argument type="service" id="scheb_two_factor.provider_registry"/>
+      <argument type="service" id="scheb_two_factor.provider_preparation_recorder"/>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+      <argument type="abstract">Firewall name</argument>
+      <argument>false</argument>
+      <argument>false</argument>
+    </service>
+    <service id="scheb_two_factor.security.form_listener" class="Scheb\TwoFactorBundle\Security\TwoFactor\Event\TwoFactorFormListener">
+      <argument type="abstract">Two-factor firewall config</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="scheb_two_factor.security.authentication_success_event_suppressor" class="Scheb\TwoFactorBundle\Security\TwoFactor\Event\AuthenticationSuccessEventSuppressor">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="scheb_two_factor.security.kernel_exception_listener" class="Scheb\TwoFactorBundle\Security\Http\Firewall\ExceptionListener">
+      <argument type="abstract">Firewall name</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="abstract">Authentication required handler</argument>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="scheb_two_factor.security.access_listener" class="Scheb\TwoFactorBundle\Security\Http\Firewall\TwoFactorAccessListener">
+      <argument type="abstract">Two-factor firewall config</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="scheb_two_factor.security.access.access_decider"/>
+    </service>
+    <service id="scheb_two_factor.security.authentication.success_handler" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationSuccessHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="abstract">Two-factor firewall config</argument>
+    </service>
+    <service id="scheb_two_factor.security.authentication.failure_handler" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationFailureHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="abstract">Two-factor firewall config</argument>
+    </service>
+    <service id="scheb_two_factor.security.authentication.authentication_required_handler" class="Scheb\TwoFactorBundle\Security\Http\Authentication\DefaultAuthenticationRequiredHandler">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="abstract">Two-factor firewall config</argument>
+    </service>
+    <service id="scheb_two_factor.null_csrf_token_manager" class="Scheb\TwoFactorBundle\Security\TwoFactor\Csrf\NullCsrfTokenManager"/>
+    <service id="scheb_two_factor.security.firewall_config" class="Scheb\TwoFactorBundle\Security\TwoFactor\TwoFactorFirewallConfig">
+      <argument type="collection"/>
+      <argument type="abstract">Firewall name</argument>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="scheb_two_factor.security.request_data_reader"/>
+    </service>
+    <service id="scheb_two_factor.security.request_data_reader" class="Scheb\TwoFactorBundle\Security\Http\Utils\RequestDataReader"/>
+    <service id="scheb_two_factor.persister_factory.doctrine" class="Scheb\TwoFactorBundle\Model\Persister\DoctrinePersisterFactory">
+      <argument type="service" id="doctrine" on-invalid="null"/>
+      <argument>null</argument>
+    </service>
+    <service id="scheb_two_factor.persister.doctrine" class="Scheb\TwoFactorBundle\Model\Persister\DoctrinePersister" lazy="true">
+      <factory service="scheb_two_factor.persister_factory.doctrine" method="getPersister"/>
+    </service>
+    <service id="scheb_two_factor.provider_registry" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderRegistry">
+      <argument type="iterator">
+        <argument key="email" type="service" id="scheb_two_factor.security.email.provider"/>
+      </argument>
+    </service>
+    <service id="scheb_two_factor.default_token_factory" class="Scheb\TwoFactorBundle\Security\Authentication\Token\TwoFactorTokenFactory"/>
+    <service id="scheb_two_factor.authentication_context_factory" class="Scheb\TwoFactorBundle\Security\TwoFactor\AuthenticationContextFactory">
+      <argument>Scheb\TwoFactorBundle\Security\TwoFactor\AuthenticationContext</argument>
+    </service>
+    <service id="scheb_two_factor.condition_registry" class="Scheb\TwoFactorBundle\Security\TwoFactor\Condition\TwoFactorConditionRegistry" lazy="true">
+      <argument type="iterator">
+        <argument type="service" id="scheb_two_factor.authenticated_token_condition"/>
+        <argument type="service" id="scheb_two_factor.ip_whitelist_condition"/>
+      </argument>
+    </service>
+    <service id="scheb_two_factor.authenticated_token_condition" class="Scheb\TwoFactorBundle\Security\TwoFactor\Condition\AuthenticatedTokenCondition" lazy="true">
+      <argument>%scheb_two_factor.security_tokens%</argument>
+    </service>
+    <service id="scheb_two_factor.ip_whitelist_condition" class="Scheb\TwoFactorBundle\Security\TwoFactor\Condition\IpWhitelistCondition" lazy="true">
+      <argument type="service" id="scheb_two_factor.default_ip_whitelist_provider"/>
+    </service>
+    <service id="scheb_two_factor.default_ip_whitelist_provider" class="Scheb\TwoFactorBundle\Security\TwoFactor\IpWhitelist\DefaultIpWhitelistProvider">
+      <argument type="collection"/>
+    </service>
+    <service id="scheb_two_factor.provider_initiator" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderInitiator" lazy="true">
+      <argument type="service" id="scheb_two_factor.provider_registry"/>
+      <argument type="service" id="scheb_two_factor.default_token_factory"/>
+    </service>
+    <service id="scheb_two_factor.firewall_context" class="Scheb\TwoFactorBundle\Security\TwoFactor\TwoFactorFirewallContext" public="true">
+      <argument type="collection">
+        <argument key="main" type="service" id="security.firewall_config.two_factor.main"/>
+      </argument>
+    </service>
+    <service id="scheb_two_factor.provider_preparation_recorder" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TokenPreparationRecorder">
+      <argument type="service" id="security.token_storage"/>
+    </service>
+    <service id="scheb_two_factor.form_controller" class="Scheb\TwoFactorBundle\Controller\FormController" public="true">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="scheb_two_factor.provider_registry"/>
+      <argument type="service" id="scheb_two_factor.firewall_context"/>
+      <argument type="service" id="security.logout_url_generator"/>
+      <argument>null</argument>
+      <argument>false</argument>
+    </service>
+    <service id="scheb_two_factor.security.form_renderer" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\DefaultTwoFactorFormRenderer" lazy="true">
+      <argument type="service" id="twig"/>
+      <argument>@SchebTwoFactor/Authentication/form.html.twig</argument>
+    </service>
+    <service id="scheb_two_factor.security.email.symfony_auth_code_mailer" class="Scheb\TwoFactorBundle\Mailer\SymfonyAuthCodeMailer">
+      <argument type="service" id="mailer.mailer"/>
+      <argument>no-reply@test.com</argument>
+      <argument>no-reply</argument>
+    </service>
+    <service id="scheb_two_factor.security.email.default_code_generator" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Email\Generator\CodeGenerator" lazy="true">
+      <argument type="service" id="scheb_two_factor.persister.doctrine"/>
+      <argument type="service" id="scheb_two_factor.security.email.symfony_auth_code_mailer"/>
+      <argument>6</argument>
+    </service>
+    <service id="scheb_two_factor.security.email.default_form_renderer" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\DefaultTwoFactorFormRenderer" lazy="true">
+      <argument type="service" id="twig"/>
+      <argument>@SchebTwoFactor/Authentication/form.html.twig</argument>
+    </service>
+    <service id="scheb_two_factor.security.email.provider" class="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Email\EmailTwoFactorProvider">
+      <tag name="scheb_two_factor.provider" alias="email"/>
+      <argument type="service" id="scheb_two_factor.security.email.default_code_generator"/>
+      <argument type="service" id="scheb_two_factor.security.email.default_form_renderer"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6563,6 +7000,8 @@
     <service id=".abstract.instanceof.App\Repository\TestRepository" class="App\Repository\TestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Validator\ConstraintValidatorInterface.0.victor_prdh_recaptcha_bundle.recaptcha_validator" class="VictorPrdh\RecaptchaBundle\Validator\Constraints\IsValidCaptchaValidator" public="true" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.victor_prdh_recaptcha_bundle.recaptcha_validator" class="VictorPrdh\RecaptchaBundle\Validator\Constraints\IsValidCaptchaValidator" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6954,12 +7393,6 @@
         <argument key="repository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4T4EJFR" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="user" type="service_closure" id="App\Entity\User"/>
-      </argument>
-    </service>
     <service id=".service_locator.cg5DUby" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7001,13 +7434,12 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ZOaKWcz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.M6.KiuM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\UserController::deleteUser" type="service_closure" id=".service_locator.5P.Q9EV"/>
         <argument key="App\Controller\Admin\UserController::index" type="service_closure" id=".service_locator.soq8KgK"/>
         <argument key="App\Controller\Admin\UserController::showUser" type="service_closure" id=".service_locator.DNF0f.K"/>
-        <argument key="App\Controller\Admin\UserController::unblockUser" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\Admin\UserController::updateUser" type="service_closure" id=".service_locator.5P.Q9EV"/>
         <argument key="App\Controller\ProfileController::edit" type="service_closure" id=".service_locator.cg5DUby"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.kXtg5m1"/>
@@ -7022,7 +7454,6 @@
         <argument key="App\Controller\Admin\UserController:deleteUser" type="service_closure" id=".service_locator.5P.Q9EV"/>
         <argument key="App\Controller\Admin\UserController:index" type="service_closure" id=".service_locator.soq8KgK"/>
         <argument key="App\Controller\Admin\UserController:showUser" type="service_closure" id=".service_locator.DNF0f.K"/>
-        <argument key="App\Controller\Admin\UserController:unblockUser" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\Admin\UserController:updateUser" type="service_closure" id=".service_locator.5P.Q9EV"/>
         <argument key="App\Controller\ProfileController:edit" type="service_closure" id=".service_locator.cg5DUby"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.kXtg5m1"/>
@@ -7034,7 +7465,7 @@
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
     </service>
-    <service id=".service_locator.19_mNxd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.lrGgBvN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator" type="service_closure" id="doctrine.orm.validator.unique"/>
@@ -7042,6 +7473,7 @@
         <argument key="Symfony\Component\Validator\Constraints\EmailValidator" type="service_closure" id="validator.email"/>
         <argument key="Symfony\Component\Validator\Constraints\ExpressionValidator" type="service_closure" id="validator.expression"/>
         <argument key="Symfony\Component\Validator\Constraints\NotCompromisedPasswordValidator" type="service_closure" id="validator.not_compromised_password"/>
+        <argument key="VictorPrdh\RecaptchaBundle\Validator\Constraints\IsValidCaptchaValidator" type="service_closure" id="victor_prdh_recaptcha_bundle.recaptcha_validator"/>
         <argument key="doctrine.orm.validator.unique" type="service_closure" id="doctrine.orm.validator.unique"/>
         <argument key="security.validator.user_password" type="service_closure" id="security.validator.user_password"/>
         <argument key="validator.expression" type="service_closure" id="validator.expression"/>
@@ -7093,7 +7525,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.usHYyl." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CCy4.in" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ChangePasswordFormType" type="service_closure" id="App\Form\ChangePasswordFormType"/>
@@ -7106,6 +7538,7 @@
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
+        <argument key="VictorPrdh\RecaptchaBundle\Form\ReCaptchaType" type="service_closure" id="victor_prdh_recaptcha_bundle.recaptcha_type"/>
       </argument>
     </service>
     <service id="messenger.bus.default.middleware.traceable" class="Symfony\Component\Messenger\Middleware\TraceableMiddleware">
@@ -7217,6 +7650,10 @@
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="debug.security.voter.scheb_two_factor.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
+      <argument type="service" id="scheb_two_factor.security.access.authenticated_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
     <service id="debug.security.voter.security.access.simple_role_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -7671,6 +8108,7 @@
     <service id="debug.security.access.decision_manager.inner" class="Symfony\Component\Security\Core\Authorization\AccessDecisionManager">
       <argument type="iterator">
         <argument type="service" id="debug.security.voter.security.access.authenticated_voter"/>
+        <argument type="service" id="debug.security.voter.scheb_two_factor.security.access.authenticated_voter"/>
         <argument type="service" id="debug.security.voter.security.access.simple_role_voter"/>
         <argument type="service" id="debug.security.voter.security.access.expression_voter"/>
       </argument>
@@ -7683,6 +8121,7 @@
     <service id="debug.security.firewall.authenticator.main.inner" class="Symfony\Component\Security\Http\Firewall\AuthenticatorManagerListener">
       <argument type="service" id="security.authenticator.manager.main"/>
     </service>
+    <service id="scheb_two_factor.security.authentication.trust_resolver.inner" class="Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver"/>
     <service id="debug.argument_resolver.request_attribute.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestAttributeValueResolver"/>
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
@@ -7690,12 +8129,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.ZOaKWcz"/>
+      <argument type="service" id=".service_locator.M6.KiuM"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.ZOaKWcz"/>
+      <argument type="service" id=".service_locator.M6.KiuM"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8770,9 +9209,19 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
+    <service id="scheb_two_factor.csrf_token_manager" alias="security.csrf.token_manager"/>
+    <service id="Scheb\TwoFactorBundle\Model\PersisterInterface" alias="scheb_two_factor.persister.doctrine"/>
+    <service id="Scheb\TwoFactorBundle\Security\TwoFactor\TwoFactorFirewallContext" alias="scheb_two_factor.firewall_context"/>
+    <service id="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorFormRendererInterface" alias="scheb_two_factor.security.form_renderer"/>
+    <service id="Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Email\Generator\CodeGeneratorInterface" alias="scheb_two_factor.security.email.default_code_generator"/>
+    <service id="scheb_two_factor.security.email.form_renderer" alias="scheb_two_factor.security.email.default_form_renderer"/>
+    <service id="scheb_two_factor.security.email.code_generator" alias="scheb_two_factor.security.email.default_code_generator" public="true"/>
+    <service id="scheb_two_factor.persister" alias="scheb_two_factor.persister.doctrine"/>
+    <service id="scheb_two_factor.ip_whitelist_provider" alias="scheb_two_factor.default_ip_whitelist_provider"/>
+    <service id="scheb_two_factor.token_factory" alias="scheb_two_factor.default_token_factory"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ZOaKWcz"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.M6.KiuM"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8793,14 +9242,15 @@
     <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
+    <service id="scheb_two_factor.security.email.auth_code_mailer" alias="scheb_two_factor.security.email.symfony_auth_code_mailer"/>
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.p81MCsb" alias=".service_locator.5P.Q9EV"/>
     <service id=".service_locator.IJyWPwb" alias=".service_locator.kXtg5m1"/>
-    <service id=".service_locator.4AEqiqM" alias=".service_locator.ZOaKWcz"/>
-    <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.nHxPsNB" alias=".service_locator.usHYyl."/>
+    <service id=".service_locator.wCSEMIX" alias=".service_locator.M6.KiuM"/>
+    <service id=".service_locator.C_sXwkA" alias=".service_locator.lrGgBvN"/>
+    <service id=".service_locator.ZL_7BWB" alias=".service_locator.CCy4.in"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8815,6 +9265,7 @@
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
     <service id="security.firewall.authenticator.main" alias="debug.security.firewall.authenticator.main"/>
+    <service id="security.authentication.trust_resolver" alias="scheb_two_factor.security.authentication.trust_resolver"/>
     <service id="argument_resolver.request_attribute" alias="debug.argument_resolver.request_attribute"/>
     <service id="argument_resolver.request" alias="debug.argument_resolver.request"/>
     <service id="argument_resolver.session" alias="debug.argument_resolver.session"/>
@@ -8829,7 +9280,6 @@
     <service id=".service_locator.IbpX3.E" alias=".service_locator.soq8KgK"/>
     <service id=".service_locator.0L1tcFA" alias=".service_locator.DNF0f.K"/>
     <service id=".service_locator.ltHs3lc" alias=".service_locator.5P.Q9EV"/>
-    <service id=".service_locator.ji808Jw" alias=".service_locator.4T4EJFR"/>
     <service id=".service_locator.UNYEMes" alias=".service_locator.cg5DUby"/>
     <service id=".service_locator.0TSyRyT" alias=".service_locator.kXtg5m1"/>
     <service id=".service_locator.426yQGu" alias=".service_locator.q2ji3lu"/>

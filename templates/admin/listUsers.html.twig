@@ -5,8 +5,11 @@
 {% block body %}
     <div class="container mx-auto py-4">
         <h1 class="text-xl font-semibold mb-2">Liste des utilisateurs</h1>
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Rechercher...">
+        </div>
         <div class="overflow-x-auto">
-            <table class="table-auto w-full border-collapse text-sm">
+            <table id="userTable" class="table-auto w-full border-collapse text-sm">
                 <thead>
                     <tr>
                         <th class="px-3 py-2 bg-gray-200">ID</th>
@@ -40,30 +43,23 @@
                             <td class="border px-3 py-2">
                                 <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isVerified ? "checked" : "" }}>
                             </td>
-                             <td class="border px-3 py-2">
+                            <td class="border px-3 py-2">
                                 <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isBlocked ? "checked" : "" }}>
                             </td>
                             <td class="border px-3 py-2">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Actions
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="{{path('admin_users_edit', {'id': user.id})}}">Modifier</a>
-                                        <a class="dropdown-item" href="{{path('admin_users_show', {'id': user.id})}}">Afficher</a>
-                                       <form action="{{ path('admin_users_delete', {'id': user.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_users_edit', {'id': user.id}) }}" title="Modifier"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-outline-info btn-sm" href="{{ path('admin_users_show', {'id': user.id}) }}" title="Afficher"><i class="fas fa-eye"></i></a>
+                                    <form action="{{ path('admin_users_delete', {'id': user.id}) }}" method="post" class="d-inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
-                                          <button type="submit" class="btn btn-danger">Supprimer l'utilisateur</button>
-                                        </form>
-
-                                        {% if user.isBlocked %}
-                                            <a class="dropdown-item" href="{{ path('admin_users_user_unblock', {'id': user.id}) }}">Débloquer</a>
-                                        {% else %}
-                                           <a class="dropdown-item" href="{{ path('admin_users_block_user', {'id': user.id}) }}">Bloquer</a>
-
-                                        {% endif %}
-                                    </div>
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Supprimer"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                    {% if user.isBlocked %}
+                                        <a class="btn btn-outline-success btn-sm" href="{{ path('admin_users_user_unblock', {'id': user.id}) }}" title="Débloquer"><i class="fas fa-lock-open"></i></a>
+                                    {% else %}
+                                        <a class="btn btn-outline-warning btn-sm" href="{{ path('admin_users_block_user', {'id': user.id}) }}" title="Bloquer"><i class="fas fa-lock"></i></a>
+                                    {% endif %}
                                 </div>
                             </td>
                         </tr>
@@ -72,4 +68,19 @@
             </table>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var table = $('#userTable');
+            var input = $('#searchInput');
+
+            input.on('keyup', function() {
+                var searchText = $(this).val().toLowerCase();
+                $('tbody tr').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
+                });
+            });
+        });
+    </script>
 {% endblock %}
