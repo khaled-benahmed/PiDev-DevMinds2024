@@ -1,0 +1,47 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}NutriFit | Planning | {{planning.jourPlanning}}{% endblock %}
+
+
+{% block body %}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td><strong>Titre</strong></td>
+            <td>{{ planning.titre }}</td>
+        </tr>
+        <tr>
+            <td><strong>Jour</strong></td>
+            <td>{{ planning.jourPlanning }}</td>
+        </tr>
+        <tr>
+            <td><strong>Date</strong></td>
+            <td>{{ planning.datePlanning|date('Y-m-d') }}</td>
+        </tr>
+        <tr>
+            <!-- Mise à jour du nom de la propriété en fonction de votre entité Planning -->
+            <td><strong>Heure Début</strong></td>
+            <!-- Utilisation du filtre 'date' pour formater l'heure -->
+            <td>{{ planning.startTime|date('H:i') }}</td>
+        </tr>
+        <tr>
+            <!-- Mise à jour du nom de la propriété en fonction de votre entité Planning -->
+            <td><strong>Heure fin</strong></td>
+            <!-- Utilisation du filtre 'date' pour formater l'heure -->
+            <td>{{ planning.endTime|date('H:i') }}</td>
+        </tr>
+        <tr>
+            <td><strong>Statut</strong></td>
+            <td>{{ planning.status }}</td>
+        </tr>
+    </tbody>
+</table>
+<div align="center" class="card-footer">
+    <button class="au-btn au-btn-icon au-btn--green au-btn--small"><a style="color:#fff;" href="{{ path('app_planning_crud_index') }}">Retour à la Liste</a></button>
+</div>
+                                
+{% endblock %}
+
+                                    
+

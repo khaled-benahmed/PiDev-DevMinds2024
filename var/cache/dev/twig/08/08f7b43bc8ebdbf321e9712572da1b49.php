@@ -45,7 +45,7 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
+<html lang=\"\">
 <head>
     <meta charset=\"UTF-8\">
     <title>
@@ -333,7 +333,7 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
-<html>
+<html lang=\"\">
 <head>
     <meta charset=\"UTF-8\">
     <title>

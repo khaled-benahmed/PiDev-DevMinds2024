@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Calendar</title>
+
+{% block body %}
+    <h1>Create new Event</h1>
+
+    {{ include('calendar/form.html.twig') }}
+
+    <a href="{{ path('app_calendar_index') }}">back to list</a>
+{% endblock %}
