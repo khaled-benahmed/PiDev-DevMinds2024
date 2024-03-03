@@ -25,6 +25,7 @@ class Planning
     #[Assert\NotBlank(message: "Vous n'avez pas saisi la date.")]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $datePlanning = null;
+
     #[Assert\NotBlank(message: "Vous n'avez pas saisi le jour.")]
     #[ORM\Column(length: 255)]
     private ?string $jourPlanning = null;
@@ -34,9 +35,12 @@ class Planning
     private ?\DateTimeInterface $startTime = null;
 
     #[Assert\NotBlank(message: "Vous n'avez pas saisi l'heure de fin.")]
+    #[Assert\Expression(
+        "this.getEndTime() > this.getStartTime()",
+        "L'heure de fin doit être supérieure à l'heure de début."
+    )]
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $endTime = null;
-
 
     #[Assert\NotBlank(message: "Vous n'avez pas saisi status.")]
     #[ORM\Column(length: 255)]
@@ -45,14 +49,9 @@ class Planning
     #[ORM\ManyToMany(targetEntity: Activite::class, inversedBy: 'plannings')]
     private Collection $activities;
 
-
-
-
     public function __construct()
     {
         $this->activities = new ArrayCollection();
-        $this->activite = new ArrayCollection();
-
     }
 
     public function getId(): ?int
@@ -120,8 +119,6 @@ class Planning
         return $this;
     }
 
-
-
     public function getStatus(): ?string
     {
         return $this->status;
@@ -157,6 +154,4 @@ class Planning
 
         return $this;
     }
-
-
 }

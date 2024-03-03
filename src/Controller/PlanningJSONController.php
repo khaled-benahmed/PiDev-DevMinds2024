@@ -26,7 +26,7 @@ class PlanningJSONController extends AbstractController
         $planning=$em->getRepository(Planning::class)->find($id);
         $planning->setDatePlanning($request->get('datePlanning'));
         $planning->setJourPlanning($request->get('jourPlanning'));
-        $planning->setHeurePlanning($request->get('heurePlanning'));
+        $planning->setStartTime($request->get('startPlanning'));
 
         $em->flush();
 
@@ -80,7 +80,7 @@ class PlanningJSONController extends AbstractController
         $planningDate=new DateTime($dateString);
         $planning->setDatePlanning($planningDate);
         $planning->setJourPlanning($request->get('jourPlanning'));
-        $planning->setHeurePlanning($request->get('startTime'));
+        $planning->setStartTime($request->get('startTime'));
 
         $em->persist($planning);
         $em->flush();
@@ -98,12 +98,29 @@ class PlanningJSONController extends AbstractController
         $rdvs = [];
 
         foreach($events as $event){
+            $startDate = $event->getDatePlanning();
+            $startTime = $event->getStartTime();
+            $endTime = $event->getEndTime();
+
+            // Combine start date and time
+            $startDateTime = clone $startDate;
+            $startDateTime->setTime(
+                $startTime->format('H'), // Hours
+                $startTime->format('i')  // Minutes
+            );
+
+            // Combine end date and time
+            $endDateTime = clone $startDate;
+            $endDateTime->setTime(
+                $endTime->format('H'), // Hours
+                $endTime->format('i')  // Minutes
+            );
+
             $rdvs[] = [
                 'id' => $event->getId(),
-                'start' => $event->getDatePlanning()->format('Y-m-d'),
-
+                'start' => $startDateTime->format('Y-m-d H:i'), // Format includes both date and time
+                'end' => $endDateTime->format('Y-m-d H:i'),     // Format includes both date and time
                 'title' => $event->getTitre(),
-                //'nomCoach' => $event->getCours()->getNomCoach(),
                 'backgroundColor' => "#2C3E50",
                 'borderColor' => "#2C3E50",
                 'textColor' => "#ffffff",
@@ -114,4 +131,5 @@ class PlanningJSONController extends AbstractController
 
         return $this->render('planning_crud/calendrier.html.twig', compact('data'));
     }
+
 }

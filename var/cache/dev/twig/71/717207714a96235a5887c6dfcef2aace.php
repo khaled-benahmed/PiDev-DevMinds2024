@@ -66,7 +66,7 @@ class __TwigTemplate_66440f662a03b95a41f5430f463b0216 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "EnergyBox | Planning";
+        echo "Nutrifit | Planning";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -114,48 +114,44 @@ class __TwigTemplate_66440f662a03b95a41f5430f463b0216 extends Template
         // line 15
         echo "
 
-<br>
-<div align=\"center\">
-    <h1><strong>Planning</strong></h1>
-</div>
-<br>
-<br>
-
-<div id=\"calendrier\">
-    <div id=\"onClick\">
-
+    <br>
+    <div align=\"center\">
+        <h1><strong>Planning</strong></h1>
     </div>
-</div>
+    <br>
+    <br>
 
-<script>
-    document.addEventListener('DOMContentLoaded',
-    function (){
-        var calendarEl = document.getElementById('calendrier');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            initialDate: new Date(),
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            events: ";
-        // line 42
-        echo (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 42, $this->source); })());
+    <div id=\"calendrier\">
+        <div id=\"onClick\">
+
+        </div>
+    </div>
+ (
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendrier');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                initialDate: new Date(),
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: ";
+        // line 41
+        echo (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 41, $this->source); })());
         echo ",
-            editable: true,
-            eventResizableFromStart: false
-                });
-                //window.location.href = `/api/calendarOnClick/\${e.event.id}`;
-                calendar.on('eventChange', (e)=>{
-                    let url = `/api/calendarOnClick/\${e.event.id}`
-                    let xhr = new XMLHttpRequest
-                    xhr.open(\"GET\", url)
-                })
-                calendar.render();
-                });
+                editable: true,
+                eventResizableFromStart: false,
+                eventClick: function(info) {
+                    window.location.href = `/planning/crud/\${info.event.id}`;
+                }
+            });
+            calendar.render();
+        });
+    </script>
 
-</script>
 
 ";
         
@@ -187,14 +183,14 @@ class __TwigTemplate_66440f662a03b95a41f5430f463b0216 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  144 => 42,  115 => 15,  105 => 14,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  143 => 41,  115 => 15,  105 => 14,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'baseBack.html.twig' %}
 
-{% block title %}EnergyBox | Planning{% endblock %}
+{% block title %}Nutrifit | Planning{% endblock %}
 
 {% block cssCalendar %}
     <style>
@@ -208,45 +204,41 @@ class __TwigTemplate_66440f662a03b95a41f5430f463b0216 extends Template
 {% block body %}
 
 
-<br>
-<div align=\"center\">
-    <h1><strong>Planning</strong></h1>
-</div>
-<br>
-<br>
-
-<div id=\"calendrier\">
-    <div id=\"onClick\">
-
+    <br>
+    <div align=\"center\">
+        <h1><strong>Planning</strong></h1>
     </div>
-</div>
+    <br>
+    <br>
 
-<script>
-    document.addEventListener('DOMContentLoaded',
-    function (){
-        var calendarEl = document.getElementById('calendrier');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            initialDate: new Date(),
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            events: {{ data|raw }},
-            editable: true,
-            eventResizableFromStart: false
-                });
-                //window.location.href = `/api/calendarOnClick/\${e.event.id}`;
-                calendar.on('eventChange', (e)=>{
-                    let url = `/api/calendarOnClick/\${e.event.id}`
-                    let xhr = new XMLHttpRequest
-                    xhr.open(\"GET\", url)
-                })
-                calendar.render();
-                });
+    <div id=\"calendrier\">
+        <div id=\"onClick\">
 
-</script>
+        </div>
+    </div>
+ (
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendrier');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                initialDate: new Date(),
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: {{ data|raw }},
+                editable: true,
+                eventResizableFromStart: false,
+                eventClick: function(info) {
+                    window.location.href = `/planning/crud/\${info.event.id}`;
+                }
+            });
+            calendar.render();
+        });
+    </script>
+
 
 {% endblock %}
 
