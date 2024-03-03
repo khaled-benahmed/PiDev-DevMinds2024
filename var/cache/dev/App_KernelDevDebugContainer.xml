@@ -363,7 +363,6 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\CalendarController"/>
       </call>
     </service>
-    <service id="App\Controller\EventNotificationServiceController" class="App\Controller\EventNotificationServiceController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>

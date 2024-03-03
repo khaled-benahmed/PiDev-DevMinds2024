@@ -1,0 +1,84 @@
+<?php //this.getEndTime%2528%2529%2520%253E%2520this.getStartTime%2528%2529%252F%252Fthis%257Cvalue
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\ExpressionLanguage\\ParsedExpression'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\ParsedExpression')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\BinaryNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\BinaryNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\NameNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\NameNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode')),
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\NameNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\ExpressionLanguage\\Expression' => [
+            'expression' => [
+                'this.getEndTime() > this.getStartTime()',
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\ParsedExpression' => [
+            'nodes' => [
+                $o[1],
+            ],
+        ],
+        'stdClass' => [
+            'nodes' => [
+                1 => [
+                    'left' => $o[2],
+                    'right' => $o[6],
+                ],
+                [
+                    'node' => $o[3],
+                    'attribute' => $o[4],
+                    'arguments' => $o[5],
+                ],
+                6 => [
+                    'node' => $o[7],
+                    'attribute' => $o[8],
+                    'arguments' => $o[9],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'operator' => '>',
+                ],
+                [
+                    'type' => 2,
+                ],
+                [
+                    'name' => 'this',
+                ],
+                [
+                    'value' => 'getEndTime',
+                ],
+                6 => [
+                    'type' => 2,
+                ],
+                [
+                    'name' => 'this',
+                ],
+                [
+                    'value' => 'getStartTime',
+                ],
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode' => [
+            'isIdentifier' => [
+                4 => true,
+                8 => true,
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\Node\\ArrayNode' => [
+            'index' => [
+                5 => -1,
+                9 => -1,
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
