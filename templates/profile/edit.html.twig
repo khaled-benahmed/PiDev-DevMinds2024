@@ -1,0 +1,89 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Edit Profile</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Email:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">First Name:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Last Name:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.lastname) }}
+                    </div>
+                </div>             
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">City:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.city) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">CIN:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.cin, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.cin) }}
+                    </div>
+                </div>
+               <!-- <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Is Verified:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.isVerified, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.isVerified) }}
+                    </div>
+                </div>-->
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Image:</label>
+                    <div class="col-sm-9">
+                         {{ form_row(form.image, {'attr': {'class': 'form-control-file'}}) }}
+                         {{ form_errors(form.image) }}
+                         {% if form.vars.value.image %}
+                            <img src="{{ asset('uploads/' ~ form.vars.value.image) }}" alt="Current Image" class="mt-2" style="max-width: 200px;">
+                        {% endif %}
+                     </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Speciality:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.speciality, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.speciality) }}
+                    </div>
+                </div>
+                 <div class="form-group row">
+                    <label class="col-sm-3 col-form-label font-weight-bold">Birthday:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.birthday, {'attr': {'class': 'form-control datepicker'}}) }}
+                        {{ form_errors(form.birthday) }}
+                    </div>
+                </div>
+         
+               <div class="form-group row">
+    <div class="col-sm-9 offset-sm-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{{ path('profile_show') }}" class="btn btn-info ml-2">Cancel</a>
+    </div>
+</div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

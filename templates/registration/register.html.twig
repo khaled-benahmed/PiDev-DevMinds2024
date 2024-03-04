@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+            
+            <div class="card bg-dark text-light">
+                <div class="card-body">
+                    <h1 class="text-center text-uppercase mb-4">Register</h1>
+
+                    {{ form_errors(registrationForm) }}
+
+                    {{ form_start(registrationForm) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form_row(registrationForm.email, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Email'}}) }}
+                            {{ form_row(registrationForm.plainPassword.first, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Password'}}) }}
+                            {{ form_row(registrationForm.plainPassword.second, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Confirm Password'}}) }}
+                            {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Lastname'}}) }}
+                            {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Firstname'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(registrationForm.username, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Username'}}) }}
+                            {{ form_row(registrationForm.city, {'attr': {'class': 'form-control mb-3'}, 'label': 'City'}) }}
+                            {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Speciality'}}) }}
+                            {{ form_row(registrationForm.birthday, {'attr': {'class': 'form-control mb-3', 'placeholder': 'Birthday'}}) }}
+                            {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control mb-3', 'placeholder': 'CIN'}}) }}
+                            {{ form_row(registrationForm.roles) }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <div class="form-check">
+                            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input', 'id': 'agreeTerms'}}) }}
+                            <label class="form-check-label" for="agreeTerms">I agree to the terms and conditions</label>
+                        </div>
+                        <small class="form-text text-danger">
+                            {{ form_errors(registrationForm.agreeTerms) }}
+                        </small>
+                    </div>
+                    
+                            {{ form_row(registrationForm.recaptcha) }} 
+    {# must be the same name of this put on the FormBuilder #}
+
+                            {{ form_errors(registrationForm.recaptcha) }}
+    {# That will display the error of the captcha to user #}
+
+
+                    <button type="submit" class="btn btn-danger btn-block mt-4">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

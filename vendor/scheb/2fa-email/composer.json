@@ -1,0 +1,23 @@
+{
+    "name": "scheb/2fa-email",
+    "type": "library",
+    "description": "Extends scheb/2fa-bundle with two-factor authentication via email",
+    "keywords": ["2fa", "two-factor", "two-step", "authentication", "symfony", "email"],
+    "homepage": "https://github.com/scheb/2fa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Scheb",
+            "email": "me@christianscheb.de"
+        }
+    ],
+    "require": {
+        "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+        "scheb/2fa-bundle": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scheb\\TwoFactorBundle\\": ""
+        }
+    }
+}

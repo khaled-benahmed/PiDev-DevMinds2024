@@ -2,17 +2,35 @@
 
 {% block title %}NutriFit | Home{% endblock %}
 
-
 {% block body %}
+<div class="container">
+    {# Afficher les messages flash #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
 
-    <br>
-    <div align="center">
-        <strong>Home Page</strong>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center shadow-lg p-5">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="display-4">Welcome to NutriFit</h1>
+                </div>
+                <div class="card-body">
+                    <p class="lead">"Fuel your life with balanced nutrition and active living for a healthy mind and body!"</p>
+                    <a href="#" class="btn btn-lg btn-outline-primary">Get Started</a>
+                </div>
+                <div class="card-footer bg-light">
+                    <small class="text-muted">Start your journey to a healthier life today!</small>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-
+</div>
 {% endblock %}

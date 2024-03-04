@@ -1,0 +1,89 @@
+{% extends "baseBack.html.twig" %}
+
+{% block body %}
+    <canvas id="verificationChart" width="300" height="200"></canvas>
+    <canvas id="roleChart" width="300" height="200"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Récupérer les données des statistiques de vérification
+            let verificationLabels = [];
+            let verificationData = [];
+            {% for stat in verificationStatistics %}
+                verificationLabels.push("{{ stat.isVerified ? 'Vérifié' : 'Non vérifié' }}");
+                verificationData.push("{{ stat.count }}");
+            {% endfor %}
+
+            // Créer un tableau de données pour le graphique de vérification
+            let verificationChartData = {
+                labels: verificationLabels,
+                datasets: [{
+                    label: 'Nombre d\'utilisateurs ',
+                    data: verificationData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)', // Couleur de barre plus foncée
+                    borderColor: 'rgba(255, 99, 132, 1)', // Bordure de barre plus foncée
+                    borderWidth: 1
+                }]
+            };
+
+            // Créer le contexte du graphique de vérification
+            let verificationCtx = document.getElementById('verificationChart').getContext('2d');
+
+            // Créer le graphique de vérification
+            let verificationChart = new Chart(verificationCtx, {
+                type: 'bar',
+                data: verificationChartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1 // Ajuster l'échelle du graphique
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Récupérer les données des statistiques de rôles
+            let roleLabels = [];
+            let roleData = [];
+            {% for stat in roleStatistics %}
+                roleLabels.push("{{ stat.roles|join(', ') }}");
+                roleData.push("{{ stat.count }}");
+            {% endfor %}
+
+            // Créer un tableau de données pour le graphique des rôles
+            let roleChartData = {
+                labels: roleLabels,
+                datasets: [{
+                    label: 'Nombre d\'utilisateurs par rôle',
+                    data: roleData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)', // Couleur de barre plus foncée
+                    borderColor: 'rgba(54, 162, 235, 1)', // Bordure de barre plus foncée
+                    borderWidth: 1
+                }]
+            };
+
+            // Créer le contexte du graphique des rôles
+            let roleCtx = document.getElementById('roleChart').getContext('2d');
+
+            // Créer le graphique des rôles
+            let roleChart = new Chart(roleCtx, {
+                type: 'bar',
+                data: roleChartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1 // Ajuster l'échelle du graphique
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

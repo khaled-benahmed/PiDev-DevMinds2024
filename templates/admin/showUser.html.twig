@@ -1,0 +1,63 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">{{ user.firstname }} {{ user.lastname }}</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th scope="row">ID</th>
+                            <td>{{ user.id }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">First name</th>
+                            <td>{{ user.firstname }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Last name</th>
+                            <td>{{ user.lastname }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Roles</th>
+                            <td>
+                                {% for role in user.roles %}
+                                    {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                    <span class="badge bg-{{ badge_color }}">
+                                        {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                        {{ role_name }}
+                                    </span>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Username</th>
+                            <td>{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C.I.N</th>
+                            <td>{{ user.cin }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date de Naissance</th>
+                            <td>{{ user.birthday ? user.birthday|date('Y-m-d') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Image</th>
+                            <td><img src="{{ asset('uploads/' ~ user.image) }}" class="img-fluid" alt="User Image"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a href="{{ path('admin_users_list') }}" class="btn btn-info">Back to list</a>
+                    <a href="{{ path('admin_users_edit', {'id': user.id}) }}" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
