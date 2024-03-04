@@ -42,56 +42,59 @@ class __TwigTemplate_908b947c4e55bcc7d25de6947f575e99 extends Template
 
         // line 1
         echo "<head>
-\t<style>
-\t\t/**
+    <style>
+        /**
             Set the margins of the page to 0, so the footer and the header
             can be of the full height and width !
          **/
-\t\t@page {
-\t\t\tmargin: 0;
-\t\t}
-\t\t/** Define now the real margins of every page in the PDF **/
-\t\tbody {
-\t\t\tmargin: 3.5cm 1cm 2cm;
-\t\t}
-\t\t/** Define the header rules **/
-\t\theader {
-\t\t\tposition: fixed;
-\t\t\ttop: 0;
-\t\t\tleft: 0;
-\t\t\tright: 0;
-\t\t\theight: 3cm;
-\t\t}
-\t\t/** Define the footer rules **/
-\t\tfooter {
-\t\t\tposition: fixed;
-\t\t\tbottom: 0;
-\t\t\tleft: 0;
-\t\t\tright: 0;
-\t\t\theight: 2cm;
-\t\t}
-\t</style>
+        @page {
+            margin: 0;
+        }
+        /** Define now the real margins of every page in the PDF **/
+        body {
+            margin: 3.5cm 1cm 2cm;
+        }
+        /** Define the header rules **/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3cm;
+        }
+        /** Define the footer rules **/
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2cm;
+        }
+    </style>
 </head>
 <body>
-\t<!-- Define header and footer blocks before your content -->
-\t<header>
-\t\t<div class=\"intro_price\" style=\"color: red;font-size: 5px;margin-left: 10px;margin-top: 10px\">
-\t\t\t<b>EnergyBox</b>
-\t\t</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tAdresse : Esprit Technopole Ghazela Ariana</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tNuméro : +216 50 01 23</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tE-mail : EnergyBox@gmail.com</div>
+<!-- Define header and footer blocks before your content -->
+<header>
+    <div class=\"intro_price\" style=\"color: red;font-size: 5px;margin-left: 10px;margin-top: 10px\">
+        <b>nutrifit</b>
+    </div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        Adresse : Esprit Technopole Ghazela Ariana</div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        Numéro : +216 50 01 23</div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        E-mail : nutrifit@gmail.com</div>
 
-\t\t<hr class=\"cmDEY eufYP cDHZq\" style=\"color: dimgray;width: 750px;\">
-\t</header>
+    <hr class=\"cmDEY eufYP cDHZq\" style=\"color: dimgray;width: 750px;\">
+</header>
 
-\t<footer></footer>
-\t";
+<footer></footer>
+";
         // line 49
         $this->displayBlock('body', $context, $blocks);
+        // line 68
+        echo "</body>
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -100,6 +103,7 @@ class __TwigTemplate_908b947c4e55bcc7d25de6947f575e99 extends Template
 
     }
 
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -110,39 +114,32 @@ class __TwigTemplate_908b947c4e55bcc7d25de6947f575e99 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 50
-        echo "\t\t<section class=\"services-area pt-100 pb-150 section-bg\" data-background=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo/LogoGymBlack.png"), "html", null, true);
-        echo "\" style=\"background-image: url(&quot;assets/img/gallery/section_bg01.png);\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"cat-cap\">
-\t\t\t\t\t<div class=\"about-caption\">
-\t\t\t\t\t\t<center>
-\t\t\t\t\t\t\t<div class=\"section-tittle section-tittle3 mb-35\">
-\t\t\t\t\t\t\t\t<h4>
-\t\t\t\t\t\t\t\t\t<span>Veuillez pratique cet activité</span>
-\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t<div class=\"mb-65 pera-bottom\">
-\t\t\t\t\t\t\t\t\t<p>";
+        echo "    <section class=\"services-area pt-100 pb-150 section-bg\" data-background=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo/logo.png"), "html", null, true);
+        echo "\" >
+        <div class=\"row\">
+            <div class=\"cat-cap\">
+                <div class=\"about-caption\">
+                    <div class=\"section-tittle section-tittle3 mb-35\" style=\"text-align: center;\">
+                        <h4>
+                            <span>Veuillez pratiquer cette activité</span>
+                        </h4>
+                        <div class=\"mb-65 pera-bottom\">
+                            <p>";
+        // line 59
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new RuntimeError('Variable "activite" does not exist.', 59, $this->source); })()), "nomActivite", [], "any", false, false, false, 59), "html", null, true);
+        echo "</p>
+                            <p>Durée : ";
         // line 60
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new RuntimeError('Variable "activite" does not exist.', 60, $this->source); })()), "nomActivite", [], "any", false, false, false, 60), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new RuntimeError('Variable "activite" does not exist.', 60, $this->source); })()), "dureeActivite", [], "any", false, false, false, 60), "html", null, true);
         echo "</p>
-\t\t\t\t\t\t\t\t\t<p>Durée :
-\t\t\t\t\t\t\t\t\t\t";
-        // line 62
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new RuntimeError('Variable "activite" does not exist.', 62, $this->source); })()), "dureeActivite", [], "any", false, false, false, 62), "html", null, true);
-        echo "</p>
-\t\t\t\t\t\t\t\t\t<p>Tenue :
-\t\t\t\t\t\t\t\t\t\t";
-        // line 64
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new RuntimeError('Variable "activite" does not exist.', 64, $this->source); })()), "tenueActivite", [], "any", false, false, false, 64), "html", null, true);
-        echo "</p>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</section>
-\t\t";
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -164,82 +161,79 @@ class __TwigTemplate_908b947c4e55bcc7d25de6947f575e99 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  137 => 64,  132 => 62,  127 => 60,  113 => 50,  94 => 49,  44 => 1,);
+        return array (  134 => 60,  130 => 59,  117 => 50,  107 => 49,  96 => 68,  94 => 49,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<head>
-\t<style>
-\t\t/**
+    <style>
+        /**
             Set the margins of the page to 0, so the footer and the header
             can be of the full height and width !
          **/
-\t\t@page {
-\t\t\tmargin: 0;
-\t\t}
-\t\t/** Define now the real margins of every page in the PDF **/
-\t\tbody {
-\t\t\tmargin: 3.5cm 1cm 2cm;
-\t\t}
-\t\t/** Define the header rules **/
-\t\theader {
-\t\t\tposition: fixed;
-\t\t\ttop: 0;
-\t\t\tleft: 0;
-\t\t\tright: 0;
-\t\t\theight: 3cm;
-\t\t}
-\t\t/** Define the footer rules **/
-\t\tfooter {
-\t\t\tposition: fixed;
-\t\t\tbottom: 0;
-\t\t\tleft: 0;
-\t\t\tright: 0;
-\t\t\theight: 2cm;
-\t\t}
-\t</style>
+        @page {
+            margin: 0;
+        }
+        /** Define now the real margins of every page in the PDF **/
+        body {
+            margin: 3.5cm 1cm 2cm;
+        }
+        /** Define the header rules **/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3cm;
+        }
+        /** Define the footer rules **/
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2cm;
+        }
+    </style>
 </head>
 <body>
-\t<!-- Define header and footer blocks before your content -->
-\t<header>
-\t\t<div class=\"intro_price\" style=\"color: red;font-size: 5px;margin-left: 10px;margin-top: 10px\">
-\t\t\t<b>EnergyBox</b>
-\t\t</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tAdresse : Esprit Technopole Ghazela Ariana</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tNuméro : +216 50 01 23</div>
-\t\t<div style=\"font-size: 5px;margin-left: 10px\">
-\t\t\tE-mail : EnergyBox@gmail.com</div>
+<!-- Define header and footer blocks before your content -->
+<header>
+    <div class=\"intro_price\" style=\"color: red;font-size: 5px;margin-left: 10px;margin-top: 10px\">
+        <b>nutrifit</b>
+    </div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        Adresse : Esprit Technopole Ghazela Ariana</div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        Numéro : +216 50 01 23</div>
+    <div style=\"font-size: 5px;margin-left: 10px\">
+        E-mail : nutrifit@gmail.com</div>
 
-\t\t<hr class=\"cmDEY eufYP cDHZq\" style=\"color: dimgray;width: 750px;\">
-\t</header>
+    <hr class=\"cmDEY eufYP cDHZq\" style=\"color: dimgray;width: 750px;\">
+</header>
 
-\t<footer></footer>
-\t{% block body %}
-\t\t<section class=\"services-area pt-100 pb-150 section-bg\" data-background=\"{{ asset('img/logo/LogoGymBlack.png')}}\" style=\"background-image: url(&quot;assets/img/gallery/section_bg01.png);\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"cat-cap\">
-\t\t\t\t\t<div class=\"about-caption\">
-\t\t\t\t\t\t<center>
-\t\t\t\t\t\t\t<div class=\"section-tittle section-tittle3 mb-35\">
-\t\t\t\t\t\t\t\t<h4>
-\t\t\t\t\t\t\t\t\t<span>Veuillez pratique cet activité</span>
-\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t<div class=\"mb-65 pera-bottom\">
-\t\t\t\t\t\t\t\t\t<p>{{ activite.nomActivite }}</p>
-\t\t\t\t\t\t\t\t\t<p>Durée :
-\t\t\t\t\t\t\t\t\t\t{{ activite.dureeActivite }}</p>
-\t\t\t\t\t\t\t\t\t<p>Tenue :
-\t\t\t\t\t\t\t\t\t\t{{ activite.tenueActivite }}</p>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</section>
-\t\t{% endblock %}
+<footer></footer>
+{% block body %}
+    <section class=\"services-area pt-100 pb-150 section-bg\" data-background=\"{{ asset('img/logo/logo.png')}}\" >
+        <div class=\"row\">
+            <div class=\"cat-cap\">
+                <div class=\"about-caption\">
+                    <div class=\"section-tittle section-tittle3 mb-35\" style=\"text-align: center;\">
+                        <h4>
+                            <span>Veuillez pratiquer cette activité</span>
+                        </h4>
+                        <div class=\"mb-65 pera-bottom\">
+                            <p>{{ activite.nomActivite }}</p>
+                            <p>Durée : {{ activite.dureeActivite }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+</body>
 ", "activite_crud/pdfExport.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024\\templates\\activite_crud\\pdfExport.html.twig");
     }
 }

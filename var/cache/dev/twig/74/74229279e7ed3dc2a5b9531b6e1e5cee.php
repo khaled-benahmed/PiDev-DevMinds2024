@@ -164,10 +164,19 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "difficulteActivite", [], "any", false, false, false, 52), "html", null, true);
             echo "</td>
                     <td>
+                        <a href=\"";
+            // line 54
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activite_pdf", ["id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+            echo "\">
+                            <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Export\">
+                                <i class=\"zmdi zmdi-collection-pdf\"></i>
+                            </button>
+                            &nbsp;
+                        </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=\"";
-            // line 55
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activite_crud_show", ["id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", [], "any", false, false, false, 55)]), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activite_crud_show", ["id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", [], "any", false, false, false, 61)]), "html", null, true);
             echo "\">
                             <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Afficher\">
                                 <i class=\"zmdi zmdi-eye\"></i>
@@ -175,15 +184,15 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
                         </a>
                         &nbsp;&nbsp;
                         <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activite_crud_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activite_crud_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", [], "any", false, false, false, 67)]), "html", null, true);
             echo "\">
                             <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Modifier\">
                                 <i class=\"zmdi zmdi-edit\"></i>
                             </button>
                         </a>
                         ";
-            // line 66
+            // line 72
             echo twig_include($this->env, $context, "activite_crud/delete_form.html.twig");
             echo "
                     </td>
@@ -200,7 +209,7 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 70
+            // line 76
             echo "                <tr>
                     <td colspan=\"8\">Pas d'activité.</td>
                 </tr>
@@ -209,7 +218,7 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['activite'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
+        // line 80
         echo "            </tbody>
 
         </table>
@@ -217,11 +226,11 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
             <br>
             <div class=\"pagination\">
                 ";
-        // line 80
-        twig_get_attribute($this->env, $this->source, (isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new RuntimeError('Variable "activites" does not exist.', 80, $this->source); })()), "setPageRange", [10], "method", false, false, false, 80);
-        // line 81
+        // line 86
+        twig_get_attribute($this->env, $this->source, (isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new RuntimeError('Variable "activites" does not exist.', 86, $this->source); })()), "setPageRange", [10], "method", false, false, false, 86);
+        // line 87
         echo "                ";
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new RuntimeError('Variable "activites" does not exist.', 81, $this->source); })()), "pagination.html.twig");
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new RuntimeError('Variable "activites" does not exist.', 87, $this->source); })()), "pagination.html.twig");
         echo "
             </div>
         </div>
@@ -279,7 +288,7 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  223 => 81,  221 => 80,  213 => 74,  204 => 70,  187 => 66,  179 => 61,  170 => 55,  164 => 52,  160 => 51,  156 => 50,  153 => 49,  135 => 48,  109 => 25,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  232 => 87,  230 => 86,  222 => 80,  213 => 76,  196 => 72,  188 => 67,  179 => 61,  169 => 54,  164 => 52,  160 => 51,  156 => 50,  153 => 49,  135 => 48,  109 => 25,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -337,6 +346,12 @@ class __TwigTemplate_d258add4666b24420eb7c6e7da565145 extends Template
                     <td>{{ activite.dureeActivite }}</td>
                     <td>{{ activite.difficulteActivite }}</td>
                     <td>
+                        <a href=\"{{ path('app_activite_pdf', {'id': activite.id}) }}\">
+                            <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Export\">
+                                <i class=\"zmdi zmdi-collection-pdf\"></i>
+                            </button>
+                            &nbsp;
+                        </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=\"{{ path('app_activite_crud_show', {'id': activite.id}) }}\">
                             <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Afficher\">

@@ -1,0 +1,68 @@
+<head>
+    <style>
+        /**
+            Set the margins of the page to 0, so the footer and the header
+            can be of the full height and width !
+         **/
+        @page {
+            margin: 0;
+        }
+        /** Define now the real margins of every page in the PDF **/
+        body {
+            margin: 3.5cm 1cm 2cm;
+        }
+        /** Define the header rules **/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3cm;
+        }
+        /** Define the footer rules **/
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2cm;
+        }
+    </style>
+</head>
+<body>
+<!-- Define header and footer blocks before your content -->
+<header>
+    <div class="intro_price" style="color: red;font-size: 5px;margin-left: 10px;margin-top: 10px">
+        <b>nutrifit</b>
+    </div>
+    <div style="font-size: 5px;margin-left: 10px">
+        Adresse : Esprit Technopole Ghazela Ariana</div>
+    <div style="font-size: 5px;margin-left: 10px">
+        Numéro : +216 50 01 23</div>
+    <div style="font-size: 5px;margin-left: 10px">
+        E-mail : nutrifit@gmail.com</div>
+
+    <hr class="cmDEY eufYP cDHZq" style="color: dimgray;width: 750px;">
+</header>
+
+<footer></footer>
+{% block body %}
+    <section class="services-area pt-100 pb-150 section-bg" data-background="{{ asset('img/logo/logo.png')}}" >
+        <div class="row">
+            <div class="cat-cap">
+                <div class="about-caption">
+                    <div class="section-tittle section-tittle3 mb-35" style="text-align: center;">
+                         <h4>
+                            <span>Veuillez pratiquer cette activité</span>
+                        </h4>
+                        <div class="mb-65 pera-bottom">
+                            <p>{{ activite.nomActivite }}</p>
+                            <p>Durée : {{ activite.dureeActivite }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+</body>

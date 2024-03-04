@@ -51,6 +51,12 @@
                     <td>{{ activite.dureeActivite }}</td>
                     <td>{{ activite.difficulteActivite }}</td>
                     <td>
+                        <a href="{{ path('app_activite_pdf', {'id': activite.id}) }}">
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Export">
+                                <i class="zmdi zmdi-collection-pdf"></i>
+                            </button>
+                            &nbsp;
+                        </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{ path('app_activite_crud_show', {'id': activite.id}) }}">
                             <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Afficher">

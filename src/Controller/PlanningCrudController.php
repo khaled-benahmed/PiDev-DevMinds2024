@@ -101,4 +101,5 @@ class PlanningCrudController extends AbstractController
             'planning' => $planning,
         ]);
     }
+
 }
