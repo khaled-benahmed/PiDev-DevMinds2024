@@ -18,9 +18,9 @@ class CategorieController extends AbstractController
     public function index(CategorieAbonnementsRepository $categorieAbonnementsRepository): Response
     {
 
-        $categories = $categorieAbonnementsRepository->findAll();//yejbed mel base de donne kol chy
+        $categories = $categorieAbonnementsRepository->findAll();
         return $this->render('categorie/Read_Back_Category.html.twig', [
-            'categories' => $categories,//mbae3ed t3adi el variable categories lel view reaad_back oitamlelha boucle oitafichi
+            'categories' => $categories,
         ]);
     }
 

@@ -1524,7 +1524,7 @@
     </service>
     <service id="mailer.mailer" class="Symfony\Component\Mailer\Mailer">
       <argument type="service" id="mailer.transports"/>
-      <argument type="service" id="debug.traced.messenger.bus.default" on-invalid="null"/>
+      <argument>null</argument>
       <argument type="service" id="debug.event_dispatcher" on-invalid="ignore"/>
     </service>
     <service id="mailer.transports" class="Symfony\Component\Mailer\Transport\Transports">
@@ -1555,6 +1555,12 @@
     </service>
     <service id="mailer.transport_factory.abstract" class="Symfony\Component\Mailer\Transport\AbstractTransportFactory" abstract="true">
       <tag name="monolog.logger" channel="mailer"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger.mailer" on-invalid="ignore"/>
+    </service>
+    <service id="mailer.transport_factory.gmail" class="Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory">
+      <tag name="mailer.transport_factory"/>
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.mailer" on-invalid="ignore"/>
@@ -6471,10 +6477,11 @@
         <argument key="abonnementRepository" type="service_closure" id="App\Repository\AbonnementRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.GQZbvNR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.GyY0RxJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
     <service id=".service_locator.RPakEiu" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6503,13 +6510,16 @@
         <argument key="managerRegistry" type="service_closure" id="doctrine"/>
       </argument>
     </service>
-    <service id=".service_locator.jqkupi0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.k87Kaat" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\AbonnementController::CreateAbonnement" type="service_closure" id=".service_locator.GQZbvNR"/>
+        <argument key="App\Controller\AbonnementController::CreateAbonnement" type="service_closure" id=".service_locator.GyY0RxJ"/>
         <argument key="App\Controller\AbonnementController::DeleteAbonnement" type="service_closure" id=".service_locator.RPakEiu"/>
         <argument key="App\Controller\AbonnementController::ReadBackAbonnement" type="service_closure" id=".service_locator.8b.I63C"/>
+        <argument key="App\Controller\AbonnementController::ReadFRONTAbonnement" type="service_closure" id=".service_locator.8b.I63C"/>
         <argument key="App\Controller\AbonnementController::UpdateAbonnement" type="service_closure" id=".service_locator.RPakEiu"/>
+        <argument key="App\Controller\AbonnementController::pay" type="service_closure" id=".service_locator.RPakEiu"/>
+        <argument key="App\Controller\AbonnementController::stripePaymentSuccess" type="service_closure" id=".service_locator.RPakEiu"/>
         <argument key="App\Controller\CategorieController::ajoutCategorie" type="service_closure" id=".service_locator.cg5DUby"/>
         <argument key="App\Controller\CategorieController::delete" type="service_closure" id=".service_locator.yGTA_v5"/>
         <argument key="App\Controller\CategorieController::index" type="service_closure" id=".service_locator..0UkRYR"/>
@@ -6518,10 +6528,13 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
-        <argument key="App\Controller\AbonnementController:CreateAbonnement" type="service_closure" id=".service_locator.GQZbvNR"/>
+        <argument key="App\Controller\AbonnementController:CreateAbonnement" type="service_closure" id=".service_locator.GyY0RxJ"/>
         <argument key="App\Controller\AbonnementController:DeleteAbonnement" type="service_closure" id=".service_locator.RPakEiu"/>
         <argument key="App\Controller\AbonnementController:ReadBackAbonnement" type="service_closure" id=".service_locator.8b.I63C"/>
+        <argument key="App\Controller\AbonnementController:ReadFRONTAbonnement" type="service_closure" id=".service_locator.8b.I63C"/>
         <argument key="App\Controller\AbonnementController:UpdateAbonnement" type="service_closure" id=".service_locator.RPakEiu"/>
+        <argument key="App\Controller\AbonnementController:pay" type="service_closure" id=".service_locator.RPakEiu"/>
+        <argument key="App\Controller\AbonnementController:stripePaymentSuccess" type="service_closure" id=".service_locator.RPakEiu"/>
         <argument key="App\Controller\CategorieController:ajoutCategorie" type="service_closure" id=".service_locator.cg5DUby"/>
         <argument key="App\Controller\CategorieController:delete" type="service_closure" id=".service_locator.yGTA_v5"/>
         <argument key="App\Controller\CategorieController:index" type="service_closure" id=".service_locator..0UkRYR"/>
@@ -7154,12 +7167,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.jqkupi0"/>
+      <argument type="service" id=".service_locator.k87Kaat"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.jqkupi0"/>
+      <argument type="service" id=".service_locator.k87Kaat"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8130,7 +8143,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jqkupi0"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.k87Kaat"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8155,7 +8168,7 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.GCAdxvy" alias=".service_locator.RPakEiu"/>
-    <service id=".service_locator.vcfZUIJ" alias=".service_locator.jqkupi0"/>
+    <service id=".service_locator.wM_MFys" alias=".service_locator.k87Kaat"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.kqX.ISU" alias=".service_locator.TU.cPco"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -8184,7 +8197,7 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.Zex8TC7" alias=".service_locator.8b.I63C"/>
-    <service id=".service_locator.FPFiL9q" alias=".service_locator.GQZbvNR"/>
+    <service id=".service_locator.DnfKZIu" alias=".service_locator.GyY0RxJ"/>
     <service id=".service_locator.JyMXRWx" alias=".service_locator.RPakEiu"/>
     <service id=".service_locator.98_GmPS" alias=".service_locator..0UkRYR"/>
     <service id=".service_locator.UNYEMes" alias=".service_locator.cg5DUby"/>

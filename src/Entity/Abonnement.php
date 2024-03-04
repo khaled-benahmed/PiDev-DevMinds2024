@@ -17,14 +17,14 @@ class Abonnement
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\NotBlank(message:"Le nom est un champ obligatoire")]
 
     private ?string $nom_a = null;
 
 
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message:"La date est un champ obligatoire")]
+    #[Assert\NotBlank(message:"La description est un champ obligatoire")]
 
 
     private ?string $description_a = null;
@@ -43,6 +43,7 @@ class Abonnement
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     #[Assert\NotBlank(message:"La date est un champ obligatoire")]
     #[Assert\Type('\DateTimeInterface', message: "La date '{{ value }}' n'est pas une date valide.")]
+    #[Assert\GreaterThan("today", message:"La date de début doit être ultérieure à aujourd'hui")]
     private ?\DateTimeImmutable $date_fin_a = null;
 
     #[ORM\ManyToOne(inversedBy: 'abonments')]

@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3f66e532d758b3173fad7a0ccb9c2ebe389a4dc6',
+        'reference' => '0ee9c44cf714c4b75f755b12174c72bc314e1a5a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3f66e532d758b3173fad7a0ccb9c2ebe389a4dc6',
+            'reference' => '0ee9c44cf714c4b75f755b12174c72bc314e1a5a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -421,8 +421,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -574,6 +574,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v13.13.0',
+            'version' => '13.13.0.0',
+            'reference' => '8dc58bab25f222a74d1157d4ca9e9e48451dd0c1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/amqp-messenger' => array(
             'pretty_version' => 'v5.4.35',
@@ -800,6 +809,15 @@
             'reference' => '89805687f360133f18bdedfb32138ce0ddd5383c',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/framework-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/google-mailer' => array(
+            'pretty_version' => 'v5.4.35',
+            'version' => '5.4.35.0',
+            'reference' => '6d7191a30fd2ae0ab740a93cfbf7fba64834aed6',
+            'type' => 'symfony-mailer-bridge',
+            'install_path' => __DIR__ . '/../symfony/google-mailer',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

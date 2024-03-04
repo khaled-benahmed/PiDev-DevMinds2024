@@ -112,7 +112,10 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
         echo "\">Home</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Coaches</a>
+                            <a class=\"nav-link\" href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Read_FRONT_Abonnement");
+        echo "\">Coaches</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Nutritionists</a>
@@ -327,7 +330,7 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  300 => 96,  290 => 95,  277 => 11,  267 => 10,  249 => 9,  230 => 6,  215 => 108,  211 => 107,  199 => 97,  197 => 95,  189 => 89,  181 => 83,  176 => 80,  173 => 79,  168 => 76,  163 => 73,  160 => 72,  154 => 68,  151 => 67,  145 => 63,  142 => 62,  136 => 59,  133 => 58,  130 => 57,  128 => 56,  111 => 42,  96 => 30,  85 => 22,  80 => 20,  73 => 16,  68 => 14,  65 => 13,  62 => 10,  60 => 9,  56 => 7,  54 => 6,  47 => 1,);
+        return array (  303 => 96,  293 => 95,  280 => 11,  270 => 10,  252 => 9,  233 => 6,  218 => 108,  214 => 107,  202 => 97,  200 => 95,  192 => 89,  184 => 83,  179 => 80,  176 => 79,  171 => 76,  166 => 73,  163 => 72,  157 => 68,  154 => 67,  148 => 63,  145 => 62,  139 => 59,  136 => 58,  133 => 57,  131 => 56,  117 => 45,  111 => 42,  96 => 30,  85 => 22,  80 => 20,  73 => 16,  68 => 14,  65 => 13,  62 => 10,  60 => 9,  56 => 7,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -376,7 +379,7 @@ class __TwigTemplate_e1648882a0723ba0742fbc24e51aeba0 extends Template
                             <a class=\"nav-link active\" aria-current=\"page\" href=\"{{ path('main') }}\">Home</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Coaches</a>
+                            <a class=\"nav-link\" href=\"{{ path('Read_FRONT_Abonnement') }}\">Coaches</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\">Nutritionists</a>

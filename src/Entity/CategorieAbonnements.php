@@ -6,6 +6,7 @@ use App\Repository\CategorieAbonnementsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CategorieAbonnementsRepository::class)]
 class CategorieAbonnements
@@ -16,9 +17,11 @@ class CategorieAbonnements
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Le Nom est un champ obligatoire")]
     private ?string $nom_categorie = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"La description est un champ obligatoire")]
     private ?string $description_c = null;
 
     #[ORM\OneToMany(mappedBy: 'categorieAbonnements', targetEntity: Abonnement::class)]
