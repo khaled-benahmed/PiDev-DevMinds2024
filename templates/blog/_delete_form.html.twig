@@ -1,0 +1,10 @@
+{% if blog is not null %}
+    <form method="post" action="{{ path('app_blog_delete', {'id': blog.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ blog.id) }}">
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Delete
+        </button>
+    </form>
+{% else %}
+    <p>No blog found.</p>
+{% endif %}

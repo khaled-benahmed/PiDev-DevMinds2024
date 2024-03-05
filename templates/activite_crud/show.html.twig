@@ -1,0 +1,38 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}NutriFit | Activité | {{ activite.nomActivite }} {% endblock %}
+
+{% block body %}
+
+    <div align="center">
+        {% set img = activite.imageActivite %}
+        <img src="{{ asset(img) }}" style="height: 350px;" alt="Erreur Import.">
+    </div>
+    <br>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td><strong>Nom</strong></td>
+            <td>{{ activite.nomActivite }}</td>
+        </tr>
+        <tr>
+            <td><strong>Durée</strong></td>
+            <td>{{ activite.dureeActivite }}</td>
+        </tr>
+        <tr>
+            <td><strong>Difficulté</strong></td>
+            <td>{{ activite.difficulteActivite }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+    <br>
+    <strong>Plus de Detail :</strong>
+    <br>
+    <p>{{ activite.descriptionActivite }}</p>
+    <br>
+    <div align="center" class="card-footer">
+        <button class="au-btn au-btn-icon au-btn--green au-btn--small"><a style="color:#fff;" href="{{ path('app_activite_crud_index') }}">Retour à la Liste</a></button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Allergie index{% endblock %}
+
+{% block body %}
+    {#  <h1>Allergie index</h1>#}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Actions</th> <!-- Renommer la colonne 'actions' en 'Actions' -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for allergie in allergies %}
+            <tr>
+                <td>{{ allergie.id }}</td>
+                <td>{{ allergie.nom }}</td>
+                <td>{{ allergie.description }}</td>
+                <td>
+                    <!-- Ajouter des classes Bootstrap aux liens -->
+                    <a href="{{ path('app_allergie_show', {'id': allergie.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                    <a href="{{ path('app_allergie_edit', {'id': allergie.id}) }}" class="btn btn-info btn-sm">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Ajouter une classe Bootstrap au lien "Create New" -->
+    <a href="{{ path('app_allergie_new') }}" class="btn btn-success">Create New</a>
+{% endblock %}

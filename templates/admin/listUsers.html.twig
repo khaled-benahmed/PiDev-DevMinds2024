@@ -1,0 +1,86 @@
+{% extends "baseBack.html.twig" %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto py-4">
+        <h1 class="text-xl font-semibold mb-2">Liste des utilisateurs</h1>
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Rechercher...">
+        </div>
+        <div class="overflow-x-auto">
+            <table id="userTable" class="table-auto w-full border-collapse text-sm">
+                <thead>
+                    <tr>
+                        <th class="px-3 py-2 bg-gray-200">ID</th>
+                        <th class="px-3 py-2 bg-gray-200">Prénom</th>
+                        <th class="px-3 py-2 bg-gray-200">Nom</th>
+                        <th class="px-3 py-2 bg-gray-200">Email</th>
+                        <th class="px-3 py-2 bg-gray-200">Cin</th>
+                        <th class="px-3 py-2 bg-gray-200">Rôles</th>
+                        <th class="px-3 py-2 bg-gray-200">Vérifié</th>
+                        <th class="px-3 py-2 bg-gray-200">Bloqué</th>
+                        <th class="px-3 py-2 bg-gray-200">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td class="border px-3 py-2">{{ user.id }}</td>
+                            <td class="border px-3 py-2">{{ user.firstname }}</td>
+                            <td class="border px-3 py-2">{{ user.lastname }}</td>
+                            <td class="border px-3 py-2">{{ user.email }}</td>
+                            <td class="border px-3 py-2">{{ user.cin }}</td>
+                            <td class="border px-3 py-2">
+                               {% for role in user.roles %}
+                                    {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                    <span class="badge bg-{{ badge_color }}">
+                                        {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                        {{ role_name }}
+                                    </span>
+                                {% endfor %}
+                            </td>
+                            <td class="border px-3 py-2">
+                                <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isVerified ? "checked" : "" }}>
+                            </td>
+                            <td class="border px-3 py-2">
+                                <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isBlocked ? "checked" : "" }}>
+                            </td>
+                            <td class="border px-3 py-2">
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_users_edit', {'id': user.id}) }}" title="Modifier"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-outline-info btn-sm" href="{{ path('admin_users_show', {'id': user.id}) }}" title="Afficher"><i class="fas fa-eye"></i></a>
+                                    <form action="{{ path('admin_users_delete', {'id': user.id}) }}" method="post" class="d-inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Supprimer"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                    {% if user.isBlocked %}
+                                        <a class="btn btn-outline-success btn-sm" href="{{ path('admin_users_user_unblock', {'id': user.id}) }}" title="Débloquer"><i class="fas fa-lock-open"></i></a>
+                                    {% else %}
+                                        <a class="btn btn-outline-warning btn-sm" href="{{ path('admin_users_block_user', {'id': user.id}) }}" title="Bloquer"><i class="fas fa-lock"></i></a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var table = $('#userTable');
+            var input = $('#searchInput');
+
+            input.on('keyup', function() {
+                var searchText = $(this).val().toLowerCase();
+                $('tbody tr').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
+                });
+            });
+        });
+    </script>
+{% endblock %}

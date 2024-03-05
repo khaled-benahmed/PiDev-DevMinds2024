@@ -1,0 +1,84 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <div class="header-area" style="background-color: black;">
+  
+    </div>
+    {% if app.user %}
+        {% set img = app.user.image %}
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <img class="rounded-circle mx-auto" src="{{ asset('uploads/' ~ app.user.image) }}" width="150" height="150" alt="Profile Image">
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="font-weight-bold">First Name:</label>
+                                <div>
+                                    <h4>{{ app.user.Firstname }}</h4>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">Last Name:</label>
+                                <div>
+                                    <h4>{{ app.user.Lastname }}</h4>
+                                </div>
+                            </div>                       
+                            <div class="form-group">
+                                <label class="font-weight-bold">City:</label>
+                                <div>
+                                    <h4>{{ app.user.city }}</h4>
+                                </div>
+                            </div>                                
+                            <div class="form-group">
+                                <label class="font-weight-bold">Email:</label>
+                                <div>
+                                    <h4>{{ app.user.email }}</h4>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <label class="font-weight-bold">Role(s):</label>
+                                {% for role in app.user.roles %}
+                                    {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
+                                    <span class="badge bg-{{ badge_color }}">
+                                        {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
+                                        {{ role_name }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">CIN:</label>
+                                <div>
+                                    <h4>{{ app.user.cin }}</h4>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">Birth Date:</label>
+                                <div>
+                                    <h4>{{ app.user.birthday ? app.user.birthday|date('Y-m-d') : '' }}</h4>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="{{ path('profile_edit') }}" class="btn btn-danger">
+                                    <i class="fa fa-magic"></i>&nbsp;
+                                    Edit
+                                    <a href="{{ path('app_home') }}" class="btn btn-info ml-2">Back to home</a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center mt-5">
+            <p>No records found</p>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,84 @@
+
+<div class="card-body card-block">
+    {{ form_start(form,{'attr':{'novalidate':'novalidate'}},{'attr':{'class':'form-horizontal'}}) }}
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.nomActivite,"Nom :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.nomActivite,{'attr':{'class':'form-control'}})}}
+            {% if form_errors(form.nomActivite) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.nomActivite) }}</small>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.dureeActivite,"Durée :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.dureeActivite,{'attr':{'class':'form-control'}})}}
+            {% if form_errors(form.dureeActivite) is empty %}
+                <small class="form-text text-muted">{{ form_errors(form.dureeActivite) }}</small>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.difficulteActivite,"Difficulté :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.difficulteActivite,{'attr':{'class':'form-control'}})}}
+            {% if form_errors(form.difficulteActivite) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.difficulteActivite) }}</small>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.imageActivite,"Image :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.imageActivite,{'attr':{'class':'form-input'}})}}
+            {% if form_errors(form.imageActivite) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.imageActivite) }}</small>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.descriptionActivite,"Description :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.descriptionActivite,{'attr':{'class':'form-control'}})}}
+            {% if form_errors(form.descriptionActivite) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.descriptionActivite) }}</small>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            {{ form_label(form.URLResources,"URL des Ressources :") }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.URLResources, {'attr': {'class': 'form-control', 'placeholder': 'Entrez l\'URL des ressources associées'}}) }}
+            {% if form_errors(form.URLResources) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.URLResources) }}</small>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+<div align="center" class="card-footer">
+    <button class="au-btn au-btn-icon au-btn--green au-btn--small"><i class="zmdi zmdi-plus"></i>{{ button_label|default('Ajouter') }}</button>
+    <button class="au-btn au-btn-icon au-btn--green au-btn--small"><a style="color:white;" href="{{ path('app_activite_crud_index') }}">Consulter Liste</a></button>
+</div>
+{{ form_end(form) }}
+</div>
+
+
+
+
+
+
+

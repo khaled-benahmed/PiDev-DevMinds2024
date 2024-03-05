@@ -1,0 +1,96 @@
+{% extends 'baseBack.html.twig' %}
+
+    {% block title %}NutriFit | Planning {% endblock %}
+
+    {% block body %}
+
+        <div class="map-data m-b-40">
+            <h3 class="title-3 m-b-30">
+                <i class="fas fa-table"></i>Gestion Plannings</h3>
+
+            <div class="table-responsive m-b-40">
+                <div class="table-data__tool">
+                    <div class="table-data__tool-left">
+                        <div class="rs-select2--light rs-select2--md">
+                            <select class="js-select2" name="property">
+                                <option selected="selected">Trier Par</option>
+                                <option value="">Date</option>
+                                <option value="">Jour</option>
+                                <option value="">Heure Début</option>
+                            </select>
+                            <div class="dropDownSelect2"></div>
+                        </div>
+                        <button class="au-btn-filter"><i class="zmdi zmdi-filter-list"></i>filters</button>
+                    </div>
+                    <div class="table-data__tool-right">
+                        <a href="{{ path('app_planning_crud_new') }}">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                <i class="zmdi zmdi-plus"></i>
+                                Ajouter Planning
+                            </button>
+                            &nbsp;
+                        </a>
+                        <a href="{{ path('app_calendar') }}">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                Planning Calendrier
+                            </button>
+                            &nbsp;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-borderless table-data3">
+                <thead>
+                <tr>
+                    <td style="color: white;"><strong style="margin-left:30px">Titre</strong></td>
+                    <td style="color: white;"><strong style="margin-left:30px">Date</strong></td>
+                    <td style="color: white;"><strong style="margin-left:30px">Jour</strong></td>
+                    <td style="color: white;"><strong style="margin-left:30px">Heure Début</strong></td>
+                    <td style="color: white;"><strong style="margin-left:30px">Heure Fin</strong></td>
+                    <td style="color: white;"><strong style="margin-left:30px">Statut</strong></td>
+
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for planning in plannings %}
+                    <tr>
+                        <td>{{ planning.titre }}</td> <!-- Ajout de la valeur de titre ici -->
+                        <td>{{ planning.datePlanning ? planning.datePlanning|date('Y-m-d') : '' }}</td>
+                        <td>{{ planning.jourPlanning }}</td>
+                        <td> <div style="margin-left:40px;">{{ planning.startTime|date('H:i') }}</div> </td>
+                        <td> <div style="margin-left:40px;">{{ planning.endTime|date('H:i') }}</div> </td>                    <td>
+                            <a href="{{ path('app_planning_crud_show', {'id': planning.id}) }}">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Afficher">
+                                    <i class="zmdi zmdi-eye"></i>
+                                </button>
+                            </a>
+                            &nbsp;&nbsp;
+                            <a href="{{ path('app_planning_crud_edit', {'id': planning.id}) }}">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Modifier">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                            </a>
+                            {{ include('planning_crud/delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">Pas de Planning.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="card-footer">
+                <br>
+                <div class="pagination">
+                    {% do plannings.setPageRange(10) %}
+                    {{knp_pagination_render(plannings, 'pagination.html.twig')}}
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {% endblock %}
+

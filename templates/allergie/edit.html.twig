@@ -1,0 +1,13 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Edit Allergie{% endblock %}
+
+{% block body %}
+    <h1>Edit Allergie</h1>
+
+    {{ include('allergie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_allergie_index') }}" class="btn btn-secondary">Back to List</a>
+
+    {{ include('allergie/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plat index{% endblock %}
+
+{% block body %}
+    {# <h1>Plat index</h1>#}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Calories</th>
+            <th>Allergie</th>
+            <th>Prix</th>
+            <th>Actions</th> <!-- Renommer la colonne 'actions' en 'Actions' -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for plat in plats %}
+            <tr>
+                <td>{{ plat.id }}</td>
+                <td>{{ plat.nom }}</td>
+                <td>{{ plat.calories }}</td>
+                <td>
+                    {% for allergy in plat.allergies %}
+                        {{ allergy.nom }}
+                    {% endfor %}
+                </td>
+                <td>{{ plat.prix }}</td>
+                <td>
+                    <!-- Ajouter des classes Bootstrap aux liens -->
+                    <a href="{{ path('app_plat_show', {'id': plat.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                    <a href="{{ path('app_plat_edit', {'id': plat.id}) }}" class="btn btn-info btn-sm">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Ajouter une classe Bootstrap au lien "Create New" -->
+    <a href="{{ path('app_plat_new') }}" class="btn btn-success">Create New</a>
+{% endblock %}

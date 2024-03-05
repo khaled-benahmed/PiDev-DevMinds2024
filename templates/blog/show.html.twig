@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    {% if blog is not null %}
+    <h1>Blog</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ blog.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ blog.nom }}</td>
+        </tr>
+        <tr>
+            <th>Muscle</th>
+            <td>{{ blog.muscle }}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ blog.type }}</td>
+        </tr>
+        <tr>
+            <th>Duree</th>
+            <td>{{ blog.duree ? blog.duree|date('H:i:s') : '' }}</td>
+        </tr>
+        </tbody>
+
+    </table>
+    {% else %}
+        <p>No blog found.</p>
+    {% endif %}
+
+    <a href="{{ path('app_blog_index') }}">back to list</a>
+
+    {#<a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>#}
+
+    {{ include('blog/_delete_form.html.twig') }}
+{% endblock %}

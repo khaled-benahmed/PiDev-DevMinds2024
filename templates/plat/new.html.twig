@@ -1,0 +1,11 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}New Plat{% endblock %}
+
+{% block body %}
+    {#  <h1>Add your pla </h1>#}
+
+    {{ include('plat/_form.html.twig') }}
+
+    <a href="{{ path('app_plat_index') }}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

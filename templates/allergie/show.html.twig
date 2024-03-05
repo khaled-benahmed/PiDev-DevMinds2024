@@ -1,0 +1,30 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Allergie{% endblock %}
+
+{% block body %}
+    <h1>Allergie</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ allergie.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ allergie.nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ allergie.description }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_allergie_index') }}">back to list</a>
+
+    {# <a href="{{ path('app_allergie_edit', {'id': allergie.id}) }}">edit</a>#}
+
+    {{ include('allergie/_delete_form.html.twig') }}
+{% endblock %}

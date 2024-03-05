@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+    {# <h1>Blog index</h1>#}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Muscle</th>
+            <th>Type</th>
+            <th>Durée</th>
+            <th>Actions</th> <!-- Renommer la colonne 'actions' en 'Actions' -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for blog in blogs %}
+            <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.nom }}</td>
+                <td>{{ blog.muscle }}</td>
+                <td>{{ blog.type }}</td>
+                <td>{{ blog.duree ? blog.duree|date('H:i:s') : '' }}</td>
+                <td>
+                    <!-- Ajouter des classes Bootstrap aux liens -->
+                    <a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                    <a href="{{ path('app_blog_edit', {'id': blog.id}) }}" class="btn btn-info btn-sm">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Ajouter une classe Bootstrap au lien "Create New" -->
+    <a href="{{ path('app_blog_new') }}" class="btn btn-success">Create New</a>
+{% endblock %}

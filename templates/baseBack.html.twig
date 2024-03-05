@@ -1,0 +1,407 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>{% block title %}NutriFit Dashboard{% endblock %}</title>
+    <!--<link rel="icon" type="image/x-icon" href="{#  #}{ asset('./BackOffice/images/icon/LogoBlack.ico')}}" />-->
+
+    {% block stylesheets %}
+        <!-- Fontfaces CSS-->
+        <link href="{{ asset('./BackOffice/css/font-face.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="{{ asset('./BackOffice/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+
+        <!-- Vendor CSS-->
+        <link href="{{ asset('./BackOffice/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="{{ asset('./BackOffice/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+
+    {% endblock %}
+
+    <style> </style>
+</head>
+
+
+<body class="animsition">
+<div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="{{path('app_home')}}">
+                        <img src="{{ asset('./BackOffice/images/logo.PNG/') }} " />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="active">
+                        <a class="js-arrow" href="{{path('app_home')}}">
+                            <i class="fas fa-home"></i>Home</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-user"></i>Utilisateurs</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="#">Afficher Utilisateurs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-table"></i>Planning</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="{{path('app_activite_crud_new')}}">Ajouter Activité</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_activite_crud_index')}}">Afficher Activités</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_planning_crud_new')}}">Ajouter Planning</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_planning_crud_index')}}">Afficher Plannings</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-plus"></i>Abonnements</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="#">Ajouter Abonnement</a>
+                            </li>
+                            <li>
+                                <a href="#">Afficher Abonnements</a>
+                            </li>
+                            <li>
+                                <a href="#">Ajouter Pack</a>
+                            </li>
+                            <li>
+                                <a href="#">Afficher Packs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-desktop"></i>Offres</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="#">Ajouter Offres</a>
+                            </li>
+                            <li>
+                                <a href="#">Afficher Offres</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-exclamation"></i>Réclamations</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="/reclamation">Afficher Réclamations</a>
+                            </li>
+                            <li>
+                                <a href="/reponse">Afficher Réponse</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="{{ path('app_home') }}">
+            <img src="{{ asset('uploads/logonutrifit.PNG') }}" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="active">
+                    <a class="js-arrow" href="{{ path('app_home') }}">
+                        <i class="fas fa-home"></i>Home
+                    </a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-user"></i>Utilisateurs
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="{{ path('admin_users_list') }}">Afficher Utilisateurs</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="{{ path('admin_users_statistics') }}">Statistiques</a>
+                        </li>
+                    </ul>
+                </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-table"></i>Planning</a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="{{path('app_activite_crud_new')}}">Ajouter Activité</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_activite_crud_index')}}">Afficher Activités</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_planning_crud_new')}}">Ajouter Planning</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_planning_crud_index')}}">Afficher Planning</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-plus"></i>Abonnements</a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="#">Ajouter Abonnement</a>
+                            </li>
+                            <li>
+                                <a href="#">Afficher Abonnements</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-desktop"></i>Offres</a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="#">Ajouter Offre</a>
+                            </li>
+                            <li>
+                                <a href="#">Afficher Offres</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-newspaper"></i>contenu</a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="{{path('app_plat_new')}}">Ajouter Plat </a>
+
+                            </li>
+                                <li>
+                                    <a href="{{path('app_plat_index')}}">Afficher Plat</a>
+                                </li>
+                                <li>
+                                    <a href="{{path('app_blog_new')}}">Ajouter blog </a>
+
+                            </li>
+                            <li>
+                                <a href="{{path('app_blog_index')}}">Afficher blog</a>
+                            </li>
+                            <li>
+                                <a href="{{path('app_allergie_new')}}">Ajouter Allergie </a>
+
+                            </li>
+                            <li>
+                                <a href="{{path('app_allergie_index')}}">Afficher Allergie </a>
+
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-exclamation"></i>Réclamations</a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="/reclamation">Afficher Réclamations</a>
+                            </li>
+                            <li>
+                                <a href="/reponse">Afficher Réponses</a>
+                            </li>
+                        </ul>
+                    </li>
+                  {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <button class="au-btn--submit" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                        <div class="header-button">
+                            
+                            </div>
+                           <div class="account-wrap">
+                <div class="account-item clearfix js-item-menu">
+
+    <div class="image">
+
+            <img src="{{ asset('uploads/' ~ app.user.image) }}" alt="{{ app.user.image }}" />
+      
+            <!-- Afficher une image par défaut ou un texte alternatif si l'utilisateur n'a pas d'image -->
+            <img src="{{ asset('uploads/default-image.png') }}" alt="Default Image" />
+    
+    </div>
+    <div class="content">
+        <a class="js-acc-btn" href="#">{{ app.user.firstname }}</a>
+    </div>
+
+                <div class="account-dropdown js-dropdown">
+                    <div class="info clearfix">
+                <div class="image">
+                        <img src="{{ asset('uploads/' ~ app.user.image) }}" alt="{{ app.user.image }}" />
+                </div>
+                <div class="content">
+                    <h5 class="name">
+                        <a href="#">{{ app.user.firstname}}{{ app.user.lastname}}</a>
+                    </h5>
+                    <span class="email">{{ app.user.email }}</span>
+                </div>
+            </div>
+
+            <div class="account-dropdown__body">
+    <div class="account-dropdown__item">
+        <a href="{{ path('profile') }}">
+<i class="bi bi-person text-primary"></i> Profile
+        </a>
+    </div>
+    
+    
+</div>
+<div class="account-dropdown__footer">
+    <a href="{{ path('app_logout') }}">
+        <i class="bi bi-power"></i> Logout
+    </a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+
+
+<!-- MAIN CONTENT-->
+<div class="page-wrapper">
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- START WHITE BACKGROUND-->
+                    <div class="map-data m-b-40">
+                        {% block body %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                   <!-- <div class="copyright">
+                        <p>Copyright © 2024 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+{% block javascripts %}
+    <!-- Jquery JS-->
+    <script src="{{ asset('./BackOffice/vendor/jquery-3.2.1.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/jquery-3.2.1.min.js')}}" ></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ asset('./BackOffice/vendor/bootstrap-4.1/popper.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/bootstrap-4.1/bootstrap.min.js')}}" ></script>
+    <!-- Vendor JS-->
+    <script src="{{ asset('./BackOffice/vendor/slick/slick.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/wow/wow.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/animsition/animsition.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/counter-up/jquery.waypoints.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/counter-up/jquery.counterup.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/circle-progress/circle-progress.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/chartjs/Chart.bundle.min.js')}}" ></script>
+    <script src="{{ asset('./BackOffice/vendor/select2/select2.min.js')}}" ></script>
+
+
+    <!-- Main JS-->
+    <script src="{{ asset('./BackOffice/js/main.js')}}" ></script>
+    <script src="https://kit.fontawesome.com/a781c8964e.js" crossorigin="anonymous"></script>
+
+
+    <!-- Calendar -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.js" integrity="sha256-DBxkGZLxKsLKhz054qUpBqtotG00r9AELGpSigJujLg=" crossorigin="anonymous"></script>-->
+
+
+
+{% endblock %}
+
+</html>
