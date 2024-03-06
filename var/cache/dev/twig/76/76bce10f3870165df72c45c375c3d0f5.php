@@ -333,6 +333,6 @@ class __TwigTemplate_686b5723fffa49bb505a4ea66fc73137 extends Template
 
 
 
-", "activite_crud/form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\form.html.twig");
+", "activite_crud/form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\form.html.twig");
     }
 }

@@ -98,7 +98,14 @@ class Planning
 
         return $this;
     }
-
+    public function getUsersFirstNames(): array
+    {
+        $firstNames = [];
+        foreach ($this->users as $user) {
+            $firstNames[] = $user->getFirstname();
+        }
+        return $firstNames;
+    }
     public function getStartTime(): ?\DateTimeInterface
     {
         return $this->startTime;

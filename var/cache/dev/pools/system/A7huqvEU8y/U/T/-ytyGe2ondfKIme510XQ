@@ -1,0 +1,3 @@
+<?php //App%255CController%255CPlanningJSONController%2523deleteJSON
+
+return [PHP_INT_MAX, []];

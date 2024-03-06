@@ -458,6 +458,6 @@ class __TwigTemplate_49af5f07d8e8cf63194009e3331f554e extends Template
 
     </body>
 {% endblock %}
-", "activite_crud/view.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\view.html.twig");
+", "activite_crud/view.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\view.html.twig");
     }
 }

@@ -88,6 +88,6 @@ class __TwigTemplate_9d0c9f4cc7426d939aaaf378c191859e extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ allergie.id) }}\">
     <button class=\"btn btn-danger\">Delete</button>
 </form>
-", "allergie/_delete_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\allergie\\_delete_form.html.twig");
+", "allergie/_delete_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\allergie\\_delete_form.html.twig");
     }
 }

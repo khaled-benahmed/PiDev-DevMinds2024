@@ -304,6 +304,6 @@ class __TwigTemplate_049977e0b92581b0ab5830b43a8475d2 extends Template
         });
     </script>
 {% endblock %}
-", "admin/statistics.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\admin\\statistics.html.twig");
+", "admin/statistics.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\admin\\statistics.html.twig");
     }
 }

@@ -143,6 +143,6 @@ class __TwigTemplate_9cc54b0558891f68211a8d790338604e extends Template
 
     <a href=\"{{ path('app_blog_index') }}\">back to list</a>
 {% endblock %}
-", "blog/new.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\blog\\new.html.twig");
+", "blog/new.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\blog\\new.html.twig");
     }
 }

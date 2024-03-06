@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reclamations PDF</title>
+    <style>
+        /* Add your CSS styles here */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reclamations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomUserReclamation</th>
+                <th>TextReclamation</th>
+                <th>DateReclamation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reclamation in reclamations %}
+                <tr>
+                    <td>{{ reclamation.id }}</td>
+                    <td>{{ reclamation.NomUserReclamation }}</td>
+                    <td>{{ reclamation.textReclamation }}</td>
+                    <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

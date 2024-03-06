@@ -93,6 +93,6 @@ class __TwigTemplate_f25226b8115d6da3340cfd634217c220 extends Template
     {{ form_widget(form) }}
 <button type=\"submit\" class=\"btn btn-primary\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "allergie/_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\allergie\\_form.html.twig");
+", "allergie/_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\allergie\\_form.html.twig");
     }
 }

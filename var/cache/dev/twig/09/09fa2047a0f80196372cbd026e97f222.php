@@ -145,7 +145,6 @@ class __TwigTemplate_3ae8866936e83f17150e74fb16401b3c extends Template
             </div>
         </div>
     </div>
-{% endblock %}
-", "security/2fa_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\security\\2fa_form.html.twig");
+{% endblock %}", "security/2fa_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\security\\2fa_form.html.twig");
     }
 }

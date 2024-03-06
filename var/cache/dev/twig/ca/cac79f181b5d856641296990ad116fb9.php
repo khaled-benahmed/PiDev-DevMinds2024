@@ -85,38 +85,38 @@ class __TwigTemplate_022015602aff00e9c9f7446793120a0c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container py-5\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-6\">
-            <div class=\"card bg-dark text-light shadow-lg\">
-                <div class=\"card-body text-center\">
-                    <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
-                    <p class=\"card-text text-muted\">
-                        Enter your email address below, and we will send you a link to reset your password.
-                    </p>
-                    ";
+        echo "    <div class=\"container py-5\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-md-6\">
+                <div class=\"card bg-dark text-light shadow-lg\">
+                    <div class=\"card-body text-center\">
+                        <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
+                        <p class=\"card-text text-muted\">
+                            Enter your email address below, and we will send you a link to reset your password.
+                        </p>
+                        ";
         // line 15
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 15, $this->source); })()), 'form_start');
         echo "
-                    <div class=\"mb-3\">
-                        ";
+                        <div class=\"mb-3\">
+                            ";
         // line 17
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 17, $this->source); })()), "email", [], "any", false, false, false, 17), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Enter your email address"]]);
         echo "
-                    </div>
-                    <button type=\"submit\" class=\"btn btn-danger btn-block\">Send Password Reset Email</button>
-                    ";
+                        </div>
+                        <button type=\"submit\" class=\"btn btn-danger btn-block\">Send Password Reset Email</button>
+                        ";
         // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
-                </div>
-                <div class=\"card-footer bg-dark border-top border-danger text-muted\">
-                    <small>Don't worry, we've got your back!</small>
+                    </div>
+                    <div class=\"card-footer bg-dark border-top border-danger text-muted\">
+                        <small>Don't worry, we've got your back!</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -157,34 +157,33 @@ class __TwigTemplate_022015602aff00e9c9f7446793120a0c extends Template
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-<div class=\"container py-5\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-6\">
-            <div class=\"card bg-dark text-light shadow-lg\">
-                <div class=\"card-body text-center\">
-                    <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
-                    <p class=\"card-text text-muted\">
-                        Enter your email address below, and we will send you a link to reset your password.
-                    </p>
-                    {{ form_start(requestForm) }}
-                    <div class=\"mb-3\">
-                        {{ form_row(requestForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Enter your email address'}}) }}
+    <div class=\"container py-5\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-md-6\">
+                <div class=\"card bg-dark text-light shadow-lg\">
+                    <div class=\"card-body text-center\">
+                        <h1 class=\"card-title text-danger mb-4\">Reset Your Password</h1>
+                        <p class=\"card-text text-muted\">
+                            Enter your email address below, and we will send you a link to reset your password.
+                        </p>
+                        {{ form_start(requestForm) }}
+                        <div class=\"mb-3\">
+                            {{ form_row(requestForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Enter your email address'}}) }}
+                        </div>
+                        <button type=\"submit\" class=\"btn btn-danger btn-block\">Send Password Reset Email</button>
+                        {{ form_end(requestForm) }}
                     </div>
-                    <button type=\"submit\" class=\"btn btn-danger btn-block\">Send Password Reset Email</button>
-                    {{ form_end(requestForm) }}
-                </div>
-                <div class=\"card-footer bg-dark border-top border-danger text-muted\">
-                    <small>Don't worry, we've got your back!</small>
+                    <div class=\"card-footer bg-dark border-top border-danger text-muted\">
+                        <small>Don't worry, we've got your back!</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 
 
-
-", "reset_password/request.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\reset_password\\request.html.twig");
+", "reset_password/request.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\reset_password\\request.html.twig");
     }
 }

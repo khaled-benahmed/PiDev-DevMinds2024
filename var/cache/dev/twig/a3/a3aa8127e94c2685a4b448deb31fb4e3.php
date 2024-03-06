@@ -334,6 +334,6 @@ class __TwigTemplate_d5bc8aedaf958f3e7f3c036b85896ccb extends Template
     </ul>
 </div>
 {% endif %}
-", "@KnpPaginator/Pagination/twitter_bootstrap_pagination.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_pagination.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_pagination.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_pagination.html.twig");
     }
 }

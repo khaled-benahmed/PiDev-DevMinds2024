@@ -8,11 +8,16 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Form\UserAdminType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\Query\Expr;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 
 #[Route('/admin/utilisateurs', name: 'admin_users_')]
@@ -74,35 +79,52 @@ class UserController extends AbstractController
     }
 
     #[Route("/block/user/{id}", name: "block_user")]
-    public function blockUser($id): Response
+    public function blockUser($id, UserRepository $userRepository, TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker): Response
     {
-        // Récupérer l'utilisateur à partir de l'ID
-        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
-    
-        // Vérifier si l'utilisateur existe
+        $user = $userRepository->find($id);
+        
         if (!$user) {
             throw $this->createNotFoundException('Utilisateur non trouvé.');
         }
-    
-        // Mettre à jour le statut de blocage de l'utilisateur
+        
+        // Récupérer les anciens rôles de l'utilisateur
+        $oldRoles = $user->getRoles();
+        
+        // Bloquer l'utilisateur
         $user->setIsBlocked(true);
-    
-        // Enregistrer les modifications en base de données
+        // Ajouter le rôle "blocked"
+        $user->addRole('ROLE_BLOCKED');
+        
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->flush();
-    
-        // Rediriger vers la page où vous affichez la liste des utilisateurs
+        
+        // Restaurer les anciens rôles de l'utilisateur dans le token de sécurité
+        $token = $tokenStorage->getToken();
+        if ($token && $token->getUser() instanceof UserInterface && $authChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            $user = $token->getUser();
+            // Manipulez les rôles ici selon votre implémentation
+        }
+        
         return $this->redirectToRoute('admin_users_list');
     }
     
     #[Route("/user/{id}/unblock", name: "user_unblock")]
-    public function unblockUser( $id): Response
+    public function unblockUser($id): Response
     {
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
-        $user->setIsBlocked(false); 
-
+    
+        if (!$user) {
+            throw $this->createNotFoundException('Utilisateur non trouvé.');
+        }
+    
+        // Supprimer le rôle "blocked"
+        $user->removeRole('ROLE_BLOCKED');
+        // Débloquer l'utilisateur
+        $user->setIsBlocked(false);
+    
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->flush();
+    
         return $this->redirectToRoute('admin_users_list'); 
     }
 

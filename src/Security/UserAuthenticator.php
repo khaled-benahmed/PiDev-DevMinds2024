@@ -2,6 +2,9 @@
 
 namespace App\Security;
 
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +18,8 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
+
 
 class UserAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -22,7 +27,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 
     public const LOGIN_ROUTE = 'app_login';
 
-    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    public function __construct(private UrlGeneratorInterface $urlGenerator,private EntityManagerInterface $entityManager)
     {
     }
 
@@ -32,6 +37,19 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
+        // Get the user object by email
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+
+        if (!$user) {
+            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+        }
+
+        // Check if the user is blocked
+        if ($user->getIsBlocked()) {
+            throw new CustomUserMessageAuthenticationException('Votre compte a été bloqué par l\'administrateur. Veuillez le contacter pour plus d\'informations.');
+        }
+
+        // If the user is not blocked, return the passport
         return new Passport(
             new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
@@ -54,6 +72,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
             // If the user is an admin, redirect to the admin interface
             return new RedirectResponse($this->urlGenerator->generate('admin_index'));
         }
+        
 
         // If the user is not an admin, redirect to the default route (or any other route you prefer)
         return new RedirectResponse($this->urlGenerator->generate('app_home'));

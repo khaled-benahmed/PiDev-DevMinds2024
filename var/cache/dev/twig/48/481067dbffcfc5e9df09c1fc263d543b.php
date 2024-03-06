@@ -228,6 +228,6 @@ class __TwigTemplate_7d92e46c6d5111b7f115ee672499d0dd extends Template
 
     {{ include('blog/_delete_form.html.twig') }}
 {% endblock %}
-", "blog/show.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\blog\\show.html.twig");
+", "blog/show.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\blog\\show.html.twig");
     }
 }

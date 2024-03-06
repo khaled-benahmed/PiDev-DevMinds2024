@@ -13,6 +13,15 @@ services:
 
 
 
+    App\Entity\Reclamation:
+        autowire: true
+        public: true
+    App\Entity\Reponse:
+        autowire: true
+        public: true
+    App\Entity\Offres:
+        autowire: true
+        public: true
 
  # Configure le service pour l'entité User
     App\Entity\User:

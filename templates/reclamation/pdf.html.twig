@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reclamations PDF</title>
+    <style>
+        /* Add your CSS styles here */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reclamation {{reclamation.id}}</h1>
+                    <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ reclamation.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom User</th>
+                            <td>{{ reclamation.NomUserReclamation }}</td>
+                        </tr>
+                        <tr>
+                            <th>Text</th>
+                            <td>{{ reclamation.textReclamation }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Reponse</th>
+                            {% if reponses is empty %}
+                                <td>pas de reponse</td>
+                            {% else %}
+                                {% for response in reponses %}
+                                    {% if response is not null %}
+                                        <td>{{ response.contenuReponse }}</td>
+                                    {% else %}
+                                        <td>pas de reponse</td>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            
+                          
+                        </tr>
+                    </tbody>
+                </table>
+</body>
+</html>

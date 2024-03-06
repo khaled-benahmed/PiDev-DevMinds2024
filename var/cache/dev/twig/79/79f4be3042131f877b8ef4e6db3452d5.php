@@ -92,6 +92,6 @@ class __TwigTemplate_8dbf8c7e19542b86451d2b70bf2c1ecd extends Template
         <i class=\"fas fa-trash\"></i> Delete
     </button>
 </form>
-", "plat/_delete_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\plat\\_delete_form.html.twig");
+", "plat/_delete_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\plat\\_delete_form.html.twig");
     }
 }

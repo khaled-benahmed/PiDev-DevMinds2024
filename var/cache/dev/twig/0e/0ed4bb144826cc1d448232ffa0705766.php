@@ -212,6 +212,6 @@ class __TwigTemplate_12be2dd2c89e60419512d097da9988af extends Template
     </div>
 
 {% endblock %}
-", "activite_crud/show.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\show.html.twig");
+", "activite_crud/show.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\show.html.twig");
     }
 }

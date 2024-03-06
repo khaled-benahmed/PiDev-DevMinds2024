@@ -70,63 +70,63 @@ class __TwigTemplate_a21f2481acc825e31231e3883b561717 extends Template
 
     <table class=\"table\">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>";
+        <tr>
+            <th>Id</th>
+            <td>";
         // line 12
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>";
         // line 16
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 16, $this->source); })()), "title", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Start</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Start</th>
+            <td>";
         // line 20
         ((twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 20, $this->source); })()), "start", [], "any", false, false, false, 20)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 20, $this->source); })()), "start", [], "any", false, false, false, 20), "Y-m-d"), "html", null, true))) : (print ("")));
         echo "</td>
-            </tr>
-            <tr>
-                <th>End</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>End</th>
+            <td>";
         // line 24
         ((twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 24, $this->source); })()), "end", [], "any", false, false, false, 24)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 24, $this->source); })()), "end", [], "any", false, false, false, 24), "Y-m-d"), "html", null, true))) : (print ("")));
         echo "</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>";
         // line 28
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 28, $this->source); })()), "description", [], "any", false, false, false, 28), "html", null, true);
         echo "</td>
-            </tr>
+        </tr>
 
-            <tr>
-                <th>Background_color</th>
-                <td>";
+        <tr>
+            <th>Background_color</th>
+            <td>";
         // line 33
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 33, $this->source); })()), "backgroundColor", [], "any", false, false, false, 33), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Text_color</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Text_color</th>
+            <td>";
         // line 37
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 37, $this->source); })()), "textColor", [], "any", false, false, false, 37), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Border_color</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Border_color</th>
+            <td>";
         // line 41
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["calendar"]) || array_key_exists("calendar", $context) ? $context["calendar"] : (function () { throw new RuntimeError('Variable "calendar" does not exist.', 41, $this->source); })()), "borderColor", [], "any", false, false, false, 41), "html", null, true);
         echo "</td>
-            </tr>
+        </tr>
         </tbody>
     </table>
 
@@ -180,39 +180,39 @@ class __TwigTemplate_a21f2481acc825e31231e3883b561717 extends Template
 
     <table class=\"table\">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ calendar.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ calendar.title }}</td>
-            </tr>
-            <tr>
-                <th>Start</th>
-                <td>{{ calendar.start ? calendar.start|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>End</th>
-                <td>{{ calendar.end ? calendar.end|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ calendar.description }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ calendar.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ calendar.title }}</td>
+        </tr>
+        <tr>
+            <th>Start</th>
+            <td>{{ calendar.start ? calendar.start|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>End</th>
+            <td>{{ calendar.end ? calendar.end|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ calendar.description }}</td>
+        </tr>
 
-            <tr>
-                <th>Background_color</th>
-                <td>{{ calendar.backgroundColor }}</td>
-            </tr>
-            <tr>
-                <th>Text_color</th>
-                <td>{{ calendar.textColor }}</td>
-            </tr>
-            <tr>
-                <th>Border_color</th>
-                <td>{{ calendar.borderColor }}</td>
-            </tr>
+        <tr>
+            <th>Background_color</th>
+            <td>{{ calendar.backgroundColor }}</td>
+        </tr>
+        <tr>
+            <th>Text_color</th>
+            <td>{{ calendar.textColor }}</td>
+        </tr>
+        <tr>
+            <th>Border_color</th>
+            <td>{{ calendar.borderColor }}</td>
+        </tr>
         </tbody>
     </table>
 
@@ -222,6 +222,6 @@ class __TwigTemplate_a21f2481acc825e31231e3883b561717 extends Template
 
     {{ include('calendar/delete_form.html.twig') }}
 {% endblock %}
-", "calendar/show.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\calendar\\show.html.twig");
+", "calendar/show.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\calendar\\show.html.twig");
     }
 }

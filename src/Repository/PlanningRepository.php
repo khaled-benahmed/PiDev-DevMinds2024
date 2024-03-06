@@ -29,6 +29,20 @@ class PlanningRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+// src/Repository/PlanningRepository.php
+
+public function findUpcomingWithinMinutes($minutes = 30)
+{
+    $qb = $this->createQueryBuilder('p');
+    $qb->where('p.start_time BETWEEN :now AND :future')
+       ->setParameter('now', new \DateTime())
+       ->setParameter('future', new \DateTime("+{$minutes} minutes"));
+
+    $query = $qb->getQuery();
+
+    return $query->setMaxResults(1)->getOneOrNullResult();
+}
+
 
     public function remove(Planning $entity, bool $flush = false): void
     {

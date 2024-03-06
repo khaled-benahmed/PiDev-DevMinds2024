@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Planning;
 use App\Entity\Activite;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
@@ -20,6 +21,7 @@ class PlanningType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
             ->add('Titre', TextType::class, [
                 'required' => true,
                 'attr' => ['placeholder' => 'Entrez le titre du planning']
@@ -67,6 +69,16 @@ class PlanningType extends AbstractType
                 'multiple' => true,
                 'by_reference' => false,
                 'placeholder' => 'Veuillez choisir les activités.',
+            ])
+            ->add('users', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => function (User $user) {
+                    return sprintf('%s(%d)', $user->getFirstname(),  $user->getUserIdentifier());
+                },
+                'expanded' => true,
+                'multiple' => true,
+                'by_reference' => false,
+                'placeholder' => 'Veuillez choisir les utilisateur correspond.',
             ])
 
         // Ajout du champ 'status' avec des options prédéfinies

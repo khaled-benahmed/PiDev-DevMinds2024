@@ -143,6 +143,6 @@ class __TwigTemplate_1db9101e426ca47a2d6dd0a58101a33b extends Template
 
     <a href=\"{{ path('app_plat_index') }}\" class=\"btn btn-secondary\">Back to List</a>
 {% endblock %}
-", "plat/new.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\plat\\new.html.twig");
+", "plat/new.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\plat\\new.html.twig");
     }
 }

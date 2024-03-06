@@ -1,0 +1,83 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Liste des Category {% endblock %}
+
+{% block body %}
+
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success ">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h1 style="text-align: left;" >Liste des categorie</h1>
+    <br>
+
+
+
+    <br>
+    <table class="table" style="text-align: center;">
+        <thead>
+        <tr style="text-align: center; vertical-align: middle;">
+            <th>ID</th>
+            <th>Nom</th>
+
+            <th>Description</th>
+
+
+
+            <th>Editer</th>
+        </tr>
+        </thead>
+        <tbody id="search-results">
+        {% for c in categories %}
+            <tr style="text-align: center; vertical-align: middle;">
+                <td>
+                    {{c.getId()}}
+                </td>
+                <td>
+                    {{c.getNomCategorie()}}
+                </td>
+
+                <td>
+                    {{c.getDescriptionC()|raw}}
+                </td>
+                <td>
+                    <div style="text-align: center;">
+                        <a href="{{path('updateCategorie',{'id':c.id})}}" class="btn btn-warning mt-2" type="submit" >Modifier</a>
+                        <a href="{{path('deleteCategorie',{'id':c.id})}}" class="btn btn-danger mt-2" type="submit" onclick="return confirm('Etes vous sure ?')">Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" style="text-align: center;">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tbody id="search"></tbody>
+    </table>
+
+    <div style="text-align: center;">
+        <br>
+        <a href="{{path('add_category')}}" class="btn btn-primary mt-2" type="submit" style="text-align: center;">Ajouter un categorie</a>
+        <br>
+        <br>
+        <br>
+    </div>
+    <script>
+        $(function () {
+            $('#search-form').submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $('#search-results').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

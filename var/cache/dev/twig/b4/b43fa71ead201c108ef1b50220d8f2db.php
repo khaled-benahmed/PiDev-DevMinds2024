@@ -33,7 +33,7 @@ class __TwigTemplate_2e8b30bb2bed7a7dfb3a9787d74cb430 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base3.html.twig";
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_2e8b30bb2bed7a7dfb3a9787d74cb430 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "plat/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base3.html.twig", "plat/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "plat/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -136,7 +136,7 @@ class __TwigTemplate_2e8b30bb2bed7a7dfb3a9787d74cb430 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base3.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Edit Plat{% endblock %}
 
@@ -149,6 +149,6 @@ class __TwigTemplate_2e8b30bb2bed7a7dfb3a9787d74cb430 extends Template
 
     {{ include('plat/_delete_form.html.twig') }}
 {% endblock %}
-", "plat/edit.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\plat\\edit.html.twig");
+", "plat/edit.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\plat\\edit.html.twig");
     }
 }

@@ -240,6 +240,6 @@ class __TwigTemplate_f2e91c35dd481d885e2f502250221a8b extends Template
     <!-- Ajouter une classe Bootstrap au lien \"Create New\" -->
     <a href=\"{{ path('app_blog_new') }}\" class=\"btn btn-success\">Create New</a>
 {% endblock %}
-", "blog/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\blog\\index.html.twig");
+", "blog/index.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\blog\\index.html.twig");
     }
 }

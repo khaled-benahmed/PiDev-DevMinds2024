@@ -147,6 +147,6 @@ class __TwigTemplate_385a6aa9f64fd45361c2eb6f1217e48d extends Template
 {% endblock %}
 
 
-", "planning_crud/new.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\planning_crud\\new.html.twig");
+", "planning_crud/new.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\planning_crud\\new.html.twig");
     }
 }

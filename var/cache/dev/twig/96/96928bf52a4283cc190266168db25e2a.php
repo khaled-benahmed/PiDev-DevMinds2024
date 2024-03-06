@@ -464,6 +464,6 @@ class __TwigTemplate_08f27de906ff5f07206e3a789cd165ea extends Template
 
 </body>
 </html>
-", "plat/affiche_front.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\plat\\affiche_front.html.twig");
+", "plat/affiche_front.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\plat\\affiche_front.html.twig");
     }
 }

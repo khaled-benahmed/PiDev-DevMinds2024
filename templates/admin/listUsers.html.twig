@@ -32,13 +32,19 @@
                             <td class="border px-3 py-2">{{ user.email }}</td>
                             <td class="border px-3 py-2">{{ user.cin }}</td>
                             <td class="border px-3 py-2">
-                               {% for role in user.roles %}
+                            {% for role in user.roles %}
+                                {% if role == "ROLE_BLOCKED" %}
+                                    <span class="badge bg-secondary">
+                                        Bloqué
+                                    </span>
+                                {% else %}
                                     {% set badge_color = role == "ROLE_ADMIN" ? "danger" : (role == "ROLE_COACH" or role == "ROLE_NUTRITIONIST" ? "warning" : "success") %}
                                     <span class="badge bg-{{ badge_color }}">
                                         {% set role_name = role == "ROLE_ADMIN" ? "Administrateur" : (role == "ROLE_COACH" ? "Coach" : (role == "ROLE_NUTRITIONIST" ? "Nutritionniste" : "Membre")) %}
                                         {{ role_name }}
                                     </span>
-                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             </td>
                             <td class="border px-3 py-2">
                                 <input class="form-checkbox h-4 w-4 text-green-600 bg-green-500" type="checkbox" disabled {{ user.isVerified ? "checked" : "" }}>

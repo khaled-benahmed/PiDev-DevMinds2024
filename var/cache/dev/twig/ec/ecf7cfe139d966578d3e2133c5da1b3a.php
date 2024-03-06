@@ -85,13 +85,13 @@ class __TwigTemplate_2ad7525e631d38b6e9dfddc9e7c652c7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
-    <div class=\"row justify-content-center mt-5\">
-        <div class=\"col-md-6\">
-            <div class=\"card bg-dark text-light shadow\">
-                <div class=\"card-body\">
-                    <h1 class=\"text-center mb-4\">Reset your password</h1>
-                    ";
+        echo "    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5\">
+            <div class=\"col-md-6\">
+                <div class=\"card bg-dark text-light shadow\">
+                    <div class=\"card-body\">
+                        <h1 class=\"text-center mb-4\">Reset your password</h1>
+                        ";
         // line 12
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 12, $this->source); })()), 'form_start');
         echo "
@@ -104,15 +104,15 @@ class __TwigTemplate_2ad7525e631d38b6e9dfddc9e7c652c7 extends Template
                         <div class=\"d-grid\">
                             <button class=\"btn btn-primary btn-block\" type=\"submit\">Reset password</button>
                         </div>
-                    ";
+                        ";
         // line 19
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 19, $this->source); })()), 'form_end');
         echo "
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -153,26 +153,25 @@ class __TwigTemplate_2ad7525e631d38b6e9dfddc9e7c652c7 extends Template
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-<div class=\"container\">
-    <div class=\"row justify-content-center mt-5\">
-        <div class=\"col-md-6\">
-            <div class=\"card bg-dark text-light shadow\">
-                <div class=\"card-body\">
-                    <h1 class=\"text-center mb-4\">Reset your password</h1>
-                    {{ form_start(resetForm) }}
+    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5\">
+            <div class=\"col-md-6\">
+                <div class=\"card bg-dark text-light shadow\">
+                    <div class=\"card-body\">
+                        <h1 class=\"text-center mb-4\">Reset your password</h1>
+                        {{ form_start(resetForm) }}
                         <div class=\"mb-3\">
                             {{ form_row(resetForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'New Password'}}) }}
                         </div>
                         <div class=\"d-grid\">
                             <button class=\"btn btn-primary btn-block\" type=\"submit\">Reset password</button>
                         </div>
-                    {{ form_end(resetForm) }}
+                        {{ form_end(resetForm) }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
-", "reset_password/reset.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\reset_password\\reset.html.twig");
+{% endblock %}", "reset_password/reset.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\reset_password\\reset.html.twig");
     }
 }

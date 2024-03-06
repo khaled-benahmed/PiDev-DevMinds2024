@@ -3,6 +3,18 @@
     <!-- Titre Field -->
     <div class="row form-group">
         <div class="col col-md-3">
+            {{ form_label(form.users, "Utilisateurs :", {'label_attr': {'class': 'form-control-label'}}) }}
+        </div>
+        <div class="col-12 col-md-9">
+            {{ form_widget(form.users) }}
+            {% if form_errors(form.users) is not empty %}
+                <small class="form-text text-muted">{{ form_errors(form.users) }}</small>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col col-md-3">
             {{ form_label(form.Titre, "Titre :", {'label_attr': {'class': 'form-control-label'}}) }}
         </div>
         <div class="col-12 col-md-9">

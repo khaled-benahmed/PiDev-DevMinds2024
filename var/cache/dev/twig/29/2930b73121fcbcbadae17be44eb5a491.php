@@ -70,17 +70,17 @@ class __TwigTemplate_3516f88ef1c26efedb83a68063258265 extends Template
 
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Description</th>
-                <th>Background_color</th>
-                <th>Text_color</th>
-                <th>Border_color</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Description</th>
+            <th>Background_color</th>
+            <th>Text_color</th>
+            <th>Border_color</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         ";
@@ -191,17 +191,17 @@ class __TwigTemplate_3516f88ef1c26efedb83a68063258265 extends Template
 
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Description</th>
-                <th>Background_color</th>
-                <th>Text_color</th>
-                <th>Border_color</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Description</th>
+            <th>Background_color</th>
+            <th>Text_color</th>
+            <th>Border_color</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for calendar in calendars %}
@@ -229,6 +229,6 @@ class __TwigTemplate_3516f88ef1c26efedb83a68063258265 extends Template
 
     <a href=\"{{ path('app_calendar_new') }}\">Create new</a>
 {% endblock %}
-", "calendar/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\calendar\\index.html.twig");
+", "calendar/index.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\calendar\\index.html.twig");
     }
 }

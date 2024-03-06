@@ -56,8 +56,7 @@ class __TwigTemplate_369e3c211227d15caeb81720071cf6a8 extends Template
 
 <p>
     Cheers!
-</p>
-";
+</p>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -102,7 +101,6 @@ class __TwigTemplate_369e3c211227d15caeb81720071cf6a8 extends Template
 
 <p>
     Cheers!
-</p>
-", "registration/confirmation_email.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\registration\\confirmation_email.html.twig");
+</p>", "registration/confirmation_email.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\registration\\confirmation_email.html.twig");
     }
 }

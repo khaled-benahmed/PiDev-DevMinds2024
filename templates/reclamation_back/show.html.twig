@@ -1,0 +1,40 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}
+    Reclamation
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="reclamation-details">
+        <h1 class="mb-4">Reclamation</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>{{ reclamation.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nom User</th>
+                    <td>{{ reclamation.NomUserReclamation }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Text</th>
+                    <td>{{ reclamation.textReclamation }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date</th>
+                    <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="navigation mt-4">
+            <a href="{{ path('app_reclamation_back_index') }}" class="btn btn-secondary mr-2">Back to List</a>
+            <a href="{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}" class="btn btn-primary mr-2">Edit</a>
+            {{ include('reclamation_back/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

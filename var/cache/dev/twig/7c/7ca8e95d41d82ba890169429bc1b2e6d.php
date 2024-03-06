@@ -226,6 +226,6 @@ class __TwigTemplate_03cd591a32c79225179ccfdb3954db35 extends Template
     <!-- Ajouter une classe Bootstrap au lien \"Create New\" -->
     <a href=\"{{ path('app_allergie_new') }}\" class=\"btn btn-success\">Create New</a>
 {% endblock %}
-", "allergie/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\allergie\\index.html.twig");
+", "allergie/index.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\allergie\\index.html.twig");
     }
 }

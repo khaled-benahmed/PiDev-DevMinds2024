@@ -226,6 +226,6 @@ class __TwigTemplate_51db24169982f48794372c49ad022120 extends Template
 
 
 
-", "planning_crud/show.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\planning_crud\\show.html.twig");
+", "planning_crud/show.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\planning_crud\\show.html.twig");
     }
 }

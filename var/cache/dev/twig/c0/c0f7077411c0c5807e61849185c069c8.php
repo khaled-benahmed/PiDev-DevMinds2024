@@ -33,7 +33,7 @@ class __TwigTemplate_52ae81066fbbdf9ad9e57bd1dd0c0bed extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base3.html.twig";
+        return "baseBack.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_52ae81066fbbdf9ad9e57bd1dd0c0bed extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "plat/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base3.html.twig", "plat/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("baseBack.html.twig", "plat/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -210,7 +210,7 @@ class __TwigTemplate_52ae81066fbbdf9ad9e57bd1dd0c0bed extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base3.html.twig' %}
+        return new Source("{% extends 'baseBack.html.twig' %}
 
 {% block title %}Plat index{% endblock %}
 
@@ -257,6 +257,6 @@ class __TwigTemplate_52ae81066fbbdf9ad9e57bd1dd0c0bed extends Template
     <!-- Ajouter une classe Bootstrap au lien \"Create New\" -->
     <a href=\"{{ path('app_plat_new') }}\" class=\"btn btn-success\">Create New</a>
 {% endblock %}
-", "plat/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\plat\\index.html.twig");
+", "plat/index.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\plat\\index.html.twig");
     }
 }

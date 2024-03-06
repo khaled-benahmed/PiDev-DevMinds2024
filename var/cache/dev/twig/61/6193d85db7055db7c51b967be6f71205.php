@@ -327,6 +327,6 @@ class __TwigTemplate_bbcd58e0b16f536d7f49cb18ce47aee4 extends Template
             {% endif %}
         </ul>
     </nav>
-{% endif %}", "pagination.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\pagination.html.twig");
+{% endif %}", "pagination.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\pagination.html.twig");
     }
 }

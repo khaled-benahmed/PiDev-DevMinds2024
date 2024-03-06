@@ -1,0 +1,26 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}
+    Edit Reclamation
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card edit-reclamation">
+        <div class="card-header">
+            <h1 class="card-title mb-0">Edit Reclamation</h1>
+        </div>
+        <div class="card-body">
+            <div class="form-container">
+                {{ include('reclamation_back/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group" role="group">
+                <a href="{{ path('app_reclamation_back_index') }}" class="btn btn-secondary">Back to List</a>
+                {{ include('reclamation_back/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

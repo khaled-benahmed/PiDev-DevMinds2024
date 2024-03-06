@@ -336,6 +336,6 @@ class __TwigTemplate_225717327a9720180430fa2f45ca3f83 extends Template
             }
         });
     </script>
-{% endblock %}", "security/login.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\security\\login.html.twig");
+{% endblock %}", "security/login.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\security\\login.html.twig");
     }
 }

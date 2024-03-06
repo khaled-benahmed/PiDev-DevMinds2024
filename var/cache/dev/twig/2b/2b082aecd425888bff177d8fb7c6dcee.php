@@ -305,6 +305,6 @@ class __TwigTemplate_c2ca2fd8d4688857bc588f7a08ce3806 extends Template
             </div>
         </div>
     </div>
-{% endblock %}", "registration/register.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\registration\\register.html.twig");
+{% endblock %}", "registration/register.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\registration\\register.html.twig");
     }
 }

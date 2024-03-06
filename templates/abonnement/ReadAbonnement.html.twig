@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Reclamation Details
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="reclamation-details">
+                    <h1>Abonnements Details</h1>
+
+                    <table class="table">
+                        <tbody>
+                        {% for a in Abonnements %}
+                            <tr style="text-align: center; vertical-align: middle;">
+                                <td>
+                                    {{a.getId()}}
+                                </td>
+                                <td>
+                                    {{a.getNomA()}}
+                                </td>
+
+                                <td>
+                                    {{a.getDescriptionA()|raw}}
+                                </td>
+                                <td>
+                                    {{a.getPrixA()}} TND
+                                </td>
+                                <td>
+                                    {{a.getDateDebutA()|date("d/m/Y")}}
+                                </td>
+                                <td>
+                                    {{a.getDateFinA()|date("d/m/Y")}}
+                                </td>
+                                <td>
+                                    {{a.categorieAbonnements.getNomCategorie()}}
+                                </td>
+
+
+                                <td>
+                                    <div style="text-align: center;">
+                                        <a href="{{path('pay_Abonnement',{'id':a.id})}}" class="btn btn-danger mt-2" type="submit" onclick="return confirm('Etes vous sure ?')">Acheter</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4" style="text-align: center;">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <div class="navigation">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delete-form">
+        </div>
+    </div>
+{% endblock %}

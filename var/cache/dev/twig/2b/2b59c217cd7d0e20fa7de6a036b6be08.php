@@ -209,6 +209,6 @@ class __TwigTemplate_7abd8db80781eb475f5e7dd220b7d963 extends Template
             </div>
         </div>
     </div>
-{% endblock %}", "home/index.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\home\\index.html.twig");
+{% endblock %}", "home/index.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\home\\index.html.twig");
     }
 }

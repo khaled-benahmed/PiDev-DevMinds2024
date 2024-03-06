@@ -87,6 +87,7 @@ return array(
     'SymfonyCasts\\Bundle\\VerifyEmail\\' => array($vendorDir . '/symfonycasts/verify-email-bundle/src'),
     'SymfonyCasts\\Bundle\\ResetPassword\\' => array($vendorDir . '/symfonycasts/reset-password-bundle/src'),
     'Svg\\' => array($vendorDir . '/phenx/php-svg-lib/src/Svg'),
+    'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
     'Scheb\\TwoFactorBundle\\' => array($vendorDir . '/scheb/2fa-bundle', $vendorDir . '/scheb/2fa-email'),
     'Sabberworm\\CSS\\' => array($vendorDir . '/sabberworm/php-css-parser/src'),
     'ReCaptcha\\' => array($vendorDir . '/google/recaptcha/src/ReCaptcha'),

@@ -143,6 +143,6 @@ class __TwigTemplate_349f5f9aa0af7fbe30dc3b734afe5b6b extends Template
 
     <a href=\"{{ path('app_allergie_index') }}\">back to list</a>
 {% endblock %}
-", "allergie/new.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\allergie\\new.html.twig");
+", "allergie/new.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\allergie\\new.html.twig");
     }
 }

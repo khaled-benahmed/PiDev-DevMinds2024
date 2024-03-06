@@ -92,6 +92,6 @@ class __TwigTemplate_507f92627a694945aeecee4138461ee4 extends Template
         <i class=\"zmdi zmdi-delete\"></i>
     </button>
 </form>
-", "activite_crud/delete_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\delete_form.html.twig");
+", "activite_crud/delete_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\delete_form.html.twig");
     }
 }

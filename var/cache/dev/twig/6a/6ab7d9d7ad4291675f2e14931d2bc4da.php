@@ -103,6 +103,6 @@ class __TwigTemplate_269a23d7db5e1cd3b0710b27baf455da extends Template
 {% else %}
     <p>No blog found.</p>
 {% endif %}
-", "blog/_delete_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\blog\\_delete_form.html.twig");
+", "blog/_delete_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\blog\\_delete_form.html.twig");
     }
 }

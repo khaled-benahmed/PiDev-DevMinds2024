@@ -2,8 +2,16 @@
 
 {% block title %}NutriFit | Planning{% endblock %}
 
-    {% block tache %}
+{% block tache %}
         <head><style>
+
+                .lead{
+                    color:#aaa;
+                }
+
+                h3, h2,a,span{color: white;
+
+                }
                 .card{
                     border: none;
                     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -88,7 +96,8 @@
 
                 }</style>
             <title></title></head>
-        <!--? Hero Start -->
+
+    <!--? Hero Start -->->
         <div class="slider-area2">
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
@@ -105,21 +114,13 @@
         <!-- Hero End -->
 
         <!--? Date Tabs Start -->
-        <section class="date-tabs section-padding30">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="section-tittle text-center mb-100">
-                            <span>Votre Planning</span>
-                        </div>
-                    </div>
-                </div>
+ 
                 <!-- Heading & Nav Button -->
                 <div class="row justify-content-center mb-10">
                     <div class="col-lg-11">
                         <div class="properties__button">
-                            <!--Nav Button  -->
-                            <nav>
+                            <!--Nav Button  -->                                            
+                            <nav>      
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Lundi</a>
                                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Mardi</a>
@@ -140,348 +141,322 @@
                         <!-- Nav Card -->
                         <div class="tab-content" id="nav-tabContent">
                             {# Lundi #}
-                            {% for planning in plannings %}
-                            <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            {% for planning in user.getPlannings() %}
+                            <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">       
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="tab-wrapper">
                                             <!-- single -->
-                                            {% for planning in plannings %}
-                                            {% if planning.jourPlanning == "Lundi" %}
-                                            <div class="single-box">
-                                                <div class="single-caption text-center">
-                                                    <div class="caption">
-                                                        <h2>{{ planning.titre }}</h2>
-                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                {% for activite in planning.activities %}
-                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                <div class="card-body">
-                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                </div>
-                                                                                <div class="card-footer">
-                                                                                    <div class="media">
-                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                        <div class="media-body">
-                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                            <small>Director of UI/UX</small>
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Lundi" %}
+                                                                                                     <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div></div>
-                                                                {% endfor %}
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 {% endif %}
-                                                {% endfor %}
-                                            </div>
+                                            {% endfor %}
                                         </div>
                                     </div>
-                                </div>
-
-                                {# Mardi #}
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="tab-wrapper">
-                                                <!-- single -->
-                                                {% for planning in plannings %}
-                                                {% if planning.jourPlanning == "Mardi" %}
-                                                <div class="single-box">
-                                                    <div class="single-caption text-center">
-                                                        <div class="caption">
-                                                            <h2>{{ planning.titre }}</h2>
-                                                            <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    {% for activite in planning.activities %}
-                                                                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                <div class="card-img-overlay d-flex flex-column">
-                                                                                    <div class="card-body">
-                                                                                        <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                        <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                        <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                    </div>
-                                                                                    <div class="card-footer">
-                                                                                        <div class="media">
-                                                                                            <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                            <div class="media-body">
-                                                                                                <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                <small>Director of UI/UX</small>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div></div>
-                                                                    {% endfor %}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {# Mercredi #}
-                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="tab-wrapper">
-                                                    <!-- single -->
-                                                    {% for planning in plannings %}
-                                                        {% if planning.jourPlanning == "Mercredi" %}
-                                                            <div class="single-box">
-                                                                <div class="single-caption text-center">
-                                                                    <div class="caption">
-                                                                        <h2>{{ planning.titre }}</h2>
-                                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                                        <div class="container">
-                                                                            <div class="row">
-                                                                                {% for activite in planning.activities %}
-                                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                                <div class="card-body">
-                                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                                </div>
-                                                                                                <div class="card-footer">
-                                                                                                    <div class="media">
-                                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                                        <div class="media-body">
-                                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                            <small>Director of UI/UX</small>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div></div>
-                                                                                {% endfor %}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {# Jeudi #}
-                                    <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="tab-wrapper">
-                                                    <!-- single -->
-                                                    {% for planning in plannings %}
-                                                        {% if planning.jourPlanning == "Jeudi" %}
-                                                            <div class="single-box">
-                                                                <div class="single-caption text-center">
-                                                                    <div class="caption">
-                                                                        <h2>{{ planning.titre }}</h2>
-                                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                                        <div class="container">
-                                                                            <div class="row">
-                                                                                {% for activite in planning.activities %}
-                                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                                <div class="card-body">
-                                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                                </div>
-                                                                                                <div class="card-footer">
-                                                                                                    <div class="media">
-                                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                                        <div class="media-body">
-                                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                            <small>Director of UI/UX</small>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                {% endfor %}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {# Vendredi #}
-                                    <div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-last-tab">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="tab-wrapper">
-                                                    <!-- single -->
-                                                    {% for planning in plannings %}
-                                                        {% if planning.jourPlanning == "Vendredi" %}
-                                                            <div class="single-box">
-                                                                <div class="single-caption text-center">
-                                                                    <div class="caption">
-                                                                        <h2>{{ planning.titre }}</h2>
-                                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                                        <div class="container">
-                                                                            <div class="row">
-                                                                                {% for activite in planning.activities %}
-                                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                                <div class="card-body">
-                                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                                </div>
-                                                                                                <div class="card-footer">
-                                                                                                    <div class="media">
-                                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                                        <div class="media-body">
-                                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                            <small>Director of UI/UX</small>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div></div>
-                                                                                {% endfor %}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {# Samedi #}
-                                    <div class="tab-pane fade" id="nav-nav-six" role="tabpanel" aria-labelledby="nav-Sports">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="tab-wrapper">
-                                                    <!-- single -->
-                                                    {% for planning in plannings %}
-                                                        {% if planning.jourPlanning == "Samedi" %}
-                                                            <div class="single-box">
-                                                                <div class="single-caption text-center">
-                                                                    <div class="caption">
-                                                                        <h2>{{ planning.titre }}</h2>
-                                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                                        <div class="container">
-                                                                            <div class="row">
-                                                                                {% for activite in planning.activities %}
-                                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                                <div class="card-body">
-                                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                                </div>
-                                                                                                <div class="card-footer">
-                                                                                                    <div class="media">
-                                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                                        <div class="media-body">
-                                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                            <small>Director of UI/UX</small>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div></div>
-                                                                                {% endfor %}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {# Dimanche #}
-                                    <div class="tab-pane fade" id="nav-nav-seven" role="tabpanel" aria-labelledby="nav-six">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="tab-wrapper">
-                                                    <!-- single -->
-                                                    {% for planning in plannings %}
-                                                        {% if planning.jourPlanning == "Dimanche" %}
-                                                            <div class="single-box">
-                                                                <div class="single-caption text-center">
-                                                                    <div class="caption">
-                                                                        <h2>{{ planning.titre }}</h2>
-                                                                        <h3>{{ planning.startTime|date('H:i') }}</h3>
-                                                                        <div class="container">
-                                                                            <div class="row">
-                                                                                {% for activite in planning.activities %}
-                                                                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
-                                                                                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                                                                            <div class="card-img-overlay d-flex flex-column">
-                                                                                                <div class="card-body">
-                                                                                                    <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
-                                                                                                    <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
-                                                                                                    <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
-                                                                                                </div>
-                                                                                                <div class="card-footer">
-                                                                                                    <div class="media">
-                                                                                                        <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
-                                                                                                        <div class="media-body">
-                                                                                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                                                                                                            <small>Director of UI/UX</small>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div></div>
-                                                                                {% endfor %}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-
                                 </div>
                             </div>
+                            
+                            {# Mardi #}
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Mardi" %}
+                                                                                                   <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# Mercredi #}
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-home-tab">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Mercredi" %}
+                                                    <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# Jeudi #}
+                            <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-contact-tab">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Jeudi" %}
+                                                                                                    <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# Vendredi #}
+                            <div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-last-tab">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Vendredi" %}
+                                                    <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# Samedi #}
+                            <div class="tab-pane fade" id="nav-nav-six" role="tabpanel" aria-labelledby="nav-Sports">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Samedi" %}
+                                                                                                     <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <h2>{{ planning.titre }}</h2>
+                                                                <h3>{{ planning.startTime|date('H:i') }}</h3>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        {% for activite in planning.activities %}
+                                                                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url({{ asset(activite.imageActivite) }});">
+                                                                                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                                                                    <div class="card-img-overlay d-flex flex-column">
+                                                                                        <div class="card-body">
+                                                                                            <small class="card-meta mb-2">{{ activite.nomActivite}}</small>
+                                                                                            <h4 class="card-title mt-0 "><a class="text-dark" href="https://creativemanner.com">{{activite.descriptionActivite  }}</a></h4>
+                                                                                            <small><i class="far fa-clock"></i> {{ activite.dureeActivite}} min</small>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <div class="media">
+                                                                                                <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80" alt="Generic placeholder image" style="max-width:50px">
+                                                                                                <div class="media-body">
+                                                                                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                                                                                    <small>Director of UI/UX</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# Dimanche #}
+                            <div class="tab-pane fade" id="nav-nav-seven" role="tabpanel" aria-labelledby="nav-six">       
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="tab-wrapper">
+                                            <!-- single -->
+                                            {% for planning in user.getPlannings() %}
+                                                {% if planning.jourPlanning == "Dimanche" %}
+                                                    <div class="single-box">
+                                                        <div class="single-caption text-center">
+                                                            <div class="caption">
+                                                                <span>{{planning.heurePlanning}}:00</span>
+                                                                <h3><a href="{{ path('app_cours_crud_show_front', {'id': planning.cours}) }}">{{planning.cours.nomCours}}</a></h3>
+                                                                <p><span>par</span> Coach {{planning.cours.nomCoach}} </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
-    {% endblock %}
+{% endblock %}

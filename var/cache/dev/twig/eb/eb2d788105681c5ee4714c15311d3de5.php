@@ -113,66 +113,78 @@ class __TwigTemplate_f89e7abf5283ca2876b9263bf43a9a94 extends Template
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "roles", [], "any", false, false, false, 29));
         foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
             // line 30
-            echo "                                    ";
-            $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
-            // line 31
-            echo "                                    <span class=\"badge bg-";
-            echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 31, $this->source); })()), "html", null, true);
-            echo "\">
-                                        ";
-            // line 32
-            $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
-            // line 33
-            echo "                                        ";
-            echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 33, $this->source); })()), "html", null, true);
-            echo "
+            echo "                                ";
+            if (($context["role"] == "ROLE_BLOCKED")) {
+                // line 31
+                echo "                                    <span class=\"badge bg-secondary\">
+                                        Bloqué
                                     </span>
                                 ";
+            } else {
+                // line 35
+                echo "                                    ";
+                $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
+                // line 36
+                echo "                                    <span class=\"badge bg-";
+                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 36, $this->source); })()), "html", null, true);
+                echo "\">
+                                        ";
+                // line 37
+                $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
+                // line 38
+                echo "                                        ";
+                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 38, $this->source); })()), "html", null, true);
+                echo "
+                                    </span>
+                                ";
+            }
+            // line 41
+            echo "                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 42
         echo "                            </td>
                         </tr>
                         <tr>
                             <th scope=\"row\">Username</th>
                             <td>";
-        // line 40
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 40, $this->source); })()), "username", [], "any", false, false, false, 40), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 46, $this->source); })()), "username", [], "any", false, false, false, 46), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th scope=\"row\">C.I.N</th>
                             <td>";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 44, $this->source); })()), "cin", [], "any", false, false, false, 44), "html", null, true);
+        // line 50
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 50, $this->source); })()), "cin", [], "any", false, false, false, 50), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th scope=\"row\">Date de Naissance</th>
                             <td>";
-        // line 48
-        ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 48, $this->source); })()), "birthday", [], "any", false, false, false, 48)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 48, $this->source); })()), "birthday", [], "any", false, false, false, 48), "Y-m-d"), "html", null, true))) : (print ("")));
+        // line 54
+        ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 54, $this->source); })()), "birthday", [], "any", false, false, false, 54)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 54, $this->source); })()), "birthday", [], "any", false, false, false, 54), "Y-m-d"), "html", null, true))) : (print ("")));
         echo "</td>
                         </tr>
                         <tr>
                             <th scope=\"row\">Image</th>
                             <td><img src=\"";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 52, $this->source); })()), "image", [], "any", false, false, false, 52))), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 58, $this->source); })()), "image", [], "any", false, false, false, 58))), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"User Image\"></td>
                         </tr>
                     </tbody>
                 </table>
                 <div class=\"text-center\">
                     <a href=\"";
-        // line 57
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_list");
         echo "\" class=\"btn btn-info\">Back to list</a>
                     <a href=\"";
-        // line 58
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 58, $this->source); })()), "id", [], "any", false, false, false, 58)]), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 64, $this->source); })()), "id", [], "any", false, false, false, 64)]), "html", null, true);
         echo "\" class=\"btn btn-primary\">Edit</a>
                 </div>
             </div>
@@ -208,7 +220,7 @@ class __TwigTemplate_f89e7abf5283ca2876b9263bf43a9a94 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  175 => 58,  171 => 57,  163 => 52,  156 => 48,  149 => 44,  142 => 40,  136 => 36,  126 => 33,  124 => 32,  119 => 31,  116 => 30,  112 => 29,  104 => 24,  97 => 20,  90 => 16,  83 => 12,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  187 => 64,  183 => 63,  175 => 58,  168 => 54,  161 => 50,  154 => 46,  148 => 42,  142 => 41,  135 => 38,  133 => 37,  128 => 36,  125 => 35,  119 => 31,  116 => 30,  112 => 29,  104 => 24,  97 => 20,  90 => 16,  83 => 12,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -242,12 +254,18 @@ class __TwigTemplate_f89e7abf5283ca2876b9263bf43a9a94 extends Template
                             <th scope=\"row\">Roles</th>
                             <td>
                                 {% for role in user.roles %}
+                                {% if role == \"ROLE_BLOCKED\" %}
+                                    <span class=\"badge bg-secondary\">
+                                        Bloqué
+                                    </span>
+                                {% else %}
                                     {% set badge_color = role == \"ROLE_ADMIN\" ? \"danger\" : (role == \"ROLE_COACH\" or role == \"ROLE_NUTRITIONIST\" ? \"warning\" : \"success\") %}
                                     <span class=\"badge bg-{{ badge_color }}\">
                                         {% set role_name = role == \"ROLE_ADMIN\" ? \"Administrateur\" : (role == \"ROLE_COACH\" ? \"Coach\" : (role == \"ROLE_NUTRITIONIST\" ? \"Nutritionniste\" : \"Membre\")) %}
                                         {{ role_name }}
                                     </span>
-                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             </td>
                         </tr>
                         <tr>
@@ -276,6 +294,6 @@ class __TwigTemplate_f89e7abf5283ca2876b9263bf43a9a94 extends Template
         </div>
     </div>
 {% endblock %}
-", "admin/showUser.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\admin\\showUser.html.twig");
+", "admin/showUser.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\admin\\showUser.html.twig");
     }
 }

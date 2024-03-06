@@ -269,6 +269,7 @@
 
     <!-- trainer section -->
 
+
     <section class="trainer_section layout_padding">
         <div class="container">
             <div class="heading_container">
@@ -277,75 +278,33 @@
                 </h2>
             </div>
             <div class="row">
+                {% for offre in offres %}
                 <div class="col-lg-4 col-md-6 mx-auto">
                     <div class="box">
                         <div class="name">
                             <h5>
-                                Smirth Jon
+                                {{offre.tags}}
                             </h5>
+                        </div>
+                        <div class="name">
+                            <h6>
+                                {{offre.description}}
+                            </h6>
                         </div>
                         <div class="img-box">
                             <img src="{{ asset('./FrontOffice/images/t1.jpg') }}" alt="">
                         </div>
                         <div class="social_box">
                             <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png') }}" alt="">
+                                <s>{{ offre.prix }} TND</s>
                             </a>
                             <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png') }}" alt="">
-                            </a>
-                        </div>
+                                {{ offre.prix * (1 - promotion.reductionPromotion / 100) }} TND
+                            </a>                            
+                        </div>                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="box">
-                        <div class="name">
-                            <h5>
-                                Jean Doe
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="{{ asset('./FrontOffice/images/t2.jpg') }}" alt="">
-                        </div>
-                        <div class="social_box">
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png')}}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png')}}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png')}}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="box">
-                        <div class="name">
-                            <h5>
-                                Alex Den
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="{{ asset('./FrontOffice/images/t3.jpg') }}" alt="">
-                        </div>
-                        <div class="social_box">
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png') }}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

@@ -86,16 +86,16 @@ class __TwigTemplate_ec3c2ece0d7df816f4b844eaf6ce53cb extends Template
 
         // line 6
         echo "
-<div class=\"card\">
-    <div class=\"card-header\">
-        <strong>Modifier</strong> Planning
-    </div>
-    ";
+    <div class=\"card\">
+        <div class=\"card-header\">
+            <strong>Modifier</strong> Planning
+        </div>
+        ";
         // line 11
         echo twig_include($this->env, $context, "planning_crud/form.html.twig", ["button_label" => "Modifier"]);
         echo "
-</div>
-                                
+    </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -137,16 +137,16 @@ class __TwigTemplate_ec3c2ece0d7df816f4b844eaf6ce53cb extends Template
 
 {% block body%}
 
-<div class=\"card\">
-    <div class=\"card-header\">
-        <strong>Modifier</strong> Planning
+    <div class=\"card\">
+        <div class=\"card-header\">
+            <strong>Modifier</strong> Planning
+        </div>
+        {{ include('planning_crud/form.html.twig', {'button_label': 'Modifier'}) }}
     </div>
-    {{ include('planning_crud/form.html.twig', {'button_label': 'Modifier'}) }}
-</div>
-                                
+
 {% endblock %}
 
 
-", "planning_crud/edit.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\planning_crud\\edit.html.twig");
+", "planning_crud/edit.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\planning_crud\\edit.html.twig");
     }
 }

@@ -65,7 +65,7 @@ class __TwigTemplate_0ba8fb6f9dfb7e3a9fafa26191dbda15 extends Template
 <div id=\"sfToolbarMainContent-";
         // line 9
         echo twig_escape_filter($this->env, (isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 9, $this->source); })()), "html", null, true);
-        echo "\" class=\"sf-toolbarreset clear-fix\" data-no-turbolink>
+        echo "\" class=\"sf-toolbarreset clear-fix\" data-no-turbolink data-turbo=\"false\">
     ";
         // line 10
         $context['_parent'] = $context;
@@ -204,7 +204,7 @@ $context["name"], "profiler_markup_version" =>                 // line 17
 </div>
 <div id=\"sfToolbarClearer-{{ token }}\" class=\"sf-toolbar-clearer\"></div>
 
-<div id=\"sfToolbarMainContent-{{ token }}\" class=\"sf-toolbarreset clear-fix\" data-no-turbolink>
+<div id=\"sfToolbarMainContent-{{ token }}\" class=\"sf-toolbarreset clear-fix\" data-no-turbolink data-turbo=\"false\">
     {% for name, template in templates %}
         {% if block('toolbar', template) is defined %}
             {% with {
@@ -242,6 +242,6 @@ $context["name"], "profiler_markup_version" =>                 // line 17
     </button>
 </div>
 <!-- END of Symfony Web Debug Toolbar -->
-", "@WebProfiler/Profiler/toolbar.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar.html.twig");
+", "@WebProfiler/Profiler/toolbar.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar.html.twig");
     }
 }

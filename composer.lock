@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb8fd169ae6e67c4e198d057c8fddd12",
+    "content-hash": "37c4c37580251a991993402af43d3c6b",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -177,16 +177,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "07e16cd7b80a2cffed99e36b541876af172f0257"
+                "reference": "420480fc085bc65f3c956af13abe8e7546f94813"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/07e16cd7b80a2cffed99e36b541876af172f0257",
-                "reference": "07e16cd7b80a2cffed99e36b541876af172f0257",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/420480fc085bc65f3c956af13abe8e7546f94813",
+                "reference": "420480fc085bc65f3c956af13abe8e7546f94813",
                 "shasum": ""
             },
             "require": {
@@ -243,7 +243,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/collections/issues",
-                "source": "https://github.com/doctrine/collections/tree/2.2.0"
+                "source": "https://github.com/doctrine/collections/tree/2.2.1"
             },
             "funding": [
                 {
@@ -259,7 +259,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-25T22:55:36+00:00"
+            "time": "2024-03-05T22:28:45+00:00"
         },
         {
             "name": "doctrine/common",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "3.7.3",
+            "version": "3.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "ebb383e8e689767ac719bbb6fbf32f6293e899b0"
+                "reference": "954e0a314c2f0eb9fb418210445111747de254a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/ebb383e8e689767ac719bbb6fbf32f6293e899b0",
-                "reference": "ebb383e8e689767ac719bbb6fbf32f6293e899b0",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/954e0a314c2f0eb9fb418210445111747de254a6",
+                "reference": "954e0a314c2f0eb9fb418210445111747de254a6",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
-                "source": "https://github.com/doctrine/migrations/tree/3.7.3"
+                "source": "https://github.com/doctrine/migrations/tree/3.7.4"
             },
             "funding": [
                 {
@@ -1152,7 +1152,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-01T12:07:17+00:00"
+            "time": "2024-03-06T13:41:11+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -2650,6 +2650,65 @@
                 "source": "https://github.com/scheb/2fa-email/tree/v6.12.0"
             },
             "time": "2023-12-03T15:44:26+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v13.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "8dc58bab25f222a74d1157d4ca9e9e48451dd0c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/8dc58bab25f222a74d1157d4ca9e9e48451dd0c1",
+                "reference": "8dc58bab25f222a74d1157d4ca9e9e48451dd0c1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v13.13.0"
+            },
+            "time": "2024-02-29T20:22:15+00:00"
         },
         {
             "name": "symfony/amqp-messenger",
@@ -8141,16 +8200,16 @@
         },
         {
             "name": "symfonycasts/reset-password-bundle",
-            "version": "v1.20.3",
+            "version": "v1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SymfonyCasts/reset-password-bundle.git",
-                "reference": "df64d82cca2ee371da5e8c03c227457069ae663e"
+                "reference": "598fc74acf0652abf495ac8db1c16234f5d59ded"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/df64d82cca2ee371da5e8c03c227457069ae663e",
-                "reference": "df64d82cca2ee371da5e8c03c227457069ae663e",
+                "url": "https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/598fc74acf0652abf495ac8db1c16234f5d59ded",
+                "reference": "598fc74acf0652abf495ac8db1c16234f5d59ded",
                 "shasum": ""
             },
             "require": {
@@ -8181,9 +8240,9 @@
             "description": "Symfony bundle that adds password reset functionality.",
             "support": {
                 "issues": "https://github.com/SymfonyCasts/reset-password-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/reset-password-bundle/tree/v1.20.3"
+                "source": "https://github.com/SymfonyCasts/reset-password-bundle/tree/v1.21.0"
             },
-            "time": "2024-02-20T10:51:53+00:00"
+            "time": "2024-03-05T20:31:46+00:00"
         },
         {
             "name": "symfonycasts/verify-email-bundle",

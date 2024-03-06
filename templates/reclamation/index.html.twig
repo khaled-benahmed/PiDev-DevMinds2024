@@ -1,0 +1,52 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}
+    Reclamation Index
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mb-4 text-white">Reclamation Index</h1>
+
+        <div class="mb-3">
+            <a href="{{ path('app_reclamation_new') }}" class="btn btn-success mb-3">Create New Reclamation</a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                {% if reclamations|length > 0 %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>NomUserReclamation</th>
+                                <th>TextReclamation</th>
+                                <th>DateReclamation</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for reclamation in reclamations %}
+                                <tr>
+                                    <td>{{ reclamation.id }}</td>
+                                    <td>{{ reclamation.NomUserReclamation }}</td>
+                                    <td>{{ reclamation.textReclamation }}</td>
+                                    <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                                    <td>
+                                        <a href="{{ path('app_reclamation_show', {'id': reclamation.id}) }}" class="btn btn-sm btn-primary mr-2">Show</a>
+                                        <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}" class="btn btn-sm btn-warning">Edit</a>
+                                        <a href="{{ path('app_reponse_show', {'id': reclamation.id}) }}" class="btn btn-sm btn-primary mr-2">Show response</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div class="alert alert-warning" role="alert">
+                        No records found.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

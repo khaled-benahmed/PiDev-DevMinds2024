@@ -1,0 +1,97 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Sponsor index{% endblock %}
+
+{% block body %}
+    <h1>Sponsor index</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="d-flex">
+                <input type="text" id="searchInput" class="form-control me-2" placeholder="Search..."> <!-- affichina el input ta3 el recherche houni  -->
+            </form>
+        </div>
+    </div>
+
+    <table class="table" id="sponsorTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomSponsor</th>
+                <th>Donnation</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sponsor in sponsors %}
+            <tr>
+                <td>{{ sponsor.id }}</td>
+                <td>{{ sponsor.nomSponsor }}</td>
+                <td>{{ sponsor.donnation }}</td>
+                <td>{{ sponsor.image }}</td>
+                <td>
+                    <a href="{{ path('app_sponsor_back_show', {'id': sponsor.id}) }}">show</a>
+                    <a href="{{ path('app_sponsor_back_edit', {'id': sponsor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_sponsor_back_new') }}">Create new</a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Your code here
+        $('#searchInput').on('input', function() {
+            // Get the search string
+            var searchString = $(this).val();
+            console.log(searchString)
+            
+            // Send AJAX request with the search string
+            $.ajax({
+                type: 'GET',
+                url: '{{ path('app_sponsor_back_index') }}',
+                data: { search: searchString }, // Include the search string in the data
+                success: function(response) {
+                    // Update table content with filtered/sorted data
+                    updateTable(response.sponsors);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+// Function to update table content
+function updateTable(sponsors) {
+    var tableBody = $('#sponsorTable tbody');
+    tableBody.empty(); // Clear existing table rows
+
+    // Add new rows based on filtered/sorted sponsors
+    sponsors.forEach(function(sponsor) {
+        var row = '<tr>' +
+            '<td>' + sponsor.id + '</td>' +
+            '<td>' + sponsor.nomSponsor + '</td>' +
+            '<td>' + sponsor.donnation + '</td>' +
+            '<td>' + sponsor.image + '</td>' +
+            '<td>' +
+            '<a href="{{ path('app_sponsor_back_show', {'id': 'SPONSOR_ID'}) }}" >show</a>' +
+            ' '+
+            '<a href="{{ path('app_sponsor_back_edit', {'id': 'SPONSOR_ID'}) }}" >edit</a>' +
+            '</td>' +
+            '</tr>';
+
+        // Replace placeholder 'SPONSOR_ID' with actual reclamation ID
+        row = row.replace(/SPONSOR_ID/g, sponsor.id);
+
+        tableBody.append(row);
+    });
+}
+
+</script>
+{% endblock %}

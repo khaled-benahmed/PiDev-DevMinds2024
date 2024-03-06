@@ -1,0 +1,282 @@
+{% extends 'baseBack.html.twig' %}
+    {% block stylesheets %}
+        <!-- Fontfaces CSS-->
+        <link href="{{ asset('./BackOffice/css/font-face.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="{{ asset('./BackOffice/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+
+        <!-- Vendor CSS-->
+        <link href="{{ asset('./BackOffice/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('./BackOffice/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="{{ asset('./BackOffice/css/theme.css')}}" rel="stylesheet" media="all">
+
+        <!-- Calendar -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+        <style>
+            #notificationContainer {
+                position: fixed;
+                left: 85%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(to right, #00b09b, #96c93d);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+
+    {% endblock %}
+{% block title %}
+    Reclamation index
+{% endblock %}
+     {% block notify %}
+                        <div class="header-button">
+                            <div class="noti-wrap" style="position: relative;left: 300px;">
+                                <div class="noti__item js-item-menu">
+                                    <i class="zmdi zmdi-comment-more"></i>
+                                    <span class="quantity">{{counterData.value}}</span>
+                                    <div class="mess-dropdown js-dropdown">
+                                        {% if counterData.reclamations is defined and counterData.reclamations is iterable %}
+                                         {% for reclamation in counterData.reclamations %}
+                                        <div class="mess__item">
+                                            <div class="content">
+                                                <h6>{{ reclamation.nomUserReclamation }} </h6>
+                                                <p>{{ reclamation.textReclamation }}</p>
+                                                <span class="time">{{ reclamation.dateReclamation }} </span>
+                                            </div>
+                            <form action="{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-success btn-sm">Respond</button>
+                            </form>
+                                        </div>
+                                            {% endfor %}
+                                            {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                
+    {% endblock %}
+{% block body %}
+<div class="container">
+   <!-- <div id="notificationContainer"></div> -->
+        <div class="reclamation-index">
+        <h1 class="mb-4">Reclamation index</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <form class="d-flex">
+                    <input type="text" id="searchInput" class="form-control me-2" placeholder="Search...">
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <button id="sortButton" class="btn btn-primary">Sort by Date</button>
+            </div>
+            <div class="col-sm-4">
+                <a href="{{ path('reclamations_pdf') }}" class="btn btn-success">Pdf</a>
+            </div>
+        </div>
+        <br><br>
+        
+
+        
+        <table class="table table-striped" id="reclamationsTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomUserReclamation</th>
+                    <th>TextReclamation</th>
+                    <th>DateReclamation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reclamation in reclamations %}
+                    <tr>
+                        <td>{{ reclamation.id }}</td>
+                        <td>{{ reclamation.NomUserReclamation }}</td>
+                        <td>{{ reclamation.textReclamation }}</td>
+                        <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
+                        <td>
+                            <a href="{{ path('app_reclamation_back_show', {'id': reclamation.id}) }}" class="btn btn-info btn-sm mr-1">Show</a>
+                            <a href="{{ path('app_reclamation_back_edit', {'id': reclamation.id}) }}" class="btn btn-primary btn-sm mr-1">Edit</a>
+                            <form action="{{ path('app_reclamation_auto_response', {'id': reclamation.id}) }}" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-success btn-sm">Respond</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_reclamation_back_new') }}" class="btn btn-success">Create new</a>
+    </div>
+    </div>
+    <br><br>
+    
+    <div class="container">
+        <div class="reclamation-index" style="width: 1000px;">
+            <canvas id="reclamationChart" width="200" height="100"></canvas>
+        </div>
+    </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Define the reclamationData variable here or pass it from PHP
+        var reclamationData = {{ reclamationData|json_encode|raw }};
+
+        // Call the renderChart function after defining reclamationData
+        renderChart(reclamationData);
+
+        // Display notification for new reclamations
+       // displayNewReclamationsNotification({{ counterData.value }});
+    });
+
+    function renderChart(reclamationData) {
+        var ctx = document.getElementById('reclamationChart').getContext('2d');
+        var chartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], 
+            datasets: [{
+                label: 'Number of Reclamations',
+                data: reclamationData,  
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        };
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMin: 0, // Minimum value for y-axis
+                        suggestedMax: Math.max(...reclamationData) + 5 // Maximum value for y-axis (add some padding)
+                    }
+                }]
+            }
+        }
+        });
+    }
+    function displayNewReclamationsNotification(newReclamationsCount) {
+        if (newReclamationsCount > 0) {
+            var notificationContainer = document.getElementById('notificationContainer');
+            var notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.textContent = `You have ${newReclamationsCount} new reclamation(s)`;
+            notificationContainer.appendChild(notification);
+            setTimeout(function() {
+                notification.remove();
+            }, 5000); // Remove the notification after 5 seconds
+        }
+    }
+    
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Your code here
+        $('#searchInput').on('input', function() {
+            // Get the search string
+            var searchString = $(this).val();
+            console.log(searchString)
+            
+            // Send AJAX request with the search string
+            $.ajax({
+                type: 'GET',
+                url: '{{ path('app_reclamation_back_index') }}',
+                data: { search: searchString }, // Include the search string in the data
+                success: function(response) {
+                    // Update table content with filtered/sorted data
+                    updateTable(response.reclamations);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+        $('#sortButton').click(function() {
+        // Get the current search string
+        var searchString = $('#searchInput').val();
+        
+        // Send AJAX request to the controller with sort parameter
+        $.ajax({
+            type: 'GET',
+            url: '{{ path('app_reclamation_back_index') }}',
+            data: { search: searchString, sort: 'date' }, // Add sort parameter
+            success: function(response) {
+                // Update table content with filtered/sorted data
+                updateTable(response.reclamations);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+     $('.noti__item').on('click', function() {
+        $.ajax({
+            type: 'POST',
+            url:'{{ path('app_resetCounter') }}', // Update this URL to match your route
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('.quantity').text('0'); // Update the notification counter to 0
+                }
+            }
+        });
+    });
+    });
+// Function to update table content
+function updateTable(reclamations) {
+    var tableBody = $('#reclamationsTable tbody');
+    tableBody.empty(); // Clear existing table rows
+
+    // Add new rows based on filtered/sorted reclamations
+    reclamations.forEach(function(reclamation) {
+        var row = '<tr>' +
+            '<td>' + reclamation.id + '</td>' +
+            '<td>' + reclamation.NomUserReclamation + '</td>' +
+            '<td>' + reclamation.textReclamation + '</td>' +
+            '<td>' + (reclamation.dateReclamation ? reclamation.dateReclamation : '') + '</td>' +
+            '<td>' +
+            '<a href="{{ path('app_reclamation_back_show', {'id': 'RECLAMATION_ID'}) }}" class="btn btn-info btn-sm mr-1">Show</a>' +
+            '<a href="{{ path('app_reclamation_back_edit', {'id': 'RECLAMATION_ID'}) }}" class="btn btn-primary btn-sm mr-1">Edit</a>' +
+            '<form action="{{ path('app_reclamation_auto_response', {'id': 'RECLAMATION_ID'}) }}" method="post" class="d-inline">' +
+            '<button type="submit" class="btn btn-success btn-sm">Respond</button>' +
+            '</form>' +
+            '</td>' +
+            '</tr>';
+
+        // Replace placeholder 'RECLAMATION_ID' with actual reclamation ID
+        row = row.replace(/RECLAMATION_ID/g, reclamation.id);
+
+        tableBody.append(row);
+    });
+}
+
+</script>
+
+{% endblock %}

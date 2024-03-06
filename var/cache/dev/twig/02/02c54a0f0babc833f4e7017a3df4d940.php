@@ -88,6 +88,6 @@ class __TwigTemplate_f7e90c8281d2722990d055aba5a8dd96 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ calendar.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "calendar/delete_form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\calendar\\delete_form.html.twig");
+", "calendar/delete_form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\calendar\\delete_form.html.twig");
     }
 }

@@ -228,6 +228,6 @@ especially when you're using different route names than the ones used here.
 
 {# The logout link gives the user a way out if they can't complete two-factor authentication #}
 <p class=\"cancel\"><a href=\"{{ logoutPath }}\">{{ \"cancel\"|trans({}, 'SchebTwoFactorBundle') }}</a></p>
-", "@SchebTwoFactor/Authentication/form.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\vendor\\scheb\\2fa-bundle\\Resources\\views\\Authentication\\form.html.twig");
+", "@SchebTwoFactor/Authentication/form.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\vendor\\scheb\\2fa-bundle\\Resources\\views\\Authentication\\form.html.twig");
     }
 }

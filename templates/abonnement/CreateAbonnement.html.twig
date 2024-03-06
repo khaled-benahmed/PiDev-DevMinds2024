@@ -1,0 +1,63 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Liste des abonnements{% endblock %}
+
+{% block body %}
+<div class="col-sm-120 col-xl-60">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Abonnement</h6>
+        {{form_start(form,{'attr': {'novalidate': 'novalidate'}} )}}
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Nom</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.nom_a,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.nom_a) }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.description_a,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.description_a) }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Prix (TND)</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.prix_a,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.prix_a) }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Date début</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.date_debut_a,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.date_debut_a) }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Date fin</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.date_fin_a,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.date_fin_a) }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Categorie</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.CategorieAbonnements,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.CategorieAbonnements) }}
+            </div>
+        </div>
+
+        <br>
+        <a href="{{path('Read_Back_Abonnement')}}" class="mt-2" >Liste des abonnement</a>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        {{form_end(form)}}
+    </div>
+</div>
+{% endblock %}

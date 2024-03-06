@@ -1,0 +1,88 @@
+{% extends 'baseBack.html.twig' %}
+
+
+{% block title %}Offres index{% endblock %}
+
+{% block body %}
+    <h1>Offres index</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="{{ path('offres_pdf') }}" class="btn btn-success">Pdf</a>
+        </div>
+    </div>
+    <br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Tags</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre in offres %}
+            <tr>
+                <td>{{ offre.id }}</td>
+                <td>{{ offre.description }}</td>
+                <td>{{ offre.tags }}</td>
+                <td>{{ offre.prix }}</td>
+                <td>
+                    <a href="{{ path('app_offres_back_show', {'id': offre.id}) }}">show</a>
+                    <a href="{{ path('app_offres_back_edit', {'id': offre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('app_offres_back_new') }}">Create new</a>
+    <br><br><br><br><br>
+    
+    <div class="container">
+        <div class="offre-index" style="width: 1000px;">
+            <canvas id="offreChart" width="200" height="50"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var countGreaterThan1000 = {{ countGreaterThan1000 }};
+        var countLessThanOrEqual1000 = {{ countLessThanOrEqual1000 }};
+        renderChart(countGreaterThan1000,countLessThanOrEqual1000);
+    });
+
+    function renderChart(countGreaterThan1000,countLessThanOrEqual1000) {
+    var ctx = document.getElementById('offreChart').getContext('2d');
+    var colors = ['#ff6384', '#36a2eb']; // Define colors for each segment
+
+    var chartData = {
+        labels: ['Price > 1000', 'Price <= 1000'], // Labels for each segment
+        datasets: [{
+            data: [countGreaterThan1000, countLessThanOrEqual1000],
+            backgroundColor: colors,
+            borderWidth: 1
+        }]
+    };
+
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: {
+            responsive: true,
+            legend: {
+                position: 'right'
+            }
+        }
+    });
+}
+
+</script>
+{% endblock %}

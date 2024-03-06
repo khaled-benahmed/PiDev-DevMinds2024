@@ -1,0 +1,38 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}
+    Reponse Details
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="reponse-details">
+                <h1 class="mb-4">Reponse Details</h1>
+{% for reponse in reponses %}
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Id</th>
+                            <td>{{ reponse.id }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Contenu</th>
+                            <td>{{ reponse.contenuReponse }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date</th>
+                            <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+{% endfor %}
+                <div class="mt-4">
+                    <a href="{{ path('app_reponse_index') }}" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

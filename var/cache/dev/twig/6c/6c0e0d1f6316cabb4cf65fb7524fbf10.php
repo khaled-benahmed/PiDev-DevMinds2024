@@ -91,8 +91,8 @@ class __TwigTemplate_fe647aecb56a398cc7fa5eb2baa2353b extends Template
         // line 8
         echo twig_include($this->env, $context, "activite_crud/form.html.twig", ["button_label" => "Modifier"]);
         echo "
-</div>
-                                
+    </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -136,10 +136,10 @@ class __TwigTemplate_fe647aecb56a398cc7fa5eb2baa2353b extends Template
 
 
     {{ include('activite_crud/form.html.twig', {'button_label': 'Modifier'}) }}
-</div>
-                                
+    </div>
+
 {% endblock %}
 
-", "activite_crud/edit.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\edit.html.twig");
+", "activite_crud/edit.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\edit.html.twig");
     }
 }

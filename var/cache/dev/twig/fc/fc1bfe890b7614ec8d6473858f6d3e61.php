@@ -281,6 +281,6 @@ class __TwigTemplate_be4f0d784937d8021822e8eac83f4074 extends Template
         </section>
     </main>
 {% endblock %}
-", "activite_crud/showFront.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\activite_crud\\showFront.html.twig");
+", "activite_crud/showFront.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\activite_crud\\showFront.html.twig");
     }
 }

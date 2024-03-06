@@ -190,6 +190,6 @@ class __TwigTemplate_a684af152bcc1c85e551408c16e2f03a extends Template
 
     {{ include('allergie/_delete_form.html.twig') }}
 {% endblock %}
-", "allergie/show.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\allergie\\show.html.twig");
+", "allergie/show.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\allergie\\show.html.twig");
     }
 }

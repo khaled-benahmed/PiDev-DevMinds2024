@@ -1,0 +1,3 @@
+<?php //App%255CController%255CActiviteJSONController%2523showJSON
+
+return [PHP_INT_MAX, []];

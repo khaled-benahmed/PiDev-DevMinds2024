@@ -134,82 +134,94 @@ class __TwigTemplate_c1ea9ee25939d28a48cd8b0ff39ce91f extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
                             <td class=\"border px-3 py-2\">
-                               ";
+                            ";
             // line 35
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 35));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
                 // line 36
-                echo "                                    ";
-                $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
-                // line 37
-                echo "                                    <span class=\"badge bg-";
-                echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 37, $this->source); })()), "html", null, true);
-                echo "\">
-                                        ";
-                // line 38
-                $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
-                // line 39
-                echo "                                        ";
-                echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 39, $this->source); })()), "html", null, true);
-                echo "
+                echo "                                ";
+                if (($context["role"] == "ROLE_BLOCKED")) {
+                    // line 37
+                    echo "                                    <span class=\"badge bg-secondary\">
+                                        Bloqué
                                     </span>
                                 ";
+                } else {
+                    // line 41
+                    echo "                                    ";
+                    $context["badge_color"] = ((($context["role"] == "ROLE_ADMIN")) ? ("danger") : ((((($context["role"] == "ROLE_COACH") || ($context["role"] == "ROLE_NUTRITIONIST"))) ? ("warning") : ("success"))));
+                    // line 42
+                    echo "                                    <span class=\"badge bg-";
+                    echo twig_escape_filter($this->env, (isset($context["badge_color"]) || array_key_exists("badge_color", $context) ? $context["badge_color"] : (function () { throw new RuntimeError('Variable "badge_color" does not exist.', 42, $this->source); })()), "html", null, true);
+                    echo "\">
+                                        ";
+                    // line 43
+                    $context["role_name"] = ((($context["role"] == "ROLE_ADMIN")) ? ("Administrateur") : (((($context["role"] == "ROLE_COACH")) ? ("Coach") : (((($context["role"] == "ROLE_NUTRITIONIST")) ? ("Nutritionniste") : ("Membre"))))));
+                    // line 44
+                    echo "                                        ";
+                    echo twig_escape_filter($this->env, (isset($context["role_name"]) || array_key_exists("role_name", $context) ? $context["role_name"] : (function () { throw new RuntimeError('Variable "role_name" does not exist.', 44, $this->source); })()), "html", null, true);
+                    echo "
+                                    </span>
+                                ";
+                }
+                // line 47
+                echo "                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 42
+            // line 48
             echo "                            </td>
                             <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
-            // line 44
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isVerified", [], "any", false, false, false, 44)) ? ("checked") : (""));
+            // line 50
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isVerified", [], "any", false, false, false, 50)) ? ("checked") : (""));
             echo ">
                             </td>
                             <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled ";
-            // line 47
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 47)) ? ("checked") : (""));
+            // line 53
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 53)) ? ("checked") : (""));
             echo ">
                             </td>
                             <td class=\"border px-3 py-2\">
                                 <div class=\"btn-group\" role=\"group\">
                                     <a class=\"btn btn-outline-primary btn-sm\" href=\"";
-            // line 51
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 51)]), "html", null, true);
+            // line 57
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 57)]), "html", null, true);
             echo "\" title=\"Modifier\"><i class=\"fas fa-edit\"></i></a>
                                     <a class=\"btn btn-outline-info btn-sm\" href=\"";
-            // line 52
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\" title=\"Afficher\"><i class=\"fas fa-eye\"></i></a>
                                     <form action=\"";
-            // line 53
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53)]), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59)]), "html", null, true);
             echo "\" method=\"post\" class=\"d-inline\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');\">
                                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                                         <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 55
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 55))), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61))), "html", null, true);
             echo "\">
                                         <button type=\"submit\" class=\"btn btn-outline-danger btn-sm\" title=\"Supprimer\"><i class=\"fas fa-trash\"></i></button>
                                     </form>
                                     ";
-            // line 58
-            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 58)) {
-                // line 59
+            // line 64
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "isBlocked", [], "any", false, false, false, 64)) {
+                // line 65
                 echo "                                        <a class=\"btn btn-outline-success btn-sm\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_user_unblock", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 65)]), "html", null, true);
                 echo "\" title=\"Débloquer\"><i class=\"fas fa-lock-open\"></i></a>
                                     ";
             } else {
-                // line 61
+                // line 67
                 echo "                                        <a class=\"btn btn-outline-warning btn-sm\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_block_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 67)]), "html", null, true);
                 echo "\" title=\"Bloquer\"><i class=\"fas fa-lock\"></i></a>
                                     ";
             }
-            // line 63
+            // line 69
             echo "                                </div>
                             </td>
                         </tr>
@@ -218,7 +230,7 @@ class __TwigTemplate_c1ea9ee25939d28a48cd8b0ff39ce91f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
+        // line 73
         echo "                </tbody>
             </table>
         </div>
@@ -268,7 +280,7 @@ class __TwigTemplate_c1ea9ee25939d28a48cd8b0ff39ce91f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  222 => 67,  213 => 63,  207 => 61,  201 => 59,  199 => 58,  193 => 55,  188 => 53,  184 => 52,  180 => 51,  173 => 47,  167 => 44,  163 => 42,  153 => 39,  151 => 38,  146 => 37,  143 => 36,  139 => 35,  134 => 33,  130 => 32,  126 => 31,  122 => 30,  118 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  234 => 73,  225 => 69,  219 => 67,  213 => 65,  211 => 64,  205 => 61,  200 => 59,  196 => 58,  192 => 57,  185 => 53,  179 => 50,  175 => 48,  169 => 47,  162 => 44,  160 => 43,  155 => 42,  152 => 41,  146 => 37,  143 => 36,  139 => 35,  134 => 33,  130 => 32,  126 => 31,  122 => 30,  118 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -307,13 +319,19 @@ class __TwigTemplate_c1ea9ee25939d28a48cd8b0ff39ce91f extends Template
                             <td class=\"border px-3 py-2\">{{ user.email }}</td>
                             <td class=\"border px-3 py-2\">{{ user.cin }}</td>
                             <td class=\"border px-3 py-2\">
-                               {% for role in user.roles %}
+                            {% for role in user.roles %}
+                                {% if role == \"ROLE_BLOCKED\" %}
+                                    <span class=\"badge bg-secondary\">
+                                        Bloqué
+                                    </span>
+                                {% else %}
                                     {% set badge_color = role == \"ROLE_ADMIN\" ? \"danger\" : (role == \"ROLE_COACH\" or role == \"ROLE_NUTRITIONIST\" ? \"warning\" : \"success\") %}
                                     <span class=\"badge bg-{{ badge_color }}\">
                                         {% set role_name = role == \"ROLE_ADMIN\" ? \"Administrateur\" : (role == \"ROLE_COACH\" ? \"Coach\" : (role == \"ROLE_NUTRITIONIST\" ? \"Nutritionniste\" : \"Membre\")) %}
                                         {{ role_name }}
                                     </span>
-                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             </td>
                             <td class=\"border px-3 py-2\">
                                 <input class=\"form-checkbox h-4 w-4 text-green-600 bg-green-500\" type=\"checkbox\" disabled {{ user.isVerified ? \"checked\" : \"\" }}>
@@ -358,7 +376,6 @@ class __TwigTemplate_c1ea9ee25939d28a48cd8b0ff39ce91f extends Template
             });
         });
     </script>
-{% endblock %}
-", "admin/listUsers.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\admin\\listUsers.html.twig");
+{% endblock %}", "admin/listUsers.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\admin\\listUsers.html.twig");
     }
 }

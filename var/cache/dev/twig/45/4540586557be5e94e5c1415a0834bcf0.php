@@ -163,7 +163,6 @@ class __TwigTemplate_e8d6334bbb6fade6db308d211cb4e12c extends Template
             </div>
         </div>
     </div>
-{% endblock %}
-", "reset_password/check_email.html.twig", "C:\\xampp\\htdocs\\piDev-DevMinds2024 (1)\\piDev-DevMinds2024\\templates\\reset_password\\check_email.html.twig");
+{% endblock %}", "reset_password/check_email.html.twig", "C:\\Users\\khaled\\Desktop\\PiDev-DevMinds2024-master\\PiDev-DevMinds2024-master\\templates\\reset_password\\check_email.html.twig");
     }
 }
